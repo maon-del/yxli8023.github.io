@@ -1,0 +1,95 @@
+<!-- start custom article footer snippet -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+{%- if jekyll.environment != "development" and
+      jekyll.environment != "beta" -%}
+
+<style>
+  .nlike{
+    font-size:24px;
+    text-align:right;
+    color:dodgerblue;
+    margin: auto;
+  }
+  .nlike:before{
+    content:'\f087';
+    font-family: FontAwesome;
+    color:dodgerblue;
+  }
+  .nlike:hover{
+    cursor: pointer;
+  }
+  .nlike > num{
+    font-size:24px;
+  }
+  .like{
+    font-size:24px;
+    text-align:right;
+    margin: auto;
+    color:dodgerblue;
+  }
+  .like:before{
+    content:'\f164';
+    font-family: FontAwesome;
+    color:dodgerblue;
+  }
+</style>
+
+{%- include snippets/get-sources.html -%}
+{%- assign _sources = __return -%}
+
+{%- assign _LEANCLOUD_APP_ID = site.pageview.leancloud.app_id -%}
+{%- assign _LEANCLOUD_APP_KEY = site.pageview.leancloud.app_key -%}
+{%- assign _LEANCLOUD_APP_CLASS = site.pageview.leancloud.app_class -%}
+
+{%- if page.key and
+  _LEANCLOUD_APP_ID and
+  _LEANCLOUD_APP_KEY and
+  _LEANCLOUD_APP_CLASS -%}
+
+  <div class="nlike"> ᐕ) 赞 <num>0</num> </div>
+
+  <script>
+    {%- include pageview-providers/leancloud/leancloud_likes.js -%}
+  </script>
+  <script>
+    var hasClicked = false;
+    var count = null;
+    window.Lazyload.js(['{{ _sources.jquery }}', '{{ _sources.leancloud_js_sdk}}'], function() {
+      var postLikes = window.postLikes(AV, {
+        appId:    '{{ _LEANCLOUD_APP_ID }}',
+        appKey:   '{{ _LEANCLOUD_APP_KEY }}',
+        appClass: '{{ _LEANCLOUD_APP_CLASS }}'
+      });
+      var key =   '{{ page.key }}';
+      var title = {{ page.title | jsonify }};
+      postLikes.increase(key, title, function(view) {
+        $("[data-page-key='{{ page.key }}']").text(view);
+      });
+      postLikes.get(key, function(likes) {
+        document.getElementsByClassName("nlike")[0].firstElementChild.innerText = likes;
+        count = likes;
+      });
+    $(function () {            
+          $(".nlike").click(function () {
+              $(this).toggleClass('like');
+              if (hasClicked) {
+                count--;
+                hasClicked=false;
+                postLikes.modifyLikes(key, false);
+              }else{
+                count++;
+                hasClicked=true;
+                postLikes.modifyLikes(key, true);
+              }
+              document.getElementsByClassName("nlike")[0].firstElementChild.innerText = count;
+          })
+      })
+    });
+  </script>
+
+{%- endif -%}
+{%- endif -%}
+
+
+<!-- end custom article footer snippet -->
