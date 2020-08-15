@@ -18,7 +18,7 @@ show_author_profile: true
 ```shell
 #!/bin/sh  
 #============ get the file name ===========  
-Folder="/home/yxli/te"  	#要批量编译哪个文件夹下面的Fortran
+Folder_A=$(pwd)  	#要批量编译当前文件夹下面的Fortran
 for file_name in ${Folder}/*.f90
 do 
 	temp_file=`basename $file_name  .f90` 
@@ -45,7 +45,7 @@ function getdir(){
 			ifort -mkl $dir_or_file -o $out_file_name.out  # 编译后文件名以out结尾
 			dir1=`dirname $out_file_name`  # 读取编译成功文件的路径,只提取目录
 			cd $dir1  # 切换到具体的文件夹
-			./$file_name.out 1>mes 2>bad &  # 执行该文件夹下面编译好的文件
+			./$file_name.out 1>mes 2>bad &  # 执行该文件夹下面编译好的文件，后缀名为out
 			# ./$out_file_name.out 1>mes 2>bad &
 			# rm $out_file_name.out
 		fi
@@ -53,8 +53,17 @@ function getdir(){
 done
 }
  
-root_dir="/home/yxli/te"
+root_dir=$(pwd) 
 getdir $root_dir
+```
+# 批量复制文件并修改文件内容
+```shell
+for ((i=0;i<=30;i=i+5)); do cp bulkimp.f90 bulkimp$i.f90;done #批量复制文件并以$i的值重命名
+for ((i=0;i<=30;i=i+5)); do sed -i "47s/30/$i/g" bulkimp$i.f90;done #批量修改文件内容(将第47行的30替换成$i的值)
+```
+# 批量杀死进程
+```shell
+ps -ef | grep out | grep -v grep | awk '{print "kill -9 "$2}'|sh  #批量杀死进程名后缀为out的进程
 ```
 # 一些自己定义的Linux命令
 ```shell
