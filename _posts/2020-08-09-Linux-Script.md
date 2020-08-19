@@ -64,6 +64,7 @@ for ((i=0;i<=30;i=i+5)); do sed -i "47s/30/$i/g" bulkimp$i.f90;done #批量修�
 # 批量杀死进程
 ```shell
 ps -ef | grep out | grep -v grep | awk '{print "kill -9 "$2}'|sh  #批量杀死进程名后缀为out的进程
+ps|grep out|awk '{print $1}'|xargs kill -9
 ```
 # 一些自己定义的Linux命令
 ```shell
