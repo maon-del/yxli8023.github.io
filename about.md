@@ -28,6 +28,7 @@ show_author_profile: true
 ![Image](/assets/images/self.jpg){:.circle.border.shadow}
 凝聚态物理在读小硕士一枚，学的是物理，偏爱计算机，却也不偏科数学。平时能用电脑解决的绝不会自己动手，导致手算能力有所下降。
 # 联系方式
+<img src=/assets/images/WeChat.jpg height="330" width="495">
 ![png](/assets/images/WeChat.jpg)
 **e-mail:yxli406@gmail.com**
 
