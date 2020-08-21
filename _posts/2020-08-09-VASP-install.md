@@ -18,8 +18,7 @@ show_author_profile: true
 # intel fortran安装
 首先需要安装Intel Parallel studio XE2019，如果有教育邮箱，可以申请试用，有效期是一年，没有的话请自行解决，百度一堆教程。
 进入软件文件夹之后会看到一个**install.sh**的文件,执行命令`./install.sh`这里默认你已经拥有root权限。按照软件的提示一路往下走，之后就是要输入序列号了，如果是教育邮箱申请的，那么你的邮箱会收到这个序列号，我的是S477-LJST6J4M。之后的安装同样遵循默认选项，虽然可以自行选择哪些需要安装，哪些不需要安装，但因为这是新手初学，暂时先不关心这个问题。接下来就是一段时间的等待之后，就可以成功安装了。
-![png](/assets/images/vasp/intel-1.png)
-![png](/assets/images/vasp/intel-2.png)
+![png](/assets/images/vasp/intel-1.png){:width="330px",:height="495px"}![png](/assets/images/vasp/intel-2.png){:width="330px",:height="495px"}
 ![png](/assets/images/vasp/intel-3.png)
 安装结束之后，并不代表软件可以使用了，如果熟悉Linux系统的话，就知道我们需要设定一下环境变量，才能保证每次进入终端之后可以成功使用intel fortran。
 首先需要找到正确的安装路径，我的安装路径为
@@ -43,14 +42,13 @@ show_author_profile: true
 进入这个目录之后，执行
 > make libintel64
 等待完成之后即可
-![png](/assets/images/vasp/intel-7.png)
-![png](/assets/images/vasp/intel-8.png)
+![png](/assets/images/vasp/intel-7.png){:width="330px",:height="495px"}![png](/assets/images/vasp/intel-8.png){:width="330px",:height="495px"}
 # VASP编译
 这里先说几句，我也是初学者，但是就我所知VASP是有许多不同的版本的，不同的版本可能编译方法都会有所不同，这可能也是网上有很多教程来教你怎么安装VASP，但是由于你手头不论是VASP或者intel fortran的版本和作者的版本都是不太相同的，所以即使是完整参照了教程，最后发现安装还是有一堆问题出现。我先在用的VASP的版本是5.4.4，Fortran编译器是ifort version 19.0.4.243(ifort -v查询结果)。
 
 将VASP5.4.4解压之后，文件夹结构如下图所示
-![png](/assets/images/vasp/vasp-1.png)
-![png](/assets/images/vasp/vasp-2.png)
+![png](/assets/images/vasp/vasp-1.png){:width="330px",:height="495px"}![png](/assets/images/vasp/vasp-2.png){:width="330px",:height="495px"}
+
 在arch中有对于不同机器，已经写好的makefile文件，接下来我们要做的就是选择合适自己机器的makefile文件，然后进行编译。这里我们选择**makefile.include.linux_intel**，将这个文件复制到和arch文件夹同级的目录下，如下图所示，然后将这个复制过来的文件重命名为**makefile.include**。接下来就是要对这个文件内容进行一些小小的调整，源文件第20行的内容为
 > OFLAG = -02
 ![png](/assets/images/vasp/vasp-3.png)

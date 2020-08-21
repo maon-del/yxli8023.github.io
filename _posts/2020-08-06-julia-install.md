@@ -23,11 +23,11 @@ Jupyter是在Ananconda的组件，所以只要先下载安装[Ananconda](https:/
 > **ENV["JULIA_PKG_SERVER"] = "https://mirrors.bfsu.edu.cn/julia/static"**
 
 加入之后，重启julia，然后查看版本信息即如图所示
-![png](../assets/images/Julia/julia-jupyter.png)
+![png](/assets/images/Julia/julia-jupyter.png)
 看到上图所示的信息之后就说明镜像设置成功了，接下就是安装将julia嵌入Jupyter的包IJulia了
 > import Pkg
 Pkg.add("IJulia")
 using IJulia
  
 以此执行上面的三个命令之后，即可成功在Jupyter中安装Julia，接下来打开Jupyter进行新建文件是，就可以看到Julia的命令了
-![png](../assets/images/Julia/julia2.png)
+![png](/assets/images/Julia/julia2.png)

@@ -17,7 +17,7 @@ show_author_profile: true
 <!--more-->
 
 # 基本定义
-![png](/assets/images/research/KM-1.png)
+![png](/assets/images/research/KM-1.png){:width="400px",:height="495px"}
 
 lattice vectors:$d_1=a(0,-1),d_2=a(-\sqrt{3}/2,1/2),d_3=a(\sqrt{3}/2,1)$，lattice平移矢量为$a_1=a(-\sqrt{3}/2,3/2),a_2=a(\sqrt{3}/2,3/2)$ ，平移矢量的长度为$\sqrt{3}a$，以这个长度为最小的单位。
 
