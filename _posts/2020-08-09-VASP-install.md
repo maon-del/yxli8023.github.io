@@ -47,6 +47,7 @@ show_author_profile: true
 这里先说几句，我也是初学者，但是就我所知VASP是有许多不同的版本的，不同的版本可能编译方法都会有所不同，这可能也是网上有很多教程来教你怎么安装VASP，但是由于你手头不论是VASP或者intel fortran的版本和作者的版本都是不太相同的，所以即使是完整参照了教程，最后发现安装还是有一堆问题出现。我先在用的VASP的版本是5.4.4，Fortran编译器是ifort version 19.0.4.243(ifort -v查询结果)。
 
 将VASP5.4.4解压之后，文件夹结构如下图所示
+
 ![png](/assets/images/vasp/vasp-1.png){:width="330px",:height="495px"}![png](/assets/images/vasp/vasp-2.png){:width="330px",:height="495px"}
 
 在arch中有对于不同机器，已经写好的makefile文件，接下来我们要做的就是选择合适自己机器的makefile文件，然后进行编译。这里我们选择**makefile.include.linux_intel**，将这个文件复制到和arch文件夹同级的目录下，如下图所示，然后将这个复制过来的文件重命名为**makefile.include**。接下来就是要对这个文件内容进行一些小小的调整，源文件第20行的内容为
