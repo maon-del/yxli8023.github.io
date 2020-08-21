@@ -3,6 +3,7 @@ title: 研究生的第一个国庆节
 tags: Live Travel
 layout: article
 license: true
+key: a20181008
 toc: true
 pageview: true
 aside:

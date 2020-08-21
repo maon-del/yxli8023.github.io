@@ -3,6 +3,7 @@ title: 毕业
 tags: Live
 layout: article
 license: true
+key: a20180612
 toc: true
 pageview: true
 aside:

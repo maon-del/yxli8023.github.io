@@ -3,6 +3,7 @@ title: 四年的大学生活，一纸言尽
 tags: Live
 layout: article
 license: true
+key: a20180603
 toc: true
 pageview: true
 aside:

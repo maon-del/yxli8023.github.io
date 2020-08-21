@@ -5,6 +5,7 @@ layout: article
 license: true
 toc: true
 pageview: true
+key: a20200806
 aside:
     toc: true
 sitemap: true
