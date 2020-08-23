@@ -13,5 +13,5 @@ show_author_profile: true
 
 ---
 <video id="video" controls="" preload="none">
-    <source id="mp4" src="G:\GitHub\yxli8023.github.io\assets\video\Something just like this.mp4" type="video/mp4">
+    <source id="mp4" src="/assets/video/Something just like this.mp4" type="video/mp4">
 </video>
