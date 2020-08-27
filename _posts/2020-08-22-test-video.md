@@ -1,5 +1,5 @@
 ---
-title: Video test
+title: Something just like this
 tags: Study 
 layout: article
 license: true
@@ -12,6 +12,8 @@ author: YuXuan
 show_author_profile: true
 
 ---
-<video id="video" controls="" preload="none">
+虽然我并不是漫威动漫的忠实爱好者，但是这个系列确实很吸引人，正好最近学习到如何在博客中插入视频资源，来把博客内容变的更加丰富，就拿酷玩的这首歌配上蜘蛛侠来展示一下。
+<!--more-->
+<video id="video" controls="" width="400" height="300" preload="auto" >
     <source id="mp4" src="/assets/video/Something just like this.mp4" type="video/mp4">
 </video>
