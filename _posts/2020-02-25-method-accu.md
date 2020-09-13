@@ -91,11 +91,15 @@ $$\sigma_ys_z=-1$$
 
 首先，对于任一波函数可以在一个完备的基矢组上进行展开$\Psi(r)=\sum_\lambda a_\lambda\phi_\lambda(r),\Psi^\dagger(r)=\sum_\lambda a^\dagger_\lambda\phi^{*}_\lambda(r)$，在这里要说明一下$\Psi^\dagger$与$a^\dagger$满足相同的对易关系，即都是对易或者反对易，这与研究的体系时费米子还是玻色子有关，而且在这里我们默认了算符都是不含时的，或者可以认为都是同一时刻的算符。如果它们不是同一时刻的算符，那么对易关系就不再是上面这种简单的形式了。
 
-将哈密顿量利用二次量子化算符写出来之后为:$H=\int d^3r\Psi^\dagger\mathcal{H}\Psi=\sum_{\lambda\lambda'}a_\lambda^\dagger a_{\lambda'}\int\phi^*_\lambda(r)\mathcal{H}\phi_{\lambda'}(r)=\sum_{\lambda}\epsilon_\lambda a^\dagger_\lambda a_\lambda$，这里强调一下几个符号$\mathcal{H}$是哈密顿量密度，所以这里是它作用到波函数上对空间的积分，而$\phi^\dagger$是$H$的本征态，所以在$\mathcal{H}$作用之后对全空间积分则可以得到$\epsilon_\lambda$，这也就是上面公式所包含的意思。
+将哈密顿量利用二次量子化算符写出来之后为
 
-粒子密度算符:$\rho(r)=\Psi^\dagger(r)\Psi(r)=\sum_{\lambda\lambda'}a^\dagger_\lambda a_{\lambda'}\phi^*_\lambda(r)\phi_{\lambda'}(r)$
+$$H=\int d^3r\Psi^\dagger\mathcal{H}\Psi=\sum_{\lambda\lambda'}a_\lambda^\dagger a_{\lambda'}\int\phi^*_\lambda(r)\mathcal{H}\phi_{\lambda'}(r)=\sum_{\lambda}\epsilon_\lambda a^\dagger_\lambda a_\lambda$$
 
-粒子数算符即对粒子密度算符对空间的积分:$N=\int d^3r\rho(r)=\sum_\lambda a^\dagger_\lambda a_\lambda$(利用$\phi$的归一化条件)
+这里强调一下几个符号$\mathcal{H}$是哈密顿量密度，所以这里是它作用到波函数上对空间的积分，而$\phi^\dagger$是$H$的本征态，所以在$\mathcal{H}$作用之后对全空间积分则可以得到$\epsilon_\lambda$，这也就是上面公式所包含的意思。
+
+粒子密度算符 $\rho(r)=\Psi^\dagger(r)\Psi(r)=\sum_{\lambda\lambda'}a^\dagger_\lambda a_{\lambda'}\phi^*_\lambda(r)\phi_{\lambda'}(r)$
+
+粒子数算符即对粒子密度算符对空间的积分 $N=\int d^3r\rho(r)=\sum_\lambda a^\dagger_\lambda a_\lambda$(利用$\phi$的归一化条件)
 
 将密度算符变换到动量空间$\rho(q)=\int d^3re^{-iqr}\rho(r)=\sum_{\lambda\eta}c_\lambda^\dagger c_\eta\int d^3r\phi_\lambda^*(r)\phi_\eta(r)e^{-iqr}$
 
