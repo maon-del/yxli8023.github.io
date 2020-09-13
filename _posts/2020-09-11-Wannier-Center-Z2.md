@@ -38,8 +38,8 @@ $$\hat{P}_{k_{y}}=\sum_{m \in o} \sum_{k_{x}}\left|\Psi_{m k_{x}k_y}\right\rangl
 零。而且在文章中也提到$\delta k_x=2\pi/N_xa_x,k_i=2\pi i/N_xa_x$，也就是在$k_x$方向上的离散动量，由于$\delta$函数的限制，所以才会有文章
 (19)式矩阵中$F_{i,i+1}$的索引表示，这个时候的$i$索引的是离散的动量$k_x$，因为这里是投影到$k_y$上的，所以将$k_x$当作了内部变化量，也就正好符
 合文章中提到的，将维度降低进行计算。
-![png](\assets\images\research\zt1.png)
-![png](\assets\images\research\zt2.png)
+![png](/assets/images/research/zt1.png)
+![png](/assets/images/research/zt2.png)
 
 和前面[$Z_2$拓扑不变量计算]()的解释一样，由于存在时间反演对称，所以每个本征值都是2重简并的，可以就认为是由两个占据态
 # 参考
