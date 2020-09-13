@@ -1,5 +1,5 @@
 ---
-title: 电子掺杂与空穴掺杂与化学势的关系
+title: 电子掺杂，空穴掺杂与化学势的关系
 tags: Fortran Superconductor
 layout: article
 license: true
