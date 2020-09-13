@@ -6,6 +6,8 @@ license: true
 toc: true
 key: a20200911
 pageview: true
+aside:
+    toc: true
 sitemap: true
 mathjax: true
 author: YuXuan
@@ -25,13 +27,19 @@ $$|k\alpha\tau\rangle=\frac{1}{\sqrt{N_{cell}}}\sum_je^{ik(R_j+\tau})|j\alpha\ta
 
 # 位置算符
 文中首先定义了一个位置算符$\hat{X}=\sum_{j a \tau} \mathrm{e}^{-\mathrm{i} \tilde{\alpha} x_{x} \cdot\left(R_{j}+\tau\right)}|j 
-\alpha \tau\rangle\langle j \alpha \tau|$，首先可以看到这是利用Wannier函数为基矢构成的位置算符。接下来又定义了投影算符，只不过这时候的投影
-算符是作用到特定的动量方向上的($k_x$ or $k_y$):$$\hat{P}_{k_{y}}=\sum_{m \in o} \sum_{k_{x}}\left|\Psi_{m k_{x}k_y}
-\right\rangle\left\langle\Psi_{m k_{x} k_y}\right|$$，这里的o代表的是对所有占据态本征矢量进行求和。接下来就是将位置算符与投影算符结合到一
+\alpha \tau\rangle\langle j \alpha \tau|$，首先可以看到这是利用Wannier函数为基矢构成的位置算符。文章中指出，这个位置算符的位相中有实空间物理位置的物理意义，我做如下理解：先后先看到位相因子$\mathrm{e}^{-\mathrm{i} \tilde{\alpha} x_{x} \cdot\left(R_{j}+\tau\right)}$中含有$R_j$它代表了第$j$个元胞的位置$\tau$则代表的时元胞中其它原子的位置，如果选取的元胞不同，则$R_j$自然是不同的，这时候反映在这个位相上的值就不同，所以位相不同，则通过这个关系就可以将实空间位置与位相联系起来。
+
+接下来又定义了投影算符，只不过这时候的投影算符是作用到特定的动量方向上的($k_x$ or $k_y$)
+
+$$\hat{P}_{k_{y}}=\sum_{m \in o} \sum_{k_{x}}\left|\Psi_{m k_{x}k_y}\right\rangle\left\langle\Psi_{m k_{x} k_y}\right|$$
+
+这里的o代表的是对所有占据态本征矢量进行求和。接下来就是将位置算符与投影算符结合到一
 起，得到一个方向投影上的位置算符，即就是文章的公式(18)，在这里存在一个$\delta$函数，所以当且仅当$k_x-k_x'=\delta k_x$的时候，这一项才不为
 零。而且在文章中也提到$\delta k_x=2\pi/N_xa_x,k_i=2\pi i/N_xa_x$，也就是在$k_x$方向上的离散动量，由于$\delta$函数的限制，所以才会有文章
 (19)式矩阵中$F_{i,i+1}$的索引表示，这个时候的$i$索引的是离散的动量$k_x$，因为这里是投影到$k_y$上的，所以将$k_x$当作了内部变化量，也就正好符
 合文章中提到的，将维度降低进行计算。
+![png](\assets\images\research\zt1.png)
+![png](\assets\images\research\zt2.png)
 
 和前面[$Z_2$拓扑不变量计算]()的解释一样，由于存在时间反演对称，所以每个本征值都是2重简并的，可以就认为是由两个占据态
 # 参考
