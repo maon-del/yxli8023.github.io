@@ -97,7 +97,8 @@ $$H=\int d^3r\Psi^\dagger\mathcal{H}\Psi=\sum_{\lambda\lambda'}a_\lambda^\dagger
 
 这里强调一下几个符号$\mathcal{H}$是哈密顿量密度，所以这里是它作用到波函数上对空间的积分，而$\phi^\dagger$是$H$的本征态，所以在$\mathcal{H}$作用之后对全空间积分则可以得到$\epsilon_\lambda$，这也就是上面公式所包含的意思。
 
-粒子密度算符 $\rho(r)=\Psi^\dagger(r)\Psi(r)=\sum_{\lambda\lambda'}a^\dagger_\lambda a_{\lambda'}\phi^*_\lambda(r)\phi_{\lambda'}(r)$
+粒子密度算符
+$$\rho(r)=\Psi^\dagger(r)\Psi(r)=\sum_{\lambda\lambda'}a^\dagger_\lambda a_{\lambda'}\phi^*_\lambda(r)\phi_{\lambda'}(r)$$
 
 粒子数算符即对粒子密度算符对空间的积分 $N=\int d^3r\rho(r)=\sum_\lambda a^\dagger_\lambda a_\lambda$(利用$\phi$的归一化条件)
 
@@ -113,15 +114,14 @@ $$H=\int d^3r\Psi^\dagger\mathcal{H}\Psi=\sum_{\lambda\lambda'}a_\lambda^\dagger
 
 粒子流:$j_i(r)=\frac{1}{2mi}\{\psi^\dagger(r)\nabla\psi(r)-\psi(r)\nabla\psi^\dagger(r)\}$，将波函数利用二次量子化的基矢做展开可得到:
 
-$j_i(q)=\frac{1}{2mi}\sum_{\lambda\eta}c^\dagger_\lambda c_\eta\int d^3re^{-iqr}[\phi^*_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^*_\lambda(r)]$
+$$j_i(q)=\frac{1}{2mi}\sum_{\lambda\eta}c^\dagger_\lambda c_\eta\int d^3re^{-iqr}\[\phi^\star_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^*_\lambda(r)\]$$
 
 接下来对于自由粒子，取平面波基矢做展开
 
-> $\phi^*_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^*_\lambda(r)=e^{-ik_1r}\frac{\partial}{\partial r}e^{ik_2r}-e^{ik_2r}\frac{\partial}{\partial r}e^{-ir_1r}=(ik_1+ik_2)e^{i(k_1-k_2)r}$
->
-> $\int d^3r(ik_1+ik_2)e^{i(k_1-k_2-q)}=i(k_1+k_2)\delta(k_1-k_2-q)$
->
-> 利用$\delta$函数的限制之后，得到$k_1,k_2$之间的关系为$k_1=k_2+q$
->
-> 最终结果为:$j_i(q)=\frac{1}{m}\sum_{k\sigma}(k+\frac{1}{2}q)c^\dagger_{k+q,\sigma}c_{k\sigma}$
+$$\phi^\star_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^\star_\lambda(r)=e^{-ik_1r}\frac{\partial}{\partial r}e^{ik_2r}-e^{ik_2r}\frac{\partial}{\partial r}e^{-ir_1r}=(ik_1+ik_2)e^{i(k_1-k_2)r}$$
+
+$\int d^3r(ik_1+ik_2)e^{i(k_1-k_2-q)}=i(k_1+k_2)\delta(k_1-k_2-q)$
+利用$\delta$函数的限制之后，得到$k_1,k_2$之间的关系为$k_1=k_2+q$
+
+最终结果为:$j_i(q)=\frac{1}{m}\sum_{k\sigma}(k+\frac{1}{2}q)c^\dagger_{k+q,\sigma}c_{k\sigma}$
 
