@@ -114,7 +114,7 @@ $$\rho(r)=\Psi^\dagger(r)\Psi(r)=\sum_{\lambda\lambda'}a^\dagger_\lambda a_{\lam
 
 粒子流:$j_i(r)=\frac{1}{2mi}\{\psi^\dagger(r)\nabla\psi(r)-\psi(r)\nabla\psi^\dagger(r)\}$，将波函数利用二次量子化的基矢做展开可得到:
 
-$$j_i(q)=\frac{1}{2mi}\sum_{\lambda\eta}c^\dagger_\lambda c_\eta\int d^3re^{-iqr}\[\phi^\star_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^*_\lambda(r)\]$$
+$$j_i(q)=\frac{1}{2mi}\sum_{\lambda\eta}c^\dagger_\lambda c_\eta\int d^3re^{-iqr}[\phi^\star_\lambda(r)\nabla\phi_\eta(r)-\phi_\eta(r)\nabla\phi^*_\lambda(r)]$$
 
 接下来对于自由粒子，取平面波基矢做展开
 
