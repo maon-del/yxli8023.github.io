@@ -42,7 +42,7 @@ $$\hat{P}_{k_{y}}=\sum_{m \in o} \sum_{k_{x}}\left|\Psi_{m k_{x}k_y}\right\rangl
 # Wilson Loop
 $$W(k_y)=F_{0,1}F_{1,2}F_{2,3}\dots F_{N_x-2,N_x-1}F_{N_x-1,0}$$
 将(19)中的所有不为0的矩阵元按照顺序相乘，既可以得到由$k_x$的取值构成的一个闭合环路的$U(2N)$Wilson loop.
-![png](../assets/images/research/zt3.png)
+![png](/assets/images/research/zt3.png)
 
 $F_{i,j}$的维度是$2N\times 2N$，即表示此时的占据态共有$2N$个
 
@@ -52,7 +52,7 @@ $F_{i,j}$的维度是$2N\times 2N$，即表示此时的占据态共有$2N$个
 这个矩阵$W(k_y)$的强大之处在于它的本征值和行列式是与环路上各个$k_x$点上的波函数的具体规范没有关系。这是一个很重要的性质，因为在前面[计算chern数](https://yxli8023.github.io/2020/07/01/Chern-Number.html)的文章中，我也曾遇到过规范选择的问题，但是我在那么没有提及这个问题，也是寻找了另外一种方法来计算chern数，而不是通过定义的方法直接计算的。所以这里构建的Wilson loop它的计算和规范选择无关，就具有很好的实用价值了。
 {:.warning}
 
-在确定了$W(k_y)$矩阵之后，其本征值就是需要求解的量，假设本征值是$\lambda_m(k_y)=|\lambda_m|e^{i\phi(k_y)},(m=1,\dots,2N)$，本征值的位相$\phi(k_y)$即是等效一维系统占据态的瓦尼尔函数心(Wannier Center)，而Wannier Center的演化则直接和体系的拓扑性质相联系，具体如何联系的可以参考后面的两篇文章。
+在确定了$W(k_y)$矩阵之后，其本征值就是需要求解的量，假设本征值是$\lambda_m(k_y)=\lvert\lambda_m\rvert e^{i\phi(k_y)},(m=1,\dots,2N)$，本征值的位相$\phi(k_y)$即是等效一维系统占据态的瓦尼尔函数心(Wannier Center)，而Wannier Center的演化则直接和体系的拓扑性质相联系，具体如何联系的可以参考后面的两篇文章。
 
 # 参考
 1.[$Z_2$拓扑不变量与拓扑绝缘体](http://www.wuli.ac.cn/CN/abstract/abstract32045.shtml)

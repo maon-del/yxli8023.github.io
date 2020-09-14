@@ -51,6 +51,7 @@ end
 @time sum1(999)
 ```
 > Result is: 1498500000000
+> 
 > Timing cost is(s): 0.000084 seconds
 ## Fortran
 ```fortran
@@ -77,6 +78,7 @@ stop
 end program main
 ```
 > Result is:          1498500000000
+>
 > Timing cost is(s):   0.4992760
 ## Mathematica
 ```mathematica
@@ -84,6 +86,7 @@ Sum[i + j + k, {i, 0, 999}, {j, 0, 999}, {k, 0, 999}] // AbsoluteTiming
 ```
 
 ![png](/assets/images/research/speed1.png)
+
 **从上面的结果中可以看到，julia在循环计算这方面速度方面的优势还是很明显的。fortran的速度也是很快的，毕竟它本来就是以速度见长的。mathematica的循环计算速度是有些慢的，不过这里强调一下，它是可以进行优化的，而且mathematica的计算优势并不是简单的通过这个循环对比就可以概括的，所以这个对比对mathematica来说并没有太大的意义。python在这里看起来是最慢的，这也符合我对这个语言的认知，它具有它灵活简单的优势，在速度方面就比较慢了，但是后面仍然可以给出python在循环时候的优化方案。**
 > julia在语言方面和python具有很大的相似性,而且也可以通过对变量指定特定的类型声明来进行提速,所以我最近几乎都是在学习julia进行编程.但是因为python现在生态比较成熟,可用的轮子比较多,所以如果特别依赖这些轮子的化,可能转julia会有一定的难度.
 
@@ -114,6 +117,7 @@ t2 = time.time()
 print('Timing cost is(s):  ',t2 - t1)
 ```
 > 2424547410323587072
+> 
 > Timing cost is(s):   0.08331894874572754
 ## julia
 ```julia
@@ -157,6 +161,7 @@ stop
 end program main
 ```
 > Result is:      14998500000000000
+>
 > Timing cost is(s):    397.8017
 
 **在这里我只简单的对比了julia和python的计算速度,Fortran对循环暂时我还没有找到加速的方法,唯一想到的就是并行,而且fortran随着循环次数的增加,所消耗的时间也是非常长.至于Mathematica来说,想要加速方法还是很多的,比如直接调用一些并行命令,或者利用纯函数进行计算,在这里就不多说了,这里主要是想展示一下过程式编程语言的速度问题,关于mathematica的计算问题,如果有机会我也会单独进行整理.**
