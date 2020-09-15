@@ -61,7 +61,33 @@ $$\langle\hat{\psi}^\dagger_1(t)\hat{O}(t)\hat{\psi}_2(t)\rangle=\langle\psi_1^\
 在相互作用绘景中的期望值计算又和Schrodinger绘景中的计算完全一致,所以这三种不同的绘景只是用来简化问题的处理,实际的计算中结果是完全相同的.
 对相互作用绘景波函数求时间的导数可得
 
-$$$$
+$$\frac{\partial}{\partial t}\hat{\psi}(t)=ie^{iH_0t}(H_0-H)e^{-iHt}\psi(0)=-ie^{iH_0t}Ve^{-iHt}\psi(0)=-ie^{iH_0t}Ve^{-iH_0t}[e^{iH_0t}e^{-iHt}\psi(0)]$$
+
+$$\frac{\partial}{\partial t}\hat{\psi}(t)=-i\hat{V}(t)\hat{\psi}(t)$$
+
+从上面的方程可以看到,波函数满足一个和$\hat{V}(t)$相关的微分方程.
+
+接下来介绍相互作用绘景中的时间演化算符**$U(t)=e^{iH_0t}e^{-iHt}$**,显然当$t=0$时,$U(0)=1$,对时间演化算符求时间导数后
+
+$$\frac{\partial}{\partial t}U(t)=ie^{iH_0t}(H_0-H)e^{-iHt}=-ie^{iH_0t}V(e^{-iH_0t}e^{iH_0t})e^{-iHt}=-i\hat{V}(t)U(t)$$
+
+时间演化算符也满足和相互作用绘景中的波函数满足同样的微分方程,求解这个微分方程可得
+
+$$U(t)-U(0)=-i\int^t_0dt_1\hat{V}(t_1)U(t_1)$$
+
+利用前面$t=0$时刻的条件后:$U(t) = 1-i\int^t_0dt_1\hat{V}(t_1)U(t_1)$
+
+从这个微分方程的解可以看到,这是一个关于$U(t)$的迭代方程,通过重复的回代,可以得到一个无穷多项的结果
+
+$$U(t)=1-i\int^t_0dt_1\hat{V}(t_1)+(-i)^2\int^t_0dt_1\int^t_0dt_2\hat{V}(t_1)\hat{V}(t_2)+\dots\\
+=\sum_{n=0}^\infty(-i)^n\int^t_0dt_1\int^t_0dt_2\dots\int^{t_{n-1}}_0\hat{V}(t_1)\hat{V}(t_2)\dots\hat{V}(t_n)$$
+
+## 编时算符
+编时算符的引进目的,就是为了使得一些算符的作用是有意义的,而且可以使得一些公式在形式上可以写的很简单,使得在进行一些计算的时候很方便.编时算符通常是作用在一组与时间相关的算符上$T[\hat{V}(t_1)\hat{V}(t_2)\hat{V}(t_3)]$,编时算符作用之后展开为
+
+$$T[\hat{V}(t_1)\hat{V}(t_2)\hat{V}(t_3)]=\hat{V}(t_3)\hat{V}(t_1)\hat{V}(t_2)\qquad if \quad t_3>t_2>t_1$$
+
+编时算符的作用就是按照一定的时间顺序来将算符组织起来,使得时间较早的算符先作用,时间较后的算符后作用,这个是要符合因果律.
 
 
 # 参考
