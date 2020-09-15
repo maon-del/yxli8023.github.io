@@ -132,9 +132,17 @@ $$\frac{\partial}{\partial t}S(t,t')=\frac{\partial}{\partial t}U(t)U^\dagger(t'
 相互作用存在的基态与无相互作用基态之间的关系,可以通过S矩阵联系起来
 
 $$\psi(0)=S(0,-\infty)\phi_0$$
+
+利用前面的公式
+
+$$\hat{\psi}(t)=S(t,0)\psi(0)$$
+
+公式逆用之后有
+
+$$\psi(0)=S(0,t)\hat{\psi}(t)$$
+
+对上式取$t\rightarrow-\infty$得到一个重要的关系$\psi(0)=S(0,-\infty)\hat{\psi}(-\infty)$.**在这里做一个重要的声明$\hat{\psi}(-\infty)$即就是$\phi_0$**.这是一个合理的猜测,在无穷远时间之前,相互作用是不存在的,随着时间慢慢的演化之后,相互作用慢慢增加,最后在0时刻的时候变完整,此时系统的哈密顿量为$H=H_0+V$.
 {:.success}
-
-
 
 
 
