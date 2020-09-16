@@ -123,9 +123,9 @@ print('Timing cost is(s):  ',t2 - t1)
 ```julia
 function sum1(num::Int128)
     c::Int64 = 0
-    for i in 0:num-1
-        for j in 0:num-1
-            for k in 0:num-1
+    for i in 0:num - 1
+        for j in 0:num - 1
+            for k in 0:num - 1
                 c = c + i + j + k
             end
         end
