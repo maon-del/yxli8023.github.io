@@ -146,7 +146,7 @@ $$\psi(0)=S(0,t)\hat{\psi}(t)$$
 
 同样的可以有
 
-$$\hat(\infty)=S(\infty,0)\psi(0)$$
+$$\hat{\psi}(\infty)=S(\infty,0)\psi(0)$$
 
 这个时候任然可以做出猜测,再$t\rightarrow\infty$的时候,$\hat{\psi}\rightarrow\phi_0$,即在相互作用存在无穷远时间之后,系统的基态波函数再次变换成了无相互作用时候的基态波函数.
 
@@ -154,7 +154,7 @@ $$\hat(\infty)=S(\infty,0)\psi(0)$$
 
 $$\phi_0e^{iL}=\hat{\psi}(\infty)=S(\infty,0)\psi(0)=S(\infty,-\infty)\phi_0$$
 
-则最终可以得到这个因子为$e^{iL}=\langle\phi_0|S(\infty,-\infty)|\phi_0\rangle$
+则最终可以得到这个因子为$e^{iL}=\langle\phi_0\lvert S(\infty,-\infty)\rvert\phi_0\rangle$
 
 上面这个因子在格林函数中是一个很重要的结论,在之后进行相互作用存在后的格林函数计算是,是一个经常出现的量,同时在计算过程中也不容忽略,关于具体的应用,我在后面也会具体整理一些内容来对这个因子的应用进行展示.
 {:.warning}
