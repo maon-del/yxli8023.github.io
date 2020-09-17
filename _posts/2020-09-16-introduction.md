@@ -151,6 +151,7 @@ fig.show()
 
 # 服务器程序编译执行
 ## Linux基本命令
+
 ```shell
 ls or ls -al 显示当前文件夹中的所有文件
 pwd  打印当前路径
@@ -164,6 +165,7 @@ cat f1.f90  将文件名为f1.f90的内容全部打印到终端
 tail -n f1.f90  将文件名为f1.f90倒数n行打印到终端
 head -n f1.f90  将文件名为f1.f90前n行打印到终端
 ```
+
 **新手可以先在本地将程序写好之后传到服务器端进行编译运行,或者使用Xshell之后可以直接使用gedit在服务器端利用图形界面对代码进行直接修改,vim使用需要一定的学习.**
 
 ![png](/assets/images/introduc/L1.png)
@@ -432,6 +434,7 @@ rm *out   # 删除编译后文件
 
 - 批量执行文件夹中所有的Fortran程序(文件夹中可以包含文件夹)
 **递归搜寻文件夹下面所有的Fortran文件**
+
 ```shell
 #!/bin/bash 
 function getdir(){
