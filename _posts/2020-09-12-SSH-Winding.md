@@ -11,9 +11,41 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
-在这篇博客中通过简单的SSH模型，来计算一下Winding Number这一拓扑不变量。虽然这个模型很简单，但是最近在学习Non-Hermitian的文章中，很多都是以这个模型为基础，研究非厄米体系的一些基本性质，其中也有通过计算非厄米系统的Winding Number来联系体系的拓扑性质。这里我就暂时不涉及非厄米的内容，因为我也只是对这个课题了解一点点内容，这里主要计算厄密SSH模型的Winding Number。
+在这篇博客中通过简单的SSH模型，来计算一下[Winding Number](https://en.wikipedia.org/wiki/Winding_number)这一拓扑不变量。虽然这个模型很简单，但是最近在学习Non-Hermitian的文章中，很多都是以这个模型为基础，研究非厄米体系的一些基本性质，其中也有通过计算非厄米系统的Winding Number来联系体系的拓扑性质。这里我就暂时不涉及非厄米的内容，因为我也只是对这个课题了解一点点内容，这里主要计算厄密SSH模型的Winding Number。
 {:.info}
 <!--more-->
+# Winding Number
+## 直观描述
+Winding number是指平面一条闭合的曲线以逆时针方向绕一点所转的圈数,正方向是逆时针,则这时候的Winding number是正数,如果是顺时针方向绕动的,那么Winding number就是负数.
+
+![png](/assets/images/research/w1.png)
+
+![png](/assets/images/research/w2.gif)
+
+## 数学表达
+平面上的曲线可以通过参数方程来表示 
+
+$$x=x(t) \text { and } y=y(t) \quad \text { for } 0 \leq t \leq 1$$
+
+如果在$t=0$和$t=1$的时候位置是相同的,那么在参数$t$变化的过程中就形成了一个闭合的曲线.这个问题同样可以放在极坐标空间中来处理
+
+$$r=r(t) \text { and } \theta=\theta(t) \quad \text { for } 0 \leq t \leq 1$$
+
+根据前面的假设,$t=0$与$t=1$位置相同,构成一个闭合的曲线,那么在极坐标空间中$\theta(0)$与$\theta(1)$之间则相差$2\pi$的整数倍
+
+$$\text { winding number }=\frac{\theta(1)-\theta(0)}{2 \pi}$$
+
+再次转换坐标系,在复平面上进行分析,直角平面上的两个分量分别看作是复平面上的实部和虚部,$z=x+\text{i} y=re^{i\theta}$
+
+$$d z=e^{i \theta} d r+i r e^{i \theta} d \theta$$
+
+$$\frac{d z}{z}=\frac{d r}{r}+i d \theta=d[\ln r]+i d \theta$$
+
+由于$\gamma$是闭合曲线,那么总的$\ln(r)$的改变等于0,所以积分$\frac{dz}{z}$就是i乘以总的$\theta$角的改变值,所以Winding Number又可以表示为
+
+$$\frac{1}{2 \pi i} \oint_{\gamma} \frac{d z}{z}$$
+
+
 # SSH model
 在这里我就不详细阐述什么是SSH模型了，简单的放一张示意图，向学习SSH模型的具体内容，可以去参考中的第一本书中，这本书讲的还是非常不错的。
 
@@ -65,6 +97,8 @@ end
 ```
 
 ![png](/assets/images/research/ssh3.png)
+
+
 
 # 参考
 1.[A Short Course On Topological Insulator](https://arxiv.org/pdf/1509.02295.pdf)
