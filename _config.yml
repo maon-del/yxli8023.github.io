@@ -100,7 +100,7 @@ chart: true # false (default), true
 
 ## => Paginate
 ##############################
-paginate: 6 # 每页文章数
+paginate: 10 # 每页文章数
 paginate_path: /page:num # don't change this unless for special need
 
 
