@@ -17,7 +17,7 @@ show_author_profile: true
 # 密度分布
 我这里的数据是用Fortran计算的,密度图的数据格式为$[x \quad y\quad z]$,在Julia中需要对这中格式的数据进行一定的操作,然后进行绘图.计算得出的数据格式如下
 
-![png](assets/images/Julia/j1.png)
+![png](/assets/images/Julia/j1.png)
 
 ```julia
 figure(figsize=(10,8))  # 画图大小
@@ -35,7 +35,7 @@ title("CornerState")
 savefig("cor.eps",bbox_inches="tight",dpi=300)  # 保存作图文件
 ```
 
-![png](assets/images/Julia/j2.png)
+![png](/assets/images/Julia/j2.png)
 
 # 子图
 ```julia
@@ -97,11 +97,11 @@ title("Magnetic")
 savefig("ldos.eps",bbox_inches="tight")
 ```
 
-![png](assets/images/Julia/j3.png)
+![png](/assets/images/Julia/j3.png)
 
 # 多曲线作图
 通常在做cylinder结构的能带图时,其实就是在一张图上做出多条曲线,计算得到的数据结构如下
-![png](assets/images/Julia/j4.png)
+![png](/assets/images/Julia/j4.png)
 
 每一行代表一个固定$k_i$下的能量本征值
 
@@ -119,4 +119,4 @@ savefig("eband.eps",bbox_inches="tight",dpi=300)
 close(f)
 ```
 
-![png](assets/images/Julia/j5.png)
+![png](/assets/images/Julia/j5.png)
