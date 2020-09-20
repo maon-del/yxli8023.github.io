@@ -111,6 +111,7 @@ $$\begin{aligned}
 &=\pm \frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} T_{\tau}(A(\tau) B)\right] \\
 &=\pm \mathcal{C}_{A B}(\tau)
 \end{aligned}\label{per}$$
+
 **同样这里只利用了$Tr$的轮换性**
 
 既然函数具有周期性,那么就一定可以和傅里叶变换联系起来,虚时$\tau$限制在$[-\beta,\beta]$区间内,则其傅里叶变换有
@@ -145,9 +146,40 @@ $$\mathcal{C}_{A B}\left(i \omega_{n}\right)=\int_{0}^{\beta} d \tau e^{i \omega
 $\omega_n$就是松原频率,对于费米子和玻色子,其取值是不同的.
 
 # 松原格林函数与推迟格林函数
-在
 
+在频率域中,这松原格林函数与推迟格林函数是拥有相同的解析函数的,也就是说存在一个函数$C_{AB}(z)$,$z$是上面平面的复频率,如果$z$恰好在虚轴上那就是$C_{AB}(i\omega)$,如果是在实轴上就是$C^R_{AB}(\omega)$.这个关系告诉我们,只要知道了这两个其中的一个,那么另外一个可以通过解析延拓的方式得到.这也就是推迟格林函数与松原格林函数之间最重要的关系.$C^R_{AB}(\omega)=C_{AB}(i\omega_n\rightarrow \omega+i\eta)$,$\eta$是个无穷小量保证函数不会发散.
+{:.success}
 
+下面来利用Lehmann表示展示一下这两者之间的联系,首先对于$\tau>0$有
+
+$$\begin{aligned}
+\mathcal{C}_{A B}(\tau) &=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} e^{\tau H} A e^{-\tau H} B\right] \\
+&=\frac{-1}{Z} \sum_{n n^{\prime}} e^{-\beta E_{n}}\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle e^{\tau\left(E_{n}-E_{n^{\prime}}\right)}
+\end{aligned}$$
+
+$Tr\equiv\sum_n\langle n \rvert \dots \rvert n\rangle$,$\rvert n\rangle$是$H$的本征态,则可以得到上面的关系,接下来进行虚时到虚频的傅里叶变换
+
+$$\begin{aligned}
+\mathcal{C}_{A B}\left(i \omega_{n}\right) &=\int_{0}^{\beta} d \tau e^{i \omega_{n} \tau} \frac{-1}{Z} \sum_{n n^{\prime}} e^{-\beta E_{n}}\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle e^{\tau\left(E_{n}-E_{n^{\prime}}\right)} \\
+&=\frac{-1}{Z} \sum_{n n^{\prime}} e^{-\beta E_{n}} \frac{\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle}{i \omega_{n}+E_{n}-E_{n^{\prime}}}\left(e^{i \omega_{n} \beta} e^{\beta\left(E_{n}-E_{n^{\prime}}\right)}-1\right) \\
+&=\frac{-1}{Z} \sum_{n n^{\prime}} e^{-\beta E_{n}} \frac{\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle}{i \omega_{n}+E_{n}-E_{n^{\prime}}}\left(\pm e^{\beta\left(E_{n}-E_{n^{\prime}}\right)}-1\right) \\
+&=\frac{1}{Z} \sum_{n n^{\prime}} \frac{\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle}{i \omega_{n}+E_{n}-E_{n^{\prime}}}\left(e^{-\beta E_{n}}-(\pm) e^{-\beta E_{n^{\prime}}}\right)
+\end{aligned}$$
+
+从这里就可以得到一个在复平面上定义的函数
+
+$$C_{A B}(z)=\frac{1}{Z} \sum_{n n^{\prime}} \frac{\left\langle n|A| n^{\prime}\right\rangle\left\langle n^{\prime}|B| n\right\rangle}{z+E_{n}-E_{n^{\prime}}}\left(e^{-\beta E_{n}}-(\pm) e^{-\beta E_{n^{\prime}}}\right)$$
+
+对松原格林函数进行解析延拓之后也就可以得到推迟格林函数,它们的联系也可以通过图像展示
+
+![png](/assets/images/research/mat1.png)
+
+**这里顺便再多说一句,$i\omega_n\rightarrow \omega+i\eta$是推迟格林函数,这个函数是再上半复平面的,当$i\omega_n\rightarrow \omega-i\eta$时得到就是超前格林函数,它是在下半复平面的,也就如上图所示**
+
+# 参考
+
+- 1.Many body quantum theory in condensed matter physics
+- 2.Many particle physics
 
 
 
