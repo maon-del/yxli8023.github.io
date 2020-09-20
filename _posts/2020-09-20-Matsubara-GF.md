@@ -1,5 +1,5 @@
 ---
-title: 松原格林函数与零温格林函数联系 
+title: 松原(Matsubara)格林函数与推迟(Retaeded)格林函数联系 
 tags:  Study Method
 layout: article
 license: true
@@ -77,3 +77,77 @@ $$\left\langle T_{\tau} A(\tau) B\left(\tau^{\prime}\right)\right\rangle=\frac{1
 从上面的结果可以看到,在虚时绘景下,由成功的把问题转换到了在无相互作用哈密顿量本征态上的计算.
 
 # 松原格林函数的定义
+虚时格林函数的定义是利用虚时Heisenberg算符进行的
+
+$$\mathcal{C}_{A B}\left(\tau, \tau^{\prime}\right) \equiv-\left\langle T_{\tau}\left(A(\tau) B\left(\tau^{\prime}\right)\right)\right\rangle$$
+
+编时算符展开对于Fermion与Boson是不同的
+
+$$T_{\tau}\left(A(\tau) B\left(\tau^{\prime}\right)\right)=\theta\left(\tau-\tau^{\prime}\right) A(\tau) B\left(\tau^{\prime}\right) \pm \theta\left(\tau^{\prime}-\tau\right) B\left(\tau^{\prime}\right) A(\tau), \quad\left\{\begin{array}{c}
++\text { for bosons } \\
+-\text { for fermions. }
+\end{array}\right.$$
+
+在前面提到过,在虚时下$\tau$与$\beta$之间建立了联系,那么$\tau$的取值也就有了一定的限制,首先证明松原格林函数只不过是虚时差的函数,即$C_{AB}(\tau,\tau')=C_{AB}(\tau-\tau')$
+
+$$\begin{aligned}
+\mathcal{C}_{A B}\left(\tau, \tau^{\prime}\right) &=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} e^{\tau H} A e^{-\tau H} e^{\tau^{\prime} H} B e^{-\tau^{\prime} H}\right] \\
+&=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} e^{-\tau^{\prime} H} e^{\tau H} A e^{-\tau H} e^{\tau^{\prime} H} B\right] \\
+&=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} e^{\left(\tau-\tau^{\prime}\right) H} A e^{-\left(\tau-\tau^{\prime}\right) H} B\right] \\
+&=\mathcal{C}_{A B}\left(\tau-\tau^{\prime}\right)
+\end{aligned}$$
+**这里仅仅使用了Tr的轮换性**
+
+松原格林函数重要的限制是$-\beta<\tau-\tau^{\prime}<\beta$时,才能保证$C_{AB}(\tau,\tau')$是收敛的,因为仅从形式上看,如果虚时不在这个区间内,那么$Tr$内会出现$e^x(x>0)$这种形式,很可能会导致发散.
+{:.warning}
+
+松原格林函数还具有周期性$C_{AB}(\tau)=\pm C_{AB}(\tau+\beta)\qquad for\quad \tau<0$
+
+$$\begin{aligned}
+\mathcal{C}_{A B}(\tau+\beta) &=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} e^{(\tau+\beta) H} A e^{-(\tau+\beta) H} B\right] \\
+&=\frac{-1}{Z} \operatorname{Tr}\left[e^{\tau H} A e^{-\tau H} e^{-\beta H} B\right] \\
+&=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} B e^{\tau H} A e^{-\tau H}\right] \\
+&=\frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} B A(\tau)\right] \\
+&=\pm \frac{-1}{Z} \operatorname{Tr}\left[e^{-\beta H} T_{\tau}(A(\tau) B)\right] \\
+&=\pm \mathcal{C}_{A B}(\tau)
+\end{aligned}\label{per}$$
+**同样这里只利用了$Tr$的轮换性**
+
+既然函数具有周期性,那么就一定可以和傅里叶变换联系起来,虚时$\tau$限制在$[-\beta,\beta]$区间内,则其傅里叶变换有
+
+$$\begin{array}{l}
+\mathcal{C}_{A B}(n) \equiv \frac{1}{2} \int_{-\beta}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau) \\
+\mathcal{C}_{A B}(\tau)=\frac{1}{\beta} \sum_{n=-\infty}^{\infty} e^{-i \pi n \tau / \beta} \mathcal{C}_{A B}(n)
+\end{array}$$
+
+再利用(\ref{per})的周期性可得
+
+$$\begin{aligned}
+\mathcal{C}_{A B}(n) &=\frac{1}{2} \int_{0}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau)+\frac{1}{2} \int_{-\beta}^{0} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau) \\
+&=\frac{1}{2} \int_{0}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau)+e^{-i \pi n} \frac{1}{2} \int_{0}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau-\beta) \\
+&=\frac{1}{2}\left(1 \pm e^{-i \pi n}\right) \int_{0}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau)
+\end{aligned}$$
+
+前面的因子$(1\pm e^{-i\pi n}$的值是由$n$来决定的,于是可以得到
+
+$$\mathcal{C}_{A B}(n)=\int_{0}^{\beta} d \tau e^{i \pi n \tau / \beta} \mathcal{C}_{A B}(\tau), \quad\left\{\begin{array}{l}
+n \text { is even for bosons } \\
+n \text { is odd for fermions }
+\end{array}\right.$$
+
+在这里进行一下符号的修改
+
+$$\mathcal{C}_{A B}\left(i \omega_{n}\right)=\int_{0}^{\beta} d \tau e^{i \omega_{n} \tau} \mathcal{C}_{A B}(\tau), \quad\left\{\begin{array}{ll}
+\omega_{n}=\frac{2 n \pi}{\beta}, & \text { for bosons } \\
+\omega_{n}=\frac{(2 n+1) \pi}{\beta}, & \text { for fermions. }
+\end{array}\right.$$
+
+$\omega_n$就是松原频率,对于费米子和玻色子,其取值是不同的.
+
+# 松原格林函数与推迟格林函数
+在
+
+
+
+
+
