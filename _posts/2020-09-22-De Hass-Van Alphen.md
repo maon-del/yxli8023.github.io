@@ -66,7 +66,37 @@ $$D=\frac{mL^2}{\pi\hbar^2}\times\hbar\omega=\frac{L^2q}{\pi\hbar}B$$
 
 下面从更加物理的角度来对朗道能级的简并度进行一个解释,前面我们已经知道,在垂直的磁场平面内,电子做简谐运动,满足波动方程
 
-$$[\frac{}{}]$$
+$$[-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial y^2}+\frac{m}{2}\omega_0^2(y-y_0)]\phi(y)=\epsilon_1\phi(y)$$
+
+旋转中心$y_0=\frac{\hbar}{qB}k_x$,它的取值应该在L范围内,另外由边界条件$k_x$的取值是均匀的,其间隔为$\Delta k_x=\frac{2\pi}{L}$,所以可以求得$y_0$的间隔$\Delta y_0=\frac{\hbar}{qB}\times\frac{2\pi}{L}$,$y_0$的取值数为$\frac{L}{\Delta y_0}=\frac{L^2qB}{2\pi\hbar}$,如果考虑自旋,那么将这个量乘以2之后,就可以得到朗道能级的简并度.
+
+在磁场中,形成一系列高度简并的分立能级,使得电子气系统能量将随着磁场强度B发生变化,这就是产生De Hass-Van Alphen效应的原因.
+{:.success}
+
+接下来对变化周期进行讨论,以$\frac{1}{B}$为变量.设磁场强度为$B_1$时,第$\lambda$能级恰好填满
+
+$$
+\lambda D = N\\
+\lambda\frac{L^2q}{\pi\hbar}B_1 = N\\
+\frac{1}{B_1}=\lambda\frac{L^2q}{\pi\hbar N}
+$$
+
+设磁场强度为$B_2$时,第$(\lambda + 1)$能级恰好完全填满
+
+$$
+(\lambda + 1)D = N\\
+\frac{1}{B_1} = (\lambda + 1)\frac{L^2q}{\pi\hbar N}
+$$
+
+$$
+\Delta(\frac{1}{B})=(\frac{1}{B_1} - \frac{1}{B_2})=\frac{L^2q}{\pi\hbar N}=\frac{2\pi q}{\hbar S_F}\qquad S_F = 2\pi^2\frac{N}{L^2}
+$$
+
+$S_F$是二维自由电子气费米圆的面积,$S_F = 2\pi^2K^2_F$.在$T=0K$时,N个自由电子填充费米圆
+
+$$2\times\frac{L^2}{(2\pi)^2}\times\pi K_F^2=N$$
+
+所以可以得到$S_F=2\pi^2\frac{N}{L^2}$.在绝对零度下系统的磁矩$M=-\partial E/\partial B$,上面分析得到$\Delta E$随$\frac{1}{B}$成周期变化,变化周期为$\frac{2\pi q}{\hbar S_F}$,所以此举也会随$\frac{1}{B}$成周期变化,与前面的变化周期相同.实验上就可以通过测量磁矩M随$\frac{1}{B}$变化的周期,从而来得到费米面$S_F$的信息.
 
 # 参考
 - 1.固体物理(黄昆)
