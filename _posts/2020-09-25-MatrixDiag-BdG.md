@@ -119,7 +119,6 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
     Ham(3,4) = -ax*sin(kx) - im*ay*sin(ky) 
     Ham(4,3) = -ax*sin(kx) + im*ay*sin(ky) 
     !--------------------------------------------------
-    call ishermitian()
     end subroutine matrix_set
 !============================================================
     subroutine band()
@@ -139,27 +138,6 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
     end do
     close(12)
     end subroutine band
-!============================================================
-      subroutine ishermitian()
-      use param
-      integer i,j
-      integer ccc
-      ccc = 0
-      open(16,file = 'verify.dat')
-      do i = 1,N
-        do j = 1,N
-            if (Ham(i,j) .ne. conjg(Ham(j,i)))then
-                ccc = ccc +1
-                write(16,*)i,j
-                write(16,*)Ham(i,j)
-                write(16,*)Ham(j,i)
-            end if
-        end do
-      end do
-      write(16,*)ccc
-      close(16)
-      return
-      end subroutine ishermitian
 !================= Hermitain Matrices solve ==============
       subroutine eigSol()
       use param
@@ -190,7 +168,7 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
 # Bogoliubov变换
 下面还是对同一个哈密顿量,利用Bogoliubov变换对其进行对角化
 
-$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V\label{bcs}$$
+$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V \label{bcs}$$
 
 引入新的粒子算符,关于这个方法的详细内容可以参考[这里](https://yxli8023.github.io/2020/09/25/MF-BdG.html).
 
