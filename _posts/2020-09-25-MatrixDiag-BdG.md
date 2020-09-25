@@ -50,7 +50,7 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
 -\Delta&0&0&-\epsilon_{-k}&\\
 \end{array}\right]$$
 
-在研究超导问题的时候,基矢要比平时扩大一倍,哈密顿量是具有[例子空穴对称性](https://physics.stackexchange.com/questions/86293/what-is-the-definition-of-particle-hole-symmetry-in-condensed-matter-physics),所以这里的空间是有冗余的.
+在研究超导问题的时候,基矢要比平时扩大一倍,哈密顿量是具有[粒子空穴对称性](https://physics.stackexchange.com/questions/86293/what-is-the-definition-of-particle-hole-symmetry-in-condensed-matter-physics),所以这里的空间是有冗余的.
 
 已经有了矩阵之后就可以对其进行对角化了,当然这个过程是通过程序进行了,之后可以得到其对应的本征值和本征矢量,下面是一个简单的示例程序,在调用cheevd函数之后,Ham中存储的就是本征矢量,而w变量中存储的就是本征值,这里数值对角化的过程就完成了.
 ```fortran
@@ -190,7 +190,7 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
 # Bogoliubov变换
 下面还是对同一个哈密顿量,利用Bogoliubov变换对其进行对角化
 
-$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V$$
+$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V\label{bcs}$$
 
 引入新的粒子算符,关于这个方法的详细内容可以参考[这里](https://yxli8023.github.io/2020/09/25/MF-BdG.html).
 
