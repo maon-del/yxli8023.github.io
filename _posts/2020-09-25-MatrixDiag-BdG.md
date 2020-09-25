@@ -168,7 +168,7 @@ $$\mathcal{H}=\left[\begin{array}{cccc}
 # Bogoliubov变换
 下面还是对同一个哈密顿量,利用Bogoliubov变换对其进行对角化
 
-$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V \label{bcs}$$
+$$\bar{H} \approx \sum_{k} \varepsilon_{k}\left(C_{k}^{+} C_{k}+C_{-k}^{+} C_{-k}\right)-\Delta \sum_{k}\left(C_{k}^{+} C_{-k}^{+}+C_{-k} C_{k}\right)+\Delta^{2} / V \label{bcs1}$$
 
 引入新的粒子算符,关于这个方法的详细内容可以参考[这里](https://yxli8023.github.io/2020/09/25/MF-BdG.html).
 
@@ -199,7 +199,7 @@ C_{k}=u_{k} \alpha_{k}+v_{k} \alpha_{-k}^{+}, \quad C_{k}^{+}=u_{k} \alpha_{k}^{
 C_{-k}=u_{k} \alpha_{-k}-v_{k} \alpha_{k}^{+}, \quad C_{-k}^{+}=u_{k} \alpha_{-k}^{+}-v_{k} \alpha_{k}
 \end{array}\right\}$$
 
-将这个算符的表达式回代到(\ref{bcs})中,可以将其利用准粒子算符$\alpha$来表示
+将这个算符的表达式回代到(\ref{bcs1})中,可以将其利用准粒子算符$\alpha$来表示
 
 $$\begin{aligned}
 \bar{H}=\sum_{k}\left\{\left[\varepsilon_{k}\left(u_{k}^{2}-v_{k}^{2}\right)+2 \Delta u_{k} v_{k}\right]\left(\alpha_{k}^{+} \alpha_{k}+\alpha_{-k}^{+} \alpha_{-k}\right)+\right.& \\
@@ -250,6 +250,7 @@ $$
 
 至于算符之间的关系就更加明确了,准粒子算符$\alpha$和原始的费米子算符$C$之间通过一个幺正矩阵(厄米矩阵本征矢构成的矩阵是个幺正矩阵)联系,这也就和Bogoliubov变换时,准粒子算符由原始费米子算符通过系数组合联系起来,而且在执行这个准粒子算符构建过程的时候,这个变换本来就是幺正的,所有的内容到这里就变得完全自洽,而Bogoliubov变换的系数就可以通过矩阵对角化后得到的本征矢量矩阵$S$得到.
 {:.success}
+
 # 参考
 
 - 1.固体理论(李正中)
