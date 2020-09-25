@@ -1,6 +1,6 @@
 ---
 title: Julia,Python,Fortran,Mathematica循环计算速度比较
-tags: Julia Code Python Mahhematica
+tags: Julia Code Python Mathematica
 layout: article
 license: true
 toc: true
