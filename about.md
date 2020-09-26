@@ -115,3 +115,12 @@ show_author_profile: true
 | :-----:|:----: | :----: |:----: |:----: |:----: |
 | 60% | 20% | 40%| 70% | 30% | 30% |
   
+# 参考书推荐
+我将自己使用过且觉得不错的书都整理到了百度云上面的一个文件夹,就不罗列具体是哪些书籍,将链接放在这里,感兴趣可以浏览下载.
+
+[参考书](https://pan.baidu.com/s/1hh6BglNG9lamz8GNFXDScw)
+
+百度网盘链接:https://pan.baidu.com/s/1hh6BglNG9lamz8GNFXDScw
+提取码:n0bw
+
+![png](/assets/images/ref.png)
