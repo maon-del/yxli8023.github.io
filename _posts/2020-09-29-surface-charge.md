@@ -52,10 +52,7 @@ $$\sigma_{surf}=\mathbf{P}\cdot\hat{\mathbf{n}}\quad mod\quad \frac{e}{A_{surf}}
 # Riemann绘制
 上面讲了这么多,如果对复变函数熟悉的话,一定可以看明白这个多值是在说什么东西,那么这里更加好看一些,所谓的有图有真相,就利用软件顺便来画画复变函数里面的黎曼面,也可以更加清楚的看到这个多值,到底是什么含义,公式中最后的取mod又如何反映取值是在多值函数的哪个分支上.
 ## Mathematica绘制
-```mathematica
-Import["http://www.mathematicaguidebooks.org/V6/downloads/RiemannSurfacePlot3D.m"]
-rsurf[func_]:=Grid[{{RiemannSurfacePlot3D[w==func,Re[w],{z,w},ImageSize->400,Coloring->Hue[Rescale[ArcTan[1.4 Im[w]],{-Pi/2,Pi/2}]],PlotPoints->{40,40},Boxed->False],RiemannSurfacePlot3D[w==func,Im[w],{z,w},ImageSize->400,Coloring->Hue[Rescale[ArcTan[1.4 Re[w]],{-Pi/2,Pi/2}]],PlotPoints->{40,40},Boxed->False]}}];
-```
+![png](/assets/images/topology/Riemann-code.png)
 
 Mathematica里面是没有内置函数直接可以进行黎曼面绘制的,最后还是从外部调用了已经写好的一个包,可以用来绘制黎曼面,代码如上.简单的解释一下上面的代码,它一共会画两张图,一张是函数实部的黎曼面,另一张就是虚部的黎曼面,设下的参数就仅仅是作图样式的一些简单设置.下面就画一下$\log(z)$这个函数的黎曼面
 ```python
