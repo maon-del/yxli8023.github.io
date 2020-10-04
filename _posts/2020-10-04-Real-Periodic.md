@@ -26,7 +26,7 @@ show_author_profile: true
 
 对于不处在边界上的格点,存在4个方向上的hopping,如图所示.如果将格点进行编号,假设$x$方向与$y$的格点数目分别为$x_n$和$y_n$,那么总的格点数目就是$x_n\times y_n$.假设一个不在边界上的格点其索引为$i$,那么它向右hopping即$C^\dagger_{i+1}C_i$,就代表索引要从$i$变成$i+1$,那么类似的如果是向左hopping,索引变化为$i\rightarrow (i-1)$.
 
-接下来就是$y$方向的hopping,还是以$i$为起点,如果向$y$的正方向hopping,那么$i\rightarrow (i+y_n)$,向$y$的负方向hopping则有$i\rightarrow (i-y_n)$.这些就是不在边界上点的4个方向hopping.下面分析边界上的点如果进行hopping.
+接下来就是$y$方向的hopping,还是以$i$为起点,如果向$y$的正方向hopping,那么$i\rightarrow (i+y_n)$,向$y$的负方向hopping则有$i\rightarrow (i-y_n)$.这些就是不在边界上点的4个方向hopping.下面分析边界上的点如何进行hopping.
 
 如果一个点处在最右端,为了构成周期边界条件,它向右hopping应该回到最左端$x_n\rightarrow 1$,相应的如果是最左端的格点,它向左hopping的时候,就应该是跳到最右端$1\rightarrow x_n$.对于处在上边界上的格点,它向上的hopping要跳到下边界$i\rightarrow i-(x_n-1)\times yn$,对应下边界上的点,向下hopping要到上边界,索引变化为$i\rightarrow i+(x_n-1)\times y_n$.
 
@@ -65,3 +65,6 @@ end subroutine boundary
 如果相对这个周期边界的设置想进一步了解,可以参考前面这篇博客[p-wave 超导体Vortex中的Majorana zero mode](https://yxli8023.github.io/2019/01/01/TSC.html),里面有我重复博客中提到的文章的代码的地址,和一份更加详细的代码解释的手册,希望可以有帮助
 {:.success}
 
+# 开边界条件
+
+**既然周期边界都设置好了,那么就顺便提及一下开边界的问题,很简单,只需要将上面关于周期边界hopping的那些项设置为0即可.也就说熊最左边到最右边,从最右边到最左边,最上边到最下边,最下边到最上边,这四个边界上的这种hopping现在设置为0,那么自然就是开边界条件了.说这个是因为如果计算3D体系的时候,如果要计算体边对应关系的能带图,可能就需要在两个方向上开边界,而另外一个方向上保持周期条件,这个设置进行类比即可.**
