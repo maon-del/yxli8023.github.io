@@ -18,7 +18,7 @@ show_author_profile: true
 # 共轭
 一个元素$a,b,c$是群$\mathcal{G}$的群元$(a,b,c)\in\mathcal{G}$,加入下列关系成立
 
-$$a=c\mid b\circ c^{-1}\label{eq1}$$
+$$a=c\circ b\circ c^{-1}\label{eq1}$$
 
 那么就说群元$a$与$b$之间是共轭的.**上式中的$\quad\circ\quad$代表的是群元的操作**.
 # 类
