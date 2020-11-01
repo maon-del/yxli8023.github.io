@@ -15,7 +15,7 @@ show_author_profile: true
 {:.info}
 <!--more-->
 # 前言
-在这里就不阐述到底如何计算Wilson loop,我所有的内容也是从[Equivalent expression of Z2 topological invariant for band insulators using the non-Abelian Berry connection](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.84.075119)中学习的,感兴趣可以参考这篇文章,你也可以将哈密顿量换成BHZ模型,遮掩过就可以计算文章中的结果.
+在这里就不阐述到底如何计算Wilson loop,它与Wannier Center的关系可以看我的这篇博客[通过Wannier Center计算体系Z2拓扑不变量](https://yxli8023.github.io/2020/09/11/Wannier-Center-Z2.html),我所有的内容也是从[Equivalent expression of Z2 topological invariant for band insulators using the non-Abelian Berry connection](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.84.075119)中学习的,感兴趣可以参考这篇文章,你也可以将哈密顿量换成BHZ模型,遮掩过就可以计算文章中的结果.
 
 我这里势利用了[Higher-Order Weyl Semimetals](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.146401)中的哈密顿量,因为自己正在看这篇文章,正好也可以学习一下如何计算Wilson loop.
 
