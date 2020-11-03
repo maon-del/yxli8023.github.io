@@ -1,6 +1,6 @@
 ---
 title: 表面电荷与极化多值性理解
-tags: topology
+tags: Topology
 layout: article
 license: true
 toc: true

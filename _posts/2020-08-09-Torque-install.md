@@ -1,6 +1,6 @@
 ---
 title: 队列系统Torque安装
-tags: Linux ab-init Shell
+tags: Linux Shell
 layout: article
 license: true
 toc: true

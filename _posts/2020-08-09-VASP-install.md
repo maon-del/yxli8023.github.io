@@ -1,6 +1,6 @@
 ---
 title: VASP编译安装
-tags: vasp ab-init
+tags: vasp
 layout: article
 license: true
 toc: true
