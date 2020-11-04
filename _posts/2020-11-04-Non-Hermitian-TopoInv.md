@@ -31,7 +31,7 @@ $$
 H(\beta)|u_R\rangle=E(\beta)|u_R\rangle,\quad H^\dagger(\beta)|u_L\rangle=E^*(\beta)|u_L\rangle
 $$
 
-在非厄密的时候是存在两种基矢的，分别为左矢$|u_L\rangle$和右矢$|u_R\rangle$.
+在非厄密的时候是存在两种基矢的，分别为左矢$\vert u_L\rangle$和右矢$\vert u_R\rangle$.
 
 在对$H(\beta)$进行对角化的时候可以表示为$H(\beta)=TJT^{-1}$,$J$是对角的,每个元素就是本征值,T则是每个本征值所对应的本征矢量
 
@@ -42,10 +42,20 @@ $$
 Q(\beta)=|\tilde{u}_R(\beta)\rangle\langle\tilde{u}_L(\beta)|-|u_R(\beta)\rangle\langle u_L(\beta)|
 $$
 
-这里$\tilde{u_R}=\sigma_z|u_R\rangle$,最后得到的$Q$是off-diagonal的形式$Q=\begin{pmatrix}0  & q\\q^{-1}&0\end{pmatrix}$,这里就可以计算非厄密的winding number了
+这里$\tilde{u_R}=\sigma_z|u_R\rangle$,最后得到的$Q$是off-diagonal的形式
+
+$$
+Q=
+\begin{pmatrix}0  & q\\
+q^{-1}&0\end{pmatrix}
+$$
+
+这里就可以计算非厄密的winding number了
+
 $$
 W = \frac{i}{2\pi}\int_{C_{\beta}}q^{-1}dq\label{wind}
 $$
+
 这里在进行数值计算的时候又有坑,(\ref{wind})中的$q^{-1}$就是矩阵$Q$中的$q^{-1}$,公式中的$dq$在数值求和的时候,就是相邻两个点上计算得到的$Q$中的$q$的差值,这样最后就可以得到正确的结果.
 
 ![png](/assets/images/topology/TopoInv.png)
