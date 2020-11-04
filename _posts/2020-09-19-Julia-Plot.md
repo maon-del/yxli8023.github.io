@@ -1,6 +1,6 @@
 ---
 title: Julia作图示例 
-tags: Julia Code
+tags: Julia Code Plot
 layout: article
 license: true
 toc: true
