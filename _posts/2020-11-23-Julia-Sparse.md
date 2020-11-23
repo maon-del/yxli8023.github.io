@@ -349,7 +349,7 @@ close(f1)
     end subroutine eigSol
 ```
 # 结果对比
-![png](/assets/images/julia/julia-sparse.png)
+![png](/assets/images/Julia/julia-sparse.png)
 
 从时间对比上来看,利用Julia的效率还是比较高的.
 
