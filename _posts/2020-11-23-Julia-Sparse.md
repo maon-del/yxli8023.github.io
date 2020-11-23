@@ -348,6 +348,306 @@ close(f1)
     return
     end subroutine eigSol
 ```
+# 实例(Python)
+```python
+import numpy as np
+from numba import jit
+from scipy.sparse.linalg import eigs, eigsh
+import time
+#==========================================================
+def boundary(xn,yn,zn):
+    # Arxiv-1909-10536
+    # 构建不同方向hopping的索引矩阵
+    nxy = xn*yn
+    nxyz = xn*yn*zn
+    bry = np.zeros((6,nxyz),dtype=int)
+    for iz in range(zn):
+        for iy in range(yn):
+            for ix in range(xn):
+                i = iz*nxy + iy*xn + ix
+                bry[0,i] = i + 1  # x正向hopping
+                if(ix==xn - 1):
+                    bry[0,i] = bry[0,i] - xn
+                bry[1,i] = i - 1  # x负向hopping
+                if(ix==0):
+                    bry[1,i] = bry[1,i] + xn
+                bry[2,i] = i + xn  # y正向hopping
+                if(iy==yn - 1):
+                    bry[2,i] = bry[2,i] - nxy
+                bry[3,i] = i - xn # y负向hopping
+                if(iy==0):
+                    bry[3,i] = bry[3,i] + nxy
+                bry[4,i] = i + nxy # z正向hopping
+                if(iz==zn - 1):
+                    bry[4,i] = bry[4,i] - nxyz
+                bry[5,i] = i - nxy # z负向hopping
+                if(iz == 0):
+                    bry[5,i] = bry[5,i] + nxyz
+    return bry
+#=============================================================
+def phase(x,y):
+    chi = 1.0
+    return np.tanh(np.sqrt(1.0*x**2 + 1.0*y**2)/chi)*(x + 1j*y)/np.sqrt(1.0*x**2 + 1.0*y**2)
+#===========================================================
+def hamset(xn,yn,zn):
+    nxy = xn*yn
+    nxyz = xn*yn*zn
+    N = nxyz*8
+    m0 = -2.5
+    t2 = 1.0
+
+    t1z = 1.0
+    t1x = 1.0
+    t1y = 1.0
+
+    t0x = 1.0
+    t0y = 1.0
+    t0z = 1.0
+
+    del0 = 0.3
+    delx = 0
+    dely = 0
+    mu = 0.1
+    ham = np.zeros((N,N))*(1+0j)
+    bry = boundary(xn,yn,zn)
+    #-----------------------------
+    for iz in range(zn):
+        for iy in range(yn):
+            for ix in range(xn):
+                i = iz*nxy + iy*xn + ix
+                #(1,1)
+                ham[i,i] = m0 - mu
+                if(ix != xn - 1):
+                    ham[i,bry[0,i]] = t0x/2.0
+                if(ix != 0):
+                    ham[i,bry[1,i]] = t0x/2.0
+                if(iy != yn - 1):
+                    ham[i,bry[2,i]] = t0y/2.0
+                if(iy != 0):
+                    ham[i,bry[3,i]] = t0y/2.0
+                if(iz != zn - 1):
+                    ham[i,bry[4,i]] = t0z/2.0
+                if(iz != 0):
+                    ham[i,bry[5,i]] = t0z/2.0
+                #(2,2)
+                ham[nxyz + i,nxyz + i] = m0 - mu
+                if(ix != xn - 1):
+                    ham[nxyz + i,nxyz + bry[0,i]] = t0x/2.0
+                if(ix != 0):
+                    ham[nxyz + i,nxyz + bry[1,i]] = t0x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz + i,nxyz + bry[2,i]] = t0y/2.0
+                if(iy != 0):
+                    ham[nxyz + i,nxyz + bry[3,i]] = t0y/2.0
+                if(iz != zn - 1):
+                    ham[nxyz + i,nxyz + bry[4,i]] = t0z/2.0
+                if(iz != 0):
+                    ham[nxyz + i,nxyz + bry[5,i]] = t0z/2.0
+                #(3,3)
+                ham[nxyz*2 + i,nxyz*2 + i] = -m0 - mu
+                if(ix != xn - 1):
+                    ham[nxyz*2 + i,nxyz*2 + bry[0,i]] = -t0x/2.0
+                if(ix != 0):
+                    ham[nxyz*2 + i,nxyz*2 + bry[1,i]] = -t0x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*2 + i,nxyz*2 + bry[2,i]] = -t0y/2.0
+                if(iy != 0):
+                    ham[nxyz*2 + i,nxyz*2 + bry[3,i]] = -t0y/2.0
+                if(iz != zn - 1):
+                    ham[nxyz*2 + i,nxyz*2 + bry[4,i]] = -t0z/2.0
+                if(iz != 0):
+                    ham[nxyz*2 + i,nxyz*2 + bry[5,i]] = -t0z/2.0
+                #(4,4)
+                ham[nxyz*3 + i,nxyz*3 + i] = -m0 - mu
+                if(ix != xn - 1):
+                    ham[nxyz*3 + i,nxyz*3 + bry[0,i]] = -t0x/2.0
+                if(ix != 0):
+                    ham[nxyz*3 + i,nxyz*3 + bry[1,i]] = -t0x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*3 + i,nxyz*3 + bry[2,i]] = -t0y/2.0
+                if(iy != 0):
+                    ham[nxyz*3 + i,nxyz*3 + bry[3,i]] = -t0y/2.0
+                if(iz != zn - 1):
+                    ham[nxyz*3 + i,nxyz*3 + bry[4,i]] = -t0z/2.0
+                if(iz != 0):
+                    ham[nxyz*3 + i,nxyz*3 + bry[5,i]] = -t0z/2.0
+                #(1,4)
+                if(ix != xn - 1):
+                    ham[i,nxyz*3 + bry[0,i]] = -1j*t1x/2.0
+                if(ix != 0):
+                    ham[i,nxyz*3 + bry[1,i]] = 1j*t1x/2.0
+                if(iy != yn - 1):
+                    ham[i,nxyz*3 + bry[2,i]] = -t1y/2.0
+                if(iy != 0):
+                    ham[i,nxyz*3 + bry[3,i]] = t1x/2.0
+                #(2,3)
+                if(ix != xn - 1):
+                    ham[nxyz + i,nxyz*2 + bry[0,i]] = -1j*t1x/2.0
+                if(ix != 0):
+                    ham[nxyz + i,nxyz*2 + bry[1,i]] = 1j*t1x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz + i,nxyz*2 + bry[2,i]] = t1y/2.0
+                if(iy != 0):
+                    ham[nxyz + i,nxyz*2 + bry[3,i]] = -t1x/2.0
+                #(3,2)
+                if(ix != xn - 1):
+                    ham[nxyz*2 + i,nxyz + bry[0,i]] = -1j*t1x/2.0
+                if(ix != 0):
+                    ham[nxyz*2 + i,nxyz + bry[1,i]] = 1j*t1x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*2 + i,nxyz + bry[2,i]] = -t1y/2.0
+                if(iy != 0):
+                    ham[nxyz*2 + i,nxyz + bry[3,i]] = t1x/2.0
+                #(4,1)
+                if(ix != xn - 1):
+                    ham[nxyz*3 + i,bry[0,i]] = -1j*t1x/2.0
+                if(ix != 0):
+                    ham[nxyz*3 + i,bry[1,i]] = 1j*t1x/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*3 + i,bry[2,i]] = t1y/2.0
+                if(iy != 0):
+                    ham[nxyz*3 + i,bry[3,i]] = -t1x/2.0
+                #(1,3)
+                if(iz != zn - 1):
+                    ham[i,nxyz*2 + bry[4,i]] = t1z/(2j)
+                if(iz != 0):
+                    ham[i,nxyz*2 + bry[5,i]] = -t1z/(2j)
+                if(ix != xn - 1):
+                    ham[i,nxyz*2 + bry[0,i]] = -1j*t2/2.0
+                if(ix != 0):
+                    ham[i,nxyz*2 + bry[1,i]] = -1j*t2/2.0
+                if(iy != yn - 1):
+                    ham[i,nxyz*2 + bry[2,i]] = 1j*t2/2.0
+                if(iy != 0):
+                    ham[i,nxyz*2 + bry[3,i]] = 1j*t2/2.0
+                #(2,4)
+                if(iz != zn - 1):
+                    ham[nxyz + i,nxyz*3 + bry[4,i]] = -t1z/(2j)
+                if(iz != 0):
+                    ham[nxyz + i,nxyz*3 + bry[5,i]] = t1z/(2j)
+                if(ix != xn - 1):
+                    ham[nxyz + i,nxyz*3 + bry[0,i]] = -1j*t2/2.0
+                if(ix != 0):
+                    ham[nxyz + i,nxyz*3 + bry[1,i]] = -1j*t2/2.0
+                if(iy != yn - 1):
+                    ham[nxyz + i,nxyz*3 + bry[2,i]] = 1j*t2/2.0
+                if(iy != 0):
+                    ham[nxyz + i,nxyz*3 + bry[3,i]] = 1j*t2/2.0
+                #(3,1)
+                if(iz != zn - 1):
+                    ham[nxyz*2 + i,bry[4,i]] = t1z/(2j)
+                if(iz != 0):
+                    ham[nxyz*2 + i,bry[5,i]] = -t1z/(2j)
+                if(ix != xn - 1):
+                    ham[nxyz*2 + i,bry[0,i]] = 1j*t2/2.0
+                if(ix != 0):
+                    ham[nxyz*2 + i,bry[1,i]] = 1j*t2/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*2 + i,bry[2,i]] = -1j*t2/2.0
+                if(iy != 0):
+                    ham[nxyz*2 + i,bry[3,i]] = -1j*t2/2.0
+                #(4,2)
+                if(iz != zn - 1):
+                    ham[nxyz*3 + i,nxyz + bry[4,i]] = -t1z/(2j)
+                if(iz != 0):
+                    ham[nxyz*3 + i,nxyz + bry[5,i]] = t1z/(2j)
+                if(ix != xn - 1):
+                    ham[nxyz*3 + i,nxyz + bry[0,i]] = 1j*t2/2.0
+                if(ix != 0):
+                    ham[nxyz*3 + i,nxyz + bry[1,i]] = 1j*t2/2.0
+                if(iy != yn - 1):
+                    ham[nxyz*3 + i,nxyz + bry[2,i]] = -1j*t2/2.0
+                if(iy != 0):
+                    ham[nxyz*3 + i,nxyz + bry[3,i]] = -1j*t2/2.0
+                # ---------------------------------------------------
+                 #i = iz*nxy + iy*xn + ix
+                if(iy == int(yn/2)& iz == int(zn/2)):
+                    phi = 0.0
+                else:
+                    phi = phase(iy - yn/2,iz - yn/2)
+                #(1,6)
+                ham[i,nxyz*5 + i] = -1j*del0*phi
+                if(ix != xn - 1):
+                    ham[i,nxyz*5 + bry[0,i]] = -1j*delx
+                if(ix != 0):
+                    ham[i,nxyz*5 + bry[1,i]] = -1j*delx
+                if(iy != yn - 1):
+                    ham[i,nxyz*5 + bry[2,i]] = -1j*dely
+                if(ix != 0):
+                    ham[i,nxyz*5 + bry[3,i]] = -1j*dely
+                #(6,1)
+                ham[nxyz*5 + i,i] = 1j*del0*phi
+                if(ix != xn - 1):
+                    ham[nxyz*5 + i,bry[0,i]] = 1j*delx
+                if(ix != 0):
+                    ham[nxyz*5 + i,bry[1,i]] = 1j*delx
+                if(iy != yn - 1):
+                    ham[nxyz*5 + i,bry[2,i]] = 1j*dely
+                if(ix != 0):
+                    ham[nxyz*5 + i,bry[3,i]] = 1j*dely
+                #(5,2)
+                ham[nxyz*4 + i,nxyz + i] = 1j*del0*phi
+                if(ix != xn - 1):
+                    ham[nxyz*4 + i,nxyz + bry[0,i]] = 1j*delx
+                if(ix != 0):
+                    ham[nxyz*4 + i,nxyz + bry[1,i]] = 1j*delx
+                if(iy != yn - 1):
+                    ham[nxyz*4 + i,nxyz + bry[2,i]] = 1j*dely
+                if(ix != 0):
+                    ham[nxyz*4 + i,nxyz + bry[3,i]] = 1j*dely
+                #(2,5)
+                ham[nxyz + i,nxyz*4 + i] = -1j*del0*phi
+                if(ix != xn - 1):
+                    ham[nxyz + i,nxyz*4 + bry[0,i]] = -1j*delx
+                if(ix != 0):
+                    ham[nxyz + i,nxyz*4 + bry[1,i]] = -1j*delx
+                if(iy != yn - 1):
+                    ham[nxyz + i,nxyz*4 + bry[2,i]] = -1j*dely
+                if(ix != 0):
+                    ham[nxyz + i,nxyz*4 + bry[3,i]] = -1j*dely
+                #(3,8)
+                ham[nxyz*2 + i,nxyz*7 + i] = -1j*del0*phi
+                if(ix != xn - 1):
+                    ham[nxyz*2 + i,nxyz*7 + bry[0,i]] = -1j*delx
+                if(ix != 0):
+                    ham[nxyz*2 + i,nxyz*7 + bry[1,i]] = -1j*delx
+                if(iy != yn - 1):
+                    ham[nxyz*2 + i,nxyz*7 + bry[2,i]] = -1j*dely
+                if(ix != 0):
+                    ham[nxyz*2 + i,nxyz*7 + bry[3,i]] = -1j*dely
+                #(8,3)
+                ham[nxyz*7 + i,nxyz*2 + i] = 1j*del0*phi
+                if(ix != xn - 1):
+                    ham[nxyz*7 + i,nxyz*2 + bry[0,i]] = 1j*delx
+                if(ix != 0):
+                    ham[nxyz*7 + i,nxyz*2 + bry[1,i]] = 1j*delx
+                if(iy != yn - 1):
+                    ham[nxyz*7 + i,nxyz*2 + bry[2,i]] = 1j*dely
+                if(ix != 0):
+                    ham[nxyz*7 + i,nxyz*2 + bry[3,i]] = 1j*dely
+    for m in range(4):
+        for l in range(4):
+            for k1 in range(nxyz):
+                for k2 in range(nxyz):
+                    ham[nxyz*4 + nxyz*m + k1,nxyz*4 + nxyz*l + k2] = np.conj(ham[nxyz*4 + nxyz*l + k2,nxyz*4 + nxyz*m + k1])
+    return ham
+#=================================================================
+def test():
+    t1 = time.time()
+    ham = hamset(5,5,5)
+    t2 = time.time()
+    print("Hatset timing cost is  ",t2 - t1)
+    t1 = time.time()
+    #evals_all, evecs_all = eigh(X)
+    #evals_large, evecs_large = eigsh(X, 3, which='LM')
+    evals_be, evecs_be = eigsh(ham, 4, which='SM')
+    t2 = time.time()
+    print("Time cost is(s): %s"%(t2 - t1))
+
+#==============================================
+test()
+```
+
 # 结果对比
 ![png](/assets/images/Julia/julia-sparse.png)
 
