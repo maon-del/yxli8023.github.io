@@ -58,7 +58,7 @@ print('Timing cost is(s):  ',t2 - t1)
 这里的测试表明这个循环加速过程对于矩阵的乘法也是同样适用的，服务器的所有核都被调用起来执行.
 
 这里我想强调一下，刚开始我的矩阵相乘用的是`mat1*mat1`,我发现这种计算方式在利用jit进行并行加速的时候是失败的，如果采用numpy库的`np.dot(mat1,mat1)`结果就是正确的，可以很好的进行并行加速。
-{:.wanring}
+{:.warning}
 
 # nodal-line 杂质计算程序
 下面的程序是我想用来重复[Impurity-induced resonant states in topological nodal-line semimetals](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.205119)这篇文章的，程序的正确与否还正在检验中，不过确定的是在利用jit进行函数闭包之后，在执行速度上确实是由很明显的提升。
