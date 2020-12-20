@@ -53,7 +53,7 @@ t2 = time.time()
 print('Timing cost is(s):  ',t2 - t1)
 ```
 
-![png](assets/images/Julia/p-mat1.png)
+![png](/assets/images/Julia/p-mat1.png)
 
 这里的测试表明这个循环加速过程对于矩阵的乘法也是同样适用的，服务器的所有核都被调用起来执行.
 
