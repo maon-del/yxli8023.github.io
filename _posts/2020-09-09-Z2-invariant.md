@@ -29,12 +29,24 @@ $$U_{\mu}=\det(\langle u_m(\mathbf{k})|u_n(\mathbf{k} + \Delta\mu)\rangle)$$
 列式计算的公式的时候，是觉得它有一些让人疑惑的地方。还是以第十张ppt中的计算公式$U_{\mu}=\det(\langle u_m(\mathbf{k})|u_n(\mathbf{k} + 
 \Delta\mu)\rangle)$，在这个公式中应该写出$U_\mu=U_\mu(\mathbf{k})$，这样就可以很自然的可以和下面计算贝利联络以及贝利曲率的公式相互联系起
 来。如果作为初学者，可能会对这个地方有一个小的疑惑。在这里再进一步把这些角标说的更加清楚一些，计算公式中的$m,n$其实就是两个相同本征值对应的两
-个不同的本征矢量。所以如果系统存在时间反演对称性，那么本征值成对出现，所以在对角化哈密顿量之后，两个相同的本征值对应两个两个不同的本征矢量，这
-也就是这里$m,n$索引的对象，所以这是一个2*2的矩阵，可以通过简单的方法求得其行列式，关于行列式的求解，可以在程序中去查找。
+个不同的本征矢量。所以如果系统存在时间反演对称性，那么本征值成对出现，所以在对角化哈密顿量之后，两个占据态的本征值对应两个两个不同的本征矢量(价带波函数)，这
+也就是这里$m,n$索引的对象(分别对应的是两个本征值的本征矢量)，所以这是一个2*2的矩阵，可以通过简单的方法求得其行列式，关于行列式的求解，可以在程序中去查找。
+
+在最后利用Berry联络求解拓扑数的时候的公式为
+
+$$n(k_l)=\frac{1}{2}(\left[\Delta_\nu A_\mu-\Delta_\mu A_\nu\right]-F(k_l))$$
+
+将这个公式翻译成差分形式之后也就是
+
+$$\Delta_\nu A_\mu=A_{\mu+\nu}-A_\mu\qquad\Delta_\mu A_\nu=A_{\nu+\mu}-A_\nu$$
+
+这里$A_\mu(k_l)=\textrm{Im}\log\left[ U_\mu(k_l)\right]$,那么相应上面的公式其实也就是对$U_\mu(k_l)$的差分.这个形式在代码里面也可以很清楚的看明白。
 
 在计算$Z_2$的过程中，需要用到多个方向上增量的本征矢量，包括:$(k_x,k_y),(k_x + \Delta k_x,k_y),(k_x+\Delta k_x,k_y + \Delta k_y),(k_x,
 k_y+\Delta k_y)$，这其实也就对应着第11张ppt中的示意图中的$u_1,u_2,u_3,u_4$。**这里的$u_i$对应的都是简并的本征态**，所以也就有了相应的对矩
 阵求行列式的操作。具体是如何构成这个矩阵的，即就是上面所说的利用两个简并本征矢量来构成。
+
+## Julia
 
 ![png](/assets/images/Julia/p1.png){:width="400px",:height="495px"}
 
@@ -115,12 +127,23 @@ function main()
             Uyx = detcal(vkx1, vkxky1, vkx2, vkxky2)
             # --------------------------------------------
             F = imag(log(Ux*Uyx*conj(Uxy)*conj(Uy)))
-            A = imag(log(Ux)) + imag(log(Uyx)) + imag(log(conj(Uxy))) + imag(log(conj(Uy)))
+            A = -imag(log(Ux)) + imag(log(Uyx)) + imag(log(conj(Uxy))) -imag(log(conj(Uy)))
             Z2 = Z2 + (A - F)/(2.0*pi)
         end
     end 
     return mod(Z2,2)
 end
+# ====================================================================
+@time main()
 ```
+## Mathematica
+
+最近正好又回想起来要利用这个方法来计算$Z_2$拓扑不变量，也就用Mathematica也写了一个版本，不过对于这种循环的程序，直接改写成Mathematica的代码，样子又丑，运行速度还不怎么滴，所以我也只是拿来练练手，熟悉了一下方法，并没有带代码进行函数式编程的改写，毕竟函数式编程才是Mathematica的最大优势，因为博客不能直接放Mathematica的代码，那么就只好截图如下了
+
+![png](/assets/images/Julia/mma-z2.png)
+
+至于Mathematica的代码，可以点击[这里下载](assets/data/mma-z2.nb).
+
 # 小疑问
+
 在计算的时候，我曾把$dk=0.1$，这时候的结果是错误的，如果将这个间隔调小之后，就可以得到正确的结果。而我利用[这里](http://www.guanjihuan.com/archives/5778)的python代码进行计算的时候，相同的间隔下面仍然得到正确的结果。我对比了python和julia计算得到的本征值和本征矢量，发现本征值的计算两个不同语言的结果是相同的，但是本征矢量则是不同的。但这个应该只是小问题，应该是可以忽略这个问题的。而且利用julia来计算的话，在速度上还是很有优势的。
