@@ -23,7 +23,7 @@ H(\mathbf{k})=(m_0-t_x\cos(k_x)+t_y\cos(k_y))\sigma_z+\lambda_x\sin(k_x)+\lambda
 ![png](/assets/images/topology/chern-1.png)
 
 计算代码如下,之前算这东西吸怪用Fortran了,所以就一直沿用原来的习惯了,不好改过来
-```Fortran
+```fortran
 !   Author: YuXuanLi
 !   Email:yxli406@gmail.com
     module pub
