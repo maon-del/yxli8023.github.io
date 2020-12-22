@@ -269,7 +269,7 @@ Gamma0 = sum(G0[1:st:N, 1:st:N]) / (M^2)
 T = inv(I4 - V*Gamma0) * V
 TG0 = [T * g for g in G0]
 
-println("Done! Generating Pixels ...")
+println("Start calculation")
 
 offset = convert(Int, N/2) # 用来把布里渊区中心移动到图中央(将一个值转换成int整形)
 final = SharedArray(zeros(N, N)) # 初始化一个矩阵,让它来接受所有并行线程的结果
@@ -288,8 +288,8 @@ f1 = open(filename,"w")
 for qx in 1:N,qy in 1:N
 	writedlm(f1,[qx*pi/N qy*pi/N final[qx,qy]])
 end
-println("Done! pixel data write to $filename, $filename.png")
 ```
 
 # 总结
+从速度上来说确实这里Julia的优势是很明显的,因为这里开了16个线程同时计算,在相同的参数下计算,Julia很快就可以计算完成,而Fortran的话,估计要算很久,因为是单线程串行,所以速度是相当的慢,而且这里在计算的时候因为嵌套的循环比较多,这就导致这种写法下,Fortran的计算速度真的就是很慢了,所以在这里Julia是获胜了.最重要的是,利用julia进行并行多线程的时候,并不需要很复杂的东西,只需要掌握简单的知识就好了,它用到的额外的几个库,用很简单的命令增加库就可以,相比较与Fortran来说简直就是态方便了.
 
