@@ -120,3 +120,44 @@ close(f)
 ```
 
 ![png](/assets/images/Julia/j5.png)
+
+# 函数集成
+上面的只是简单的展示了一下julia的作图功能,这里我将所有的内容整理成函数,这样只需要输入所要作图的文件名,即可以按照上面的样式进行图形绘制
+```julia
+using PyPlot,DelimitedFiles
+# =======================================================
+function density2D(file_name::String)
+    # 2D density plot
+    figure(figsize=(10,8))
+    f = open(file_name)
+    s = readdlm(f)
+    s = reshape(s,(convert(Int32,length(s)/3),3))
+    x = s[:,1]
+    y = s[:,2]
+    z = s[:,3]
+    a1 = scatter(x,y,z*20,c=z,edgecolors="b",cmap="Reds")
+    colorbar(a1)
+    xticks(0:10:maximum(x))
+    yticks(0:10:maximum(y))
+    title("CornerState")
+    savefig("cor.eps",bbox_inches="tight",dpi=300)
+end 
+# --------------------------------------------------------
+function cylinder(file_name::String)
+    # topological cylinder gemoetry band structure
+    figure(figsize=(10,8))
+    f = open(file_name)
+    s = readdlm(f)
+    #s = reshape(s,(convert(Int32,length(s)/3),3))
+    #p=plot(s[:,1],s[:,2:end],"black")
+    p=plot(s[:,1],s[:,2:end])
+    title("cylinder-geometry")
+    xlabel("kx")
+    ylabel("ky")
+    #annotate("(a)", xy=(0,0), xytext=(-0.3, 3.5))
+    savefig("eband.eps",bbox_inches="tight",dpi=300)
+    close(f)
+end 
+```
+
+从整体上来看,Julia的绘图功能确实没有Python那么齐全,很多细节的地方还有一些标签的样式也无法精确的控制,不过相信这会发展的越来越好的.
