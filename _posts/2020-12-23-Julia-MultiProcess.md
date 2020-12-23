@@ -45,7 +45,7 @@ function fun2(kn::Int64)::Float64
     return re
 end
 #----------------------------------------
-function fun3(kn)::Float64
+function fun3(kn)
     # 增加8线程，注意别开太多
     addprocs(8 - nprocs());
     println("Running ",nprocs()," processes");
