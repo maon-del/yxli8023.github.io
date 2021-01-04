@@ -1,6 +1,6 @@
 ---
-title: WannierTools研究Topological Insulator
-tags:  
+title: wannierTools研究Topological Insulator
+tags:  vasp
 layout: article
 license: true
 toc: true
@@ -11,15 +11,15 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
-这里我想继续通过[WannierTools](https://www.wanniertools.org/)来计算Topological insulator的一些性质,来让自己对输入文件中的一些参数有一个更加深刻的认识,并通过这个实例来学习新的一些控制参数的作用.
+这里我想继续通过[WannierTools](https://www.wannierTools.org/)来计算Topological insulator的一些性质,来让自己对输入文件中的一些参数有一个更加深刻的认识,并通过这个实例来学习新的一些控制参数的作用.
 {:.info}
 <!--more-->
 # Topological insulator
 这个博客中学习的实例同样来自于源代码中`examples`文件夹中
 
-![png](/assets/images/WannierTools/ti1.png)
+![png](/assets/images/wannierTools/ti1.png)
 
-![png](/assets/images/WannierTools/ti2.png)
+![png](/assets/images/wannierTools/ti2.png)
 
 首先解压文件得到这个体系的紧束缚模型的数据
 ```python
@@ -123,12 +123,12 @@ mpirun -np 10 wt.x
 ```shell
 gnuplot surfdos_l.gnu
 ```
-![png](/assets/images/WannierTools/ti3.png)
+![png](/assets/images/wannierTools/ti3.png)
 
 # Bi$_2$Se$_3$
 这里对3D拓扑绝缘体Bi$_2$Se$_3$进行一些计算
 
-![png](/assets/images/WannierTools/ti4.png)
+![png](/assets/images/wannierTools/ti4.png)
 
 首先解压紧束缚数据
 ```shell
@@ -284,13 +284,13 @@ gnuplot arc_l.gnu  # 计算费米弧
 gnuplot spintext_l.gnu  # 计算费米弧上的spin分布
 gnuplot slabek.gnu # 计算边界态
 ```
-![png](/assets/images/WannierTools/ti5.png)
+![png](/assets/images/wannierTools/ti5.png)
 
-![png](/assets/images/WannierTools/ti6.png)
+![png](/assets/images/wannierTools/ti6.png)
 
-![png](/assets/images/WannierTools/ti7.png)
+![png](/assets/images/wannierTools/ti7.png)
 
-![png](/assets/images/WannierTools/ti8.png)
+![png](/assets/images/wannierTools/ti8.png)
 
 上面就是这个实例的一些参数设置和计算得到的一些结果.
 
@@ -303,12 +303,12 @@ SURFACE            ! Specify surface with two vectors, see doc
  ```
  计算的结果如下
 
-![png](/assets/images/WannierTools/ti9.png)
+![png](/assets/images/wannierTools/ti9.png)
 
-![png](/assets/images/WannierTools/ti10.png)
+![png](/assets/images/wannierTools/ti10.png)
 
-![png](/assets/images/WannierTools/ti11.png)
+![png](/assets/images/wannierTools/ti11.png)
 
-![png](/assets/images/WannierTools/ti12.png)
+![png](/assets/images/wannierTools/ti12.png)
 
 
