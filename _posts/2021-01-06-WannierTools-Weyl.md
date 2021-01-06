@@ -1,10 +1,10 @@
 ---
-title: wannierTools研究Topological Insulator
+title: wannierTools研究Weyl半金属
 tags:  vasp
 layout: article
 license: true
 toc: true
-key: a20210103a
+key: a20210106
 pageview: true
 sitemap: true
 mathjax: true
@@ -219,12 +219,59 @@ stop
 end ! end of program 
 ```
 
-
 接下来就是准备控制计算的`wt.in`文件,然后执行计算
 ```shell
 cp wt.in-bands wt.in  # 计算体态能带
 wt.x &  # 开始计算
 gnuplot bulkek.gnu  # 画体态能带图
+```
+继续来学习`wt.in`这个控制文件中的一些参数,首先来看计算体态能带的控制文件
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat"  ! 紧束缚能带数据
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+BulkBand_calc         = T ! 计算体态能带
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied 占据态数目
+SOC = 1                 ! SOC=1代表此时考虑自旋轨道耦合
+E_FERMI = 0        ! e-fermi  费米能大小
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points(作图时k点的数目)
+/
+
+LATTICE   ! 元胞基矢,与VASP中的结构相同
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors(元胞中只有一个原子)
+Direct                          ! Direct or Cartisen coordinate(这个原子的空间坐标,此时是采用直接坐标的方式,还有一种分数坐标的表示方法)
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors 
+A s
+
+
+SURFACE            ! See doc for details 表面基矢方向确定,在计算表面态时的控制参数
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KPATH_BULK            ! k point path  计算体态能带时的路径控制,通常这个路径都是选取BZ中的高对称路径
+2              ! number of k line only for bulk band
+X 0.50000 0.00000 0.0000 G 0.00000 0.00000 0.0000
+G 0.00000 0.00000 0.0000 Z 0.00000 0.00000 0.5000  
+
 ```
 最终结果如下
 
@@ -237,6 +284,57 @@ cp wt.in-findnodes wt.in
 wt.x & 
 gnuplot Nodes.gnu
 ```
+继续分析参数控制文件`wt.in`
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+FindNodes_calc        = T ! 这个参数的控制是个逻辑变量,T代表寻找Weyl点
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 6             ! number k points  这个值变大,会使得计算时间变长,不过计算结果更好
+Nk2 = 6             ! number k points 
+Nk3 = 6             ! number k points 
+Gap_threshold = 0.0001 ! threshold for GapCube output  计算Weyl点总需要设置一个范围值,不然真的就是个点
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+SURFACE            ! See doc for details
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KCUBE_BULK
+ 0.00  0.00  0.00   ! Original point for 3D k plane 基矢的初始点位置选取
+ 1.00  0.00  0.00   ! The first vector to define 3d k space plane 三个基矢方向
+ 0.00  1.00  0.00   ! The second vector to define 3d k space plane
+ 0.00  0.00  1.00   ! The third vector to define 3d k cube
+```
+
 计算结束之后,会生成一个`Nodes.dat`的文件,里面就是Weyl点的位置信息,绘图结果如下
 
 ![png](/assets/images/wannierTools/w5.png)
@@ -248,6 +346,57 @@ cp wt.in-chirality wt.in
 wt.x &
 gnuplot wanniercenter3D_Weyl_1.gnu
 gnuplot wanniercenter3D_Weyl_2.gnu
+```
+分析参数控制文件`wt.in`
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+WeylChirality_calc    = T  ! 计算不同Weyl点的手性
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+Nk2 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+WEYL_CHIRALITY
+2            ! Num_Weyls  Weyl点的数目
+Cartesian    ! Direct or Cartesian coordinate
+0.004        ! Radius of the ball surround a Weyl point 相当于是一个化学势填充,使得Weyl点变成一个小球
+    0.00000000   -0.00000000    1.04719755   ! 两个Weyl点的空间位置
+    0.00000000    0.00000000   -1.04719755
+
 ```
 ![png](/assets/images/wannierTools/w6.png)
 
@@ -269,6 +418,57 @@ cp wt.in-Berry-curvature wt.in
 wt.x &
 gnuplot Berrycurvature-normalized.gnu-tutorial # 结果绘制
 ```
+分析控制文件
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+BerryCurvature_calc   = T ! 计算Berry曲率的开关
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+Nk2 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KPLANE_BULK  ! 因为Berry曲率是个2D的,Weyl体系是3D的,这里就是控制要计算的是哪个平面上的Berry曲率
+Direct
+ 0.00  0.00  0.00   ! Center for 3D k slice
+ 1.00  0.00  0.00   ! The first vector is along x direction
+ 0.00  0.00  1.00   ! The second vector is along z direction
+
+
+```
 ![png](/assets/images/wannierTools/w7.png)
 
 丛结果上来看,再Weyl点上,Berry曲率是有奇异的,一个是Berry曲率的`源`,另外一个是`汇`.
@@ -285,6 +485,66 @@ cp wt.in-surfacestates wt.in
 wt.x &
 gnuplot surfdos_l.gnu
 gnuplot arc_l.gnu
+```
+分析计算控制文件`wt.in`
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+SlabSS_calc           = T  ! 计算表面态
+SlabArc_calc          = T  ! 计算Fermi弧
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi 费米能量的位置
+/
+
+&PARAMETERS
+Eta_Arc = 0.001     ! infinite small value, like brodening 
+E_arc = 0.0         ! energy for calculate Fermi Arc  计算费米弧的能量位置
+OmegaNum = 400  ! omega number       这个值跟表面态的计算是相关的,值越大计算细节越清晰
+OmegaMin = -1.6     ! energy interval 控制表面态能量计算的区间
+OmegaMax =  1.6     ! energy interval
+Nk1 = 201            ! number k points 
+Nk2 = 201           ! number k points 
+NP = 2              ! number of principle layers(我理解这个是开边界方向的格点数目)
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+A   0    0    0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details 
+ 1  0  0           ! 这里只是设置了x和z方向的矢量,表明这两个方向是周期的,所以计算的是(010)表面上的表面态
+ 0  0  1
+
+KPATH_SLAB   ! 控制slab结构下计算表面态的路径
+1        ! numker of k line for 2D case
+-X -0.50 0.0 X 0.5 0.0  ! k path for 2D case
+
+KPLANE_SLAB
+-0.5 -0.5      ! Original point for 2D k plane
+ 1.0  0.0      ! The first vector to define 2D k plane 
+ 0.0  1.0      ! The second vector to define 2D k plane  for arc plots
+
+
 ```
 计算结果如下
 
@@ -304,10 +564,62 @@ wt.x &
 gnuplot wcc.gnu
 cp wcc.eps wcc-kz0.5.eps
 ```
+分析计算控制文件`wt.in`
+```fortran
+&TB_FILE
+Hrfile = "Weyl3D_hr.dat" ! 紧束缚模型数据
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+Wanniercenter_calc = T ! 计算Wannier Center演化
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+Nk2 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details 控制表面方向
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KPLANE_BULK
+Direct
+ 0.00  0.00  0.00   ! Original point for 3D k plane 
+ 0.00  1.00  0.00   ! The second vector to define 3d k space plane
+ 1.00  0.00  0.00   ! The first vector to define 3d k space plane
+
+
+
+```
 ![png](/assets/images/wannierTools/w9.png)
 
 从这个结果中可以看到,如果计算的平面截过Fermi arc,那么Chern number就是1,否则就是0.其实本质上Chern number就是Wannier Charge Center(WCC)再参数变化一个周期时候的winding.
-# 练习
+
 
 
 
