@@ -156,5 +156,214 @@ end ! end of program
 到这里就将一个紧束缚的哈密顿量完全转换成了WannierTools所需要的紧束缚的紧束缚的数据.接下来就可以准备`wt.in`文件来计算体系的其它相关的性质.
 
 # Berry曲率计算
+这里要计算不同的性质主要就是构建`wt.in`这个文件,要计算Berry曲率的控制文件内容为
+```fortran
+&TB_FILE
+Hrfile = "ChernInsulator_hr.dat"
+/
 
-# 
+!> bulk band structure calculation flag
+&CONTROL
+BerryCurvature_calc   = T  ! 逻辑变量控制是否计算Berry曲率
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+Nk2 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE    ! 由于Berry曲率是2D的,这里设置3个矢量方向,其实也只是读取前两个,所以计算的是(kx,ky)面上的Berry曲率
+ 1  0  0
+ 0  1  0
+ 0  0  1
+
+KPLANE_BULK  ! 这个参数是在计算边界态或者表面格林函数时候设置的
+Direct
+ 0.00  0.00  0.00   ! Center for 3D k slice
+ 1.00  0.00  0.00   ! The first vector is along x direction
+ 0.00  0.00  1.00   ! The second vector is along z direction
+```
+# 体态能带计算
+```fortran
+&TB_FILE
+Hrfile = "ChernInsulator_hr.dat" ! 紧束缚模型的数据
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+BulkBand_calc         = T  ! 计算体态能带(逻辑变量做开关)
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KPATH_BULK            ! k point path 体态能带计算时k空间的路径
+2              ! number of k line only for bulk band
+G 0.00000 0.00000 0.0000 X 0.50000 0.00000 0.0000
+X 0.50000 0.00000 0.0000 M 0.50000 0.50000 0.0000
+M 0.50000 0.50000 0.0000 G 0.00000 0.00000 0.0000  
+```
+![png](/assets/images/wannierTools/CI1.png)
+# Wannier Charge Center计算
+```fortran
+&TB_FILE
+Hrfile = "ChernInsulator_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+Wanniercenter_calc = T ! 逻辑变量控制Wannier Charge Center的演化计算
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Nk1 = 60            ! number k points 
+Nk2 = 60            ! number k points 
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+ A 0     0     0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! See doc for details
+ 0  0  1
+ 1  0  0
+ 0  1  0
+
+KPLANE_BULK
+Direct
+ 0.00  0.00  0.00   ! Original point for 3D k plane  如果时3D体系,通过平移可以计算不同kz时候的WCC
+ 0.00  1.00  0.00   ! The second vector to define 3d k space plane
+ 1.00  0.00  0.00   ! The first vector to define 3d k space plane
+```
+![png](/assets/images/wannierTools/CI4.png)
+# 边界态计算
+这里采用表面格林函数的办法来计算系统的边界态
+```fortran
+&TB_FILE
+Hrfile = "ChernInsulator_hr.dat"
+/
+
+!> bulk band structure calculation flag
+&CONTROL
+SlabSS_calc           = T  ! 通过表面格林函数计算边界态
+SlabArc_calc          = T  ! 计算Fermi Arc
+/
+
+&SYSTEM
+NumOccupied = 1         ! NumOccupied
+SOC = 1                 ! soc
+E_FERMI = 0        ! e-fermi
+/
+
+&PARAMETERS
+Eta_Arc = 0.001     ! infinite small value, like brodening 
+E_arc = 0.0         ! energy for calculate Fermi Arc
+OmegaNum = 400  ! omega number       
+OmegaMin = -1.6     ! energy interval
+OmegaMax =  1.6     ! energy interval
+Nk1 = 201            ! number k points 
+Nk2 = 201           ! number k points 
+NP = 2              ! number of principle layers
+/
+
+LATTICE
+Angstrom
+   1.0000000   000000000   000000000    
+   000000000   1.0000000   000000000    
+   000000000   000000000   1.0000000    
+
+ATOM_POSITIONS
+1                               ! number of atoms for projectors
+Direct                          ! Direct or Cartisen coordinate
+A   0    0    0. 
+
+PROJECTORS
+ 1           ! number of projectors
+A s
+
+
+SURFACE            ! 因为这里是2D体系,所以只有第一个矢量是起作用的,故这里计算的是(01)面上的边界态
+ 1  0  0
+ 0  0  1
+
+KPATH_SLAB  ! 这里控制计算边界态的路径
+1        ! numker of k line for 2D case
+-X -0.50 0.0 X 0.5 0.0  ! k path for 2D case
+
+KPLANE_SLAB
+-0.5 -0.5      ! Original point for 2D k plane
+ 1.0  0.0      ! The first vector to define 2D k plane 
+ 0.0  1.0      ! The second vector to define 2D k plane  for arc plots
+```
+
+![png](/assets/images/wannierTools/CI2.png)
+
+![png](/assets/images/wannierTools/CI3.png)
