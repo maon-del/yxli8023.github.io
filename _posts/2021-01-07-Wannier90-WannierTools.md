@@ -135,6 +135,6 @@ end kpoints
 
 计算结束之后就可以看到结果输出了
 
-![png](/assets/images/wannierTools/W90_2.png)
+![png](/assets/images/wannierTools/W90_3.png)
 
 得到了`lead_hr.dat`这个文件数据之后,就可以利用WannierTools来计算其相关的性质了.

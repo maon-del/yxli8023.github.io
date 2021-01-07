@@ -16,22 +16,12 @@ show_author_profile: true
 <!--more-->
 # Chern Insulator
 Chern Insulator这个模型还是很简单的,没有任何对称性去保护它,其对应的哈密顿量为
-$$
-\begin{equation}
-H(\mathbf{k})=A_x\sin(k_x)\sigma_x+A_y\sin(k_y)\sigma_y+(m_0-t_x\cos(k_x)-t_y\cos(k_y))\sigma_z
-\end{equation}
-$$
+$$H(\mathbf{k})=A_x\sin(k_x)\sigma_x+A_y\sin(k_y)\sigma_y+(m_0-t_x\cos(k_x)-t_y\cos(k_y))\sigma_z$$
 当$m_0\in(-2,2)$的时候这个体系都是具有边界态的,也就是说它是拓扑的,那么我们就可以分别计算其对应的Berry曲率,Wannier Charge Center(WCC),以及通过表面格林函数计算其边界态,下面我就详细的记录一下如何将一个紧束缚模型的哈密顿量变成WannierTools需要的数据格式.
 # 模型变数据
 要明白这个变换过程,请自行学习紧束缚近似模型和Wannier波函数这两个相关的内容,可以参考固体理论(李正中)这本书.
 要将紧束缚近似模型改写到实空间中的`Wannier`轨道上,也就是做下面的变换
-$$
-\begin{equation}
-\sin(k)=\frac{1}{2i}(e^{ik}-e^{-ik})\\
-\cos(k)=\frac{1}{2}(e^{ik}+e^{-ik})\\
-c_i=\frac{1}{\sqrt{\mathcal{N}}}\sum_{k}e^{-ik}c_k
-\end{equation}
-$$
+$$\sin(k)=\frac{1}{2i}(e^{ik}-e^{-ik})\\\cos(k)=\frac{1}{2}(e^{ik}+e^{-ik})\\c_i=\frac{1}{\sqrt{\mathcal{N}}}\sum_{k}e^{-ik}c_k$$
 也就是将$k$空间的哈密顿量要在实空间的`Wannier`波函数上来计算不同近邻格点之间波函数的overlap,能看懂紧束缚近似模型,肯定就清楚如何从`sin,cos`变成离散的格点形式,所以这里直接了当的认为$e^{ik_x}$就是就是电子在$x$正方向上的hopping,那么相应的$e^{-ik_x}$则是代表电子在$x$负方向上的hopping.
 
 下面再来对泡里矩阵$\sigma$进行分析理解,因为这里讨论的是一个2轨道模型,也就是一个2带模型,所以$\sigma_x$相关的项就表示轨道间(带间)耦合是简并的,而对于$\sigma_y$则轨道间(带间)的耦合是相反的,最后对于$\sigma_z$这一项,是不存在轨道间(带间)耦合的.
