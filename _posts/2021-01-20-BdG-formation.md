@@ -1,10 +1,10 @@
 ---
 title: 正常态到BdG哈密顿量的构建
-tags:  vasp
+tags:  Superconductor
 layout: article
 license: true
 toc: true
-key: a20210120
+key: a20210120a
 pageview: true
 sitemap: true
 mathjax: true
@@ -84,4 +84,7 @@ $$\hat{H}^{BdG}=\frac{1}{2}\sum_\mathbf{k}\Psi^\dagger H^{\mathrm{BdG}}(\mathbf{
 
 # 参考
 1.[Bogoliubov变换与Majorana表示](https://zhuanlan.zhihu.com/p/59445571)
+
 2.[Bogoliubov-de Gennes Method and Its Applications](https://link.springer.com/book/10.1007/978-3-319-31314-6)
+
+3.[Majorana Corner Modes in a High-Temperature Platform](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.096803)
