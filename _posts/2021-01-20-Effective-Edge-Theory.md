@@ -102,12 +102,12 @@ $$\begin{equation}
 \psi_\alpha(x)=\phi(x)\xi_\alpha=\mathcal{N}_x\sin(\kappa_1x)e^{\kappa_2x}e^{ik_yy}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $\lvert\mathcal{N}_x\lvert^2=4\lvert\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2\lvert$.(Here, $\kappa_1=\sqrt{\lvert(2m_0/t_x)\lvert-(\lambda_x^2/t_x^2)}, \kappa_2=-\frac{\lambda_x}{t_x}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
+with normalization given by $|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=-\frac{\lambda_x}{t_x}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
-\xi_1&=\lvert\sigma_y=-1\rangle\otimes\lvert\uparrow\rangle\\
-\xi_2&=\lvert\sigma_y=+1\rangle\otimes\lvert\downarrow\rangle\\
+\xi_1&=|\sigma_y=-1\rangle\otimes|\uparrow\rangle\\
+\xi_2&=|\sigma_y=+1\rangle\otimes|\downarrow\rangle\\
 \end{aligned}
 \end{equation}$$
 
@@ -139,12 +139,12 @@ $$\begin{equation}
 \psi_\alpha(x)=\phi(x)\xi_\alpha=\mathcal{N}_x\sin(\kappa_1x)e^{\kappa_2x}e^{ik_yy}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $\lvert\mathcal{N}_x\lvert^2=4\lvert\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2\lvert$.(Here, $\kappa_1=\sqrt{\lvert(2m_0/t_x)\lvert-(\lambda_x^2/t_x^2)}, \kappa_2=\frac{\lambda_x}{t_x}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=\xi_\alpha$. We explicitly choose them as
+with normalization given by $|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=\frac{\lambda_x}{t_x}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
-\xi_1&=\lvert\sigma_y=-1\rangle\otimes\lvert\downarrow\rangle\\
-\xi_2&=\lvert\sigma_y=+1\rangle\otimes\lvert\uparrow\rangle\\
+\xi_1&=|\sigma_y=-1\rangle\otimes|\downarrow\rangle\\
+\xi_2&=|\sigma_y=+1\rangle\otimes|\uparrow\rangle\\
 \end{aligned}
 \end{equation}$$
 
@@ -185,12 +185,12 @@ $$\begin{equation}
 \psi_\alpha(y)=\phi(y)\xi_\alpha=\mathcal{N}_y\sin(\kappa_1y)e^{\kappa_2y}e^{ik_xx}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $\lvert\mathcal{N}_y\lvert^2=4\lvert\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2\lvert$.(Here, $\kappa_1=\sqrt{\lvert(2m_0/t_y)\lvert-(\lambda_y^2/t_y^2)}, \kappa_2=-\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=\xi_\alpha$. We explicitly choose them as
+with normalization given by $|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}, \kappa_2=-\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
-\xi_1&=\lvert\sigma_x=-1\rangle\otimes\lvert\downarrow\rangle\\
-\xi_2&=\lvert\sigma_x=+1\rangle\otimes\lvert\uparrow\rangle\\
+\xi_1&=|\sigma_x=-1\rangle\otimes|\downarrow\rangle\\
+\xi_2&=|\sigma_x=+1\rangle\otimes|\uparrow\rangle\\
 \end{aligned}
 \end{equation}$$
 
@@ -220,12 +220,12 @@ $$\begin{equation}
 \psi_\alpha(y)=\phi(y)\xi_\alpha=\mathcal{N}_y\sin(\kappa_1y)e^{\kappa_2y}e^{ik_xx}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $\lvert\mathcal{N}_y\lvert^2=4\lvert\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2\lvert$.(Here, $\kappa_1=\sqrt{\lvert(2m_0/t_y)\lvert-(\lambda_y^2/t_y^2)}, \kappa_2=\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
+with normalization given by $|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}, \kappa_2=\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
-\xi_1&=\lvert\sigma_x=-1\rangle\otimes\lvert\uparrow\rangle\\
-\xi_2&=\lvert\sigma_x=+1\rangle\otimes\lvert\downarrow\rangle\\
+\xi_1&=|\sigma_x=-1\rangle\otimes|\uparrow\rangle\\
+\xi_2&=|\sigma_x=+1\rangle\otimes|\downarrow\rangle\\
 \end{aligned}
 \end{equation}$$
 
