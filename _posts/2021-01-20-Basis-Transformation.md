@@ -571,7 +571,9 @@ H^{\mathrm{BdG}}(\mathbf{k})&=(\xi_{\bf k}\sigma_z-\mu +{\bf h\cdot s})\tau_z+2\
 
 所有程序的编译命令为
 > ifort -mkl file.f90 -o a.out
-./a.out &   ! 后台执行程序
+> ./a.out &   ! 后台执行程序
+
+
 # 参考
 1.[Bogoliubov变换与Majorana表示](https://zhuanlan.zhihu.com/p/59445571)
 
