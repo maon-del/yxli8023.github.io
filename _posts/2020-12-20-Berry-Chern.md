@@ -1,6 +1,6 @@
 ---
 title: Berry Phase及Chern number的一些理解
-tags: topology 
+tags: Topology 
 layout: article
 license: true
 toc: true
