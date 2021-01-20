@@ -102,7 +102,7 @@ $$\begin{equation}
 \psi_\alpha(x)=\phi(x)\xi_\alpha=\mathcal{N}_x\sin(\kappa_1x)e^{\kappa_2x}e^{ik_yy}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $$|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$$.(Here, $$\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=-\frac{\lambda_x}{t_x}$$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
+with normalization given by $\begin{equation}|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\end{equation}$.(Here, $\begin{equation}\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=-\frac{\lambda_x}{t_x}\end{equation}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
