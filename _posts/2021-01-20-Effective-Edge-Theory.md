@@ -104,7 +104,7 @@ $$\begin{equation}
 
 with normalization given by 
 
-$$\begin{equation}|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\qquad \kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=-\frac{\lambda_x}{t_x}\end{equation}$$
+$$\begin{equation}|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\qquad \kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}\qquad\kappa_2=-\frac{\lambda_x}{t_x}\end{equation}$$
 
 
 The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
@@ -144,7 +144,11 @@ $$\begin{equation}
 \psi_\alpha(x)=\phi(x)\xi_\alpha=\mathcal{N}_x\sin(\kappa_1x)e^{\kappa_2x}e^{ik_yy}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}, \kappa_2=\frac{\lambda_x}{t_x}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=\xi_\alpha$. We explicitly choose them as
+with normalization given by 
+
+$$\begin{equation}|\mathcal{N}_x|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\qquad\kappa_1=\sqrt{|(2m_0/t_x)|-(\lambda_x^2/t_x^2)}\qquad\kappa_2=\frac{\lambda_x}{t_x}\end{equation}$$
+
+The eigenvectors $\xi_\alpha$ satisfy $\sigma_ys_z\xi_\alpha=\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
@@ -190,7 +194,11 @@ $$\begin{equation}
 \psi_\alpha(y)=\phi(y)\xi_\alpha=\mathcal{N}_y\sin(\kappa_1y)e^{\kappa_2y}e^{ik_xx}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}, \kappa_2=-\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=\xi_\alpha$. We explicitly choose them as
+with normalization given by 
+
+$$\begin{equation}|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\qquad\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}\qquad\kappa_2=-\frac{\lambda_y}{t_y}\end{equation}$$
+
+The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
@@ -225,7 +233,11 @@ $$\begin{equation}
 \psi_\alpha(y)=\phi(y)\xi_\alpha=\mathcal{N}_y\sin(\kappa_1y)e^{\kappa_2y}e^{ik_xx}\xi_\alpha
 \end{equation}$$
 
-with normalization given by $|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|$.(Here, $\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}, \kappa_2=\frac{\lambda_y}{t_y}$).  The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
+with normalization given by
+
+$$\begin{equation}|\mathcal{N}_y|^2=4|\kappa_2(\kappa_1^2+\kappa_2^2)/\kappa_1^2|\qquad\kappa_1=\sqrt{|(2m_0/t_y)|-(\lambda_y^2/t_y^2)}\qquad\kappa_2=\frac{\lambda_y}{t_y}\end{equation}$$
+
+The eigenvectors $\xi_\alpha$ satisfy $\sigma_x\xi_\alpha=-\xi_\alpha$. We explicitly choose them as
 
 $$\begin{equation}
 \begin{aligned}
