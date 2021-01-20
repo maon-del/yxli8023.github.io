@@ -22,22 +22,27 @@ $$H_{\mathrm{TI}}=(m_0-t_x\cos k_x-t_y\cos k_x)\sigma_z+\lambda_x\sin k_x\sigma_
 with basis $\Psi=(c_{a\uparrow\mathbf{k}},c_{b\uparrow\mathbf{k}},c_{a\downarrow\mathbf{k}},c_{b\downarrow\mathbf{k}})^T$, $M(\mathbf{k})=m_0-t_x\cos k_x-t_y\cos k_y$
 
 将哈密顿量以算符形式写出来即为
+
 $$\hat{H}^{TI}=\sum_\mathbf{k}\Psi^\dagger H^{\mathrm{TI}}(\mathbf{k})\Psi$$
 
 当在模型中加入超导配对之后,模型变为
+
 $$H^{\mathrm{BdG}}(\mathbf{k})=(m_0-t_x\cos k_x-t_y\cos k_y)\sigma_z\tau_z+\lambda_x\sin k_x\sigma_xs_z+\lambda_y\sin k_y\sigma_y\tau_z+\Delta(\mathbf{k})s_y\tau_y-\mu\tau_z\label{bdg}$$
 
 with basis $\Psi=(c_{a\uparrow\mathbf{k}},c_{b\uparrow\mathbf{k}},c_{a\downarrow\mathbf{k}},c_{b\downarrow\mathbf{k}},c^\dagger_{a\uparrow\mathbf{-k}},c^\dagger_{b\uparrow\mathbf{-k}},c^\dagger_{a\downarrow\mathbf{-k}},c^\dagger_{b\downarrow\mathbf{-k}})^T=(C_\mathbf{k},C^\dagger_\mathbf{-k})$
 
 将哈密顿量以算符形式写出来即为
+
 $$\hat{H}^{BdG}=\frac{1}{2}\sum_\mathbf{k}\Psi^\dagger H^{\mathrm{BdG}}(\mathbf{k})\Psi$$
 
 下面就来推导每一项到底是如何从公式$(\ref{ti})$在加入超导之后变为$(\ref{bdg})$的.
 
-$$\begin{aligned}
+$$\begin{eqnarray}
+\begin{aligned}
 \sum_\mathbf{k}M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{k})c_{b\sigma\mathbf{k}}c^\dagger_{a\sigma\mathbf{k}}\right]\\
-&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{-k})c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]
-\end{aligned}\label{q1}$$
+&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{-k})c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\label{q1}
+\end{aligned}
+\end{eqnarray}$$
 
 $$\begin{aligned}
 \sum_\mathbf{k}\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}&=\frac{1}{2}\sum_\mathbf{k}\left[\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-\sin k_xc_{b\sigma\mathbf{k}}c^\dagger_{a\sigma\mathbf{k}}\right]\\
