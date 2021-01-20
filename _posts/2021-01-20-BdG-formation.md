@@ -40,27 +40,33 @@ $$\hat{H}^{BdG}=\frac{1}{2}\sum_\mathbf{k}\Psi^\dagger H^{\mathrm{BdG}}(\mathbf{
 $$\begin{eqnarray}
 \begin{aligned}
 \sum_\mathbf{k}M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{k})c_{b\sigma\mathbf{k}}c^\dagger_{a\sigma\mathbf{k}}\right]\\
-&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{-k})c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\label{q1}
-\end{aligned}
+&=\frac{1}{2}\sum_\mathbf{k}\left[M(\mathbf{k})c^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-M(\mathbf{-k})c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]
+\end{aligned}\label{q1}
 \end{eqnarray}$$
 
-$$\begin{aligned}
+$$\begin{equation}
+\begin{aligned}
 \sum_\mathbf{k}\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}&=\frac{1}{2}\sum_\mathbf{k}\left[\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-\sin k_xc_{b\sigma\mathbf{k}}c^\dagger_{a\sigma\mathbf{k}}\right]\\
 &=\frac{1}{2}\sum_\mathbf{k}\left[\sin k_xc_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-\sin (-k_x)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\\
-&=\frac{1}{2}\sum_\mathbf{k}\left[\sin k_xc_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}+\sin (k_x)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]
-\end{aligned}\label{q2}$$
+&=\frac{1}{2}\sum_\mathbf{k}\left[\sin k_xc_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}+\sin (k_x)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\label{m12}
+\end{aligned}
+\end{equation}\label{q2}$$
 
-$$\begin{aligned}
+$$\begin{equation}
+\begin{aligned}
 \sum_{\mathbf{k}\sigma}-i\sin k_yc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}&=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[-i\sin k_yc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}+i\sin k_yc_{b\sigma\mathbf{k}}c^\dagger_{a\sigma\mathbf{k}}\right]\\
 &=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[-i\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}+i\sin(-k_y)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\\
-&=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[-i\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-i\sin(k_y)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]
-\end{aligned}\label{q3}$$
+&=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[-i\sin k_xc^\dagger_{a\sigma\mathbf{k}}c_{b\sigma\mathbf{k}}-i\sin(k_y)c_{b\sigma\mathbf{-k}}c^\dagger_{a\sigma\mathbf{-k}}\right]\label{m13}
+\end{aligned}
+\end{equation}\label{q3}$$
 
-$$\begin{aligned}
+$$\begin{equation}
+\begin{aligned}
 \sum_\mathbf{k\alpha}\Delta(\mathbf{k})c^\dagger_{\alpha\uparrow\mathbf{k}}c^\dagger_{\alpha\downarrow\mathbf{-k}}&=\frac{1}{2}\sum_\mathbf{k\alpha}\left[\Delta(\mathbf{k})c^\dagger_{\alpha\uparrow\mathbf{k}}c^\dagger_{\alpha\downarrow\mathbf{-k}}-\Delta(\mathbf{k})c^\dagger_{\alpha\downarrow\mathbf{-k}}c^\dagger_{\alpha\uparrow\mathbf{k}}\right]\\
 &=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[\Delta(\mathbf{k})c^\dagger_{\alpha\uparrow\mathbf{k}}c^\dagger_{\alpha\downarrow\mathbf{-k}}-\Delta(\mathbf{-k})c^\dagger_{\alpha\downarrow\mathbf{k}}c^\dagger_{\alpha\uparrow\mathbf{-k}}\right]\\
-&=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[\Delta(\mathbf{k})c^\dagger_{\alpha\uparrow\mathbf{k}}c^\dagger_{\alpha\downarrow\mathbf{-k}}-\Delta(\mathbf{k})c^\dagger_{\alpha\downarrow\mathbf{k}}c^\dagger_{\alpha\uparrow\mathbf{-k}}\right]
-\end{aligned}\label{q4}$$
+&=\frac{1}{2}\sum_{\mathbf{k}\sigma}\left[\Delta(\mathbf{k})c^\dagger_{\alpha\uparrow\mathbf{k}}c^\dagger_{\alpha\downarrow\mathbf{-k}}-\Delta(\mathbf{k})c^\dagger_{\alpha\downarrow\mathbf{k}}c^\dagger_{\alpha\uparrow\mathbf{-k}}\right]\label{m14}
+\end{aligned}
+\end{equation}\label{q4}$$
 
 $\Gamma_1=\tau_z\otimes s_0\otimes\sigma_z\quad\Gamma_2=\tau_0\otimes s_z\sigma_x\quad\Gamma_3=\tau_z\otimes s_0\otimes\sigma_y\quad\Gamma_4=\tau_y\otimes s_y\otimes\sigma_0$
 
