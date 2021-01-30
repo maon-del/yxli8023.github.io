@@ -1,6 +1,6 @@
 ---
-title: 有效边界理论
-tags:  Math Method Study Topology(space部分)
+title: 有效边界理论(space部分)
+tags:  Math Method Study Topology
 layout: article
 license: true
 toc: true
