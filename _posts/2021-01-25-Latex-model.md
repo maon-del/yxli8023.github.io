@@ -1,6 +1,6 @@
 ---
 title: 硕士毕业论文Latex模板
-tags: Study
+tags: Study Latex
 layout: article
 license: true
 toc: true
