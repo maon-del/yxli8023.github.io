@@ -22,27 +22,27 @@ show_author_profile: true
 # PPT展示
 这里利用图片的方式展示一下我制作的PPT模板
 
-![png](../assets/images/latex/beamer_Page1.png)
+![png](/assets/images/latex/beamer_Page1.png)
 
-![png](../assets/images/latex/beamer_Page2.png)
+![png](/assets/images/latex/beamer_Page2.png)
 
-![png](../assets/images/latex/beamer_Page3.png)
+![png](/assets/images/latex/beamer_Page3.png)
 
-![png](../assets/images/latex/beamer_Page4.png)
+![png](/assets/images/latex/beamer_Page4.png)
 
-![png](../assets/images/latex/beamer_Page5.png)
+![png](/assets/images/latex/beamer_Page5.png)
 
-![png](../assets/images/latex/beamer_Page6.png)
+![png](/assets/images/latex/beamer_Page6.png)
 
-![png](../assets/images/latex/beamer_Page7.png)
+![png](/assets/images/latex/beamer_Page7.png)
 
-![png](../assets/images/latex/beamer_Page8.png)
+![png](/assets/images/latex/beamer_Page8.png)
 
-![png](../assets/images/latex/beamer_Page9.png)
+![png](/assets/images/latex/beamer_Page9.png)
 
-![png](../assets/images/latex/beamer_Page10.png)
+![png](/assets/images/latex/beamer_Page10.png)
 
 # 下载
-所有的源代码可以[点击这里下载](../assets/pdf/beamer-model.zip)
+所有的源代码可以[点击这里下载](/assets/pdf/beamer-model.zip)
 
 
