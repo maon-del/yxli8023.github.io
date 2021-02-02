@@ -22,23 +22,23 @@ show_author_profile: true
 
 $$\begin{equation}
 \begin{aligned}
-H({\bf k})&=\left(
+H(\mathbf{k})&=\left(
 \begin{array}(cc)
-H_0({\bf k})-\mu&-iD({\bf k})\\
-iD({\bf k})&\mu-H^{*}_0({\bf k})
+H_0(\mathbf{k})-\mu&-iD(\mathbf{k})\\
+iD(\mathbf{k})&\mu-H^{*}_0(\mathbf{k})
 \end{array}
 \right)\\
-H_0({\bf k})&=v(\sin k_x\Gamma_1+\sin k_y\Gamma_2+\sin k_z\Gamma_3)+m({\bf k})\\
-m({\bf k})&=m_0-m_1(\cos k_x+\cos k_y)-m_2\cos k_z
+H_0(\mathbf{k})&=v(\sin k_x\Gamma_1+\sin k_y\Gamma_2+\sin k_z\Gamma_3)+m(\mathbf{k})\\
+m(\mathbf{k})&=m_0-m_1(\cos k_x+\cos k_y)-m_2\cos k_z
 \end{aligned}
 \end{equation}
 $$
 
 $\Gamma_1=\sigma_x\otimes s_x\qquad\Gamma_2=\sigma_x\otimes s_y\qquad\sigma_x\otimes s_z\qquad\Gamma_4=\sigma_y\otimes s_0\qquad\Gamma_5=\sigma_z\otimes s_0\qquad\Gamma_{ij}=\left[\Gamma_i,\Gamma_j \right]/2i$
 
-铁基超导配对$s_\pm$形式为$D({\bf k})=\Delta({\bf k})\Gamma_{13}$
+铁基超导配对$s_\pm$形式为$D(\mathbf{k})=\Delta(\mathbf{k})\Gamma_{13}$
 
-$$\Delta({\bf k})=\Delta_0+\Delta_1(\cos k_x+\cos k_y)$$
+$$\Delta(\mathbf{k})=\Delta_0+\Delta_1(\cos k_x+\cos k_y)$$
 
 对于三维空间中的一个球面,可以用欧拉角来参数化,如下图所示的任意一个面$\Sigma(\phi,\theta)$
 
@@ -46,15 +46,15 @@ $$\Delta({\bf k})=\Delta_0+\Delta_1(\cos k_x+\cos k_y)$$
 
 $$\hat{{\bf }n}_{\Sigma}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)^{T}$$
 
-哈密顿量$H_0({\bf k})$的能带反转点在$Z$,将$H_0({\bf k})$在这点$(0,0,\pi)$展开
+哈密顿量$H_0(\mathbf{k})$的能带反转点在$Z$,将$H_0(\mathbf{k})$在这点$(0,0,\pi)$展开
 
-$$H_0^{Z}({\bf k})=v(k_x\Gamma_1+k_y\Gamma_2-k_z\Gamma_3)+\left[\tilde{m}_0+(m_1/2)(k_x^2+k_y^2)-(m_2/2)k_z^2 \right]\Gamma_5$$
+$$H_0^{Z}(\mathbf{k})=v(k_x\Gamma_1+k_y\Gamma_2-k_z\Gamma_3)+\left[\tilde{m}_0+(m_1/2)(k_x^2+k_y^2)-(m_2/2)k_z^2 \right]\Gamma_5$$
 
 这里$\tilde{m}_0=m_0-2m_1+m_2$
 
 要想对任意方向上的平面$\Sigma(\phi,\theta)$计有效表面理论,需要将本来的直角坐标$(k_x,k_y,k_z)$利用欧拉角代表的旋转做一个转动$R(\phi,\theta)=R_Y(-\theta)R_Z(-\phi)$
 
-$${\bf k^{'}}=(k_1,k_2,k_3)^{T}=R(\phi,\theta){\bf k}$$
+$${\bf k^{'}}=(k_1,k_2,k_3)^{T}=R(\phi,\theta)\mathbf{k}$$
 
 通过这样的方式之后,只要确定了旋转角,就可以确定在任意角度的转动下,直角坐标基矢与转动后的坐标基矢之间的联系,然后就可以计算对应方向上的有效表面态,即在旋转坐标之后,基矢变为$(k_1,k_2,k_3)$,沿$k_3$方向取开边界条件,就可以计算$\Sigma(\phi,\theta)$面上的表面态,关于这句话的含义,还是看明白文章之后再结合文章结果来理解比较好.
 {:.success}
@@ -91,7 +91,7 @@ $$-k_x \sin (\theta ) \cos (\phi )-k_yk_x \sin (\theta ) \sin (\phi )-k_z \cos (
 
 
 ## 坐标旋转
-为了将两个不同坐标$(k_1,k_2,k_3)$与$(k_x,k_y,k_z)$联系起来,我这里先整理一下坐标上的问题.文章中提到$k_3=\hat{n}_{{\bf \Sigma}}\cdot {\bf k}$,所以结果为
+为了将两个不同坐标$(k_1,k_2,k_3)$与$(k_x,k_y,k_z)$联系起来,我这里先整理一下坐标上的问题.文章中提到$k_3=\hat{n}_{{\bf \Sigma}}\cdot \mathbf{k}$,所以结果为
 
 ![png](/assets/images/mma/s5.png)
 
