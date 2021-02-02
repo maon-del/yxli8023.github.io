@@ -20,7 +20,7 @@ show_author_profile: true
 # 边界态计算
 文章的内容就不说了,直接从哈密顿量以及边界态的计算开始,首先就是拓扑铁基超导体的哈密顿量
 
-$$\begin{equation}\begin{aligned}H(\mathbf{k})&=\left(\begin{array}(cc)
+$$\begin{equation}\begin{aligned}H(\mathbf{k})&=\left(\begin{array}{cc}
 H_0(\mathbf{k})-\mu&-iD(\mathbf{k})\\
 iD(\mathbf{k})&\mu-H^{*}_0(\mathbf{k})
 \end{array}\right)\\
@@ -38,7 +38,7 @@ $$\Delta(\mathbf{k})=\Delta_0+\Delta_1(\cos k_x+\cos k_y)$$
 
 对于三维空间中的一个球面,可以用欧拉角来参数化,如下图所示的任意一个面$\Sigma(\phi,\theta)$
 
-![png](/assets/images/mma/s1.jpg)
+![png](/assets/images/Mma/s1.jpg)
 
 $$\hat{n}_{\Sigma}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)^{T}$$
 
@@ -71,15 +71,15 @@ $$\begin{equation}
 
 - 首先根据上面的结论确定旋转矩阵$U(\phi,\theta)$
 
-![png](/assets/images/mma/s2.png)
+![png](/assets/images/Mma/s2.png)
 
 - 下一步就是对$H^Z_0({ k^{'}})$做幺正变换,因为是软件计算,所以变换完成之后需要做一些假设来将结果变为最简形式**HTr**
 
-![png](/assets/images/mma/s3.png)
+![png](/assets/images/Mma/s3.png)
 
 结果中**coor2**就是幺正变换之后的结果,这里先验证一下$\tilde{h}_0$中$-vk_3\Gamma_3$这一项,直接从**coor2**中挑选$\Gamma_3$这个矩阵对应的一项出来
 
-![png](/assets/images/mma/s4.png)
+![png](/assets/images/Mma/s4.png)
 
 从上图中的结果中可以看到$\Gamma_3$矩阵会有(1,3)这样非零矩阵元,所以就从**HTr**中选取(1,3)这一项元素,结果为
 
@@ -89,7 +89,7 @@ $$-k_x \sin (\theta ) \cos (\phi )-k_yk_x \sin (\theta ) \sin (\phi )-k_z \cos (
 ## 坐标旋转
 为了将两个不同坐标$(k_1,k_2,k_3)$与$(k_x,k_y,k_z)$联系起来,我这里先整理一下坐标上的问题.文章中提到$k_3=\hat{n}_{{ \Sigma}}\cdot \mathbf{k}$,所以结果为
 
-![png](/assets/images/mma/s5.png)
+![png](/assets/images/Mma/s5.png)
 
 所以到这一步,通过验证我们的计算结果是正确的,这里我们可以发现$\Gamma_1,\Gamma_2,\Gamma_3$它们的形式都是相似的,所以剩下的两项也是可以通过这个方式来计算的,我自己已经验证过这两项的正确性了,具体就不再这里多写了,感兴趣可以自行运算,接下来就可以利用这个程序计算分解中的其它项了.
 {:.success}
@@ -97,18 +97,18 @@ $$-k_x \sin (\theta ) \cos (\phi )-k_yk_x \sin (\theta ) \sin (\phi )-k_z \cos (
 
 既然已经得到了转动后$k_3$的表达式(\ref{k3}),那么我们将$k_1,k_2$也计算出来
 
-![png](/assets/images/mma/s6.png)
+![png](/assets/images/Mma/s6.png)
 
 通过上面的计算,就可以得到所有的$(k_1,k_2,k_3)\rightleftarrows(k_x,k_y,k_z)$之间的变换及逆变换关系,那么自然也是可以验证$k_1\Gamma_2,k_2\Gamma_2$这种对应的项.
 
 ## $\Gamma_5$
 这个幺正变化中,比较麻烦的是$\Gamma_5$这一项的变换,这里就来仔细的计算这一项究竟是怎么在幺正变换中改变形式的,首先从转动过后的**HTr**中将$\Gamma_5$这一项提取出来
 
-![png](/assets/images/mma/s7.png)
+![png](/assets/images/Mma/s7.png)
 
 这时候因为上面计算**HTr**的时候只是做了幺正操作,并没有完成坐标的变换,所以结果仍然是$(k_x,k_y,k_z)$,这里首先将其变换到$(k_1,k_2,k_3)$这个坐标系下面,上面也已经计算出了它们之间的联系
 
-![png](/assets/images/mma/s8.png)
+![png](/assets/images/Mma/s8.png)
 
 这里程序的主要思路就是,先计算出$(k_x,k_y,k_z)$与$(k_1,k_2,k_3)$之间是如何通过$(\theta,\phi)$联系的,然后将结果带入到$\frac{1}{2} \left(m_1 \left(k_x^2+k_y^2\right)-k_z^2 m_2\right)+\tilde{m}_{01}$中,然后通过合并同类项
 
@@ -136,7 +136,7 @@ $$\frac{m_1}{2}$$
 
 $$\tilde{m}_0=m_0-2m_1+m_2$$
 
-![png](/assets/images/mma/s9.png)
+![png](/assets/images/Mma/s9.png)
 
 到这里通过幺正变换分解哈密顿量的操作就全部完成了,文章中剩下的部分就是求解边界态的微分方程.
 {:.success}
