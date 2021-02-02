@@ -20,14 +20,10 @@ show_author_profile: true
 # 边界态计算
 文章的内容就不说了,直接从哈密顿量以及边界态的计算开始,首先就是拓扑铁基超导体的哈密顿量
 
-$$\begin{equation}
-\begin{aligned}
-H(\mathbf{k})&=\left(
-\begin{array}(cc)
+$$\begin{equation}\begin{aligned}H(\mathbf{k})&=\left(\begin{array}(cc)
 H_0(\mathbf{k})-\mu&-iD(\mathbf{k})\\
 iD(\mathbf{k})&\mu-H^{*}_0(\mathbf{k})
-\end{array}
-\right)\\
+\end{array}\right)\\
 H_0(\mathbf{k})&=v(\sin k_x\Gamma_1+\sin k_y\Gamma_2+\sin k_z\Gamma_3)+m(\mathbf{k})\\
 m(\mathbf{k})&=m_0-m_1(\cos k_x+\cos k_y)-m_2\cos k_z
 \end{aligned}
