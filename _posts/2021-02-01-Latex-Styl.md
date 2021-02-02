@@ -1,5 +1,5 @@
 ---
-title: Latex 排版中的技巧记录
+title: Latex 排版中的技巧记录(....ing)
 tags: Study Latex
 layout: article
 license: true
