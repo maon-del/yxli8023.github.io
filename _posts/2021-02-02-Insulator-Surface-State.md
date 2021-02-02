@@ -40,7 +40,7 @@ $$\Delta(\mathbf{k})=\Delta_0+\Delta_1(\cos k_x+\cos k_y)$$
 
 ![png](/assets/images/mma/s1.jpg)
 
-$$\hat{{\bf }n}_{\Sigma}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)^{T}$$
+$$\hat{n}_{\Sigma}=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)^{T}$$
 
 哈密顿量$H_0(\mathbf{k})$的能带反转点在$Z$,将$H_0(\mathbf{k})$在这点$(0,0,\pi)$展开
 
@@ -50,14 +50,14 @@ $$H_0^{Z}(\mathbf{k})=v(k_x\Gamma_1+k_y\Gamma_2-k_z\Gamma_3)+\left[\tilde{m}_0+(
 
 要想对任意方向上的平面$\Sigma(\phi,\theta)$计有效表面理论,需要将本来的直角坐标$(k_x,k_y,k_z)$利用欧拉角代表的旋转做一个转动$R(\phi,\theta)=R_Y(-\theta)R_Z(-\phi)$
 
-$${\bf k^{'}}=(k_1,k_2,k_3)^{T}=R(\phi,\theta)\mathbf{k}$$
+$$ k^{'}=(k_1,k_2,k_3)^{T}=R(\phi,\theta)\mathbf{k}$$
 
 通过这样的方式之后,只要确定了旋转角,就可以确定在任意角度的转动下,直角坐标基矢与转动后的坐标基矢之间的联系,然后就可以计算对应方向上的有效表面态,即在旋转坐标之后,基矢变为$(k_1,k_2,k_3)$,沿$k_3$方向取开边界条件,就可以计算$\Sigma(\phi,\theta)$面上的表面态,关于这句话的含义,还是看明白文章之后再结合文章结果来理解比较好.
 {:.success}
 
-在新的坐标$(k_1,k_2,k_3)$下,哈密顿量$H^Z_0({\bf k^{'}})$一般具有比较复杂的形式,但是可以通过一个幺正变换,经过操作之后分解为比较简单的形式,**这个幺正变换是怎么寻找的,文章中并未说明,我也没有搞清楚,这里就是借用文章中的结论.**$U(\phi,\theta)=e^{i\Gamma_{13}\theta/2}e^{i\Gamma_{12}\phi/2}$
+在新的坐标$(k_1,k_2,k_3)$下,哈密顿量$H^Z_0({ k^{'}})$一般具有比较复杂的形式,但是可以通过一个幺正变换,经过操作之后分解为比较简单的形式,**这个幺正变换是怎么寻找的,文章中并未说明,我也没有搞清楚,这里就是借用文章中的结论.**$U(\phi,\theta)=e^{i\Gamma_{13}\theta/2}e^{i\Gamma_{12}\phi/2}$
 
-$$U(\phi,\theta)H^Z_0({\bf k^{'}})U(\phi,\theta)^\dagger=\tilde{h}_0+\tilde{h}_1\label{uni}$$
+$$U(\phi,\theta)H^Z_0({ k^{'}})U(\phi,\theta)^\dagger=\tilde{h}_0+\tilde{h}_1\label{uni}$$
 
 整个文章中,就是公式(\ref{uni})这个变化操作比较绕,因为没有给出具体计算,所以这里我就主要是通过Mathematica程序计算,来看一下每一项都是如何得出的,首先给出文章中通过分解之后得出的结果.
 {:.warning}
@@ -73,7 +73,7 @@ $$\begin{equation}
 
 ![png](/assets/images/mma/s2.png)
 
-- 下一步就是对$H^Z_0({\bf k^{'}})$做幺正变换,因为是软件计算,所以变换完成之后需要做一些假设来将结果变为最简形式**HTr**
+- 下一步就是对$H^Z_0({ k^{'}})$做幺正变换,因为是软件计算,所以变换完成之后需要做一些假设来将结果变为最简形式**HTr**
 
 ![png](/assets/images/mma/s3.png)
 
@@ -87,7 +87,7 @@ $$-k_x \sin (\theta ) \cos (\phi )-k_yk_x \sin (\theta ) \sin (\phi )-k_z \cos (
 
 
 ## 坐标旋转
-为了将两个不同坐标$(k_1,k_2,k_3)$与$(k_x,k_y,k_z)$联系起来,我这里先整理一下坐标上的问题.文章中提到$k_3=\hat{n}_{{\bf \Sigma}}\cdot \mathbf{k}$,所以结果为
+为了将两个不同坐标$(k_1,k_2,k_3)$与$(k_x,k_y,k_z)$联系起来,我这里先整理一下坐标上的问题.文章中提到$k_3=\hat{n}_{{ \Sigma}}\cdot \mathbf{k}$,所以结果为
 
 ![png](/assets/images/mma/s5.png)
 
