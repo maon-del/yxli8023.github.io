@@ -304,8 +304,8 @@ subroutine inv(ndim,Amat)
 ! C := alpha*op( A )*op( B ) + beta*C
     subroutine mat_mul(nmatdim,A,B,C)  
     ! nmatdim is dimension of matrix
-    use pub
     implicit none
+    integer,parameter::dp = kind(1.0d0) ! double precision(精度控制)
     integer,intent(in)::nmatdim    
     complex(dp)::ALPHA
     complex(dp)::BETA 
