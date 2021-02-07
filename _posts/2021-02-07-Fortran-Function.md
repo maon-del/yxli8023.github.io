@@ -255,3 +255,68 @@ Write(*,'(4(f5.1,1x))') H2( :, i)
 End do
 End Program www_fcode_cn
 ```
+# 矩阵求逆
+```fortran
+subroutine inv(ndim,Amat)
+    ! ndim is dimension of Amat,the input Amat will be written which is result
+    implicit none
+    integer,parameter::dp = 8
+    integer::i
+    integer::info
+    integer,intent(in)::ndim   ! in 代表这个值只能是个输入值,不会被改变
+!    IPIV   : INTEGER. Array,DIMENSION at least max(1,n). The pivot indices that define
+!    the permutation matrix P; row i of the matrix was interchanged with
+!    row ipiv(i). Corresponds to the single precision factorization (if info=
+!    0 and iter ≥ 0) or the double precision factorization (if info= 0 and
+!    iter < 0).
+    integer,allocatable::ipiv(:)
+    complex(dp),parameter::zone = (1.0d0,0.0d0)
+!    Amat  :
+!    Overwritten by the factors L and U from the factorization of A = P*L*U;
+!    the unit diagonal elements of L are not stored.
+!    If iterative refinement has been successfully used (info= 0 and iter≥
+!    0),then A is unchanged.
+!    If double precision factorization has been used (info= 0 and iter <
+!    0),then the array A contains the factors L and U from the factorization
+!    A = P*L*U; the unit diagonal elements of L are not stored.
+    complex(dp),intent(inout):: Amat(ndim,ndim)
+!    Bmat  :
+!    Overwritten by the solution matrix X for dgesv,sgesv,zgesv,zgesv.
+    complex(dp),allocatable::Bmat(:,:)
+    allocate(ipiv(ndim))
+    allocate(Bmat(ndim,ndim))
+    ipiv=0
+    ! unit matrix
+    Bmat= (0d0,0d0)
+    do i=1,ndim
+        Bmat(i,i)= zone
+    end do
+    call zgesv(ndim,ndim,Amat,ndim,ipiv,Bmat,ndim,info)
+    if(info.ne.0)print *,'something wrong with zgesv'
+    Amat=Bmat
+    return
+    end subroutine inv
+```
+
+# 矩阵相乘
+```fortran
+! performs matrix-matrix multiply
+! C := alpha*op( A )*op( B ) + beta*C
+    subroutine mat_mul(nmatdim,A,B,C)  
+    ! nmatdim is dimension of matrix
+    use pub
+    implicit none
+    integer,intent(in)::nmatdim    
+    complex(dp)::ALPHA
+    complex(dp)::BETA 
+    complex(dp),intent(in) ::A(nmatdim ,nmatdim)
+    complex(dp),intent(in) ::B(nmatdim ,nmatdim)
+    !complex(dp)::mat_mul(nmatdim,nmatdim)
+    complex(dp),intent(out)::C(nmatdim,nmatdim)
+    alpha = 1.0d0 
+    beta = 0.0d0
+    C(:,:) = (0.0d0,0.0d0)
+    call ZGEMM('N','N',nmatdim,nmatdim,nmatdim,ALPHA,A,nmatdim,B,nmatdim,BETA,C,nmatdim)
+    return
+    end subroutine mat_mul
+```
