@@ -54,6 +54,8 @@ $$A(\omega,k_i)=-\frac{1}{\pi}\textrm{Im}(g^{(N)}(\omega,k_i))$$
 
 # 代码
 ```julia
+using LinearAlgebra,DelimitedFiles,PyPlot
+#---------------------------------------------------
 function Pauli()
     hn = 4
     g1 = zeros(ComplexF64,hn,hn)
@@ -135,7 +137,7 @@ function main()
     re::ComplexF64 = 0.0
     eta::Float64 = 0.01
     domg::Float64 = 0.01
-    dk::Float64 = 0.05
+    dk::Float64 = 0.01
     f1 = open("edgeState.dat","w")
     for omg in -2:domg:2
         for kx in -pi:dk:pi
