@@ -47,10 +47,10 @@ $$A(\omega,k_i)=-\frac{1}{\pi}\textrm{Im}(g^{(N)}(\omega,k_i))$$
 
 结果如下图
 
-![png](assets/images/Julia/edge-gf.png)
+![png](/assets/images/Julia/edge-gf.png)
 
 这里计算得到的图像并不是很光滑,这与计算的时候选择的计算间隔以及格林函数中的小虚部有关,而且和作图工具也有关系,不过我最近在学习利用gunplot来做图,因为是命令作图,基矢数据量非常大也不同担心电脑死机,而用类似origin的前端作图工具,当想让曲线光滑的时候,所需要的数据文件就会非常大,从而对电脑要求就会非常高,所以可以通过这些方面的改进来将这个图做得更好看.
-{;.warning}
+{:.warning}
 
 # 代码
 ```julia
