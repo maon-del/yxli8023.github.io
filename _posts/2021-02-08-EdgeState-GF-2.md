@@ -22,28 +22,8 @@ show_author_profile: true
 
 $$H(\mathbf{k})=(m_0-t_x\cos k_x-t_y\cos k_y)\sigma_z+\lambda_x\sin k_x\sigma_xs_z+\lambda_y\sin k_y\sigma_y\label{ham}$$
 
-计算方法如下,已经知道了$H$之后,系统的格林函数可以写作
+至于具体的计算方法可以阅读[Highly convergent schemes for the calculation of bulk and surface Green functions](https://iopscience.iop.org/article/10.1088/0305-4608/15/4/009)这篇文章。
 
-$$G^{-1}(z)=z-H=\left(\begin{array}{cccc}
-z-H_0&C&0&0\\
-C^\dagger&z-H_0&C&0\\
-0&C^\dagger&z-H_0&C\\
-0&0&C^\dagger&\cdots
-\end{array}\right)\label{gf}$$
-
-where the diagonal block H0 describes the Hamiltonian within the same “principal layer,”这一项其实就是哈密顿量(\ref{ham})沿某一方向开边界之后,包含好量子数$k_i$的那部分,自然$C,C^\dagger$就是相邻格点之间的hopping项了,从这里就可以看出,这样哈密顿量需要处理的就只是很小的一块,计算量自然很小.
-
-我们可以发现由于(\ref{gf})是个三对角形式,所以可以将它通过迭代的方式进行求解
-
-$$g^{(N)}_{ij}=(z-H_0-Cg^{(N-1)}C^\dagger)^{-1}_{ij}$$
-
-对于初始条件
-
-$$g^{(0)}=(z-H_0)^{-1}$$
-
-他就是系统的边界格林函数,当选择一定的迭代精度之后,就可以求解得到最后的边界格林函数$g^{(N)}$,通过格林函数就可以计算对应的谱函数,也就可以得到边界态的结果
-
-$$A(\omega,k_i)=-\frac{1}{\pi}\textrm{Im}(g^{(N)}(\omega,k_i))$$
 
 结果如下图
 
