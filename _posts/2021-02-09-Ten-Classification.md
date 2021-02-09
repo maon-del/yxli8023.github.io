@@ -17,7 +17,7 @@ show_author_profile: true
 <!--more-->
 最近在做一些工作,在阅读文献的时候有一些比较重要的工作需要仔细的阅读和理解,这里我就想把自己看拓扑分类这方面的文章时的一些理解和笔记整理一下,也可以加深自己对文章的理解.
 # 10重分类
-![png](../assets/images/topology/AT-ten.png)
+![png](/assets/images/topology/AT-ten.png)
 
 这是根据手性对称(sublattice symmetry or chiral symmetry),时间反演对称(Time reversal symmetry),粒子空穴对称(Particle hole symmetry)对哈密顿量进行分类,首先来理解一下为什么会有10个分类.
 
@@ -46,5 +46,5 @@ $\eta_c=\pm 1$:$(\epsilon_c,\eta_c)=(1,1)$则代表spinless(整数自旋)的TRS�
 如果存在PHS,则系统的能量一定是关于零对称分布的.
 {:.warning}
 
-# 对称类
+
 
