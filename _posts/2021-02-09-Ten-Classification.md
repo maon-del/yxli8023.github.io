@@ -46,5 +46,14 @@ $\eta_c=\pm 1$:$(\epsilon_c,\eta_c)=(1,1)$则代表spinless(整数自旋)的TRS�
 如果存在PHS,则系统的能量一定是关于零对称分布的.
 {:.warning}
 
+在动量空间中,哈密顿量$H(\mathbf{k})$在这些算符的操作下变换为
+
+$$\begin{equation}\begin{aligned}
+&\mathcal{T}H(\mathbf{k})\mathcal{T}=H(-\mathbf{k})\qquad TRS\\
+&\mathcal{C}H(\mathbf{k})\mathcal{C}=-H(-\mathbf{k})\qquad PHS\\
+&\mathcal{S}H(\mathbf{k})\mathcal{S}=-H(\mathbf{k})\qquad \textrm{Chiral Symmetry}\\
+\end{aligned}\end{equation}$$
+
+
 
 
