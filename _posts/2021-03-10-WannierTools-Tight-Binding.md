@@ -1,5 +1,5 @@
 ---
-Ttitle: 从紧束缚模型出发构建WannierTools需要的数据
+title: 从紧束缚模型出发构建WannierTools需要的数据
 tags: Topology
 layout: article
 license: true

@@ -1,5 +1,5 @@
 ---
-Ttitle: wannier90_hr数据的可视化分析
+title: wannier90_hr数据的可视化分析
 tags: Topology
 layout: article
 license: true

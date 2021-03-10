@@ -1,5 +1,5 @@
 ---
-Ttitle: 拓扑10重分类表笔记
+title: 拓扑10重分类表笔记
 tags: Topology
 layout: article
 license: true
