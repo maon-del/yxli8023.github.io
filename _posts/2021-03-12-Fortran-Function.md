@@ -4,7 +4,7 @@ tags: Code Fortran
 layout: article
 license: true
 toc: true
-key: a20210207
+key: a20210312
 pageview: true
 aside:
     toc: true
@@ -319,4 +319,25 @@ subroutine inv(ndim,Amat)
     call ZGEMM('N','N',nmatdim,nmatdim,nmatdim,ALPHA,A,nmatdim,B,nmatdim,BETA,C,nmatdim)
     return
     end subroutine mat_mul
+```
+
+# 读取文件行数
+通常在读取文件的时候, 并不会指导文件到底有多少行, 这个子过程就是用来确定在读取到文件结尾的时候终止循环, 从而指导一共有多少行数据
+```fortran
+subroutine main2()
+! 读取不明行数的文件
+implicit none
+integer count,stat
+real h1,h2,h3
+open(1,file = "wavenorm.dat")
+do while (.true.)
+    count = count + 1
+    read(1,*,iostat = STAT)h1,h2,h3
+    if(stat .ne. 0) exit ! 当这个参数不为零的时候,证明读取到文件结尾
+end do
+write(*,*)h1,h2,h3
+write(*,*)count
+close(1)
+return
+end subroutine 
 ```
