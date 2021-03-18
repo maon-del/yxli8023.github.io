@@ -341,3 +341,41 @@ close(1)
 return
 end subroutine 
 ```
+
+# 文件数据格式化
+```fortran
+    program main
+    implicit none
+    integer m1,m2,m3
+    call main2()
+    stop
+    end program 
+!=======================================================    
+    subroutine main2()
+    ! 读取不明行数的文件
+    implicit none
+    integer count,stat
+    real h1,h2,h3,h22
+    h1 = 0
+    h2 = 0
+    h3 = 0
+    h22 = 0
+    open(1,file = "da.dat")
+    open(2,file = "da2.dat")
+    count = 0
+    do while (.true.)
+        count = count + 1
+        h22 = h2
+        read(1,*,iostat = STAT)h1,h2,h3
+        if(h22.ne.h2)write(2,*)""  ! 在这里加空行是为了gnuplot绘制密度图
+        write(2,999)h1,h2,h3   ! 数据格式化
+        if(stat .ne. 0) exit ! 当这个参数不为零的时候,证明读取到文件结尾
+    end do
+    write(*,*)h1,h2,h3
+    write(*,*)count
+    close(1)
+    close(2)
+999 format(3f11.6)
+    return
+    end subroutine 
+```
