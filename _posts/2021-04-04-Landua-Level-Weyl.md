@@ -52,12 +52,12 @@ $$E=\pm\sqrt{(n+\frac{1}{2})\hbar\omega_0+\chi^2v_F^2\hbar^2k_x^2}$$
 
 原文中的结果为
 
-$$\begin{equation}\epsilon^\chi_n(k_x)=\left{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\end{equation}$$
+$$\begin{equation}\epsilon^\chi_n(k_x)=\{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\end{equation}$$
 
 这里$\omega_c=v_f/\mathcal{l}_B$, $\mathcal{l}_B=\sqrt{\hbar/eB}$. 
 
 我这里求解得到的结果与原文中其实是完全相同的, 只不过原文中是利用算符变换求解得到的, 而且原文中应该是同时丢弃了零点能, 这样我的求解结果就是原文是完全一致的.
-{.:warning}
+{:.warning}
 
 # 参考
 1. [Quantum Oscillations of the Positive Longitudinal Magnetoconductivity: A Fingerprint for Identifying Weyl Semimetals](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.036601)
