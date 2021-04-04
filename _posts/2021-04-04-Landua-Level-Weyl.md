@@ -52,7 +52,7 @@ $$E=\pm\sqrt{(n+\frac{1}{2})\hbar\omega_0+\chi^2v_F^2\hbar^2k_x^2}$$
 
 原文中的结果为
 
-$$\begin{equation}\epsilon^\chi_n(k_x)=\{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\end{equation}$$
+$$\begin{equation}\epsilon^\chi_n(k_x)=\left{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\end{equation}$$
 
 这里$\omega_c=v_f/\mathcal{l}_B$, $\mathcal{l}_B=\sqrt{\hbar/eB}$. 
 
