@@ -1,10 +1,10 @@
 ---
-title: 商群的浅显理解
+title: 群论学习笔记
 tags: Math
 layout: article
 license: true
 toc: true
-key: a20201005
+key: a20210415
 pageview: true
 sitemap: true
 mathjax: true
@@ -65,3 +65,32 @@ a \mathcal{U}=\{a \circ p \mid p \in \mathcal{U} \subseteq \mathcal{G}\}, & a \i
 
 计算的代码可以[点击这里下载](/assets/data/1005.nb)
 
+# Homomorphism
+存在两个群$G$与$G^{'}$,如果在$G$与$G^{'}$有一个映射关系$\theta$且仍然满足群元素的运算关系,那么这个映射称为同态(Homomorphism).
+
+$$(\theta A_i)(\theta A_j)=\theta(A_iA_j)\quad \text{for all }A_i,A_j\in G$$
+
+阶数较小的群称为阶数较大的群的同态像(homomorph). 把$G$中映射到$G^{'}$单位元素上的所有元素的集合, 称为同态核(kernel of the homomorphism).
+
+# Isomorphism
+如果这个映射使得群$G$与$G^{'}$中的元素满足一一对应关系, 那么此时的$\theta$叫做同构(Isomorphism), 两个群之间是同构的(isomorphic).
+
+# automorphism
+如果两个群$G$与$G^{'}$是完全相同的, 那么也就是$\theta$是一个群到自身的映射, 那么这种映射称为自同构(automorphism).
+
+如果$\theta$是自同构映射, 且映射满足
+
+$$\theta G=XGX^{-1};\text{for }X\in G$$
+
+此时可以看出自同构是等价于共轭的, 那么这种情况称为内自同构(inner automorphism), 其余的情况就称为外自同构(outer automorphisms).
+
+## 实例
+If $G$ = $G_6$ and $G^{'}= G_2 = \{E,A^{'}\}$, then the mapping
+
+$$\theta(E)= \theta(D)= \theta(F)= E\\ \theta(A)= \theta(B)= \theta(C)= A^{'}$$
+
+is a homomorphism of $G_6$ onto $G_2$.
+
+The groups $C_{3v}$, $D_3$ and $S_3$ are isomorphic: They have the same order and share the same multiplication table.
+
+If $\theta(E)= E, \theta(A)= B, (B)= C, \theta(C)= A, \theta(D)= F$, and $\theta(F)= D$, the mapping is an automorphism of $G_6$ onto itself.
