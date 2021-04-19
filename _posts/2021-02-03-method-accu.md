@@ -135,6 +135,8 @@ i&-i\\
 
 $$U\cdot\sigma_yU^\dagger=\sigma_x\qquad U\sigma_xU^\dagger=-\sigma_z$$
 
+$$\sigma_x\rightarrow-\sigma_z,\sigma_y\rightarrow\sigma_x,\sigma_z\rightarrow-\sigma_y$$
+
 ![png](/assets/images/Mma/s10.png)
 
 一般可以将这个幺正变换应用两次或者任意次数,来将不同的项放到不同的泡里矩阵前.

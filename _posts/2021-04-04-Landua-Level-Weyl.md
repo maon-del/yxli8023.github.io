@@ -52,13 +52,82 @@ $$E=\pm\sqrt{(n+\frac{1}{2})\hbar\omega_0+\chi^2v_F^2\hbar^2k_x^2}$$
 
 原文中的结果为
 
-$$\begin{equation}\epsilon^\chi_n(k_x)=\{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\end{equation}$$
+$$\epsilon^\chi_n(k_x)=\left \{ \begin{array}{c}-\chi\hbar v_Fk_x\qquad n=0\\\text{sgn}(n)\sqrt{2\rvert n\rvert(\hbar\omega_c)^2+(\hbar v_Fk_x)^2}\qquad n\neq 0\end{array}\right.$$
 
 这里$\omega_c=v_f/\mathcal{l}_B$, $\mathcal{l}_B=\sqrt{\hbar/eB}$. 
 
 我这里求解得到的结果与原文中其实是完全相同的, 只不过原文中是利用算符变换求解得到的, 而且原文中应该是同时丢弃了零点能, 这样我的求解结果就是原文是完全一致的.
 {:.warning}
 
+# 升降算符法求解
+在这里为了避免符号繁琐, 采用自然单位制$\hbar=e=1$, 并将手性$\xi$略去, 为了结果之后只需要简单在结果前面乘上这一项就可以, 磁场矢势此时采用对称规范$\mathbf{A}=\frac{1}{2}(0,-Bz,+By)$.
+
+$$H(\mathbf{k})=k_x\sigma_x+(k_y-\frac{1}{2}Bz)\sigma_y+(k_z+\frac{1}{2}By)\sigma_z$$
+
+重新定义新的算符$k_y^{'}=k_y-\frac{1}{2}Bz,k_z^{'}=k_z+\frac{1}{2}By$, 两者之间满足对易关系
+
+$$\left[k_y^{'},k_z^{'}\right]=iB$$
+
+接下来对哈密顿量进行一个幺正变换, $\sigma_x\rightarrow-\sigma_z,\sigma_y\rightarrow\sigma_x,\sigma_z\rightarrow-\sigma_y$, 利用到的幺正变换矩阵为
+
+$$\begin{equation}U=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
+i&-i\\
+1&1
+\end{array}\right]\end{equation}$$
+
+哈密顿量改写为
+
+$$H(\mathbf{k})=-k_x\sigma_z+k_y^{'}\sigma_x-k_z^{'}\sigma_y$$
+
+定义升降算符
+
+$$a=\frac{k_y^{'}-ik_z^{'}}{\sqrt{2B}}\qquad a^\dagger=\frac{k_y^{'}+ik_z^{'}}{\sqrt{2B}}$$
+
+哈密顿量的矩阵形式为
+
+$$H(\mathbf{k})=\sqrt{2B}\left(\begin{array}{cc}-\frac{k_x}{\sqrt{2B}}&a\\
+a^\dagger&\frac{k_x}{\sqrt{2B}}\end{array}\right)$$
+
+求解本征方程
+
+$$H(\mathbf{k})\Psi=E\Psi\qquad \Psi=(\theta_1\rvert n-1\rangle,\theta_2\rvert n\rangle)^T$$
+
+结合升降算符性质
+
+$$a\rvert n\rangle=\sqrt{n}\rvert n-1\rangle\qquad a^\dagger\rvert n\rangle=\sqrt{n+1}\rvert n+1\rangle$$
+
+可以求解得到本征值为
+
+$$E=\pm\sqrt{k_x^2+2B n}\qquad (n\ge 1)$$
+
+这里$n\ge 1$是因为波函数形式为$\Psi=(\theta_1\rvert n-1\rangle,\theta_2\rvert n\rangle)^T$, 所以必须满足这个条件. 若想要求解$n=0$时的能级, 则$\rvert n-1\rangle\rightarrow_{n=0}0$, 则可以求解得到
+
+$$E=-k_x$$
+
+最后求解得到的结果为
+
+$$E(k_x)=\left\{\begin{array}{c}-k_x\qquad n=0\\
+\sqrt{k_x^2+2B n}\qquad (n\ge 1)\end{array}\right.$$
+
+# 矩阵方法
+其实刚才已经将哈密顿量变换成矩阵算符形式
+
+$$H(\mathbf{k})=\sqrt{2B}\left(\begin{array}{cc}-\frac{k_x}{\sqrt{2B}}&a\\
+a^\dagger&\frac{k_x}{\sqrt{2B}}\end{array}\right)$$
+
+把波函数写作
+
+\Psi=(\theta_1\rvert n-1\rangle,\theta_2\rvert n\rangle)^T
+
+我们可以发现升降算符只出现在非对角线上, 也就是$H(\mathbf{k})$作用到$\Psi$上的时候, $a^\dagger$作用到$\rvert n-1\rangle$, 而 $a$作用到了$\rvert n\rangle$上, 再结合升降算符的性质, 可以直接把矩阵写成
+
+$$H(\mathbf{k})=\sqrt{2B}\left(\begin{array}{cc}-\frac{k_x}{\sqrt{2B}}&\sqrt{n}\\
+\sqrt{n}&\frac{k_x}{\sqrt{2B}}\end{array}\right)$$
+
+这个时候哈密顿量的本征值可以通过直接对角化这个$2\times 2$的矩阵得到, 结果和上面是完全相同的.
+
 # 参考
+
 1. [Quantum Oscillations of the Positive Longitudinal Magnetoconductivity: A Fingerprint for Identifying Weyl Semimetals](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.036601)
 
+2. Topological insulator and topological superconductor()
