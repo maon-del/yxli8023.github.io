@@ -79,7 +79,7 @@ $UserBaseDirectory/Applications
 在材料能带计算的过程中, 对每条能带标记其不可约表示是比较重要的一个事情, 这个内容利用SpaceGroupIrep同样可以, 只不过需要结合其他的工具, 这部分内容我并不会, 所以这里就只是介绍一下, 具体我也还在学习过程中.
 
 # 代码
-所有上面的内容, 可以[点击这里下载](/assets/data/SpaceGroup.nb)
+所有上面的内容, 可以[点击这里下载](/assets/data/SpaceGroup.zip)
 
 
 
