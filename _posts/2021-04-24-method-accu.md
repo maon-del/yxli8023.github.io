@@ -5,7 +5,7 @@ layout: article
 license: true
 toc: true
 pageview: true
-key: a20210203
+key: a20210424
 aside:
     toc: true
 sitemap: true
@@ -140,3 +140,30 @@ $$\sigma_x\rightarrow-\sigma_z,\sigma_y\rightarrow\sigma_x,\sigma_z\rightarrow-\
 ![png](/assets/images/Mma/s10.png)
 
 一般可以将这个幺正变换应用两次或者任意次数,来将不同的项放到不同的泡里矩阵前.
+
+# Edge mode and Dirac equation
+这里整理一下通常拓扑绝缘体里面求解边界态的另外一种方法, 首先假设在$y$方向有质量的变化$m(y)$, 对于一个Chern insulator模型在低能下写成
+
+$$H(y)=k_x\sigma_x+k_y\sigma_y+m(y)\sigma_z=-i\partial_x\sigma_x-i\partial_y\sigma_y+m(y)\sigma_z$$
+
+首先可以看到方程并没有$x,y$变量之间的耦合, 采用分离变量法, 假设方程的解为
+
+$$\psi(x,y)=\phi_1(x)\phi_2(y)$$
+
+如果在$y$方向上存在质量畴壁, 那么存在的gapless边界态一定会是衰减形式的波函数, 且衰减长度与质量能隙$m(y)$有关
+
+$$\phi_2(y)=e^{i\int_0^{+\infty}m(y^{'})dy^{'}}$$
+
+将假设的波函数代入薛定谔方程中
+
+$$-i\partial_x\sigma_x\phi_1(x)+m(y)(i\sigma_y\phi_1(x)+\sigma_z\phi_1(x))=E\phi_1(x)$$
+
+对于零能解($k_x=0$), 其一定不存在与质量相关的依赖, 可以得到
+
+$$i\sigma_y\phi_1(x)+\sigma_z\phi_1(x)=0\rightarrow \sigma_x\phi_1(x)=-\phi_1(x)$$
+
+方程的解为$\phi_1(x)=\xi(x)\frac{1}{\sqrt{2}}(1,-1)^T$, $\xi(x)$是个标量函数, 满足
+
+$$i\partial_x\xi(x)=E\xi(x)$$
+
+解$\xi(x)=e^{ik_xx}$是一个在$x$边界上以能量$E=k_x$传播的手性模.
