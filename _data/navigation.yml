@@ -28,7 +28,18 @@ header:
     url: /about.html
     key: about-page
 #------------------------------------------------------
-  - title:      Samples
+  - title:      
+  # @start locale config
+      en      : &EN       Publish
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      zh-Hans : &ZH_HANS  发表文章
+      zh      : *ZH_HANS
+      zh-CN   : *ZH_HANS
+      zh-SG   : *ZH_HANS
+      # @end locale config
     url:        /samples.html
     key:        samples-page
 

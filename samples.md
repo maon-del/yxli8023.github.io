@@ -2,12 +2,12 @@
 layout: article
 titles:
   # @start locale config
-  en      : &EN       Samples
+  en      : &EN       Publish
   en-GB   : *EN
   en-US   : *EN
   en-CA   : *EN
   en-AU   : *EN
-  zh-Hans : &ZH_HANS  模板演示
+  zh-Hans : &ZH_HANS  科研成果
   zh      : *ZH_HANS
   zh-CN   : *ZH_HANS
   zh-SG   : *ZH_HANS
@@ -24,21 +24,13 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
-不知道该写点什么，先这样吧
-{:.info}
 
-Success Text.
-{:.success}
+1.[Rotational symmetry breaking and partial Majorana corner states in a heterostructure based on high-
+$T_c$ superconductors](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.024517)
 
-Warning Text.
-{:.warning}
-
-Error Text.
-{:.error}
-
-<div>{%- include extensions/netease-cloud-music.html id='413812448' -%}</div>
+<!-- <div>{%- include extensions/netease-cloud-music.html id='413812448' -%}</div>
 <div>{%- include extensions/netease-cloud-music.html id='500132554' -%}</div>
 
 <div>{%- include extensions/slideshare.html id='u9L9zDsqEWNKE1' -%}</div>
 
-<p><iframe src="//player.bilibili.com/player.html?aid=201792962&bvid=BV1Ah411o72A&cid=226367619&page=1" frameborder="no" scrolling="no" width="95%" height="600"> </iframe></p>
+<p><iframe src="//player.bilibili.com/player.html?aid=201792962&bvid=BV1Ah411o72A&cid=226367619&page=1" frameborder="no" scrolling="no" width="95%" height="600"> </iframe></p> -->
