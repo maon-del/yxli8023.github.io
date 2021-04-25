@@ -53,7 +53,7 @@ $$A^\alpha(-k)=i\sum_a\langle u^\beta_{k,a}\rvert\nabla_k\rvert u^\beta_{k,a}\ra
 
 可以得到极化为
 
-$$\begin{aligned}P^\alpha&=\frac{1}{2\pi}(\int_0^\pi(A^\alpha(k)+A^\beta(k))+\int_0^\pi\sum_a\nabla_k\chi_{k,a})\\&=\frac{1}{2\pi}(\int_0^\pi A(k)+\sum_a(\chi_{\pi,a}-\chi_{0,a}))\end{aligned}\qquad A(k)=A^\alpha(k)+A^\beta(k)\label{eq2}$$
+$$\begin{aligned}P^\alpha&=\frac{1}{2\pi}(\int_0^\pi(A^\alpha(k)+A^\beta(k))+\int_0^\pi\sum_a\nabla_k\chi_{k,a})\\&=\frac{1}{2\pi}(\int_0^\pi A(k)+\sum_a(\chi_{\pi,a}-\chi_{0,a}))\qquad A(k)=A^\alpha(k)+A^\beta(k)\end{aligned}\label{eq2}$$
 
 最后一项可以通过$U(2N)$的sewing matrix进行改写
 
@@ -83,4 +83,8 @@ $$P^\alpha=\frac{1}{2\pi}(\int_0^\pi dk A(k)+i\text{log}\left[\frac{\text{Pf}[B(
 
 $$P=\frac{1}{2\pi}\int_{-\pi}^\pi dk A(k)=P^\alpha+P^\beta$$
 
+正如前面提及到的, 满足时间反演不变的体系, 对应的Chern数为0, 所以此时两个能带的极化总和也为0, 但是可以定义时间反演极化$P^T=P^\alpha-P^\beta=2p^\alpha-P$
 
+$$P^T=\frac{1}{2\pi}(\int_0^\pi dk A(k)-\int_{-\pi}^0dk A(k)+2i\text{log}[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])$$
+
+此时体系的时间反演极化不为零, 可以作为拓扑不变量与实际物理图像之间的联系来理解体系的拓扑性质.
