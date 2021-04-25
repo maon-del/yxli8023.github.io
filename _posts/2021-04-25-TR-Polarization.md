@@ -53,7 +53,7 @@ $$A^\alpha(-k)=i\sum_a\langle u^\beta_{k,a}\rvert\nabla_k\rvert u^\beta_{k,a}\ra
 
 可以得到极化为
 
-$$\begin{aligned}P^\alpha&=\frac{1}{2\pi}(\int_0^\pi(A^\alpha(k)+A^\beta(k))+\int_0^\pi\sum_a\nabla_k\chi_{k,a})\\&=\frac{1}{2\pi}(\int_0^\pi A(k)+\sum_a(\chi_{\pi,a}-\chi_{0,a}))\qquad A(k)=A^\alpha(k)+A^\beta(k)\end{aligned}\label{eq2}$$
+$$\begin{equation}\begin{aligned}P^\alpha&=\frac{1}{2\pi}(\int_0^\pi(A^\alpha(k)+A^\beta(k))+\int_0^\pi\sum_a\nabla_k\chi_{k,a})\\&=\frac{1}{2\pi}(\int_0^\pi A(k)+\sum_a(\chi_{\pi,a}-\chi_{0,a}))\qquad A(k)=A^\alpha(k)+A^\beta(k)\end{aligned}\end{equation}\label{eq2}$$
 
 最后一项可以通过$U(2N)$的sewing matrix进行改写
 
