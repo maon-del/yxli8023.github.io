@@ -136,7 +136,7 @@ $$P_T=\frac{1}{\pi i}\log[\frac{\sqrt{\text{Det}[B(\pi)]}}{\text{Pf}[B(\pi)]}\fr
 ## Wannier Center
 当系统存在时间反演的时候,占据的Wannier轨道的中心也会随着外部参数的变化而改变,相比较于Chern insulator,此时Wannier态是成对出现的,如果体系是$Z_2$非平庸的,那么在时间演化的过程中这一对Wannier center会彼此交换位置.
 
-![png](../assets/images/topology/Z21.png)
+![png](/assets/images/topology/Z21.png)
 
 如果时间反演极化在$t=0$和$t=T/2$的差为1, 则它们之间存在一个不匹配的性质, 此时一定会有奇数条边界态在$t=0$与$t=T/2$之间穿过费米能级,对应的拓扑不变量为
 
