@@ -69,7 +69,7 @@ $$B^{\beta,\alpha}_{mn}(k)=\langle u^\beta_{-k,m}\rvert T\rvert u^\alpha_{k,n}\r
 
 $B^{\beta,\alpha}_{mn}$是Kramers对能带$\alpha,\beta$的sewing matrix,这里可以存在多个Kramers对$m=1,2,\cdots,N$, 但是sewing matrix 耦合Kramers对是两两组合的, 所以矩阵$B$将会变成分块非对角形式
 
-$$B=\left[\begin{array}{cc}0&-e^{-i\chi_{-k,n}}\\e^{-i\chi_{k,n}}&0\end{array}\right]$$
+$$B=\left[\begin{array}{cc}0&-e^{-i\chi_{-k,n}}\\e^{-i\chi_{k,n}}&0\end{array}\right]\label{eq7}$$
 
 可以看到在$k=0,\pi$处, 矩阵$B$是反对称的, 故而可以将(\ref{eq2})中的第二项改写为
 
@@ -85,6 +85,53 @@ $$P=\frac{1}{2\pi}\int_{-\pi}^\pi dk A(k)=P^\alpha+P^\beta$$
 
 正如前面提及到的, 满足时间反演不变的体系, 对应的Chern数为0, 所以此时两个能带的极化总和也为0, 但是可以定义时间反演极化$P^T=P^\alpha-P^\beta=2p^\alpha-P$
 
-$$P^T=\frac{1}{2\pi}(\int_0^\pi dk A(k)-\int_{-\pi}^0dk A(k)+2i\text{log}[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])$$
+$$P^T=\frac{1}{2\pi}(\int_0^\pi dk A(k)-\int_{-\pi}^0dk A(k)+2i\text{log}[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])\label{eq6}$$
 
 此时体系的时间反演极化不为零, 可以作为拓扑不变量与实际物理图像之间的联系来理解体系的拓扑性质.
+
+## Non-Abelian Berry Potentials at $k,-k$
+
+时间反演操作可以将$\rvert u_{k,\beta}\rangle$与另外一个动量为$-k$的简并态联系起来,如果系统同时存在反演对称性, 则在每个$k$点能带都是双重简并的
+
+$$\rvert u_{-k,\alpha}\rangle=\sum_\beta B^{*}_{\alpha,\beta}(k)T\rvert u_{k,\beta}\rangle\label{eq4}$$
+
+这里的$\alpha,\beta$是能带index,矩阵$B$是幺正矩阵
+
+$$\langle u_{-k,\alpha}\rvert T\rvert u_{k,\beta}\rangle\qquad B_{\alpha\beta}(k)=-B_{\beta\alpha}(-k)$$
+
+对于多带系统,non-Abelian Berry vector为
+
+$$\begin{aligned}a^{\alpha\beta}_i(-k)&=i\langle u_{-k,\alpha}\rvert\partial_{k_i}\rvert u_{-k,\beta}\rangle\\&=-i\sum_{m\theta\gamma}B_{\theta\gamma}(k)B^{*}_{\beta\gamma}(k)(u_{k\theta})_nU^{*}_{mn}U_{mp}\partial_k(u_{k\gamma})^{*}_p+B_{\alpha\theta}(k)(\partial_kB^{*}_{\beta\gamma}(k))(u_{k\theta})_nU^{*}_{mn}U_{mp}(u_{k\gamma})^{*}_n\\&=-i\sum_{n,\theta,\gamma}N_{\alpha\theta}(k)B^{*}_{\beta\gamma}(k)(u_{k\theta})_n\partial_k(u_{k\gamma})^{*}_n-B_{\alpha\theta}(k)(\partial_kB^{*}_{\beta\gamma})(u_{k\theta})_n(u_{k\gamma})^{*}_n\\&=B_{\alpha\theta}(k)(-i(u_{k\theta})_n\partial_k(u_{k\gamma})^{*}_n)B^{*}_{\beta\gamma}-iB_{\alpha\theta}\partial_kB^{*}_{\beta\theta}\end{aligned}$$
+
+上式推导将(\ref{eq4})代入即可, 最终得到$-k$处的非阿贝尔矢势是$k$处非阿贝尔矢势的复共轭,再加上一个矩阵$B$的规范变换
+
+$$a^{\alpha\beta}_i(-k)=B_{\alpha\theta}(k)a^{\theta\gamma *}_i(k)B^{*}_{\beta\gamma}-B_{\alpha\theta}\partial_kB^{*}_{\beta\theta}\qquad a_i(-k)=B(k)a^{*}_i(k)B^\dagger(k)-iB\partial_iB^\dagger$$
+
+阿贝尔Berry位相是非阿贝尔势的对角元素
+
+$$\begin{aligned}A_i(-k)=\text{Tr}[a_i(-k)]&=\text{Tr}[B^\dagger(k)B(k)a_i^*(k)]-\text{Tr}[iB\partial_iB^\dagger]\end{aligned}$$
+
+$k,-k$点的Abelian矢势的差为
+
+$$\text{Tr}[B^\dagger(k)\partial_kB(k)]=\frac{1}{i}(A_i(-k)-A_i(k))\label{eq5}$$
+
+结合(\ref{eq5})可以将(\ref{eq6})改写为
+
+$$\begin{aligned}P^T&=\frac{1}{2\pi}(\int_0^\pi dk A(k)-\int_{-\pi}^0dk A(k)+2i\text{log}[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])\\&=\frac{1}{2\pi i}(\int_0^{\pi} dk\text{Tr}[B^\dagger\partial_kB]-2\log[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])\end{aligned}$$
+
+结合(\ref{eq7})可得
+
+$$\begin{aligned}\text{Tr}[B^\dagger\partial_kB]&=\text{Tr}[\left[\begin{array}{cc}0&-e^{-i\chi_{-k,n}}\\e^{-i\chi_{k,n}}&0\end{array}\right]\left[\begin{array}{cc}0&-\nabla_ke^{-i\chi_{-k,n}}\\\nabla_ke^{-i\chi_{k,n}}&0\end{array}\right]]\\&=-i(\nabla_k\chi_k+\nabla_k\chi_{-k})=\nabla_k\log(\text{Det}[B(k)])\end{aligned}$$
+
+最终时间反演极化可以表示为
+
+$$p_T=\frac{1}{2\pi}(\int_0^{\pi}dk\nabla_k\log[\text{Det}[B(k)]]-2\log[\frac{\text{Pf}[B(\pi)]}{\text{Pf}[B(0)]}])$$
+
+因为矩阵$B$是反对称的, 根据[反对称矩阵Pfaffian学习](https://yxli8023.github.io/2021/04/24/Pfaffian.html)中的内容, 可以知道$\text{Det}[B]=\text{Pf}[B]^2$, 则时间反演极化为
+
+$$P_T=\frac{1}{\pi i}\log[\frac{\sqrt{\text{Det}[B(\pi)]}}{\text{Pf}[B(\pi)]}\frac{\text{Pf}[B(0)]}{\text{Det}[B(0)]}]$$
+
+因为取对数的不确定性, $P_T$仅对2的余数有意义$(P_T\quad\text{mod}\quad 2)$, 也就是说对于一个规范变换, 只会改变$P_T$偶数的值. $P_T$的奇偶性则决定于在$k=0,\pi$处$\text{Pf}(B(k))$与$\sqrt{\text{Det}(B(k))}$处于相同的分支还是不同的分支.
+
+
+
