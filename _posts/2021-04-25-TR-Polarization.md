@@ -89,7 +89,7 @@ $$P^T=\frac{1}{2\pi}(\int_0^\pi dk A(k)-\int_{-\pi}^0dk A(k)+2i\text{log}[\frac{
 
 此时体系的时间反演极化不为零, 可以作为拓扑不变量与实际物理图像之间的联系来理解体系的拓扑性质.
 
-## Non-Abelian Berry Potentials at $k,-k$
+## 非阿贝尔贝利位相
 
 时间反演操作可以将$\rvert u_{k,\beta}\rangle$与另外一个动量为$-k$的简并态联系起来,如果系统同时存在反演对称性, 则在每个$k$点能带都是双重简并的
 
@@ -133,5 +133,26 @@ $$P_T=\frac{1}{\pi i}\log[\frac{\sqrt{\text{Det}[B(\pi)]}}{\text{Pf}[B(\pi)]}\fr
 
 因为取对数的不确定性, $P_T$仅对2的余数有意义$(P_T\quad\text{mod}\quad 2)$, 也就是说对于一个规范变换, 只会改变$P_T$偶数的值. $P_T$的奇偶性则决定于在$k=0,\pi$处$\text{Pf}(B(k))$与$\sqrt{\text{Det}(B(k))}$处于相同的分支还是不同的分支.
 
+## Wannier Center
+当系统存在时间反演的时候,占据的Wannier轨道的中心也会随着外部参数的变化而改变,相比较于Chern insulator,此时Wannier态是成对出现的,如果体系是$Z_2$非平庸的,那么在时间演化的过程中这一对Wannier center会彼此交换位置.
 
+![png](../assets/images/topology/Z21.png)
+
+如果时间反演极化在$t=0$和$t=T/2$的差为1, 则它们之间存在一个不匹配的性质, 此时一定会有奇数条边界态在$t=0$与$t=T/2$之间穿过费米能级,对应的拓扑不变量为
+
+$$P_T(T/2)-P_T(0)=P_T(k_y=\pi)-P_T(k_y)=0$$
+
+当系统维度是2维的时候,上式等于
+
+$$\Pi_{i=1}^4\frac{\sqrt{\text{Det}[B(\Lambda_i)]}}{\text{Pf}[B(\Lambda_i)]}$$
+
+此处的$\Lambda_i$是2D布里渊区中的时间反演不变动量点. 
+
+对于三维的体系
+
+$$Z_2=\Pi_{i=1}^8\frac{\sqrt{\text{Det}[B(\Lambda_i)]}}{\text{Pf}[B(\Lambda_i)]}$$
+
+$\Lambda_i$是3D布里渊区中的8个时间反演不变动量点.
+
+$$\Lambda_i=\{(0,0,0),(0,0,\pi),(0,\pi,0),(0,\pi,\pi),(\pi,0,0),(\pi,0,\pi),(\pi,\pi,0),(\pi,\pi,\pi)\}$$
 
