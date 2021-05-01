@@ -27,7 +27,7 @@ conda install -c conda-forge phonopy
 {:.warning}
 下面是我做自洽计算的VASP输入文件
 - INCAR
-```shell
+```python
 Global Parameters
 ISTART =  1            (Read existing wavefunction; if there)
 ISPIN =  2           (Spin polarised DFT)
