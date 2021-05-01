@@ -5,7 +5,6 @@ layout: article
 license: true
 toc: true
 key: a20210426
-cover: /assets/images/gnuplot/gnu2d-2.png 
 pageview: true
 aside:
     toc: true
