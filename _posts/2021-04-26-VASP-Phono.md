@@ -15,19 +15,21 @@ author: YuXuan
 show_author_profile: true
 ---
 这篇博客是我学习声子谱计算的一些笔记,因为通常在判断一个体系是否具有稳定性的时候,需要计算其声子谱,最近也在慢慢摸索第一性计算的相关工具和知识,就一起整理出来.
-<!--more-->
-# Phonopy 安装
+<! -more-->
+
+!  Phonopy 安装
 VASP的安装这里就不多说了,可以参考[VASP编译安装](https://yxli8023.github.io/2020/08/09/VASP-install.html)这篇博客中的内容,这里主要先整理如何安装[Phonopy](https://phonopy.github.io/phonopy/), 完全参考的是[官网](https://phonopy.github.io/phonopy/)上的教程,从官网上的安装教程来看,最好是先安装好[Ananconda](https://www.anaconda.com/),关于Ananconda的安装可以参考[做数值计算好用的软件及杂项整理](https://yxli8023.github.io/2020/09/16/introduction.html)这篇博客中的内容.在安装好了Ananconda之后,开始安装Phonopy
 ```shell
 conda install -c conda-forge phonopy
 ```
 我是在Linux服务器上安装的,所以在安装Ananconda与Phonopy时都是以root用户进行的,中间只会简单的进行库函数的更新与Phonopy的安装,过程耗时非常少,耐心等待几分钟即可.
-# 自洽
+
+!  自洽
 首先在计算声子谱的时候,要先保证完成了结构优化,因为我对结构优化还不是很熟悉,所以我在这里整理的只是如何正确的完整声子谱计算的整个流程,我是利用一个已知的结构,在自洽计算的结果上进行声子谱计算的.
 {:.warning}
 下面是我做自洽计算的VASP输入文件
 - INCAR
-```python
+```Fortran
 Global Parameters
 ISTART =  1            (Read existing wavefunction; if there)
 ISPIN =  2           (Spin polarised DFT)
@@ -38,17 +40,28 @@ PREC   =  Normal       (Precision level)
 LWAVE  = .TRUE.        (Write WAVECAR or not)
 LCHARG = .TRUE.        (Write CHGCAR or not)
 ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)
-#GGA = PE
-# LVTOT  = .TRUE.      (Write total electrostatic potential into LOCPOT or not)
-# LVHAR  = .TRUE.      (Write ionic + Hartree electrostatic potential into LOCPOT or not)
-# NELECT =             (No. of electrons: charged cells; be careful)
-# LPLANE = .TRUE.      (Real space distribution; supercells)
-# NPAR   = 4           (Max is no. nodes; don't set for hybrids)
-# NWRITE = 2           (Medium-level output)
-# KPAR   = 2           (Divides k-grid into separate groups)
-# NGX    = 500         (FFT grid mesh density for nice charge/potential plots)
-# NGY    = 500         (FFT grid mesh density for nice charge/potential plots)
-# NGZ    = 500         (FFT grid mesh density for nice charge/potential plots)
+
+! GGA = PE
+
+!  LVTOT  = .TRUE.      (Write total electrostatic potential into LOCPOT or not)
+
+!  LVHAR  = .TRUE.      (Write ionic + Hartree electrostatic potential into LOCPOT or not)
+
+!  NELECT =             (No. of electrons: charged cells; be careful)
+
+!  LPLANE = .TRUE.      (Real space distribution; supercells)
+
+!  NPAR   = 4           (Max is no. nodes; don't set for hybrids)
+
+!  NWRITE = 2           (Medium-level output)
+
+!  KPAR   = 2           (Divides k-grid into separate groups)
+
+!  NGX    = 500         (FFT grid mesh density for nice charge/potential plots)
+
+!  NGY    = 500         (FFT grid mesh density for nice charge/potential plots)
+
+!  NGZ    = 500         (FFT grid mesh density for nice charge/potential plots)
  
 Static Calculation
 ISMEAR =  0            (gaussian smearing method)
@@ -58,7 +71,8 @@ NEDOS  =  2001         (DOSCAR points)
 NELM   =  60           (Max electronic SCF steps)
 EDIFF  =  1E-08        (SCF energy convergence; in eV)
 NBANDS = 64
-#NBANDS = 128
+
+! NBANDS = 128
 LSORBIT    = .TRUE.    (Activate SOC)
 ```
 
