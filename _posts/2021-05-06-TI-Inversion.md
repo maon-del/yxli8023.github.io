@@ -16,8 +16,6 @@ article_header:
   background_image: false
 aside:
     toc: true
-sidebar:
-  nav: layouts
 sitemap: true
 mathjax: true
 author: YuXuan
