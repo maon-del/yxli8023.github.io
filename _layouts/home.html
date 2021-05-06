@@ -23,7 +23,10 @@ titles:
   fr-FR   : *FR
   fr-LU   : *FR
   # @end locale config
-show_title: false
+show_title: true
+header:
+  theme: dark
+  background: 'linear-gradient(135deg, rgb(34, 139, 87), rgb(139, 34, 139))'
 articles:
   data_source: paginator.posts
   article_type: BlogPosting
@@ -31,6 +34,8 @@ articles:
   show_excerpt: true
   show_readmore: true
   show_info: true
+  excerpt_type: html
+
 ---
 <div class="layout--home">
   {%- include paginator.html -%}
