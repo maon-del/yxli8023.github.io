@@ -21,6 +21,7 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
+![Dark Mode](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/blog/dark-mode.gif)
 这里整理一下当拓扑绝缘体存在时间反演对称之后,$\mathcal{Z}_2$拓扑不变量可以只通过在时间反演不变动量点$\Gamma_i$计算宇称,这极大的简化了$\mathcal{Z}_2$的计算,而且在材料计算中也有很重要的作用.
 <!--more-->
 
