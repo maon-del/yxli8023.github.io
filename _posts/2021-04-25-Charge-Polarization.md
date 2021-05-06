@@ -1,6 +1,6 @@
 ---
 title: 一维电荷极化理论
-tags: topology
+tags: Topology
 layout: article
 license: true
 toc: true

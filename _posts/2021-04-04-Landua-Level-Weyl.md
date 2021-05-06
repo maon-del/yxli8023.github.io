@@ -130,4 +130,6 @@ $$H(\mathbf{k})=\sqrt{2B}\left(\begin{array}{cc}-\frac{k_x}{\sqrt{2B}}&\sqrt{n}\
 
 1. [Quantum Oscillations of the Positive Longitudinal Magnetoconductivity: A Fingerprint for Identifying Weyl Semimetals](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.036601)
 
-2. Topological insulator and topological superconductor()
+2. Topological insulator and topological superconductor
+
+3.[Dirac Quantum Wells at Domain Walls in Antiferromagnetic Topological Insulators](https://arxiv.org/pdf/2104.00690.pdf)

@@ -1,6 +1,6 @@
 ---
 title: 时间反演极化
-tags: topology
+tags: Topology
 layout: article
 license: true
 toc: true

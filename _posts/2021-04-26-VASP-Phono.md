@@ -14,7 +14,7 @@ author: YuXuan
 show_author_profile: true
 ---
 这篇博客是我学习声子谱计算的一些笔记,因为通常在判断一个体系是否具有稳定性的时候,需要计算其声子谱,最近也在慢慢摸索第一性计算的相关工具和知识,就一起整理出来.
-<# -more-->
+<!--more-->
 
 #  Phonopy 安装
 VASP的安装这里就不多说了,可以参考[VASP编译安装](https://yxli8023.github.io/2020/08/09/VASP-install.html)这篇博客中的内容,这里主要先整理如何安装[Phonopy](https://phonopy.github.io/phonopy/), 完全参考的是[官网](https://phonopy.github.io/phonopy/)上的教程,从官网上的安装教程来看,最好是先安装好[Ananconda](https://www.anaconda.com/),关于Ananconda的安装可以参考[做数值计算好用的软件及杂项整理](https://yxli8023.github.io/2020/09/16/introduction.html)这篇博客中的内容.在安装好了Ananconda之后,开始安装Phonopy
