@@ -6,6 +6,11 @@ license: true
 toc: true
 key: a20210506
 pageview: true
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#123'
+  background_image: false
 aside:
     toc: true
 sitemap: true
