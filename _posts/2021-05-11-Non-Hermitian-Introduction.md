@@ -69,5 +69,7 @@ PPT使用Latex制作的,源代码可以[点击这里下载](/assets/pdf/Non-Herm
 
 # 参考
 1.[Edge States and Topological Invariants of Non-Hermitian Systems](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.086803)
+
 2.[Non-Hermitian Chern Bands](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.136802)
+
 3.[Non-Hermitian Physics](https://www.tandfonline.com/doi/abs/10.1080/00018732.2021.1876991?journalCode=tadp20)
