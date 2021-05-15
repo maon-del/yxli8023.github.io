@@ -52,12 +52,12 @@ done
 ```
 
 - 完善版
+
 ```shell
 #!/bin/bash
 rm mes.dat
 while :
 do 
-	sleep  1 # 每10分钟进行一次监测
 	conut=$(ps -ef |grep "out" |grep -v "grep" |wc -l) # 从进程中查看out结尾的程序数目
 	echo ID_Number: $conut>>mes.dat  # 打印进程中out结尾的数量
 	current_time="`date +"%Y-%m-%d %H-%M-%S"`" #获取系统当前时间
@@ -74,6 +74,7 @@ do
 		# exit 0
 		echo -e "\n" >> mes.dat
 	fi
+	sleep  10m # 每10分钟进行一次监测
 done
 
 ```
