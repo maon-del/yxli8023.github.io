@@ -1,5 +1,5 @@
 ---
-title: Fortran 常用函数整理
+title: Fortran 常用函数及操作
 tags: Code Fortran 
 layout: article
 license: true
@@ -350,7 +350,7 @@ return
 end subroutine 
 ```
 
-# 文件数据格式化
+# 读取不明行数的文件
 ```fortran
     program main
     implicit none
@@ -386,4 +386,22 @@ end subroutine
 999 format(3f11.6)
     return
     end subroutine 
+```
+
+# 整数/浮点数转换为字符串
+```fortran
+    subroutine plot(m3)
+    ! 将能带图绘制到一起
+    use pub
+    character*20::str1,str2,str3,str4,str5,str6
+    integer m3
+    str1 = "half-ud"
+    write(str2,"(I2.2)")m3 将整数转换成字符串
+    str3 = ".gnu"
+    str4 = trim(str1)//trim(str2)//trim(str3)  ! trim()在拼接字符串的时候删除字符串中多余的空格
+    write(str5,'(f5.2)')dx ! 将一个小数转成字符串
+    write(*,*)str2
+    write(*,*)str5
+    return
+    end subroutine plot
 ```
