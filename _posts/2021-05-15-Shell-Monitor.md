@@ -1,6 +1,6 @@
 ---
 title: 监测程序运行的Shell脚本
-tags: Fortran Plot Code Shell
+tags: Code Shell
 layout: article
 license: true
 toc: true
@@ -27,7 +27,7 @@ show_author_profile: true
 <!--more-->
 在前面[Fortran + Gnu 批量计算](https://yxli8023.github.io/2021/05/15/Fortran-Gnu.html)这篇博客中,虽然可以批量的进行fortran程序的编译和执行,在程序执行完成之后再批量的进行gnuplot绘图,这里的缺陷就是必须人为的取查看前面编译的fortran程序是否已经执行完毕,谁也不会准确的指导自己的程序何时会在服务器上执行完毕,那么就可以通过一个脚本让服务器自行监测程序的运行,当fortran程序执行完毕之后,接下来就可以让服务器再自行启动gnuplot的绘图程序.
 
-# 代码
+# 程序监测
 这篇博客的脚本其实也就是对[Fortran + Gnu 批量计算](https://yxli8023.github.io/2021/05/15/Fortran-Gnu.html)这篇博客的一个缺陷补充,但是监测程序修改一下同样可以监测别的东西,所以就单独整理了出来.
 ```shell
 #!/bin/bash
@@ -49,7 +49,7 @@ do
 	fi
 done
 ```
-# 代码解释
+## 代码解释
 这里用了一个无限循环,每10分钟进行一次监测
 ```shell
 sleep  10m # 每10分钟进行一次监测
@@ -86,4 +86,17 @@ ps -ef | grep "out" | grep -v grep | awk '{print "ID:" $2 "   Time:" $7}'>>mes.d
 这里有一点需要注意,因为是在执行shell脚本,此时同样可以让这个脚本在后台自动执行,假设这个脚本名为**monitor.sh**,那么需要利用
 `nohup sh monitor.sh &`来提交任务,这样即使我们退出了终端,那么这个任务也会在后台自动执行.
 {:.warning}
+
+# 批量kill进程
+```shell
+#! /bin/bash
+com1=$(ps -u yxli|grep out|awk '{print $1}')
+#com1=$(ps -u yxli)
+for i in $com1
+do 
+	#echo $i
+	kill -9 $i
+done
+```
+从自己(yxli)的进程中(`ps -u yxli`)寻找`out`结尾的进程(`grep out`)并提取第一列的进程号(`awk '{print $1}'`),通过一个`for`循环遍历所有的进程号,然后强制杀死进程(`kill -9 $i`)
 
