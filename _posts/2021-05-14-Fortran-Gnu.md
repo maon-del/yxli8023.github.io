@@ -4,7 +4,7 @@ tags: Fortran Plot Code Shell
 layout: article
 license: true
 toc: true
-key: a20210515
+key: a20210514
 pageview: true
 header:
   theme: dark
@@ -677,4 +677,6 @@ getdir $fold
 其实这里还有一个小的缺陷,就是必须等到程序执行完毕之后才会去画图,这当然是必然的事情,程序不执行完毕,没有数据肯定不能绘图,但我们不知道程序何时会执行完毕,所以此时还是需要认为的等待程序执行结束后,才能运行批量绘图的这个脚本,我想可以进行升级,让服务器自动监测程序时候执行完毕,如果执行完毕就可以自动执行绘图的脚本,这样只需要服务器自行判断即可,我们需要的只是去做别的事情,然后再完成之后,去检查计算结果即可,节省时间,高效率才是搞科研的终极目标.
 {:.warning}
 
+上面提到的小缺陷我已经在[监测程序运行的Shell脚本](https://yxli8023.github.io/2021/05/15/Shell-Monitor.html)这篇博客中给出了解决方案.
+{:.success}
 
