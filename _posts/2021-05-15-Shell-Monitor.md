@@ -29,6 +29,7 @@ show_author_profile: true
 
 # 程序监测
 这篇博客的脚本其实也就是对[Fortran + Gnu 批量计算](https://yxli8023.github.io/2021/05/15/Fortran-Gnu.html)这篇博客的一个缺陷补充,但是监测程序修改一下同样可以监测别的东西,所以就单独整理了出来.
+- 初级版
 ```shell
 #!/bin/bash
 while :
@@ -48,6 +49,33 @@ do
 		# exit 0
 	fi
 done
+```
+
+- 完善版
+```shell
+#!/bin/bash
+rm mes.dat
+while :
+do 
+	sleep  1 # 每10分钟进行一次监测
+	conut=$(ps -ef |grep "out" |grep -v "grep" |wc -l) # 从进程中查看out结尾的程序数目
+	echo ID_Number: $conut>>mes.dat  # 打印进程中out结尾的数量
+	current_time="`date +"%Y-%m-%d %H-%M-%S"`" #获取系统当前时间
+	if [ $conut -eq 0 ];then
+		echo current_time:$current_time >> mes.dat
+		#echo Not running  >>  mes.dat # 如果out结尾进程数量不为零,则执行这一项
+		sh auto-plot-fold.sh &
+		exit 0
+	else
+		echo current_time:$current_time >> mes.dat
+		echo $conut processing is running >>  mes.dat   # 如果out结尾进程数量为零,则执行这一项	
+		#ps -ef|grep "monitor.sh">>mes.dat	
+		ps -ef | grep "out" | grep -v grep | awk '{print "ID:" $2 "   Time used:" $7}'>>mes.dat
+		# exit 0
+		echo -e "\n" >> mes.dat
+	fi
+done
+
 ```
 ## 代码解释
 这里用了一个无限循环,每10分钟进行一次监测
