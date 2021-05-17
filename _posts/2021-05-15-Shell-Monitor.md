@@ -116,16 +116,44 @@ ps -ef | grep "out" | grep -v grep | awk '{print "ID:" $2 "   Time:" $7}'>>mes.d
 `nohup sh monitor.sh &`来提交任务,这样即使我们退出了终端,那么这个任务也会在后台自动执行.
 {:.warning}
 
-# 批量kill进程
+# 升级版
 ```shell
-#! /bin/bash
-com1=$(ps -u yxli|grep out|awk '{print $1}')
-#com1=$(ps -u yxli)
-for i in $com1
+#!/bin/sh  
+#============ get the file name ===========  
+rm *.gnu *.png no* *.dat *.out 1>/dev/null 2>/dev/null mes.dat &
+Folder_A=$(pwd) 
+for file_a in ${Folder_A}/*.f90
 do 
-	#echo $i
-	kill -9 $i
+	temp_file=`basename $file_a  .f90` 
+	ifort -mkl -O3 -CB $file_a -o $temp_file.out 
+    nohup ./$temp_file.out 1>/dev/null 2>/dev/null &
+done
+
+while :
+do 
+	sleep  10 # 每10秒钟进行一次监测
+	conut=$(ps -ef |grep "out" |grep -v "grep" |wc -l) # 从进程中查看out结尾的程序数目
+	echo ID_Number: $conut>>mes.dat  # 打印进程中out结尾的数量
+	current_time="`date +"%Y-%m-%d %H-%M-%S"`"
+	if [ $conut -eq 0 ];then
+		echo current_time:$current_time >> mes.dat
+		#echo Not running  >>  mes.dat # 如果out结尾进程数量不为零,则执行这一项
+		# 程序执行完毕开始绘图
+		Folder_A=$(pwd) 
+		for file_a in ${Folder_A}/*.gnu
+		do 
+			gnuplot $file_a  1>/dev/null 2>/dev/null &
+		done
+		exit 0 # 绘图结束后退出死循环
+	else
+		echo current_time:$current_time >> mes.dat
+		echo $conut processing is running >>  mes.dat   # 如果out结尾进程数量为零,则执行这一项	
+		#ps -ef|grep "monitor.sh">>mes.dat	
+		ps -ef | grep "out" | grep -v grep | awk '{print "ID:" $2 "   Time used:" $7}'>>mes.dat
+		# exit 0
+		echo -e "\n" >> mes.dat
+	fi
 done
 ```
-从自己(yxli)的进程中(`ps -u yxli`)寻找`out`结尾的进程(`grep out`)并提取第一列的进程号(`awk '{print $1}'`),通过一个`for`循环遍历所有的进程号,然后强制杀死进程(`kill -9 $i`)
+这里把绘图与程序编译执行放在了一起,如果在编写fortran程序的时候,同时对相应的数据写出对应的gnuplot绘图代码,那么可以利用这个程序将程序编译执行和作图一起完成,这样可以节省很多时间.
 
