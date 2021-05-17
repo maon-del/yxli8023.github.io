@@ -56,3 +56,6 @@ print(pa.cpu_count())
 在这个程序中,开启的进程数直接就是计算机上cpu的总数,如果故意将jit加速的装饰去掉,可以直接看到所有正在执行的进程
 
 ![png](/assets/images/research/pa1.png)
+
+这里去掉闭包装饰器`@jit`是因为加上它之后,python在计算循环的时候会非常快,从而看不到上面的多进程执行的过程,这里为了展示一下并行的效果,所以注释掉该语句,关于python循环加速可以参考[Julia,Python,Fortran,Mathematica循环计算速度比较](https://yxli8023.github.io/2020/09/14/Loop-speed.html)这篇博客的内容.
+{:.success}

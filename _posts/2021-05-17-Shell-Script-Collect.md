@@ -95,3 +95,81 @@ alias v5s='nohup mpirun -np 10 v5_ncl&'
 alias ll='ls --block-size=M -l -t'
 ```
 以`M`为单位显示文件大小.
+
+# 批量编译并执行程序
+```shell
+#!/bin/sh  
+#============ get the file name ===========  
+rm *.gnu *.png no* *.dat *.out 1>/dev/null 2>/dev/null &
+Folder_A=$(pwd) 
+for file_a in ${Folder_A}/*.f90
+do 
+	temp_file=`basename $file_a  .f90` 
+	ifort -mkl -O3 -CB $file_a -o $temp_file.out 
+    nohup ./$temp_file.out 1>/dev/null 2>/dev/null &
+done
+```
+将这个脚本文件放在放置在和需要编译的fortran文件相同的文件夹中,这个脚本会自动搜寻当前文件夹中所有后缀名为.f90的文件,然后编译并执行,这里采用的ifort进行编译的,而且因为对角化用到了mkl库中的cheevd这个函数,所有编译选项有-mkl这个参数.
+{:,success}
+
+上面的代码可以参考[Fortran + Gnuplot 批量数据输出绘图](https://yxli8023.github.io/2021/05/14/Fortran-Gnu.html)这篇博客的内容.
+
+# 批量执行gnuplot绘图
+```shell
+#!/bin/sh  
+#============ get the file name ===========  
+Folder_A=$(pwd) 
+for file_a in ${Folder_A}/*.gnu
+do 
+	gnuplot $file_a  
+done
+```
+当文件夹中有很多gnuplot绘图文件的时候,将前一节的代码进行微改就可以得到批量执行绘图的脚本.
+
+# 递归文件夹编译执行Fortran
+```shell
+#!/bin/bash 
+# 递归搜寻文件夹下面所有的.f90或者.f后缀结尾的文件,并利用ifort编译该文件,然后执行
+function getdir(){
+    for element in `ls $1`
+      do
+		    out="out"
+        dir_or_file=$1"/"$element
+    if [ -d $dir_or_file ]
+      then
+        getdir $dir_or_file
+      else  # 下面的全是文件
+		rm *dat *gnui 1>/dev/null 2>/dev/null
+	  	if [ "${dir_or_file##*.}"x = "f90"x ]||[ "${dir_or_file##*.}"x = "f"x ];then	# 筛选处特定后缀的文件
+    		dir_name=`dirname $dir_or_file` # 读取目录
+			file_name=`basename $dir_or_file .f90` # 读取以f90结尾的文件名
+			out_file_name="$dir_name/$file_name"  # 定义编号成功的文件名称
+			ifort -mkl $dir_or_file -o $out_file_name.$out  # 开始编译fortran文件,编译后文件名以out结尾
+			dir1=`dirname $out_file_name`
+			#echo $dir1
+			cd $dir1  # 切换到具体的文件夹
+			./$file_name.$out 1>mes 2>bad &  # 执行该文件夹下面编译好的文件
+			# ./$out_file_name.out 1>mes 2>bad &
+			rm $out_file_name.$out
+		fi
+        #temp_file=`basename $dir_or_file  .f90` #将文件名后缀删除
+        #ifort -mkl $dir_or_file -o $temp_file.out  # 编译后文件名以out结尾
+        #echo $dir_or_file     # 这里的变量时完整的路径名
+    fi
+done
+}
+ 
+root_dir=`pwd`
+getdir $root_dir
+```
+前面的编译脚本只能在当前文件夹中由Fortran程序的时候运行,如果当前文件夹下面还有文件夹,其中又包含了Fortran程序,这个时候就需要递归的寻找所有的内容,然后进行编译,此时就需要用到上面的脚本.这里可以通过
+```shell
+ out="out"
+
+ ifort -mkl $dir_or_file -o $out_file_name.$out  # 开始编译fortran文件,编译后文件名以out结尾
+```
+这两个来边界的修改所有的编译后的可执行程序的名称,我这里采用的是用原来的文件名,将后缀名改为**.out**,即**filename.out**来作为Fortran编译之后的可执行文件名的名称,若想修改,仅以通过修改
+```shell
+out="out"
+```
+这一项就可以,也就是通过修改后缀名,可不是去直接修改整个名称,这样可以方便我们知道哪个可执行程序对应的Fortran源代码是哪一个文件.
