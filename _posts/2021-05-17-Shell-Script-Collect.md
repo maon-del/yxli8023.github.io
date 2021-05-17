@@ -1,5 +1,5 @@
 ---
-title: 整理边界的shell脚本及命令
+title: 整理便捷的shell脚本及命令
 tags: Code Shell
 layout: article
 license: true
