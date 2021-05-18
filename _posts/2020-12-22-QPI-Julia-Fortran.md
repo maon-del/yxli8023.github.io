@@ -1,6 +1,6 @@
 ---
 title: 准粒子(QPI)干涉计算
-tags:  Topology Julia Fortran
+tags:  Topology Julia Fortran Plot
 layout: article
 license: true
 toc: true
@@ -300,4 +300,61 @@ end
 
 # 总结
 从速度上来说确实这里Julia的优势是很明显的,因为这里开了16个线程同时计算,在相同的参数下计算,Julia很快就可以计算完成,而Fortran的话,估计要算很久,因为是单线程串行,所以速度是相当的慢,而且这里在计算的时候因为嵌套的循环比较多,这就导致这种写法下,Fortran的计算速度真的就是很慢了,所以在这里Julia是获胜了.最重要的是,利用julia进行并行多线程的时候,并不需要很复杂的东西,只需要掌握简单的知识就好了,它用到的额外的几个库,用很简单的命令增加库就可以,相比较与Fortran来说简直就是态方便了.
+
+# Julia + Gnuplot
+虽然Julia也可以绘图,但是使用起来始终没有Gnupltot那么方便,这里可以通过调整一下程序,让得到的数据结果可以方便的利用Gnuplot来绘图
+```julia
+file = "result"
+form = ".dat"
+filename = join([file,1,form])
+f1 = open(filename,"w")
+# code for plot
+#PyPlot.set_cmap("gray_r")
+#imsave(filename * ".png", -final)
+for qx in 1:N
+    for qy in 1:N
+	    writedlm(f1,[qx*pi/N qy*pi/N final[qx,qy]])
+    end
+    writedlm(f1," ")
+end
+close(f1)
+```
+经过这样的修改之后,首先`filename = join([file,1,form])`可以实现批量命名文件,只要修改其中的第二个参数就可以,在`for`循环中加入`writedlm(f1," ")`是为了让内层循环计算一次之后,数据之间加入一个空行,这是为了配合Gnuplot绘图.
+
+## gnuplot 密度图
+
+绘图模板如下
+```shell
+set encoding iso_8859_1
+#set terminal  postscript enhanced color
+#set output 'arc_r.eps'
+#set terminal pngcairo truecolor enhanced  font ",50" size 1920, 1680
+set terminal png truecolor enhanced font ",50" size 1920, 1680
+set output 'density.png'
+#set palette defined ( -10 "#194eff", 0 "white", 10 "red" )
+set palette defined ( -10 "blue", 0 "white", 10 "red" )
+#set palette rgbformulae 33,13,10
+unset ztics
+unset key
+set pm3d
+set border lw 6
+set size ratio -1
+set view map
+set xtics
+set ytics
+#set xlabel "K_1 (1/{\305})"
+set xlabel "k_x"
+#set ylabel "K_2 (1/{\305})"
+set ylabel "k_y"
+set ylabel offset 1, 0
+set colorbox
+set xrange [0:1]
+set yrange [0:1]
+set pm3d interpolate 4,4
+#splot 'wavenorm.dat' u 1:2:3 w pm3d
+#splot 'wavenorm.dat' u 1:2:3 w pm3d
+splot 'result1.dat' u 1:2:3 w pm3d
+```
+
+![png](/assets/images/Julia/density.png)
 
