@@ -87,6 +87,3 @@ plt.show()
 ```
 
 ![png](/assets/images/Mma/Remain-pic7.png)
-
-# 代码下载
-Mathematica绘制的代码,可以[点击这里下载](/assets/data/Remain.zip)
