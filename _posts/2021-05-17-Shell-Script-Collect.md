@@ -207,3 +207,25 @@ fold=`pwd`
 getdir $fold
 ```
 这个脚本是在递归编译执行fortran的基础上修改的,只是简单的替换了`gnuplot $dir_or_file & `这个执行命令,以及修改寻找`if [ "${dir_or_file##*.}"x = "gnu"x ];then`后缀名为`.gnu`的文件.
+
+# 批量创建文件并写入内容
+```shell
+for i in  5.2 5.3 5.4 5.5 5.6 5.7 5.8 ; do
+cat >POSCAR$i <<!
+cubic diamond
+   $i 
+ 0.0    0.5     0.5
+ 0.5    0.0     0.5
+ 0.5    0.5     0.0
+  2
+Direct
+ -0.125 -0.125 -0.125
+  0.125  0.125  0.125
+!
+echo "a = $i"
+
+done
+```
+这个脚本可以通过循环创建不同的POSCAR文件,而且每个文件中的第二行的内容都不同(`$i`会随着循环改变).代码第二行中的`<<!`表示下一次遇到感叹号`!`就是文件内容的截止位置.
+
+![png](/assets/images/shell/shell-file.png)

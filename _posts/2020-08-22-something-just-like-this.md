@@ -1,6 +1,6 @@
 ---
 title: Something just like this
-tags: Study 
+tags: Live 
 layout: article
 license: true
 toc: true
