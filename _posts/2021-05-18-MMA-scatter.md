@@ -1,6 +1,6 @@
 ---
 title: Mathamatica 绘制旋转的散点密度图
-tags: Plot Mathamatica
+tags: Plot Mathematica
 layout: article
 license: true
 toc: true

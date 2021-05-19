@@ -173,3 +173,37 @@ getdir $root_dir
 out="out"
 ```
 这一项就可以,也就是通过修改后缀名,可不是去直接修改整个名称,这样可以方便我们知道哪个可执行程序对应的Fortran源代码是哪一个文件.
+# 递归文件夹执行gnuplot绘图
+```shell
+#!/bin/bash 
+# 递归搜寻文件夹下面所有的.gnu后缀结尾的文件,并利用gnuplot执行该文件
+function getdir(){
+    for element in `ls $1`
+      do
+        dir_or_file=$1"/"$element
+    if [ -d $dir_or_file ]
+      then
+        getdir $dir_or_file
+      else  # 下面的全是文件
+	  	if [ "${dir_or_file##*.}"x = "gnu"x ];then	# 筛选处特定后缀的文件
+    		dir_name=`dirname $dir_or_file` # 读取目录
+			file_name=`basename $dir_or_file .gnu` # 读取以.gnu结尾的文件名
+			out_file_name="$dir_name/$file_name"  # 定义编号成功的文件名称
+			#ifort -mkl $dir_or_file -o $out_file_name.out  # 编译后文件名以out结尾
+			dir1=`dirname $out_file_name`
+			#echo $dir1
+			cd $dir1  # 切换到具体的文件夹
+			gnuplot $dir_or_file &  # 执行搜寻到的.gnu后缀的文件
+		fi
+        #temp_file=`basename $dir_or_file  .f90` #将文件名后缀删除
+        #ifort -mkl $dir_or_file -o $temp_file.out  # 编译后文件名以out结尾
+        #echo $dir_or_file     # 这里的变量时完整的路径名
+    fi
+done
+}
+ 
+# fold="/home/yxli/te"
+fold=`pwd`
+getdir $fold
+```
+这个脚本是在递归编译执行fortran的基础上修改的,只是简单的替换了`gnuplot $dir_or_file & `这个执行命令,以及修改寻找`if [ "${dir_or_file##*.}"x = "gnu"x ];then`后缀名为`.gnu`的文件.
