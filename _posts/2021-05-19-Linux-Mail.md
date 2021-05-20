@@ -207,6 +207,7 @@ if __name__ == "__main__":
 ```shell
 python3 filename.py "test"
 ```
-![png](../assets/images/shell/mail-pic.png)
+在`Python`中可以利用模块`os`实现和Linux下很多相同功能的操作,`os.getcwd()`就可以获取当前文件的路径.
+![png](/assets/images/shell/mail-pic.png)
 
 
