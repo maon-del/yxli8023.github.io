@@ -208,6 +208,10 @@ if __name__ == "__main__":
 python3 filename.py "test"
 ```
 在`Python`中可以利用模块`os`实现和Linux下很多相同功能的操作,`os.getcwd()`就可以获取当前文件的路径.
+
+最后的结果如下图所示,可以将图片修改成自己计算的结果,这样就可以直接通过邮件查看结果,不用再登录服务器去查看结果.
+
+
 ![png](/assets/images/shell/mail-pic.png)
 
 
