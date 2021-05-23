@@ -90,7 +90,7 @@ $$\pm\sqrt{m^2+{\bf k}^2}$$
 ## Chern 绝缘体
 以二维系统为例演示狄拉克理论的用法,二维情况下最小的Dirac模型为
 
-$$H({\bf {)=m\sigma_z+k_x\sigma_x+k_y\sigma_y\label{eq2}$$
+$$H({\bf })=m\sigma_z+k_x\sigma_x+k_y\sigma_y\label{eq2}$$
 
 三个Pauli矩阵外加一个单位矩阵,可以构成二维矩阵的完备基矢,所以此时无法找到另外的$2\times 2$的厄米矩阵同时与三个Pauli矩阵都反对易.当把两个(\ref{eq2})直和起来之后,$\tau_0\otimes H({\bf k})$,此时仍然无法加入满足要求的质量项.如果把质量符号相反的最小模型直和起来,$\tau_z\otimes H({\bf k})$,此时就可以加入形如$\tau_x\sigma_0$的额外质量项.实际上,我们将任意多个质量同号的Chern剧院提直和起来,都不能加入额外的质量项;而每一对质量相反的Chern绝缘体之间总是可以加入额外的质量项,这索命无对称性的二维系统具有$\mathcal{Z}$的拓扑分量,其中拓扑不平庸的态统称为Chern绝缘体.
 
