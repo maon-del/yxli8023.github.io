@@ -307,6 +307,7 @@ show_author_profile: true
 # 修改版
 总算在今天完成了自己的毕业答辩,论文撰写的时候就是利用了我上面的模板,但是在目录的地方还是有一些问题,比如章节编号应该使用**第一章 拓扑绝缘体**这样的形式才对,而上面的模板中会显示为**1 第一章 拓扑绝缘体**, 而且这里的`第一章`还是需要自己在论文写作的时候自行加入,这里对模板中的这部分内容进行修改,可以正确显示章节编号,而且能让`Latex`自己对章节进行识别并显示**第几章**,就不需要自己写文章的时候手动的进行修改.
 - **包引用**
+
 ```latex
 %\usepackage[top=30mm,bottom=25mm,left=25mm,right=25mm]{geometry}%页面布局
 \usepackage[top=2cm,bottom=3cm,left=3cm,right=3cm,includehead,includefoot]{geometry} %文档排版结构设置
@@ -338,6 +339,7 @@ show_author_profile: true
 \usepackage{titlesec} % 章节编号及内容修改
 ```
 - **具体设置**
+
 ```latex
 %\linespread{1.6}%行间距设置
 %\numberwithin{equation}{section}%公式按照章节标号(数字章节标号时使用)
@@ -402,20 +404,23 @@ show_author_profile: true
 %=========================================
 % 主题章节显示修改
 \titleformat{\section}[block]{\zihao{-3}\centering\songti\bf}{第\thesection 章}{1em}{}
-
 \titleformat{\subsection}[block]{\zihao{-3}\songti\bf}{\arabic{section}.\arabic{subsection}}{1em}{}
 ```
+
 主要修改为
 ```latex
 \titleformat{\section}[block]{\zihao{-3}\centering\songti\bf}{第\thesection 章}{1em}{}
 ```
+
 可以在对每个`\section{拓扑绝缘体}`居中显示`第X章 拓扑绝缘体`,这个章节的编号是第几次使用`\section`这个命令.
 
 对目录的调整为
+
 ```latex
 \titlecontents{section}[0em]{\zihao{-3}\bf}{第\thecontentslabel 章$\quad$}{}{\titlerule*[5pt]{$\cdot$}\contentspage}
 %[0em]调节目录中章节标号与左边距的距离
 ```
+
 这个命令会对目录的section进行调整,左对齐开始显示,并自动根据章节进行编号.下面展示一下修改后的结果
 
 ![png](/assets/images/latex/mulu1.png)
@@ -423,6 +428,7 @@ show_author_profile: true
 ![png](/assets/images/latex/mulu2.png)
 
 上面的设置中还有一些其他参数可以调整,比如想调整目录中,左对齐的间距
+
 ```latex
 \titlecontents{section}[0em]
 ```
