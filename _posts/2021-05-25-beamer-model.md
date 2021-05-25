@@ -4,7 +4,7 @@ tags: Study
 layout: article
 license: true
 toc: true
-key: a20210130
+key: a20210525
 pageview: true
 header:
   theme: dark
@@ -50,7 +50,15 @@ show_author_profile: true
 
 ![png](/assets/images/latex/beamer_Page10.png)
 
+# 加时钟
+在用这个PPT做毕业答辩的时候,因为有时间要求,所以就想在里面增加一个时钟,这样可以让自己在答辩的时候知道时间,不会因为超时每老师嫌弃.
+```latex
+\usepackage[font=TimesI,timeinterval=1]{tdclock} % 时钟
+\date[\initclock\factorclockfont{2.0}\tdtime]{\large 5月25日,2021年} % 显示当前时间
+```
+增加一个宏包`tdclock`,之后在`\date`处修改一下即可.
+
+**如果使用了这个模板,祝大家答辩顺利.**
+
 # 下载
 所有的源代码可以[点击这里下载](/assets/pdf/beamer-model.zip)
-
-

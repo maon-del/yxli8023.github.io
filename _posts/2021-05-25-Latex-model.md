@@ -4,7 +4,7 @@ tags: Study Latex
 layout: article
 license: true
 toc: true
-key: a20210125
+key: a20210525
 pageview: true
 header:
   theme: dark
@@ -304,6 +304,129 @@ show_author_profile: true
 
 **这里致谢一下谢文欣同学,这个事情是他想搞的,我在他提供的一个Latex文件的基础上完成了对整体样式的调整,感谢他在我更改这个模板中提出的问题和建议.**
 
+# 修改版
+总算在今天完成了自己的毕业答辩,论文撰写的时候就是利用了我上面的模板,但是在目录的地方还是有一些问题,比如章节编号应该使用**第一章 拓扑绝缘体**这样的形式才对,而上面的模板中会显示为**1 第一章 拓扑绝缘体**, 而且这里的`第一章`还是需要自己在论文写作的时候自行加入,这里对模板中的这部分内容进行修改,可以正确显示章节编号,而且能让`Latex`自己对章节进行识别并显示**第几章**,就不需要自己写文章的时候手动的进行修改.
+- **包引用**
+```latex
+%\usepackage[top=30mm,bottom=25mm,left=25mm,right=25mm]{geometry}%页面布局
+\usepackage[top=2cm,bottom=3cm,left=3cm,right=3cm,includehead,includefoot]{geometry} %文档排版结构设置
+\usepackage{graphicx}%图片载入
+%\usepackage[UTF8]{ctex}%显示中文
+\usepackage{float}%图片浮动环境，类似于word中的文字浮动和图片的关系
+\usepackage{amsmath}%数学环境
+%\usepackage{epstopdf}% eps格式图片使用宏包
+\usepackage{pdfpages}% 直接插入pdf的宏包
+\usepackage{ulem}
+%\usepackage{url}%超链接
+%\usepackage{identfirst}
+\usepackage{setspace}%行间距设置宏包
+%\usepackage{marginnote}% 边注宏包
+%\usepackage{subfigure}
+%\usepackage{subfig}
+%\usepackage{diagbox}
+%\usepackage{appendix}%增加附录
+\usepackage{fancyhdr}% 设置页眉和页脚宏包
+%\usepackage{xcolor}% 边框设置宏包
+%\usepackage{listings}% 边框样式设置
+\usepackage{titlesec}% 标题与段落间距
+\usepackage{titletoc} % 目录设置
+\usepackage{xeCJK} %字体设置
+%\usepackage[numbers,compress]{natbib} % 文献引用设置
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue]{hyperref}  % 公式,文献引用设置超链接
+\usepackage{cite} % 参考文献引用设置
+\usepackage{zhnumber} % change section number to chinese
+\usepackage{titlesec} % 章节编号及内容修改
+```
+- **具体设置**
+```latex
+%\linespread{1.6}%行间距设置
+%\numberwithin{equation}{section}%公式按照章节标号(数字章节标号时使用)
+
+\renewcommand\theequation{\arabic{section}-\arabic{equation}}%重新定义公式编号,公式按章节标号
+
+\renewcommand\thefigure{\arabic{section}.\arabic{figure}}%图片按章节标号
+\makeatletter
+%\@addtoreset{figure}{section}
+\renewcommand{\figurename}{图}               % 对图表中的Fig进行中文翻译变为图
+\renewcommand{\contentsname}{ \zihao{3}\bf 目$\qquad$录}           % 对Contents进行汉化为目录
+\renewcommand\listfigurename{插\ 图\ 目\ 录} % 对List of Figures进行汉化为插图目录
+\renewcommand\listtablename{表\ 格\ 目\ 录}  % 对List of Tables进行汉化表格目录
+\setcounter{tocdepth}{2}%目录章节深度设置(2表示只显示到\subsection)
+
+%\setlength{\parskip}{0.5\baselineskip}% 设置空行换行后，上下两段文字间距
+%\titlespacing*{section}{0pt}{9pt}{0pt}% 设置标题与段落间距
+%============================= 目录设置 
+% 目录中Chapter的显示设置
+\titlecontents{chapter}[1.5em]{\zihao{3}\bf}{\contentslabel{1.5em}}{\hspace*{-2em}}{\titlerule*[5pt]{$\cdot$}\contentspage}
+
+%------------------------------
+%\titlecontents{section}[3.3em]{\zihao{-3}\bf}{\contentslabel{1.8em}}{\hspace*{-2.3em}}{\titlerule*[5pt]{$\cdot$}\contentspage}
+% 章节目录间距等设置
+\titlecontents{section}[0em]{\zihao{-3}\bf}{第\thecontentslabel 章$\quad$}{}{\titlerule*[5pt]{$\cdot$}\contentspage}
+%[0em]调节目录中章节标号与左边距的距离
+%---------------------------------
+% 子章节目录间距等设置
+\titlecontents{subsection}[2em]{\zihao{4}\bf}{\thecontentslabel{$\quad$}}{}{\titlerule*[5pt]{$\cdot$}\contentspage}
+
+%==========================================================================
+\renewcommand{\baselinestretch}{1.5} %行间距1.5倍
+%===============================页眉页脚设置================================
+\fancypagestyle{plain}{
+%\fancyhead[RE]{\leftmark} % 在偶数页的右侧显示章名
+\fancyhf{}
+%\fancyhead[C]{\rightmark} %页眉居中显示章节名
+\fancyhead[C]{高温超导异质结中的旋转对称破缺和部分马约拉纳角态} %页眉居中设置论文标题
+\fancyfoot[C]{\zihao{5} 第\thepage 页}
+%\fancyhead[LO]{\rightmark} % 在奇数页的左侧显示小节名
+%\fancyhead[LE,RO]{~\thepage~} % 在偶数页的左侧，奇数页的右侧显示页码
+% 设置页脚：在每页的右下脚以斜体显示书名
+%\fancyfoot[RO,RE]{\it \text{右下角内容}} %右下角增加\text{}中的内容
+\renewcommand{\headrulewidth}{1.5pt} % 页眉与正文之间的水平线粗细
+\renewcommand{\footrulewidth}{1.5pt} % 页脚也正文之间的水平黑线
+%\renewcommand{\footrulewidth}{0pt}
+%\renewcommand\headrule{\hrule width \hsize height 2pt \kern 2pt \hrule width \hsize height 0.4pt}%页眉上双线
+}
+%=============== 全局字体设置 ===============
+\renewcommand{\songti}{\CJKfontspec{STSong}}% 华文宋体
+
+%===============================  引用上标设置 ===========
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+%\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} %之后的文献上标引用使用\upcite{}
+%\newcommand{\upcite}[1]{$^\cite{#1}$} %之后的文献上标引用使用\upcite{}
+%=============================
+%设置中文章节号
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand\thesection{\zhnum{section}}
+%=========================================
+% 主题章节显示修改
+\titleformat{\section}[block]{\zihao{-3}\centering\songti\bf}{第\thesection 章}{1em}{}
+
+\titleformat{\subsection}[block]{\zihao{-3}\songti\bf}{\arabic{section}.\arabic{subsection}}{1em}{}
+```
+主要修改为
+```latex
+\titleformat{\section}[block]{\zihao{-3}\centering\songti\bf}{第\thesection 章}{1em}{}
+```
+可以在对每个`\section{拓扑绝缘体}`居中显示`第X章 拓扑绝缘体`,这个章节的编号是第几次使用`\section`这个命令.
+
+对目录的调整为
+```latex
+\titlecontents{section}[0em]{\zihao{-3}\bf}{第\thecontentslabel 章$\quad$}{}{\titlerule*[5pt]{$\cdot$}\contentspage}
+%[0em]调节目录中章节标号与左边距的距离
+```
+这个命令会对目录的section进行调整,左对齐开始显示,并自动根据章节进行编号.下面展示一下修改后的结果
+
+![png](/assets/images/latex/mulu1.png)
+
+![png](/assets/images/latex/mulu2.png)
+
+上面的设置中还有一些其他参数可以调整,比如想调整目录中,左对齐的间距
+```latex
+\titlecontents{section}[0em]
+```
+可以通过修改第三个参数来调整,同样的subsection的设置也是完全相同的.
 
 
 
