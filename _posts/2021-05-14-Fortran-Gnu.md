@@ -680,3 +680,46 @@ getdir $fold
 上面提到的小缺陷我已经在[监测程序运行的Shell脚本](https://yxli8023.github.io/2021/05/15/Shell-Monitor.html)这篇博客中给出了解决方案.
 {:.success}
 
+## 小改动
+这里稍微修改了一下程序编译后的名称,干脆用数字表示了,防止因为原来的文件名太长,导致可执行文件名也很长,不方便查看.
+```shell
+#!/bin/bash 
+# 递归搜寻文件夹下面所有的.f90或者.f后缀结尾的文件,并利用ifort编译该文件,然后执行
+cnt=0  # 定义一个变量,来统计文件夹下面对应程序的个数
+function getdir(){
+    for element in `ls $1`
+      do
+		out="out"
+        dir_or_file=$1"/"$element
+    if [ -d $dir_or_file ]
+      then
+        getdir $dir_or_file
+      else  # 下面的全是文件
+		rm *dat *gnu *png 1>/dev/null 2>/dev/null
+	  	if [ "${dir_or_file##*.}"x = "f90"x ]||[ "${dir_or_file##*.}"x = "f"x ];then	# 筛选处特定后缀的文件
+			cnt=$[$cnt+1]
+    		dir_name=`dirname $dir_or_file` # 读取目录
+			file_name=`basename $dir_or_file .f90` # 读取以f90结尾的文件名
+			#out_file_name="$dir_name/$file_name"  # 定义编号成功的文件名称
+			out_file_name="$dir_name/$cnt"  # 定义编号成功的文件名称
+			ifort -mkl $dir_or_file -o $out_file_name.$out  # 开始编译fortran文件,编译后文件名以out结尾,以数字命名
+			dir1=`dirname $out_file_name`
+			#echo $out_file_name.$out
+			#echo $dir1
+			cd $dir1  # 切换到具体的文件夹,是为了在具体的文件夹中,运行编译好的可执行文件
+			#echo $cnt.$out
+			./$cnt.$out 1>/dev/null 2>/dev/null &  # 执行该文件夹下面编译好的文件
+			#rm $out_file_name.$out
+		fi
+        #temp_file=`basename $dir_or_file  .f90` #将文件名后缀删除
+        #ifort -mkl $dir_or_file -o $temp_file.out  # 编译后文件名以out结尾
+        #echo $dir_or_file     # 这里的变量时完整的路径名
+    fi
+done
+}
+ 
+root_dir=`pwd`
+getdir $root_dir
+
+```
+
