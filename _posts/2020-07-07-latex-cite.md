@@ -71,7 +71,7 @@ Eprint = {arXiv:1903.01144},
 
 最近在整理文章的补充材料，正好遇到了要修改公式编号的问题。通常正文中的公式编号都是按照公式的顺序号来的，第几个公式就是第几号(**我这里是以revtex4为模板说的，当然你也可以让公式编号按照章节走，这是写毕业论文的格式**)，但是如果你加**\appendix**，那么附录中每一节(section)的公式编号会有个大写字母来表示(A1,B1，C1等等)，但是到了补充材料中，通常看到公式都是以S为开头，之后就是公式的顺序编号了，所以这里可以人为的修改这个公式编号，来满足需求，Latex真的是太方便了。
 
-```late
+```latex
 \renewcommand{\theequation}{S\arabic{equation}} % This line ads "S" in front of your equation numbering.
 ```
 
