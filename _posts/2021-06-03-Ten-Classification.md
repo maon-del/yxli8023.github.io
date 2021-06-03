@@ -1,5 +1,5 @@
 ---
-title: 拓扑10重分类表笔记.....
+title: 拓扑10重分类表笔记
 tags: Topology
 layout: article
 license: true
@@ -429,13 +429,13 @@ $$\nu[q]=\frac{1}{2}\frac{m}{\rvert m\rvert}$$
 
 通常体态波函数的非平庸拓扑性质总是会存在无能隙的边界态,当$z$方向存在一个质量变化项
 
-$m(z)\rightarrow\left\{\begin{array}{c}+m,\qquad z\rightarrow+\infty\\-m,\qquad z\rightarrow-\infty\end{array}\right.$
+$m(z)\rightarrow\left\{ \begin{array}{c}+m,\qquad z\rightarrow+\infty\\ -m,\qquad z\rightarrow-\infty\end{array}\right.$
 
 来研究局域在边界$z=0$上2D Dirac费米子解.对class AIII 的3D Dirac哈密顿量$\mathcal{H}=-i\alpha_\mu\partial_\mu-i\beta\gamma^5m(z)$
 
 能量为$E(k_\perp)$的解为
 
-$\Psi(z)=\left(\begin{array}{c}0\\a(k_\perp)\\b(k_\perp)\\0\end{array}\right)\exp[-\int^zdz^{'}m(z^{'})]$
+$\Psi(z)=\left(\begin{array}{c}0\\ a(k_\perp)\\ b(k_\perp)\\ 0\end{array}\right)\exp[-\int^zdz^{'}m(z^{'})]$
 
 这里$k_\perp=(k_x,k_y),x_\perp=(x,y)$分别表示动量和位置坐标,系数$a(k_\perp),b(k_\perp)$满足方程
 
@@ -467,7 +467,7 @@ $$\mathcal{H}=-i\partial_\mu\sigma_\mu+A_\mu\sigma_\mu,\quad\mu=x,y$$
 
 八分量3D Dirac 哈密顿量为
 
-$\mathcal{H}=\left(\begin{array}{cc}0&D\\D^\dagger&0\end{array}\right),\quad D=i\sigma_y\beta(k_\mu\alpha_\mu-im\gamma^5)$
+$\mathcal{H}=\left(\begin{array}{cc}0&D\\ D^\dagger&0\end{array}\right),\quad D=i\sigma_y\beta(k_\mu\alpha_\mu-im\gamma^5)$
 
 是Class CI的一员,因为满足$D^T(k)=D(-k)$,能谱为$E(k)=\pm\sqrt{k^2+m^2}=\pm\lambda$,每个本征值都是4重简并的.
 
