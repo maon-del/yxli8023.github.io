@@ -339,15 +339,188 @@ $$\nu[q]=\int\frac{d^3k}{24\pi^2}\epsilon^{\mu\nu\rho}\text{Tr}[(q^{-1}\partial_
 
 # 3D Dirac Hamintonian
 
+通过对3D哈密顿量的研究,计算(\ref{v})中所表示的winding number来确定系统的拓扑性质,并且可以通过哈密顿量计算其对应的边界态.
 
+## 3D four-component Dirac hamiltonian
 
+一个(3+1)D的有质量Dirac哈密顿量表示为
 
+$$\mathcal{H}=-\partial_\mu\alpha_\mu+m\beta,\quad\mu=x,y,z\label{dirac}$$
 
+这里$m\in\mathbb{R}$,标准的$\Gamma$矩阵为
 
+$$\alpha_\mu=\tau_x\sigma_\mu=\left(\begin{array}{cc}0&\sigma_\mu\\\sigma_\mu&0\end{array}\right),\quad\beta=\tau_z=\left(\begin{array}{cc}1&0\\0&-1\end{array}\right),\quad\gamma^5=\tau_x=\left(\begin{array}{cc}0&1\\1&0\end{array}\right),\quad\mu=x,y,z$$
+
+在动量空间中哈密顿量表示为
+
+$$\mathcal{H}=\alpha_\mu k_\mu+m\beta=\left(\begin{array}{cc}m&k\cdot\sigma\\ k\cdot\sigma&-m\end{array}\right)\label{dirac2}$$
+
+其能谱为$E(k)=\pm\sqrt{k^2+m^2}:=\pm\lambda(k)$
+
+此时并没有明确哈密顿量的对称性,(\ref{dirac})可以实现class AII, AIII,DIII拓扑绝缘体.
+
+### Class AII
+
+class AII中的3D Dirac哈密顿量(\ref{dirac2})满足$i\sigma_y\mathcal{H}^*(k)(-i\sigma_y)=\mathcal{H}(-k)$,是满足TRS的半整数自旋的拓扑绝缘体.
+
+### Class DIII
+
+除了TRS, 当哈密顿量同样满足PHS$\tau_y\otimes\sigma_y\mathcal{H}^*\tau_y\otimes\sigma_y=-\mathcal{H}(-k)$,则3D Dirac哈密顿量(\ref{dirac})是class DIII中的一员,将(\ref{dirac2})进行幺正变换$\mathcal{H}\rightarrow\text{diag}(\sigma_0,-i\sigma_y)H\text{diag}(\sigma_0,+i\sigma_y)$变为
+
+$$\mathcal{H}(k)=\left(\begin{array}{cc}m&k\cdot\sigma(i\sigma_y)\\(-i\sigma_y)k\cdot\sigma&-m\end{array}\right)\label{d3}$$
+
+可以发现哈密顿量满足
+
+$$i\sigma_y\mathcal{H}^*(-i\sigma_y)=\mathcal{H}(-k),\qquad\tau_x\mathcal{H}\tau_x=-\mathcal{H}^*(-k)$$
+
+这个拓扑绝缘体哈密顿量(\ref{d3})描述超流$^3He $ B相的BW态BdG的费米子准粒子, 此时矢量${\bf d}$平行于动量${\bf d}_k\sim k$.
+
+### Class AIII
+
+3D Dirac 哈密顿量由于存在手性对称$\tau_y\mathcal{H}\tau_y=-\mathcal{H}$可以视为class AIII中的拓扑绝缘体,通过基矢旋转$\tau_y\rightarrow\tau_z$将(\ref{dirac})变为off-diagonal分块对角形式
+
+$$\mathcal{H}=-i\alpha_\mu\partial_\mu-i\beta\gamma^5m,\quad \mu=x,y,z$$
+
+在动量空间中
+
+$$\mathcal{H}(k)=\left(\begin{array}{cc}0&k\cdot\sigma-im\\k\cdot\sigma+im&0\end{array}\right)\label{d5}$$
+
+手性对称会存在$\beta\mathcal{H}(k)\beta=-\mathcal{H}(k)$
+
+## 投影子与winding number
+
+2D两分量的有质量Dirac哈密顿量为$\mathcal{H}^\text{2D}_\text{Dirac}(k_x,k_y)=k_x\sigma_x+k_y\sigma_y+m\sigma_z$是最简单的一个二维拓扑绝缘体的例子,其对应的Hall电导$\sigma_{xy}=\text{sgn}(m)/2(e^2/h)$,如果将$(k_x,k_y,m)$看做是一系列可以绝热变化的参数之后,2D Dirac对应的$2\times 2$的哈密顿量正可以描述Abelian几何位相.$4\times 4$的Dirac哈密顿量(\ref{dirac2})可以看做是$2\times 2$实例$\mathcal{H}^\text{2D}_\text{Dirac}(k_x,k_y)$的一个一般推广,这个体系会存在非平庸的Non-Abelia贝利位相.这里来考虑哈密顿量
+
+$$\mathcal{H}=\alpha_\mu k_\mu+m\beta=\left(\begin{array}{cc}m&k\cdot\sigma\\ k\cdot\sigma&-m\end{array}\right)$$
+
+的本征态,当$E(k)=-\lambda(k)$时
+
+$$\rvert u_1(k)\rangle=\frac{1}{\sqrt{2\lambda(\lambda+m)}}\left(\begin{array}{c}-k_{-}\\ k_z\\ 0\\\lambda+m\end{array}\right)$$
+
+$$\rvert u_2(k)\rangle=\frac{1}{\sqrt{2\lambda(\lambda+m)}}\left(\begin{array}{c}-k_{z}\\ -k_{+}\\ \lambda+m\\0\end{array}\right)$$
+
+当$E(k)=+\lambda(k)$时
+
+$$\rvert u_3(k)\rangle=\frac{1}{\sqrt{2\lambda(\lambda-m)}}\left(\begin{array}{c}k_{-}\\ -k_z\\ 0\\\lambda-m\end{array}\right)$$
+
+$$\rvert u_4(k)\rangle=\frac{1}{\sqrt{2\lambda(\lambda-m)}}\left(\begin{array}{c}k_z\\ k_+\\ \lambda-m\\0\end{array}\right)$$
+
+这里$k_\pm=k_x\pm ik_y$.如果$m>0$此时$\rvert u_{3,4}(k)\rangle$在$\lambda=m$时不是一个较好的定义.
+
+接下来对占据态求解$Q$矩阵(也就是投影子)
+
+$Q(k)=2P(k)-1=-\frac{1}{\lambda}(k_\mu\alpha_\mu+m\beta)$
+
+通过对手性操作进行轮换$\tau_y\rightarrow\tau_z$,可以求解class AIII(\ref{d5})哈密顿量对应的$q$矩阵
+
+$$q(k)=-\frac{1}{\lambda}(k_\mu\sigma_\mu-im)\label{q1}$$
+
+同样的,对于哈密顿量(\ref{d3}),其对应的投影子为
+
+$$q(k)=i\sigma_y(k_\mu\sigma_mu-im)/\lambda,\qquad q^T(-k)=a(k)$$
+
+通过winding number的计算公式(\ref{v})表示$q(k)$从$S^3$到$U(2)$的一个映射,可以计算(\ref{q1})的winding为
+
+$$\nu[q]=\frac{1}{2}\frac{m}{\rvert m\rvert}$$
+
+这里出现半整数$\frac{1}{2}$是利用连续模型描述时的普遍情况,因为用连续模型描述的时候,无穷远点是个奇点,此时的空间不是有界的,所以需要包括高能部分就会补充这种不足.
+
+## 边界Dirac费米子
+
+通常体态波函数的非平庸拓扑性质总是会存在无能隙的边界态,当$z$方向存在一个质量变化项
+
+$m(z)\rightarrow\left\{\begin{array}{c}+m,\qquad z\rightarrow+\infty\\-m,\qquad z\rightarrow-\infty\end{array}\right.$
+
+来研究局域在边界$z=0$上2D Dirac费米子解.对class AIII 的3D Dirac哈密顿量$\mathcal{H}=-i\alpha_\mu\partial_\mu-i\beta\gamma^5m(z)$
+
+能量为$E(k_\perp)$的解为
+
+$\Psi(z)=\left(\begin{array}{c}0\\a(k_\perp)\\b(k_\perp)\\0\end{array}\right)\exp[-\int^zdz^{'}m(z^{'})]$
+
+这里$k_\perp=(k_x,k_y),x_\perp=(x,y)$分别表示动量和位置坐标,系数$a(k_\perp),b(k_\perp)$满足方程
+
+$$\left(\begin{array}{c}a(k_\perp)\\b(k_\perp)\end{array}\right)=\frac{e^{ik_\perp\cdot x_\perp}}{\sqrt{2}}\left(\begin{array}{c}e^{i\cdot\text{arg}(k_\perp)}\\\pm 1\end{array}\right)$$
+
+能量$E(k_\perp)=\pm\sqrt{k_x^2+k_y^2}$,下面再来讨论一下这些边界态对杂质的稳定性
+
+- class AII and DIII
+
+单个表面Dirac费米子的无能隙性质是受到TRS保护的,打开能隙将会违反Kramer定理,对于class AII只有空间均匀的微扰与TRS相兼容的是个常熟势$V$
+
+$$\mathcal{H}=-i\partial_\mu\sigma_\mu+V,\quad\mu=x,y$$
+
+此时并不能打开能隙,而对于class DIII,基矢常熟势也将会被TRS所禁止.
+
+- Class AIII
+
+一个单个组分的2D Dirac费米子在class AIII中可以被静态均匀的矢量势微扰
+
+$$\mathcal{H}=-i\partial_\mu\sigma_\mu+A_\mu\sigma_\mu,\quad\mu=x,y$$
+
+矢量势仅仅会改变node的位置,并不会打开能隙.
+
+## 3D eight-component Dirac Hamiltonian
+
+对于Class CI,CII 并不能由四分量的(3+1)D Dirac哈密顿量组成且存在无能隙的边界态,这里考虑八分量的(3+1)D Dirac哈密顿量.
+
+### Class CI
+
+八分量3D Dirac 哈密顿量为
+
+$\mathcal{H}=\left(\begin{array}{cc}0&D\\D^\dagger&0\end{array}\right),\quad D=i\sigma_y\beta(k_\mu\alpha_\mu-im\gamma^5)$
+
+是Class CI的一员,因为满足$D^T(k)=D(-k)$,能谱为$E(k)=\pm\sqrt{k^2+m^2}=\pm\lambda$,每个本征值都是4重简并的.
+
+off-diagonal形式对应的投影子为
+
+$$Q(k)=2P(k)-1=-\frac{1}{\lambda}\mathcal{H}(k),\qquad q(k)=-\frac{1}{\lambda}i\sigma_y\beta(k_\mu\alpha_\mu-im\gamma^5)$$
+
+其对应的winding number可以被计算
+
+$$\nu[q]=\frac{1}{2}\frac{m}{\rvert m\rvert}\times 2$$
+
+当把3D Dirac绝缘体在研$z$方向2D表面上截止是,可以得到两分量的表面Dirac费米子
+
+$$\mathcal{H}=\left(\begin{array}{cc}0&d\\D^\dagger&0\end{array}\right),\qquad D=i\sigma_y(k_++A_x\sigma_x+A_y\sigma_y+A_z\sigma_z)$$
+
+这里已经包含了class CI允许的微扰$A_{x,y,z}\in\mathbb{C}$,可以检验$D^T(k)=D(-k)$.四分量无能隙Dirac 费米子可以面议任意三个复数值(六个实数)$A_{x,y,z}$.正如class AIII中的矢量势一样,$A_{x,y,z}$也仅仅是将Dirac节点的位置从(0,0)移动到$(k_x^0,k_y^0)$,这里的$(k_x^0,k_y^0)$满足方程
+
+$$(k_x^0)^2-(k_y^0)^2-\text{Re}A^2+\text{Im}A^2=0\qquad k_x^0k_y^0+(\text{Re}A\cdot\text{Im}A)=0$$
+
+### Class CII
+
+八分量3D Dirac哈密顿量
+
+$$\mathcal{H}=\left(\begin{array}{cc}0&D\\D^\dagger&0\end{array}\right),\quad D=k_\mu\alpha_\mu+m\beta=D^\dagger$$
+
+是class CII的一员,满足$i\sigma_y D^*(k)(-i\sigma_y)=D(-k)$,对应的能谱为$E(k)=\pm\sqrt{k^2+m^2}$,$Q,q$矩阵分别为
+
+$$Q(k)=2P(k)-1=-\frac{1}{\lambda}\mathcal{H}(\lambda),\quad q(k)=-\frac{1}{\lambda}(k_\mu\alpha_\mu+m\beta)$$
+
+与classCI的3D Dirac绝缘体相比,在class CII 的Dirac质量项为$m\beta$而不是手性的$im\gamma^5$,由于这个不同,class CII对应的3D Dirac哈密顿量的winding number为
+
+$$\nu[q]=0$$
+
+由于此时winding number等于0,沿$z$方向存在质量畴壁时,我们不能在class CII 的3D Dirac绝缘体中寻找到两组分的两维Dirac费米子.
+
+考虑2D表面上最一般的一个Dirac哈密顿量的形式
+
+$$\mathcal{H}=\left(\begin{array}{cc}0&D\\D^\dagger&0\end{array}\right),\quad D=\left(\begin{array}{cc}v_+&k_{-}+a\\k_+-\bar{a}&v^*_+\end{array}\right)=(k_x+ia)\sigma_x+(k_y+ia_y)\sigma_y+i\text{Im}v_+\sigma_z$$
+
+这里的微扰$a_{x,y}$和$v_+$是被class CII对称性允许的.这里可以发现这些表面Dirac费米子的无能隙性质在存在微扰时仍然是稳定的.考虑哈密顿量的行列式
+
+$$\text{det}(DD^\dagger)=(\rvert v_+\rvert^2-\rvert k_+\rvert^2+\rvert a\rvert^2)^2-(\bar{a}k_{-}-ak_{+})^2$$
+
+当
+
+$$\rvert k_+\rvert^2=\rvert v_+\rvert^2+\rvert a\rvert^2\qquad\text{and}\qquad(k_x,k_y)\perp(a_x,a_y)$$
+
+时行列式是消失的.这表明对于行列式总是可以找到一个波矢$(k_x,k_y)$其对应的能量本征值消失,从而不存在能隙.
 
 # 参考
 
 - 1.拓扑半金属的磁响应与拓扑绝缘体中的$d-2$为边界态(宋志达)
+- 2.[Classification of topological insulators and superconductors in three spatial dimensions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.78.195125)
 
 
 
