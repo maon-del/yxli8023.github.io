@@ -213,13 +213,55 @@ $$C[h(k,\theta)]=\int d\theta\frac{\partial p(\theta)}{\partial\theta},\quad p(\
 
 这里求和是对所有的占据态进行的.通常情况下两个不同的参数化$h(k,\theta),h^{'}(k,\theta)$会对应着不同的Chern数$C[h(k,\theta)]\neq C[h^{'}(k,\theta)]$,然而由对称限制(\ref{ha6})保证这两个不同的Chern数相差偶数$C[h(k,\theta)]-C[h^{'}(k,\theta)]=2n,n\in\mathbb{Z}$.
 
+接下来证明上面的结论,对$h(k,\theta)$的本征态$\rvert k,\theta;\alpha\rangle$对应的本征值$E_\alpha(k,\theta)$,利用(\ref{ha6})可得
 
+$$h(-k,2\pi-\theta)C\rvert k,\theta;\alpha\rangle^*=-E_\alpha(k)C\rvert k,\theta;\alpha\rangle^*$$
 
+$\rvert k,\theta;\alpha\rangle^*=\sum_\beta(\langle m,\beta\rvert k,\theta;\alpha\rangle^*)\rvert m,\beta\rangle,$这里$m,\beta$分别是未知空间格点和轨道索引.因此$C\rvert k,\theta;\alpha\rangle^*\equiv\rvert -k,2\pi-\theta;\bar{\alpha}\rangle$是$h(-k,2\pi-\theta)$的本征态,对应的本征值为$E_{\bar{\alpha}}(k,2\pi-\theta)=-E_\alpha(k,\theta)$.哈密顿量$h(k,\theta)$与$h(-k,2\pi-\theta)$的本征态是一一对应的,从而可以得到
 
+$$P(\theta)=\int\frac{dk}{2\pi}\sum_{E_\alpha(k)<0}(-i)\langle k,\theta;\alpha\rvert\partial_k\rvert k,\theta;\alpha\rangle=\int\frac{dk}{2\pi}\sum_{E_{\bar{\alpha}(-k)}>0}(-i)(\langle -k,2\pi-\theta;\bar{\alpha}\rvert)^*\cdot\partial_k\rvert -k,2\pi-\theta;\bar{\alpha}\rangle^*=-P(2\pi-\theta)\label{ha7}$$
 
+因此$P(\theta)\quad\text{mod}\quad1$是well defined,(\ref{ha7})表明$P(\theta)+P(2\pi-\theta)=0\quad\text{mod}\quad 1$.对于$\theta=0$或者$\theta=\pi$有$2\pi-\theta=0\quad\text{mod}\quad 2\pi$,从而得到$P(\theta)=0\quad or\quad1/2$.也就是说极化取值为$1$或者$1/2$对任何满足粒子空穴对称的绝缘体.**如果两个系统具有不同的极化P,在不破坏粒子空穴对称情况下,是不能通过绝热演化相互转换的,因为在绝热演化过程中P是个连续函数,当它不是0或者1/2时就破坏了粒子空穴对称.**这也就解释了为什么在存在粒子空穴对称的情况下系统是$\mathbb{Z}_2$分类的.有前面的定义可知极化$P(\theta)=\int dk a_k/2\pi$是规范依赖的,下面就来定义一个更加普遍的$\mathbb{Z}_2$表达式,它仅包含规范不变量$\partial P(\theta)/\partial\theta$和Chern数$C_1$.
 
+由对称性(\ref{ha7})可得
 
+$$\int_0^\pi dP(\theta)=\int_\pi^{2\pi}dP(\theta)\label{ha8}$$
 
+它是规范独立的,因为只包含了极化$P(\theta)$的变化.这个方程表明在闭合路径的前半部分与后半部分极化的变化都是相同的.考虑两个不同的参数化过程$h(k,\theta),h^{'}(k,\theta)$满足$h(k,0)=h^{'}(k,0)=h_1(k),h(k,\pi)=h^{'}(k,\pi)=h_2(k)$.这里$h(k,\theta),h^{'}(k,\theta)$对应的极化分别为$P(\theta),P^{'}(\theta)$,二者对应的Chern数之差为
+
+$$C[h]-C[h^{'}]=\int_0^{2\pi}d\theta(\frac{\partial P(\theta)}{\partial\theta}-\frac{\partial P^{'}(\theta)}{\partial\theta})$$
+
+定义新的差值$g_1(k,\theta),g_2(k,\theta)$
+
+$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in[0,\pi]\\h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right.\\g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in[0,\pi]\\h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right.$$
+
+这里$g_1(k,\theta)$与$g_2(k,\theta)$只是重新组合对两个路劲$h(k,\theta),h^{'}(k,\theta)$进行了组合,如下图所示
+
+![png](tpf4.png)
+
+从$g_1,g_2$的构建路径可以直接得到
+
+$C[g_1]=\int_0^\pi d\theta(\frac{\partial P(\theta)}{\partial \theta}-\frac{\partial P^{'}(\theta)}{\partial\theta})\\ C[g_2]=\int^{2\pi}_\pi d\theta(\frac{\partial P(\theta)}{\partial\theta}-\frac{\partial P^{'}(\theta)}{\partial\theta})$
+
+因此可以得到$C[h]-C[h^{'}]=C[g_1]+C[g_2]$,由(\ref{ha8})可以得到$C[g_1]=C[g_2]$,从而$C[h]-C[h^{'}]=2C[g_1]$.由于$C[g_1]\in\mathbb{Z}$我们可以得到$C[h]-C[h^{'}]$的取值是偶数.Chern数$C[h],C[h^{'}]$的不同是因为它们对应的路径之间存在奇异点,而且由于粒子空穴对称性的存在,这个奇异点的位置也是对称的.基于上面的讨论,可以定义一个相对Chern宇称
+
+$$N_1[h_1(k),h_2(k)]=(-1)^{C[h(k,\theta)]}$$
+
+它与$h(k,\theta)$的选取无关,只决定于哈密顿量$h_1(k),h_2(k)$.而且对于任意三个粒子空穴对称的哈密顿量$h_1(k),h_2(k),h_3(k)$总是满足
+
+$N_1[h_1(k),h_2(k)]N_1[h_2(k),h_3(k)]=N_1[h_1(k),h_3(k)]$
+
+由$N_1[h_1(k),h_2(k)]=1$在任意两个粒子空穴对称哈密顿量之间定义了一个等价关系,因此可以将所有满足粒子空穴对称的哈密顿量分成两类.定义一个真空态$h_0(k)\equiv h_0$,这里$h_0$是任意一个不依赖于动量$k$的矩阵且满足粒子空穴对称$C^\dagger h_0C=-h_0^T$,可以认为$h_0$描述的是一个没有hopping完全局域的系统,将它作为一个平庸的参考态可以得到$N_1[h_0(k),h_1(k)]\equiv N_1[h(k)]$作为哈密顿量$h(k)$的$\mathbb{Z}_2$拓扑不变量.所有满足$N_1[h_0(k),h(k)]=1$的哈密顿量$h(k)$都是$\mathbb{Z}_2$平庸的,满足$N_1[h_0(k),h(k)]=-1$的都是$\mathbb{Z}_2$非平庸的.
+
+对于一个$\mathbb{Z}_2$非平庸的哈密顿量$h_1(k)$可以定义一个差值$h(k,\theta)$满足$h(k,0)=h_0,h(k,\pi)=h_1(k)$,对应的Chern数为$C[h(k,\theta)]$为奇整数,如果研究一个一维开边界的系统$h(k,\theta)$,实空间中的紧束缚哈密顿量为
+
+$$h_{mn}(\theta)=\frac{1}{\sqrt{L}}\sum_ke^{ik(x_m-x_n)}h(k,\theta),\quad 1\leq m,n\leq L$$
+
+此时再$h(k,\theta)$的能隙中有一个束缚态,与非零的Chern数相关联.当Chern数$C[h(k,\theta)]=2n-1,n\in\mathbb{Z}$这里由一些值$\theta^L_s\in[0,2\pi),s=1,2,\cdots,2n-1$,此时哈密顿量$h_{mn}(\theta_s)$有零能的局域态在系统的左边界上,同样的有相同数目的零能态在有边界上其$\theta^R_s$与左端相同.
+
+![png](tpf5.png)
+
+由于再$h_{mn}(\theta)$与$h_{mn}(2\pi-\theta)$之间有粒子空穴对称性的存在,零能态总是成对出现在$\theta$与$2\pi-\theta$处.当Chern数是奇数是,一定有零能级出现在$\theta=0$和$\theta=\pi$.由于$\theta=0$是个平庸的绝缘体,对应着平带因此不存在终端态,局域的零能拓扑态出现在$\theta=\pi$处.总而言之,一个粒子空穴对称的$\mathbb{Z}_2$拓扑绝缘体在开边界的时候会存在一个零能的局域态.
 
 
 
