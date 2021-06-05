@@ -85,7 +85,7 @@ $$h({\bf k})=\sum_{a=1}^3[d_a({\bf k})\sigma_a+\epsilon({\bf k})\mathbb{1}]$$
 
 $$C_1=\frac{1}{2\pi}\int dk_x\int dk_y\hat{\bf d}\cdot\frac{\partial\hat{\bf d}}{\partial k_x}\times\frac{\partial\hat{\bf d}}{\partial k_y}$$
 
-![png](tpf1.png)
+![png](../assets/images/topology/tpf1.png)
 
 一个实际的物理模型为
 
@@ -117,7 +117,7 @@ $H=\sum_{k_y,x}[c^\dagger_{k_y}(x)\frac{\sigma_z-i\sigma_x}{2}c_{k_y}(x+1)+\text
 
 在经过这个变换之后就可以将原本的2D系统看做是一个$L_y$依赖的1D紧束缚模型链,$L_y$表示在$y$方向上的周期晶格数目.而哈密顿量$H_\text{1D}$的本征值可以在每个$k_y$下通过数值方式求解,如下图所示
 
-![png](tpf2.png)
+![png](../assets/images/topology/tpf2.png)
 
 可以发现此时有个很明显的边界态会穿过体能隙,并且分别位于$x=0,L_x$这两个边界上.而且每条边界态的手性(费米速度)也是不同的,从图中也可以看出费米速度$v=\partial E/\partial k$对于左边界态总是正的,而对于右边界态总是负的,霍尔效应可以通过Laughlin的规范讨论来进行理解.考虑一个沿着$y$方向的电场$E_y$,可以表示为
 
@@ -158,7 +158,7 @@ $G(\theta)=\frac{\partial}{\partial \theta}(\int\frac{dk_x}{2\pi}a_x(k_x,\theta)
 
 和量子Hall情况相似,电流响应将会导致电荷密度的响应,着可以通过电荷守恒条件来确定,当参数$\theta$同时具有时间和空间变化时$\theta(x,t)$,响应方程(\ref{h5})仍然适用,从连续性方程可得到
 
-$$\frac{\partial\rho}{\partial t}=-\frac{\partial J_x}{\partial x}=-\frac{\partial^2P(\theta)}{\partial x\partial t}\rightarrow\rho=-\frac{\partial P(\theta)}{\partial x}$$
+$$\frac{\partial\rho}{\partial t}=-\frac{\partial J_x}{\partial x}=-\frac{\partial^2P(\theta)}{\partial x\partial t}\rightarrow\rho=-\frac{\partial P(\theta)}{\partial x}\label{ha8}$$
 
 这里电荷密度$\rho$是基于背景电荷而言.此时密度与电流响应可以写为
 
@@ -182,7 +182,7 @@ $$h(k,\theta)=\sin k\sigma_x+(\cos k-1)\sigma_z+m(\sin\theta\sigma_y+\cos\theta\
 
 在$m<<1$的极限下,将哈密顿量展开成连续模型$h(k,\theta)\simeq k\sigma_x+m(\sin\theta\sigma_y+\cos\theta\sigma_z)$,着是一个连续的(1+1)D Dirac模型,有一个实质量$m\cos\theta$和一个虚质量$m\sin\theta$,根据前面的讨论,此时极化$\int dk_xa_x/2$可以由矢量$\mathbf{d}(k)=(\sin k,m\sin\theta,m\cos\theta+\cos k-1)$所张开的立体角来决定,如下图所示
 
-![png](tpf3.png)
+![png](../assets/images/topology/tpf3.png)
 
 在$m<<1$的即现在,可以发现张开的立体角$\Omega(\theta)=2\pi$,因此极化$P(\theta)\simeq\theta/2\pi$,响应电流为
 
@@ -237,7 +237,7 @@ $$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in[0,\pi]\\h^{'}(
 
 这里$g_1(k,\theta)$与$g_2(k,\theta)$只是重新组合对两个路劲$h(k,\theta),h^{'}(k,\theta)$进行了组合,如下图所示
 
-![png](tpf4.png)
+![png](../assets/images/topology/tpf4.png)
 
 从$g_1,g_2$的构建路径可以直接得到
 
@@ -259,14 +259,140 @@ $$h_{mn}(\theta)=\frac{1}{\sqrt{L}}\sum_ke^{ik(x_m-x_n)}h(k,\theta),\quad 1\leq 
 
 此时再$h(k,\theta)$的能隙中有一个束缚态,与非零的Chern数相关联.当Chern数$C[h(k,\theta)]=2n-1,n\in\mathbb{Z}$这里由一些值$\theta^L_s\in[0,2\pi),s=1,2,\cdots,2n-1$,此时哈密顿量$h_{mn}(\theta_s)$有零能的局域态在系统的左边界上,同样的有相同数目的零能态在有边界上其$\theta^R_s$与左端相同.
 
-![png](tpf5.png)
+![png](../assets/images/topology/tpf5.png)
 
-由于再$h_{mn}(\theta)$与$h_{mn}(2\pi-\theta)$之间有粒子空穴对称性的存在,零能态总是成对出现在$\theta$与$2\pi-\theta$处.当Chern数是奇数是,一定有零能级出现在$\theta=0$和$\theta=\pi$.由于$\theta=0$是个平庸的绝缘体,对应着平带因此不存在终端态,局域的零能拓扑态出现在$\theta=\pi$处.总而言之,一个粒子空穴对称的$\mathbb{Z}_2$拓扑绝缘体在开边界的时候会存在一个零能的局域态.
+由于再$h_{mn}(\theta)$与$h_{mn}(2\pi-\theta)$之间有粒子空穴对称性的存在,零能态总是成对出现在$\theta$与$2\pi-\theta$处.当Chern数是奇数是,一定有零能级出现在$\theta=0$和$\theta=\pi$.由于$\theta=0$是个平庸的绝缘体,对应着平带因此不存在终端态,局域的零能拓扑态出现在$\theta=\pi$处.总而言之,一个粒子空穴对称的$\mathbb{Z}_2$拓扑绝缘体在开边界的时候会存在一个零能的局域态.存在零能级会有一个重要的物理结果，在非平庸拓扑绝缘体边界上将会存在半整数的电荷，在周期系统中当化学势为零的时候，当有$N$条占据的能带时，每个格点上平均的粒子数密度为$\bar{n}_m=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle=N$，在开放边界时相对于$N$的粒子数为$\rho_m(\mu)=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle_\mu-N$，粒子空穴对称性会保证$\rho_m(\mu)=-\rho_m(-\mu)$，当化学势$\mu$在能隙中间时，$\mu,-\mu$的区别就是零能态束缚在$\rvert 0L\rangle$还是$\rvert 0R\rangle$，对格点$m$足够远离右边界的时候
 
+$$\text{lim}_{\mu\rightarrow 0^{+}}[\rho_m(\mu)-\rho_m(-\mu)]=\sum_\alpha\rvert\langle m\alpha\rvert 0L\rangle\rvert^2$$
 
+当对左边界进行求和$\sum_m\rho_m(\mu\rightarrow 0^+)=1/2$，此时并不会包括另外一端的贡献。当零能态未被占据时边界上将会局域$1/2$个电子，当被占据时则会有$-1/2$个电子占据。从在半整数电荷也可以在开边界条件下，从非平庸于平庸相的质量畴壁视角来理解，通过对$h_{mn}(\theta)$定义插值，与空间依赖的畴壁为$\theta(x\rightarrow+\infty)=\pi,\theta(x\rightarrow-\infty)=0$，由相应公式(\ref{ha8})可得畴壁上积累的电荷为
 
+$$Q_d=e\int_{-\infty}^{+\infty}dx\frac{\partial P[\theta(x)]}{\partial x}=e\int dP(\theta)=\frac{e}{2}\int_0^{2\pi}dP(\theta)=\frac{e}{2}C[h(k,\theta)]$$
 
+这里需要强调，对于一个占据的局域态，其上面的电子总是可以变化整数个，也就是说$Q_d$只有$\text{mod}\quad e$才是有意义的，边界上存在分数的电荷$a\pm e/2$也仅仅在系统时拓扑非平庸的时候才满足。
 
+## (0+1)维$\mathbb{Z}_2$分类粒子空穴对称绝缘体
+
+对$(1+1)$维的系统进行围堵约化来研究$(0+1)$维系统的性质，这个维度约化的研究可以帮助理解后面$(2+1)$维时间反演不变(TRI)拓扑绝缘体从$(4+1)$维约化而来的过程。
+
+自由粒子哈密顿量$h$满足粒子空穴对称表现为
+
+$$C^\dagger hC=-h^T$$
+
+给定两个满足粒子空穴对称的额哈密顿量$h_1,h_2$，利用和前面相同的处理过程在区间$\theta\in[0,2\pi]$定义连续插值$h(\theta)$满足
+
+$$h(0)=h_1,\quad h(\pi)=h_2,\quad C^\dagger h(\theta)C=-h(2\pi-\theta)^T\label{ha9}$$
+
+对所有的$\theta$而言$h(\theta)$都是有能隙的，哈密顿量$h(\theta)$是$(1+1)$维哈密顿量$h(k)$进行维度约化后的结果，此时波矢$k$被$\theta$代替。限制条件(\ref{ha9})正是粒子空穴对称性，所以$h(\theta)$就对应着满足粒子空穴对称的$(1+1)$维绝缘体，可以通过Chern宇称$N_1[h(\theta)]$来进行分类。如果$N_1[h(\theta)]=-1$，在哈密顿量$h(\theta)$与真空哈密顿量$h(\theta)=h_0,\theta\in[0,2\pi]$之间没有满足粒子空穴对称的连续插值存在。在$h_1,h_2$之间考虑两个不同的插值$h(\theta),h^{'}(\theta)$，通过结合律$N_1[h(\theta)]N_1[h^{'}(\theta)]=N_1[h(\theta),h^{'}(\theta)]$，它是两个插值路径的相对Chern宇称。因为$N_1[h(\theta)]$与$h_1,h_2$之间的插值是不相关的，所以$N_0[h_1,h_2]\equiv N_1[h(\theta)]$可以被定义为$h_1,h_2$的函数。此时$(0+1)维\mathbb{Z}_2$量$N_0$与$(1+1)$维时候的$N_1[h(k),h^{'}(\theta)]$扮演者相同的角色。
+
+在$h(\theta),h^{'}(\theta)$之间定义连续插值$g(\theta,\varphi)$，它满足
+
+$$g(\theta,\varphi=0)=h(\theta),\quad g(\theta,\varphi=\pi),h^{'}(\theta),\quad g(0,\varphi)=h_1,\quad g(\pi,\varphi)=h_2,\quad C^\dagger g(\theta,\varphi)C=-g(2\pi-\theta,2\pi-\varphi)^T$$
+
+根据上一节的讨论可以简单的得到这样的连续插值总是可以存在的，对于所有的$\theta,\varphi$，函数$g(\theta,\varphi)$都是有能隙的。在两维参数空间$(\theta,\varphi)$中总是可以定义Berry位相和第一Chern数$C_1[g(\theta,\varphi)]$。通过定义Chern宇称可以得到$N_1[h(\theta),h^{'}(\theta)]=(-1)^{C_1[g(\theta,\varphi)]}$。参数化的哈密顿量可以从两个视角来看：不仅在$h(\theta),h^{'}(\theta)$间定义了插值，同样在$g(0,\varphi)=h_1,g(\pi,\varphi)=h_2$之间也定义了插值。无论$\varphi$去任何值，$g(0,\varphi),g(\pi,\varphi)$都是真空态哈密顿量，它们都有相对平庸的Chern宇称$N_1[h(\theta),h^{'}(\theta)]=N_1[g(0,\varphi),g(\pi,\varphi)]=N_1[h_1,h_2]=1$。
+
+从上面的分析可以得到,任何两个属于相同$\mathbb{Z}_2$类的$h(\theta)$与$h^{'}(\theta)$,他们的Chern宇称$N_1[h(\theta)]$仅仅依赖于终点的$h_1,h_2$.也就是说$N_0[h_1,h_2]\equiv N_1[h(\theta)]$定义了一对粒子空穴对称哈密顿量$h_1,h_2$之间的关系.之后选择任意一个参考哈密顿量$h_0$,总是可以定义所有哈密顿量满足$N_0[h_0,h]=1$是平庸的$N_0[h_0,h]=-1$是非平庸的.此时与$(1+1)$维情况有所不同的是参考哈密顿量$h_0$的选择不是自然的.总而言之,平庸与非平庸仅仅在$(0+1)$维具有意义.但是分类仍然是有意义的,任意两个哈密顿量满足$N_0[h_1,h_2]=-1$都不能在不破坏粒子空穴对称的情况下绝热转换.**单格点粒子空穴对称哈密顿量的流形是不连通的,起码会存在两个连接的片段.**
+{:.success}
+
+考虑一个简单的$2\times 2$哈密顿量,通常单格点哈密顿量可以分解为
+
+$$h=d_0\sigma^0+\sum_{a=1}^3d_a\sigma^a$$
+
+当粒子空穴变换$C=\sigma^1$要求$C^\dagger hC=-h^T$时,从上面的表达式可以得到$d_0=d_1=d_2=0$,因此$h =d_3\sigma^3$,只要$d_3\neq 0$哈密顿量$h$就有能隙.下面来看$d_3>0,d_3<0$这两个简单的$\mathbb{Z}_2$分类.先找到一个绝热的插值$h(\theta)=d_0(\theta)\sigma^0+\sum_ad_a(\theta)\sigma^a$是定义在$d_3>,d_3<0$之间,自旋矢量$\vec{d}(\theta)$可以会沿着有粒子空穴对称决定的虚拟路径从北极点向南极点演化.
+
+![png](../assets/images/topology/tpf6.png)
+
+拓扑数$N_0[h_1,h_2]$可以简单的通过路径$d_a(\theta)$所包含的Berry位相来决定,当$h_1,h_2$在不同的极点是为$\pi$否则就是0.通过上面的例子就可以从图像上清晰的理解$\mathbb{Z}_2$的含义.
+
+# 第二Chern数及其物理结果
+
+根据前面的维度约化,从时间反演破缺$(2+1)$维的拓扑绝缘体通过第一Chern数进行分类,进而得到了$(1+1)\rightarrow(0+1)$维的对应理论.这里利用相同的维度约化方式从$(4+1)\rightarrow(3+1)\rightarrow(2+1)$维的链式来研究时间反演不变的拓扑绝缘体.
+
+## $(4+1)$维中的第二Chern数及非线性响应
+
+$(4+1)$维的绝缘体在外部$U(1)$规范场作用下会出现非线性响应,其系数对应着第二Chern数.它与前面$(2+1)$系统的Hall电导对应的第一Chern数是完全类似的.通过路径积分的方式来描述非线性响应是比较方便的,考虑一个耦合了$U(1)$规范场的$(4+1)$维哈密顿量
+
+$$H[A]=\sum_{m,n}(c^\dagger_{m\alpha}h_{mn}^{\alpha\beta}e^{iA_{mn}}c_{n\beta}+\text{H.c})+\sum_mA_{0m}c^\dagger_{m\alpha}c_{m\alpha}$$
+
+规范场$A^\mu$的有效作用量可以通过路径积分得到
+
+$$e^{iS_\text{eff}[A]}=\int D[c]D[c^\dagger]\exp\{i\int dt[\sum_mc^\dagger_{m\alpha}(i\partial_t)c_{m\alpha}-H[A] \}=\text{det}[(i\partial_t-A_{0m})\delta^{\alpha\beta}_{mn}-h^{\alpha\beta}_{mn}e^{iA_{mn}}]$$
+
+费米子系统的响应函数为
+
+$$j_\mu({\bf x})=\frac{\delta S_\text{eff}[A]}{\delta A_\mu({\bf x})}$$
+
+对于$(2+1)$维的情况,有效作用量$S_\text{eff}$包含了Chern-Simons项$(C_1/4\pi)A_\mu\epsilon^{\mu\nu\tau}\partial_\nu A_\tau$如公式(\ref{h2})所示,第一Chern数$C_1$出现在系数中.对于$(4+1)$维的系统,一个相似的拓扑项也会出现在有效作用量中,这就是第二Chern数
+
+$$S_\text{eff}=\frac{C_2}{24\pi^2}\int d^4xdt\epsilon^{\mu\nu\rho\sigma\tau}A_\mu\partial_\nu A_\rho\partial_\sigma A_\tau$$
+
+这里$\mu,\nu,\rho,\sigma,\tau=0,1,2,3,4$,这里的系数$C_2$可以通过计算单圈Feynamn图进行计算
+
+![png](../assets/images/topology/tpf7.png)
+
+$$C_2=-\frac{\pi^2}{15}\epsilon^{\mu\nu\rho\sigma\tau}\int\frac{d^4kd\omega}{(2\pi)^5}\text{Tr}[(G\frac{\partial G^{-1}}{\partial q^\mu})(G\frac{\partial G^{-1}}{\partial q^\nu})(G\frac{\partial G^{-1}}{\partial q^\rho})(G\frac{\partial G^{-1}}{\partial q^\sigma})(G\frac{\partial G^{-1}}{\partial q^\tau})]\label{ha10}$$
+
+$q^\mu=(\omega,k_1,k_2,k_3,k_4)$是频率动量矢量,单粒子格林函数$G(q^\mu)=[\omega+i\delta-h(k_i)]^{-1}$.下面来研究第二Chern数$C_2$与非阿贝尔Berry位相规范场在动量空间中的联系.首先写出一些结论:
+
+对于任何一个$(4+1)$维单粒子哈密顿量$h({\bf k})$的能带绝缘体,通过(\ref{ha10})定义的非线性响应系数$C_2$等于非阿贝尔Berry位相规范场在布里渊区(BZ)中的第二Chern数
+
+$$C_2=\frac{1}{32\pi^2}\int d^4k\epsilon^{ijkl}\text{Tr}[f_{ij}f_{kl}],\quad f_{ij}^{\alpha\beta}=\partial_ia_j^{\alpha\beta}-\partial_ja_i^{\alpha\beta}+i[a_i,a_j]^{\alpha\beta},\quad a^{\alpha\beta}_i({\bf k})=-i\langle\alpha,{\bf k}\rvert\frac{\partial}{\partial k_i}\rvert\beta,{\bf k}\rangle\label{ha11}$$
+
+这里$ij,k,l=1,2,3,4$.其中$a_i^{\alpha\beta}$中的$\alpha$是占据态的索引,因此对于一个一般的多带模型,$a_i^{\alpha\beta}$是个非阿贝尔规范场,$f_{ij}^{\alpha\beta}$与非阿贝尔场强相关联.**这里的关键点是将**(\ref{ha10})**简化成一个拓扑不变量,不论哈密顿量发生怎样的变化,只要能带不穿过费米能级,那么$C_2$就是不变的.**
+
+先标记哈密顿量$h({\bf k})$的本征值$\epsilon_\alpha({\bf k}),\alpha=1,2,\cdots,N,\epsilon_\alpha({\bf k})\leq\epsilon_{\alpha+1}({\bf k})$.当有$M$条能带被占据的时候,从事可以对能带急性连续的形变$\epsilon_\alpha({\bf k})\rightarrow\epsilon_G$ for $\alpha\leq M,\epsilon_\alpha({\bf k})\rightarrow\epsilon_E$ for $\alpha>M,(\epsilon_E>\epsilon_G)$. 在变形的过程中,对应的所有本征态$\rvert\alpha,{\bf k}\rangle$都是不变的,也就是说可以把哈密顿量$h({\bf k})$变成一些平带模型.
+
+![tpf8](../assets/images/topology/tpf8.png)
+
+由于(\ref{ha10})与第二Chern数(\ref{ha11})都是拓扑不变量,下面对(\ref{ha11})研究其在平带上的性质,此时可以将哈密顿量写为
+
+$$h_0({\bf k})=\epsilon_G\sum_{1\leq\alpha\leq M}\rvert\alpha,{\bf k}\rangle\langle\alpha,{\bf k}\rvert+\epsilon_E\sum_{\beta>M}\rvert\beta,{\bf k}\rangle\langle\beta,{\bf k}\rvert\equiv\epsilon_GP_G({\bf k})+\epsilon_EP_E({\bf k})$$
+
+这里$P_G({\bf k})[P_E({\bf k})]$是占据态(空态)的投影算子.课题通过这些投影算子来定义非阿贝尔Berry联络,单粒子格林函数也可以通过投影算子来计算计算.综上可得,对于任意一个$(4+1)$维的能带绝缘体,这里总会有一个耦合$U(1)$规范场的有效作用量对应的Chern-Simons项,它的系数对应的正是非阿贝尔Berry位相规范场对应的第二Chern数.利用运动方程可以得到
+
+$j^\mu=\frac{C_2}{8\pi^2}\epsilon^{\mu\nu\rho\sigma\tau}\partial_\nu A_\rho\partial_\sigma A_\tau\label{ha12}$
+
+这是对外场$A_\mu$的非线性响应.当考虑下面的场时
+
+$A_x=0,A_y=B_zx,A_z=-E_zt,A_w=A_t=0$
+
+这里$x,y,z,w$表示空间维度,$t$代表时间.非零分量的的场强度为$F_{xy}=B_z,F_{zt}=-E_z$,有(\ref{ha12})得到的电流为
+
+$$j_w=\frac{C_2}{4\pi^2}B_zE_z$$
+
+当沿着$x,y$方向进行积分之后(取周期边界条件且$E_z$不随$(x,y)$变化),可以得到
+
+$$\int dxdyj_w=\frac{C_2}{4\pi^2}(\int dxdyB_z)E_z\equiv\frac{C_2N_{xy}}2\pi{E_z},$$
+
+这里$N_{xy}=\int dxdy B_z/2\pi$是穿过$xy$平面的量子通量数目,这就是4D量子霍尔效应.第二Chern数为$C_2$的$(4+1)$维绝缘体,$zw$面上的量子Hall电导为$C_2N_{xy}/2\pi$,是由$xy$面上磁场磁通$2\pi N_{xy}$诱导出来的.第二Chern数同样可以通过研究表面态来理解,此时$(4+1)$维的表面态由$(3+1)$维的理论来描述.
+
+## 基于Dirac模型的时间反演不变绝缘体
+
+$(4+1)$维连续Dirac模型为
+
+$$H=\int d^4 x[\psi^\dagger(x)\Gamma^i(-i\partial_i)\psi(x)+m\psi^\dagger\Gamma^0\psi],\quad i=1,2,3,4\text{是空间维度}$$
+
+$\Gamma^\mu,\mu=0,1,2,3,4$是满足Clifford代数的Dirac矩阵
+
+$$\{\Gamma^\mu,\Gamma^\nu\}=2\delta_{\mu\nu}\mathbb{I},\quad\mathbb{I}\text{是单位矩阵}$$
+
+这个模型的格点形式为
+
+$$H=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^--i\Gamma^i}{2})\psi_{n+\hat{i}}+\text{H.c}]+m\sum_n\psi^\dagger_n\Gamma^0\psi_n$$
+
+在动量空间中红
+
+$$H=\sum_{\bf k}\psi^\dagger_{\bf k}[\sum_i\sin k_i\Gamma^i+(m+c\sum_i\cos k_i)\Gamma^0]\psi_{\bf k}\label{ha13}$$
+
+将哈密顿量写成更紧凑的形式
+
+$$H=\sum_{\bf k}\psi^\dagger_{\bf k}d_a({\bf k})\Gamma^a\psi_{\bf k},\quad d_a({\bf k})=[(m+c\sum_i\cos k_i),\sin k_x,\sin k_y,\sin k_z,\sin k_w]$$
+
+与之前研究$(2+1)$维两带模型相似,单粒子哈密顿量形式为$h({\bf k})=d_a({\bf k})\Gamma^a$由两个本征值$E_{\pm}-\pm\sqrt{\sum_ad_a^2({\bf k})}$,不过此时能级是二重简并的,当$\sum_ad^2_a({\bf k})\equiv d^2({\bf k})$在整个BZ中不消失的时候,半满时系统是有能隙的,此时$E=E_{-}$的能带是占据的.因为此时有两个占据的能带,可以定义一个$SU(2)\times U(1)$的绝热联络.从哈密顿量(\ref{ha13})可以定义单粒子格林函数并计算第二Chern数
+
+$$C_2=\frac{3}{8\pi^2}\int d^4k\epsilon^{abcde}\hat{d_a}\partial_x\hat{d_b}\partial_y\hat{d_c}\partial_z\hat{d_w}\partial_e\label{ha14}$$
+
+**这是一个从BZ $T^4$到球$S^4$的映射**,$\hat{d_a}({\bf k})\equiv d_a({\bf k})/\rvert d({\bf k})\rvert$.
 
 
 
