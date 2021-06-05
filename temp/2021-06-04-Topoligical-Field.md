@@ -463,7 +463,54 @@ $$H[A]=\sum_{k_w,\vec{x},s}[\psi^\dagger_{\vec{x},k_w}(\frac{c\Gamma^0-i\Gamma^s
 
 $$H_{3D}[A,\theta]=\sum_{\vec{x},s}[\psi^\dagger_\vec{x}(\frac{c\Gamma^0-i\Gamma^s}{2})e^{iA_{\vec{x},\vec{x}+\hat{s}}}+\text{H.c}]+\sum_{\vec{x},s}\psi^\dagger_\vec{x}[\sin \theta_\vec{x}\Gamma^4+(m+c\cos \theta_\vec{x})\Gamma^0]\psi_\vec{x}$$
 
-着描述的是耦合电磁想$A_{\vec{x},\vec{x}+\hat{s}}$的能带绝缘体,绝热参数场为$\theta_\vec{x}$.
+着描述的是耦合电磁想$A_{\vec{x},\vec{x}+\hat{s}}$的能带绝缘体,绝热参数场为$\theta_\vec{x}$.为了研究$(3+1)$维系统的响应性质，有效作用量$S_\text{3D}[A,\theta]$为
+
+$$\exp^{iS_\text{3D}[A,\theta]}=\int D[\psi]D[\bar{\psi}]\exp\{i\int dt[\sum_\vec{x}^{'}\bar{\psi}\vec{x}(i\partial_\tau-A_{\vec{x}0})\psi_\vec{x}-H[A,\theta]]\}\label{ha17}$$
+
+在场构型$A_s(\vec{x},t)\equiv 0,\theta(\vec{x},t)\equiv\theta_0$处进行Taylor展开，$S_\text{3D}$中将会包含从$(4+1)$维推到得到的非线性响应
+
+$$S_\text{3D}=\frac{G_3(\theta)}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}\delta\theta\partial_\mu A_\nu\partial_\sigma A_\tau\label{ha18}$$
+
+与(\ref{ha11})相比较，$\delta\theta(\vec{x},t)=\theta(\vec{x},t)-\theta_0$扮演了$A_4$的角色，系数$C_3(\theta)$可以通过相同的Feymann图来计算得到，只是此时需要对3D的哈密顿量(\ref{ha17})进行，不对$k_w$积分，最终可以得到$G_3(\theta)$的表达式
+
+$$G_3(\theta)=-\frac{\pi}{6}\int \frac{d^3kd\omega}{(2\pi)^4}\text{Tr}\epsilon^{\mu\nu\sigma\tau}[(G\frac{\partial G^{-1}}{\partial q^\mu})(G\frac{\partial G^{-1}}{\partial q^\nu})(G\frac{\partial G^{-1}}{\partial q^\sigma})(G\frac{\partial G^{-1}}{\partial q^\tau})],\quad q^\mu=(\omega,k_x,k_y,k_z)$$
+
+$G_3(\theta)$可以从Berry曲率中计算得到
+
+$$G_3(\theta_0)=\frac{1}{8\pi^2}\int d^3k\epsilon^{ijk}\text{Tr}[f_{\theta i}f_{jk}]$$
+
+此时Berry曲率是定义在四维空间中的$(k_x,k_y,k_z,k_\theta)$中，
+
+$$a^{\alpha\beta}_i=-i\langle\vec{k},\theta_0;\alpha\rvert(\partial/\partial k_i)\rvert\vec{k},\theta_0;\beta\rangle,\quad a^{\alpha\beta}_\theta=-i\langle\vec{k},\theta_0;\alpha\rvert(\partial/\partial\theta_0)\rvert\vec{k},\theta_0;\beta\rangle$$
+
+跟第二Chern数相比，可以得到求和规则
+
+$$G_3(\theta)d\theta=C_2\in\mathbb{Z}$$
+
+这正好对应着$(1+1)$维系统中泵浦系数求和$G_1(\theta)$，前面$G_1(\theta)=\partial P_1/\partial\theta$，这里$P_1$就是简单的电子极化。同样的在$(3+1)$维同样可以定义广义极化$P_3(\theta)$满足$G_3(\theta)=\partial P_3/\partial\theta_0$。通常情况下电子极化$\mathbf{P}$是与外部电场$\mathbf{E}$线性耦合的，磁化$\mathbf{M}$与外部磁场$\mathbf{B}$也是线性耦合的，然而此时可以看到$P_3$是一个赝标量，它与外部电磁场$\mathbf{E}\cdot\mathbf{B}$是非线性耦合的，因为这个原因通常称$P_3$是磁电极化。
+{:.success}
+
+为了得到$P_3$需要介绍非阿贝尔Chern-Simons项
+
+$$\mathcal{K}^A=\frac{1}{16\pi^2}\epsilon^{ABCD}\text{Tr}[(f_{BC}-\frac{1}{3}[a_B,a_C])\cdot a_D]$$
+
+这是一个四维空间$q=(k_x,k_y,k_z,\theta_0)$中的矢量，$A,B,C,D=x,y,z,\theta$，$\mathcal{K}$满足
+
+$$\partial_A\mathcal{K}=\frac{1}{32\pi^2}\epsilon^{ABCD}\text{Tr}[f_{AB}f_{CD}]\rightarrow G_3(\theta_0)=\int d^3k\partial_A\mathcal{K}$$
+
+当第二Chern数等于0时，在定义$a_A$的时候会遇到阻塞，也就意味在整个参数空间中$\mathcal{K}$不是单值的，然而在一个合适的规范选择下$\mathcal{K}$可以时单值的，$G_3(\theta)=\int d^3\partial_\theta\mathcal{K}^\theta\equiv\partial P_3(\theta_0)/\partial\theta_0$
+
+$$P_3(\theta_0)=\int d^3k\mathcal{K}^\theta=\frac{1}{16\pi^2}\int d^3k\epsilon^{\theta ijk}\text{Tr}[(f_{ij}-\frac{1}{3}[a_i,a_j])\cdot a_k]$$
+
+因此$P_3(\theta)$时非阿贝尔Chern-Simons项在三分量动量空间中的积分。这与电子极化时定义在一个动量空间中绝热演化路径的积分时相似的。
+
+众所周知，Chern-Simons在三维的积分只有对整数取模才是规范不变的，在一个规范变换$a_i\rightarrow u^{-1}a_iu-iu^{-1}$下，极化$P_3$的改变为
+
+$$\Delta P_3=\frac{i}{24\pi^2}\int d^k \epsilon^{theta ijk}\text{Tr}[(u^{-1}\partial_i u)(u^{-1}\partial_j u)(u^{-1}\partial_k u)]$$
+
+它是一个整数，因此$P_3$就像$P_1$一样对1取模才是well defined，当改变$\theta_0$从0到$2\pi$就可以得到$C_2$。有效作用量(\ref{ha18})可以通过引入$G_3=\partial P_3/\partial\theta$进行简化，然后进行分部积分之后
+
+$$S_{3D}=\frac{1}{4\pi}\int d^3kdt\epsilon^{\mu\nu\sigma\tau}A_\mu(\partial P_3/\partial\theta)v_\nu\delta\theta\partial_\sigma A_\tau$$
 
 
 
