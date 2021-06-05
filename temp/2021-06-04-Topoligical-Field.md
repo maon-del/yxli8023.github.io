@@ -354,7 +354,7 @@ $j^\mu=\frac{C_2}{8\pi^2}\epsilon^{\mu\nu\rho\sigma\tau}\partial_\nu A_\rho\part
 
 这是对外场$A_\mu$的非线性响应.当考虑下面的场时
 
-$A_x=0,A_y=B_zx,A_z=-E_zt,A_w=A_t=0$
+$A_x=0,A_y=B_zx,A_z=-E_zt,A_w=A_t=0\label{ha16}$
 
 这里$x,y,z,w$表示空间维度,$t$代表时间.非零分量的的场强度为$F_{xy}=B_z,F_{zt}=-E_z$,有(\ref{ha12})得到的电流为
 
@@ -378,7 +378,7 @@ $$\{\Gamma^\mu,\Gamma^\nu\}=2\delta_{\mu\nu}\mathbb{I},\quad\mathbb{I}\text{是�
 
 这个模型的格点形式为
 
-$$H=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^--i\Gamma^i}{2})\psi_{n+\hat{i}}+\text{H.c}]+m\sum_n\psi^\dagger_n\Gamma^0\psi_n$$
+$$H=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^--i\Gamma^i}{2})\psi_{n+\hat{i}}+\text{H.c}]+m\sum_n\psi^\dagger_n\Gamma^0\psi_n\label{ha15}$$
 
 在动量空间中红
 
@@ -392,7 +392,80 @@ $$H=\sum_{\bf k}\psi^\dagger_{\bf k}d_a({\bf k})\Gamma^a\psi_{\bf k},\quad d_a({
 
 $$C_2=\frac{3}{8\pi^2}\int d^4k\epsilon^{abcde}\hat{d_a}\partial_x\hat{d_b}\partial_y\hat{d_c}\partial_z\hat{d_w}\partial_e\label{ha14}$$
 
-**这是一个从BZ $T^4$到球$S^4$的映射**,$\hat{d_a}({\bf k})\equiv d_a({\bf k})/\rvert d({\bf k})\rvert$.
+**这是一个从BZ $T^4$到球$S^4$的映射**,$\hat{d_a}({\bf k})\equiv d_a({\bf k})/\rvert d({\bf k})\rvert$.由(\ref{ha14})所表示的winding number等于Berry位相规范场对应的第二Chern数.对于格点模型(\ref{ha15})可以简单计算其$C_2$.考虑格点模型有固定的正参数$c$和一个可调参数$m$,随着$m$的变化Chern数$C_2(m)$就是关于$m$的函数.当哈密顿量是无能隙的时候,Chern数就会发生变化$\sum_ad_a^2({\bf k})=0$.当$m\rightarrow+\infty$是矢量$\hat{d_a}({\bf k})=(1,0,0,0,0)$此时的$C_2(m)=0$.因此只需要研究$C_2(m)$发生变化的量子临界点即可,也就是$C_2(m)$发生变化时$m$的值.通过$\sum_ad_a^2({\bf k})=0$可以求解得到临界值$m$和对应的动量点${\bf k}$
+
+$$m=\left\{\begin{array}{c}-4,\quad{\bf k}=(0,0,0,0)\\ -2c,\quad {\bf k}\in P[(\pi,0,0,0)]\\ 0,\quad\mathbf{k}\in P[(\pi,0,\pi,0)]\\ 2c,\quad \mathbf{k}\in P[(\pi,\pi,\pi,0)]\\ 4c,\quad\mathbf{k}=(\pi,\pi,\pi,\pi)\end{array}\right.$$
+
+这里$P[\mathbf{k}]$表示通过交换波矢的索引得到的一系列矢量$\mathbf{k}$.比如$P[(\pi,0,0,0)]$包含了$(\pi,0,0,0),(0,\pi,0,0),(0,0,\pi,0),(0,0,0,\pi)$.下面研究一下临界点$m=-4c$处第二Chern数$C_2(m)$的变化.在$m+4c<<2c$的极限下,系统最小能隙位于$\mathbf{k}=0$,在该点进行低能展开可得$d_a({\bf k})\simeq (\delta m,k_x,k_y,k_z,k_w)+o(\rvert k\rvert),\delta m\equiv m+4c$.在动量空间中做截断$\Lambda<<2\pi$,可以得到第二Chern数在低能和高能部分
+
+$$C_2=\frac{3}{8\pi^2}(\int_{\rvert\mathbf{k}\rvert<<\Lambda}+\int_{\rvert\mathbf{k}\rvert>>\Lambda})\epsilon^{abcde}\hat{d}_a\partial_x\hat{d}_b\partial_y\hat{d}_c\partial_z\hat{d}_d\partial_w\equiv C_2^{(1)}(\delta m,\Lambda)+C_2^{(2)}()\delta m,\Lambda$$
+
+因为在高能部分$\rvert\mathbf{k}\rvert>\Lambda$不存在能级交叉,所以$C_2$在$\delta m=0$处的跃变仅仅来源于$C_2^{(1)}$,在极限$\rvert\delta m\rvert<\Lambda<<2\pi$时,通过连续近似的$d_a(\mathbf{k})$可得到
+
+$$C_2^{(1)}(\delta m,\Lambda)\simeq\frac{3}{8\pi^2}\int_{\rvert\mathbf{k}\rvert<<\Lambda}d^4k\frac{\delta m}{(\delta m^2+\mathbf{k}^2)^{5/2}}$$
+
+通过积分可以得到
+
+$$\Delta C_{2\delta m=0^-}^{\delta m=0^+}=\Delta C_{2\delta m=0^-}^{(1)\delta m=0^+}=1$$
+
+**从上面的分析可以知道第二Chern数由在能级交叉处有效连续模型来决定,在连续模型情况下对应的正是Dirac 模型.**对所有临界点附近进行分析可以得到
+
+$$C_2(m)=\left\{\begin{array}{c}0,\quad m<-4c\quad\text{or}\quad m>4c\\ 1,\quad -4c<m<-2c\\ -3,\quad -2c<m<0\\ 3,\quad 0<m<2c\\ -1,\quad 2c<m<4c\end{array}\right.$$
+
+在得到了第二Chern数之后,就可以通过拓扑非平庸的表面态来研究这个模型,与前面的研究方法相同,沿某一个方向取开边界,比如取$w$方向,其余的维度都是周期边界条件,哈密顿量可以转换成一个1D紧束缚模型的求和
+
+$$H=\sum_{\vec{k},w}[\psi^\dagger_\vec{k}(w)(\frac{c\Gamma^0-i\Gamma^4}{2})\psi_\vec{k}(w+1)+\text{H.c}]+\sum_{\vec{k},w}\psi^\dagger_\vec{k}(w)[\sin k_i\Gamma^i+(m+c\sum_i\cos k_i)\Gamma^0]\psi_\vec{k}(w),$$
+
+$C_2\neq 0$的能隙间表面态如下图所示
+
+![tpf8](../assets/images/topology/tpf9.png)
+
+当Chern数是$C_2$时,这里会有$C_2$支线性色散无能隙的表面态,其低能有效理论可以通过有$\rvert C_2\rvert$个手性费米子
+
+$H=\text{sgn}(C_2)\int\frac{d^3 p}{(2\pi)^3}\sum_{i=1}^{\rvert C_2\rvert}v_i\psi^\dagger_i(\vec{p})\vec{\sigma}\cdot\vec{\mathbf{p}}\psi_i(\vec{p})$
+
+前面的因子$\text{sgn}(C_2)$保证了表面态的手性,是由Chern数的符号决定的.从表面理论可以从更加物理的角度来理解外场$U(1)$规范场与非线性响应之间的关联.k考虑与(\ref{ha16})相同的规范场构型,则非零的场曲率为$F_{xy}=b_z,F_{zt}=-E_z$.最终一个$(3+1)$维表面态耦合磁场$\mathbf{B}=B_z\hat{\mathbf{z}}$和电场$\mathbf{E}=E_z\hat{\mathbf{z}}$,此时考虑$-4c<m<-2c$这个参数区间,对应的$cC_2=1$,此时的表面理论是手性费米子的单粒子哈密顿量
+
+$$h=v\vec{\sigma}\cdot(\vec{p}+\vec{A})=v\sigma_xp_x+v\sigma_y(p_y+B_zx)+v\sigma_z(p_z-E_zt)$$
+
+如果$E_z$足够小,此时时间依赖项$A_z(t)=-E_zt$可以看做是微扰,当$A_z$固定的时候单粒子能谱为
+
+$$E_{n\pm}(p_z)=\pm v\sqrt{(p_z+A_z)^2+2n\rvert B_z\rvert},n=1,2,\cdots,\quad E_0(p_z)=v(p_z+A_z)\text{sgn}(B_z)$$
+
+当表面取$L_x\times L_y\times L_z$的周期边界条件时,每个朗道能级的简并度为$N_{xy}=L_xL_yB_z/2\pi$.与量子Hall边界态的规范讨论相似,无限小的电场$E_z$将会绝热的移动动量$p_z\rightarrow p_z+E_zt$,如下图所示,从$t=0$到$t=T\equiv 2\pi/L_zE_z$时,动量的变化为$p\rightarrow p_z+2\pi/L_z$,此时3D表面上净增加的电子数目为$N_{xy}$,总而言之,一个一般的Hall流$I_w$个是沿着$w$方向的
+
+$$I_w=\frac{N_xy}{T}=\frac{L_xL_yL_zB_zE_z}{4\pi^2}$$
+
+![png](../assets/images/topology/tpf10.png)
+
+根据电流密度可以得到$j_w=B_zE_z/4\pi^2$,这与前面得到的结果(\ref{ha12})一致.更加一般形式的电流密度$j_w$可以表示为
+
+$$j_w=C_2\frac{\mathbf{E}\cdot\mathbf{B}}{4\pi^2}=\frac{C_2}{32\pi^2}\epsilon^{\mu\nu\sigma\tau}F_{\mu\nu}F_{\sigma\tau}$$
+
+这是无质量$(3+1)$维Dirac费米子的手性反常方程.因为4D格点Dirac模型的3D无能隙边界态是手性费米子,所以电流$I_w$总是包含着特定手性的电荷,这将会导致3D边界上手性不守恒.
+{:.info}
+
+# 维度约化$(3+1)$维时间反演不变绝缘体
+
+对于满足时间反演不变(TRI)的$(4+1)$维的体系其第二Chern数不为零,通过将其中的某个动量参数替换成$\theta$来实现维度约化的目的,从而可以来研究$(3+1)$维以及$(2+1)$维绝缘体.
+
+## $(3+1)$维绝缘体的有效作用量
+
+Dirac哈密顿量(\ref{ha15})耦合外部$U(1)$规范场之后
+
+$$H[A]=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^0-i\Gamma^i}{2})e^{iA_{n,n+\hat{i}}}\psi_{n+\hat{i}}+\text{H.c}]+m\sum_n\psi^\dagger_n\Gamma^0\psi_n$$
+
+现在考虑一个特殊的朗道规范$A_{n,n+\hat{i}}=A_{n+\hat{w},n+\hat{w}+\hat{i}}$,它沿着$w$方向是平移不变的,因此在周期边界条件下$w$方向的动量$k_w$是个好量子数,哈密顿量可以写为
+
+$$H[A]=\sum_{k_w,\vec{x},s}[\psi^\dagger_{\vec{x},k_w}(\frac{c\Gamma^0-i\Gamma^s}{2})e^{iA_{\vec{x},\vec{x}+\hat{s}}}\psi_{\vec{x}+\hat{s},k_w}+\text{H.c}]+\sum_{k_w,\vec{x},s}\psi^\dagger_{\vec{x},k_w}\{\sin(k_w+A_{\vec{x}4})\Gamma^4+[m+c\cos(k_w+A_{\vec{x}4})]\Gamma^0\}\psi_{\vec{x},k_w}$$
+
+这里的$\vec{x}$代表三维坐标,$A_{\vec{x}4}\equiv A_{\vec{x},\vec{x}+\hat{w}},s=1,2,3$表示$x,y,z$方向.在这个表达式中,不同$k_w$态是无耦合的,此时就可以将$(4+1)$的$H[A]$约化为一系列$(3+1)$维固定$k_w$的哈密顿量,重新改写$k_w+A_{\vec{x}4}=\theta_\vec{x}$约化到$(3+1)$维的模型为
+
+$$H_{3D}[A,\theta]=\sum_{\vec{x},s}[\psi^\dagger_\vec{x}(\frac{c\Gamma^0-i\Gamma^s}{2})e^{iA_{\vec{x},\vec{x}+\hat{s}}}+\text{H.c}]+\sum_{\vec{x},s}\psi^\dagger_\vec{x}[\sin \theta_\vec{x}\Gamma^4+(m+c\cos \theta_\vec{x})\Gamma^0]\psi_\vec{x}$$
+
+着描述的是耦合电磁想$A_{\vec{x},\vec{x}+\hat{s}}$的能带绝缘体,绝热参数场为$\theta_\vec{x}$.
+
+
 
 
 
