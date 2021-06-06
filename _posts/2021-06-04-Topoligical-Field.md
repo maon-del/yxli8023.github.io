@@ -97,7 +97,7 @@ $h({\bf k})=\sin k_x\sigma_x+\sin k_y\sigma_y+(m+\cos k_x+\cos k_y)\sigma_z$
 
 这里$\epsilon({\bf k})=0,{\bf d(k)}=(\sin k_x,\sin k_y,m+\cos k_x+\cos k_y)$,体系的Chern数为
 
-$$C_1=\left\{\begin{array}{c}1\qquad\text{for $0<m<2$}\\-1\qquad\text{for $-2<m<0$}\\0\qquad\text{otherwise}\end{array}\right。$$
+$$C_1=\left\{\begin{array}{c}1\qquad\text{for $0<m<2$}\\-1\qquad\text{for $-2<m<0$}\\0\qquad\text{otherwise}\end{array}\right. $$
 
 在$m\rightarrow 2$的连续极限下,模型可以约化为(2+1)-D的有质量Dirac哈密顿量
 
@@ -243,7 +243,7 @@ $$C[h]-C[h^{'}]=\int_0^{2\pi}d\theta(\frac{\partial P(\theta)}{\partial\theta}-\
 
 定义新的差值$g_1(k,\theta),g_2(k,\theta)$
 
-$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in[0,\pi]\\h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right。\\g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in[0,\pi]\\h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right。$$
+$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in[0,\pi]\\h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right. \\g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in[0,\pi]\\h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right. $$
 
 这里$g_1(k,\theta)$与$g_2(k,\theta)$只是重新组合对两个路劲$h(k,\theta),h^{'}(k,\theta)$进行了组合,如下图所示
 
@@ -413,7 +413,7 @@ $$C_2=\frac{3}{8\pi^2}\int d^4k\epsilon^{abcde}\hat{d_a}\partial_x\hat{d_b}\part
 
 **这是一个从BZ $T^4$到球$S^4$的映射**,$\hat{d_a}({\bf k})\equiv d_a({\bf k})/\rvert d({\bf k})\rvert$。由(\ref{ha14})所表示的winding number等于Berry位相规范场对应的第二Chern数。对于格点模型(\ref{ha15})可以简单计算其$C_2$。考虑格点模型有固定的正参数$c$和一个可调参数$m$,随着$m$的变化Chern数$C_2(m)$就是关于$m$的函数。当哈密顿量是无能隙的时候,Chern数就会发生变化$\sum_ad_a^2({\bf k})=0$。当$m\rightarrow+\infty$是矢量$\hat{d_a}({\bf k})=(1,0,0,0,0)$此时的$C_2(m)=0$。因此只需要研究$C_2(m)$发生变化的量子临界点即可,也就是$C_2(m)$发生变化时$m$的值。通过$\sum_ad_a^2({\bf k})=0$可以求解得到临界值$m$和对应的动量点${\bf k}$
 
-$$m=\left\{\begin{array}{c}-4,\quad{\bf k}=(0,0,0,0)\\ -2c,\quad {\bf k}\in P[(\pi,0,0,0)]\\ 0,\quad\mathbf{k}\in P[(\pi,0,\pi,0)]\\ 2c,\quad \mathbf{k}\in P[(\pi,\pi,\pi,0)]\\ 4c,\quad\mathbf{k}=(\pi,\pi,\pi,\pi)\end{array}\right。$$
+$$m=\left\{\begin{array}{c}-4,\quad{\bf k}=(0,0,0,0)\\ -2c,\quad {\bf k}\in P[(\pi,0,0,0)]\\ 0,\quad\mathbf{k}\in P[(\pi,0,\pi,0)]\\ 2c,\quad \mathbf{k}\in P[(\pi,\pi,\pi,0)]\\ 4c,\quad\mathbf{k}=(\pi,\pi,\pi,\pi)\end{array}\right. $$
 
 这里$P[\mathbf{k}]$表示通过交换波矢的索引得到的一系列矢量$\mathbf{k}$。比如$P[(\pi,0,0,0)]$包含了$(\pi,0,0,0),(0,\pi,0,0),(0,0,\pi,0),(0,0,0,\pi)$。下面研究一下临界点$m=-4c$处第二Chern数$C_2(m)$的变化。在$m+4c<<2c$的极限下,系统最小能隙位于$\mathbf{k}=0$,在该点进行低能展开可得$d_a({\bf k})\simeq (\delta m,k_x,k_y,k_z,k_w)+o(\rvert k\rvert),\delta m\equiv m+4c$。在动量空间中做截断$\Lambda<<2\pi$,可以得到第二Chern数在低能和高能部分
 
@@ -429,7 +429,7 @@ $$\Delta C_{2\delta m=0^-}^{\delta m=0^+}=\Delta C_{2\delta m=0^-}^{(1)\delta m=
 
 **从上面的分析可以知道第二Chern数由在能级交叉处有效连续模型来决定,在连续模型情况下对应的正是Dirac 模型。**对所有临界点附近进行分析可以得到
 
-$$C_2(m)=\left\{\begin{array}{c}0,\quad m<-4c\quad\text{or}\quad m>4c\\ 1,\quad -4c<m<-2c\\ -3,\quad -2c<m<0\\ 3,\quad 0<m<2c\\ -1,\quad 2c<m<4c\end{array}\right。$$
+$$C_2(m)=\left\{\begin{array}{c}0,\quad m<-4c\quad\text{or}\quad m>4c\\ 1,\quad -4c<m<-2c\\ -3,\quad -2c<m<0\\ 3,\quad 0<m<2c\\ -1,\quad 2c<m<4c\end{array}\right. $$
 
 在得到了第二Chern数之后,就可以通过拓扑非平庸的表面态来研究这个模型,与前面的研究方法相同,沿某一个方向取开边界,比如取$w$方向,其余的维度都是周期边界条件,哈密顿量可以转换成一个1D紧束缚模型的求和
 
@@ -607,7 +607,7 @@ $$h(k,0)=h_1(k),\quad h(k,\pi)=h_2(k),\quad T^\dagger h(-k,-\theta)T=h^T(k,\thet
 
 腿与$\theta\in [0,2\pi],h(k,\theta)$都是有能隙的。因为插值是$\theta$的周期函数,那么可以在$(k,\theta)$空间中定义Berry位相规范场的第二Chern数$C_2[h(k,\theta)]$。下面来研究对于任意两个插值$h,h^{'}$其$C_2[h(k,\theta)]-C_2[h^{'}(k,\theta)]=0\quad\text{mod}\quad 2$。定一辆个新的$g_{1,2}(k,\theta)$
 
-$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in [0,\pi]\\ h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right。\\ g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in [0,\pi]\\ h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right。$$
+$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in [0,\pi]\\ h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right. \\ g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in [0,\pi]\\ h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right. $$
 
 通过定义,$g_1,g_2$满足$C_2[h]-C_2[h^{'}]=C_2[g_1]+C_2[g_2],T^\dagger g_1(-k,-\theta)T=g_2^T(k,\theta)$。为了研究$C_2[g_1]=C_2[g_2]$考虑$g_1(k,\theta)$的本征值为$E_\alpha(k,\theta)$的本征态$\rvert k,\theta;\alpha\rangle_1$
 
@@ -781,7 +781,7 @@ $$\nabla\cdot\mathbf{D}=4\pi\rho+2\alpha(\nabla P_3\cdot\mathbf{B})\\ \nabla\tim
 
 在$z=0$处考虑一个铁磁-拓扑绝缘体的界面,如上图所示,正常的线性偏振光可以表示为
 
-$$\mathbf{A}(z,t)=\left\{\begin{array}{c}\mathbf{a}e^{i(-kz-\omega t)}+\mathbf{b}e^{i(kz-\omega t)},\quad z>0\\ \mathbf{c}e^{i(-k^{'}z-\omega t)},\quad z<0\end{array}\right。$$
+$$\mathbf{A}(z,t)=\left\{\begin{array}{c}\mathbf{a}e^{i(-kz-\omega t)}+\mathbf{b}e^{i(kz-\omega t)},\quad z>0\\ \mathbf{c}e^{i(-k^{'}z-\omega t)},\quad z<0\end{array}\right. $$
 
 这里的$k=\omega/v,k^{'}=\omega/v^{'}$分别是$z>0,z<0$区域的波矢。 方程(\ref{ha32})中的$\nabla P_3$项在$z=0$处会贡献一个非常规的边界条件。定义$\nabla P_3=\Delta\hat{\bf z}\delta(z)$(满足$\Delta -1/2\in\mathbb{z}$),边界条件为
 
