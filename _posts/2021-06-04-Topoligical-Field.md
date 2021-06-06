@@ -701,7 +701,7 @@ $$\begin{equation}\begin{aligned}H&=\sum_{z,k_x,k_y}[\psi^\dagger_{k_x,k_y}(z)(\
 
 在时间反演变化下$\Gamma^0$是偶函数$\Gamma^{1,2,3,4}$是奇函数性质,因此(\ref{ha27})中只有最后一项是时间反演奇函数项,因为$\sin\theta(z)$项的存在,它会局域点边界上。将哈密顿量分解为$H=H_0+H_1$,这里$H_1$代表的就是(\ref{ha27})中的最后一项,而$H_0$则是其余满足TRI的项。
 
-第一$h_0,h_1$分别对应$H_0,H_1,哈密顿量$H_0$描述$\theta=0,\theta=\pi$交接处的时间反演不变面。对于$-4c < m < -2c$参化的哈密顿量$H_0(\theta),\theta\in[0,2\pi]$有一个Chern数$C_2=1$,因此对于$\theta=0,\theta=\pi$的系统有相对Chern宇称为-1。可以进行检验对于$\theta=0,-4c < m < -2c$哈密顿量与$m\rightarrow-\infty$是绝热连接的。因此$\theta=0,\theta=\pi$对应的分别是$\mathbb{Z}$的拓扑平庸与非平庸相。因此对于$H_0$在$z$的畴壁处,会存在奇数个无能隙的Dirac锥。通过数值的方式同样可以确定对于$h_0$在$(k_x,j_y)=(0,0)$存在一个Dirac锥。接下来研究$h_1$的作用,它满足$\{\Gamma^4,h_0=0\}$满足反对易关系,则是一个质量项,表面Dirac锥的有效哈密顿量为$h)\text{surf}=k_x\sigma_x+k_y\sigma_y$是个合适的基矢,它与$\GAmma^4$反对易。在希尔伯特空间中与$H_\text{surf}$反对易的项只有$\sigma_z$,因此在格点模型中$\Gamma^4$的作用是诱导出质量项$m\sigma_z$。更加准确的关于$m$的幅值和符号可以通过微扰理论进行计算。$H-\text{surf}$的两个零能表面态为$\rvert k=0,\alpha\rangle,\alpha=1,2$,在有效理论中矩阵$\sigma_x,\sigma_y$的表示为
+第一$h_0,h_1$分别对应$H_0,H_1$,哈密顿量$H_0$描述$\theta=0,\theta=\pi$交接处的时间反演不变面。对于$-4c < m < -2c$参化的哈密顿量$H_0(\theta),\theta\in[0,2\pi]$有一个Chern数$C_2=1$,因此对于$\theta=0,\theta=\pi$的系统有相对Chern宇称为-1。可以进行检验对于$\theta=0,-4c < m < -2c$哈密顿量与$m\rightarrow-\infty$是绝热连接的。因此$\theta=0,\theta=\pi$对应的分别是$\mathbb{Z}$的拓扑平庸与非平庸相。因此对于$H_0$在$z$的畴壁处,会存在奇数个无能隙的Dirac锥。通过数值的方式同样可以确定对于$h_0$在$(k_x,j_y)=(0,0)$存在一个Dirac锥。接下来研究$h_1$的作用,它满足$\{\Gamma^4,h_0=0\}$满足反对易关系,则是一个质量项,表面Dirac锥的有效哈密顿量为$h_\text{surf}=k_x\sigma_x+k_y\sigma_y$是个合适的基矢,它与$\Gamma^4$反对易。在希尔伯特空间中与$H_\text{surf}$反对易的项只有$\sigma_z$,因此在格点模型中$\Gamma^4$的作用是诱导出质量项$m\sigma_z$。更加准确的关于$m$的幅值和符号可以通过微扰理论进行计算。$H-\text{surf}$的两个零能表面态为$\rvert k=0,\alpha\rangle,\alpha=1,2$,在有效理论中矩阵$\sigma_x,\sigma_y$的表示为
 
 $$\sigma_{\alpha\beta}^{i}=\langle k=0,\alpha\rvert\frac{\partial h_0}{\partial k_i}\rvert_{k=0}\rvert k=0,\beta\rangle,\quad i=x,y$$
 
@@ -803,7 +803,7 @@ $$\theta(B)=\mu B+2\text{sgn}(B)\arctan\frac{2}{\sqrt{\epsilon/\mu}+\sqrt{\epsil
 
 最终,拓扑贡献可以通过改变磁场的方向来得到,也可以通过外推$\theta(B)$在$B\rightarrow 0^+$的极限下。
 
-# 维度约化zhi$(2+1)$维
+# 维度约化至$(2+1)$维
 
 
 
