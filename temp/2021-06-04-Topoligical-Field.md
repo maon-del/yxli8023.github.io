@@ -83,7 +83,7 @@ $$h({\bf k})=\sum_{a=1}^3[d_a({\bf k})\sigma_a+\epsilon({\bf k})\mathbb{1}]$$
 
 在单粒子哈密顿量$h({\bf k})$中,矢量${\bf d(k)}$就像是作用在两能级赝自旋$\sigma_i$上的Zeeman场,占据态能带满足$[{\bf d(k)\cdot\sigma}]\rvert -,\mathbf{k}\rangle=-\rvert{\bf d(k)}\rvert\rvert-,\mathbf{k}\rangle$,这表明spinor的自旋极化方向为${\bf -d(k)}$,因此在$\rvert-,\mathbf{k}\rangle$上沿着某个${\bf k}$空间的路径$C$进行绝热演化时获得的Berry位相等于自旋$1/2$的粒子在磁场中沿着$\mathbf{d}(C)$绝热旋转时获得的Berry位相,**着正就是由路径$\mathbf{d}(C)$所张开的立体角的一半.**因此第一Chern数$C_1$可以被${\bf d(k)}$围绕原点的winding来确定
 
-$$C_1=\frac{1}{2\pi}\int dk_x\int dk_y\hat{\bf d}\cdot\frac{\partial\hat{\bf d}}{\partial k_x}\times\frac{\partial\hat{\bf d}}{\partial k_y}$$
+$$C_1=\frac{1}{2\pi}\int dk_x\int dk_y\hat{\bf d}\cdot\frac{\partial\hat{\bf d}}{\partial k_x}\times\frac{\partial\hat{\bf d}}{\partial k_y}\label{c1}$$
 
 ![png](../assets/images/topology/tpf1.png)
 
@@ -461,7 +461,7 @@ $$H[A]=\sum_{k_w,\vec{x},s}[\psi^\dagger_{\vec{x},k_w}(\frac{c\Gamma^0-i\Gamma^s
 
 这里的$\vec{x}$代表三维坐标,$A_{\vec{x}4}\equiv A_{\vec{x},\vec{x}+\hat{w}},s=1,2,3$表示$x,y,z$方向.在这个表达式中,不同$k_w$态是无耦合的,此时就可以将$(4+1)$的$H[A]$约化为一系列$(3+1)$维固定$k_w$的哈密顿量,重新改写$k_w+A_{\vec{x}4}=\theta_\vec{x}$约化到$(3+1)$维的模型为
 
-$$H_{3D}[A,\theta]=\sum_{\vec{x},s}[\psi^\dagger_\vec{x}(\frac{c\Gamma^0-i\Gamma^s}{2})e^{iA_{\vec{x},\vec{x}+\hat{s}}}+\text{H.c}]+\sum_{\vec{x},s}\psi^\dagger_\vec{x}[\sin \theta_\vec{x}\Gamma^4+(m+c\cos \theta_\vec{x})\Gamma^0]\psi_\vec{x}$$
+$$H_{3D}[A,\theta]=\sum_{\vec{x},s}[\psi^\dagger_\vec{x}(\frac{c\Gamma^0-i\Gamma^s}{2})e^{iA_{\vec{x},\vec{x}+\hat{s}}}+\text{H.c}]+\sum_{\vec{x},s}\psi^\dagger_\vec{x}[\sin \theta_\vec{x}\Gamma^4+(m+c\cos \theta_\vec{x})\Gamma^0]\psi_\vec{x}\label{ha20}$$
 
 着描述的是耦合电磁想$A_{\vec{x},\vec{x}+\hat{s}}$的能带绝缘体,绝热参数场为$\theta_\vec{x}$.为了研究$(3+1)$维系统的响应性质，有效作用量$S_\text{3D}[A,\theta]$为
 
@@ -510,7 +510,190 @@ $$\Delta P_3=\frac{i}{24\pi^2}\int d^k \epsilon^{theta ijk}\text{Tr}[(u^{-1}\par
 
 它是一个整数，因此$P_3$就像$P_1$一样对1取模才是well defined，当改变$\theta_0$从0到$2\pi$就可以得到$C_2$。有效作用量(\ref{ha18})可以通过引入$G_3=\partial P_3/\partial\theta$进行简化，然后进行分部积分之后
 
-$$S_{3D}=\frac{1}{4\pi}\int d^3kdt\epsilon^{\mu\nu\sigma\tau}A_\mu(\partial P_3/\partial\theta)v_\nu\delta\theta\partial_\sigma A_\tau$$
+$$S_{3D}=\frac{1}{4\pi}\int d^3kdt\epsilon^{\mu\nu\sigma\tau}A_\mu(\partial P_3/\partial\theta)v_\nu\delta\theta\partial_\sigma A_\tau\label{ha19}$$
+
+这个有效的作用量对任意绝热依赖于$\vec{x},t$的哈密顿量$h(\vec{k},\vec{x},t)$都是well defined.这个有效作用量在场论中被称为轴子电动力学,绝热场$P_3$扮演了轴子场的作用.
+
+## 有效作用量$S_{3D}$的物理效应
+
+有效作用量是$A_\mu$的二次型,他描述了对外部电磁场的线性响应,而且这个场同时依赖于空间和$P_3$对时间的梯度.对$S_{3D}$求变分可以得到响应方程
+
+$$j^\mu=\frac{1}{2\pi}\epsilon^{\mu\nu\sigma\tau}\partial_\nu P_3\partial_\sigma A_\tau\label{ha21}$$
+
+下面可以从两种情况来理解上式的结果
+
+### 空间梯度$P_3$诱导Hall效应
+
+卡片绿亦歌系统$P_3=P_3(z)$仅在$z$方向变化,这个可以通过在Dirac模型(\ref{ha20})中变化$\theta=\theta(z)$,在这种情况下(\ref{ha21})变成
+
+$$j^\mu=\frac{\partial_z P_3}{2\pi}\epsilon^{\mu\nu\rho}\partial_\nu A_\rho,\quad\mu,\nu,\rho=t,x,y$$
+
+它描述了在$xy$平面上的量子霍尔效应,对应的Hall电导为$\sigma_{xy}=\partial_zP_z/2\pi$,如下图所示
+
+![png](../assets/images/topology/tpf11.png)
+
+对于一个在$x$方向均匀的电场$E_x$,Hall电流密度$j_y=(\partial_z P_3/2\pi)E_x$.沿着$z$方向有限区间急性积分就可以得到$xy$上的电流密度
+
+$$J^{2D}_y=\int_{z_1}^{z_2}dzj_y=\frac{1}{2\pi}(\int_{z_1}^{z_2}dP_3)E_x$$
+
+在区间$z_1\leq z\leq z_2$内的净Hall电导为
+
+$$\sigma_{xy}^{2D}=\int_{z_1}^{z_2}dP_3/2\pi$$
+
+在这个区间内它仅依赖于$P_3$的变化,与不依赖于其具体的细节$P_3(z)$.与$(1+1)$维的情况相似,如果对(\ref{ha8})进行空间积分,就可以得到由极化诱导出来的总电荷
+
+$Q=-\int_{z_1}^{z_2}dP/2\pi$
+
+通过比较可以发现在$(3+1)$维中的$P_3$与Hall电导间的关系与$(1+1)$维中极化与总电荷之间的关系式类似的.两个均匀材料将不同$P_3$处将会琮琤畴壁,从而由Hall电导为$\sigma_H=\Delta P_3/2\pi$.在$(1+1)$维中诱导的分数电荷为$Q=-\Delta P/2\pi$.
+
+### $P_3$时间梯度诱导的拓扑磁电效应
+
+当$P_3=P_3(t)$是空间均匀,但随着时间变化时,
+
+$$j^i=-\frac{\partial_t P_3}{2\pi}\epsilon^{ijk}\partial_jA_k,\quad i,j,k=x,y,z,\quad\vec{j}=-\frac{\partial_tP_3}{2\pi}\vec{B}\label{ha22}$$
+
+由于电荷极化$\vec{P}$满足$\vec{j}=\partial_t\vec{P}$,对于一个静态均匀的磁场B可以得到$\partial_t\vec{P}=-\partial_t(P_3\vec{B}/2\pi)$,因此有
+
+$$\vec{P}=-\frac{\vec{B}}{2\pi}(P_3+\text{const})$$
+
+这个方程描述了有磁场诱导的电子极化,正是磁电效应.与多铁材料中相同的效应相比较,此时的磁电效应是拓扑起源仅仅依赖于磁电极化$P_3$.与$(1+1)$维绝热泵浦效应相似,响应同样可以从表面态物理来理解,考虑一个格点Dirac模型(\ref{ha20})沿$x,y$方向是周期的$z$方向是开边界,当存在沿$z$方向的静态磁场$B_z$时,单粒子的能谱$E_n(\theta)$可以在固定$\theta$出进行求解,如上图(b)所示,在$(2+1)$维的边界上存在midgap states. 这里需要注意的是每个态都是$N$重简并的,$N=B_zL_xL_y/2\pi$是朗道能级简并度,在格点模型中当$-4c<m<-2c$时第二Chern数$C_2=\int^{\theta=2\pi}_{\theta=0}dP_3=1$可以发现在一个周期中$\theta=0\rightarrow2\pi$,$N$重简并的表面态在下边界下沉,然后再上边界浮出,当$\theta$绝热的从$0$到$2\pi$的过程中,将会有$N$个电子从上表面泵浦到下表面,这与前面(\ref{ha22})的结果是一致的
+
+$$\Delta Q=\int dt\int dxdyj_z=-\frac{\int_0^{2\pi}dP_3}{2\pi}B_zL_xL_y=-NC_2$$
+
+**在$(3+1)$维系统中磁场的绝热泵浦是$(4+1)$维拓扑绝缘体表面手性反常诱导的.**当磁单极存在的时候,拓扑词典效应将会存在特异的性质,对于一个均匀的$P_3$,方程(\ref{ha22})推导出
+
+$$\nabla\cdot\vec{j}=-\frac{\partial_tP_3}{2\pi}\nabla\cdot\vec{B}$$
+
+在格点上考虑紧致的$U(1)$电磁场,磁单极密度为$\rho_m=\nabla\cdot\vec{B}/2\pi$可以是非零的,可以得到
+
+$$\partial_t\rho_e=(\partial_tP_3)\rho_m$$
+
+因此当$P_3$绝热的从0变话到$\Theta/2\pi$,磁单极会获得一个电荷
+
+$$Q_e=\frac{\Theta}{2\pi}Q_m$$
+
+## $\mathbb{Z}_2$分类的时间反演不变绝缘体
+
+在前面分析$(1+1)$维粒子空穴对称绝缘体中,关键是要找到两个满足粒子空穴对称的差值$h_1(k),h_2(k)$具有相同的Chern数宇称,这样他们相对Chern宇称就是well defined.此时3D系统具有的是时间反演对称,它会扮演与粒子空穴对称相同的作用.对于一个哈密顿量$H=\sum_{mn}c^\dagger_{m\alpha}h^{\alpha\beta}_{mn}c_{n\beta}$对应的时间反演变化时个反幺正算符$c_{m\alpha}\rightarrow T^{\alpha\beta}c_{m\beta}$,这里时间反演矩阵$T$满足$T^\dagger T=\mathbb{I},T^*T=-\mathbb{I}$,在动量空间中时间反演对称要求
+
+$$T^\dagger h(-\vec{k})T=h^T(\vec{k})$$
+
+$T^*T=-\mathbb{I}$是重要的,它将会导致Kramers简并,现在利用与前面$(1+1)$维相同的方法来对$(3+1)$维TRI的系统定义$\mathbb{Z}_2$不变量.对任意两个TRI的能带绝缘体$h_1(k),h_2(k)$,可以定义插值$h(k,\theta)$满足
+
+$$h(k,0)=h_1(k),\quad h(k,\pi)=h_2(k),\quad T^\dagger h(-k,-\theta)T=h^T(k,\theta)$$
+
+腿与$\theta\in [0,2\pi],h(k,\theta)$都是有能隙的.因为插值是$\theta$的周期函数,那么可以在$(k,\theta)$空间中定义Berry位相规范场的第二Chern数$C_2[h(k,\theta)]$.下面来研究对于任意两个插值$h,h^{'}$其$C_2[h(k,\theta)]-C_2[h^{'}(k,\theta)]=0\quad\text{mod}\quad 2$.定一辆个新的$g_{1,2}(k,\theta)$
+
+$$g_1(k,\theta)=\left\{\begin{array}{c}h(k,\theta),\quad\theta\in [0,\pi]\\ h^{'}(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right.\\ g_2(k,\theta)=\left\{\begin{array}{c}h^{'}(k,2\pi-\theta),\quad\theta\in [0,\pi]\\ h(k,\theta),\quad\theta\in[\pi,2\pi]\end{array}\right.$$
+
+通过定义,$g_1,g_2$满足$C_2[h]-C_2[h^{'}]=C_2[g_1]+C_2[g_2],T^\dagger g_1(-k,-\theta)T=g_2^T(k,\theta)$.为了研究$C_2[g_1]=C_2[g_2]$考虑$g_1(k,\theta)$的本征值为$E_\alpha(k,\theta)$的本征态$\rvert k,\theta;\alpha\rangle_1$
+
+$$g_2^T(-k,-\theta)T^\dagger\rvert k,\theta;\alpha\rangle_1=T^\dagger g_1(k,\theta)\rvert k,\theta;\alpha\rangle_1=E_\alpha(k,\theta)T^\dagger\rvert k,\theta;\alpha\rangle_1\\ \rightarrow g_2(-k,-\theta)T^T(\rvert k,\theta;\alpha\rangle_1)^*=E_\alpha(k,\theta)T^T(\rvert k,\theta;\alpha\rangle_1)^*$$
+
+因此$T^T(\rvert k,\theta;\alpha\rangle_1)^*$是$g_2(-k,\theta)$的本征态,其本征值也是$E_\alpha(k,\theta)$.将$g_2(-k,\theta)$的本征态$\rvert -k,-\theta,\beta\rangle_2$展开
+
+$$T^T(\rvert k,\theta;\alpha\rangle_1)^*=\sum_\beta U_{\alpha\beta}(k,\theta)\rvert -k,-\theta;\beta\rangle_2$$
+
+$g_1,g_2$系统的Berry位相规范矢量满足
+
+$$a_{1j}^{\alpha\beta}(k,\theta)=-i\langle k,\theta;\alpha\rvert\partial_j\rvert k,\theta;\beta\rangle_1=-i[\sum_{\gamma,\delta}U^*_{\alpha\gamma}\langle -k,-\theta;\gamma\rvert\partial_j(U_{\beta\delta}\rvert -k,-\theta;\delta\rangle_2)]^*\\ =\sum_{\gamma,\delta}U_{\alpha\gamma}a_{2j}^{\gamma\delta*}(-k,-\theta)(U^\dagger)_{\delta\beta}-i\sum_\gamma U_{\alpha\gamma}(k,\theta)\partial_j U^*_{\beta\gamma}(k,\theta)\label{ha23}$$
+
+总而言之$a_{1j}^{\alpha\beta}(k,\theta)$等于$a_{2j}^{\alpha\beta}$只是相差一个规范变换,Berry位相去曲率满足$f_{1ij}^{\alpha\beta}(k,\theta)=U_{\alpha\gamma}f^{\gamma\delta*}_{2ij}(-k,-\theta)(U^\dagger)_{\delta\beta}$,这就使得$C_2[g_1(k,\theta)]=C_2[g_2(k,\theta)]$.这里就证明了对任意两个对称插值$h,h^{'}$都有 $C_2[h(k,\theta)]-C_2[h^{'}(k,\theta)]=2C_2[g(k,\theta)]=0\quad\text{mod}\quad 2$,则相对第二Chern数宇称为
+
+$$N_3[h_1(k),h_2(k)]=(-1)^{C_2[h(k,\theta)]}$$
+
+它对任意两个时间反演不变的$(3+1)$维绝缘体都是well defined,与插值选取是无关的.与$(1+1)$ 情况相似,此时可以选取一个真空哈密顿量$h_0$作为参考,所有满足$N_3[h_0,h]=-1$的称为$\mathbb{Z}_2$非平庸,$N_3[h_0,h]=1$是平庸的.通过(\ref{ha23})的推导以及TRI哈密顿量满足$T^\dagger h(-k,-\theta)T=h^T(k,\theta)$,Berry位相规范势满足$a_i(k)=Ua_i(-k)U^\dagger-iU\partial_iU^\dagger$,从而可以得到电磁极化$P_3$满足
+
+$$2P_3=\frac{i}{24\pi^2}\int d^3k\epsilon^{ijk}\text{Tr}[(U\partial_iU^\dagger)(U\partial_jU^\dagger)(U\partial_kU^\dagger)]\in\mathbb{Z}$$
+
+这里仅有两个不等价TRI $P_3$值$P_3=0,P_3=1/2$.对两个哈密顿量$h_1,h_2$其第二Chern数满足$C_2[h(k,\theta)]=2(P_3[h_2]-P_3[h_1])$ mod 2,所以$P_3$的差值决定了相对Chern宇称$N_3[h_1,h_2]=(-1)^{2(P_3[h_1]-P_3[h_2])}$. 因此平庸的哈密顿量有$P_3=0$,而非平庸的为$P_3=1/2$.
+
+当得到了$\mathbb{Z}_2$分类之后,由这个拓扑量子数对应的物理结果可以通过$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_3(x,t)\partial_\mu A)\nu\partial_\sigma A_\tau$来进行研究.一个粒子空穴对称$\mathbb{Z}_2$分类的绝缘体在其边界上将会存在零能束缚态,且边界上存在半整数电荷.同样的,对于非平庸的$(3+1)$维绝缘体同样由拓扑保护的表面态.而研究$(3+1)$维表面态最简单的方法就是再次进行维度约化.对于任意三维哈密顿量$h_1(k)$一个插值$h(k,\theta)$可以放置在$h_1$和真空哈密顿量$h_0$之间,如果把$\theta$看做是第四个动量,那么$h(k,\theta)$就定义了一个$(4+1)$维的能带绝缘体,而且它还要满足时间反演不变的限制.沿$z$方向取开边界条件,其余三个方向都是周期边界,当第二Chern数$\C_2[h]$非零时,在表面上此时将会有$\rvert C_2[h]\rvert$种$(3+1)$维手性费米子.也就是说在表面态的3D布里渊区中将会有$\rvert C_2[h]\rvert$个节点$(k_{xn},k_{yn},\theta_{n}),n=1,\cdots,\rvert C_2[h]\rvert$,这里的能谱$E_n(k_x,k_y,\theta)$是无能隙的并有线性色散的Dirac锥.
+
+> 从时间反演对称可以得到$(k_x,k_y,\theta),(-k_x,-k_y,-\theta)$处的能谱是完全相同的,即如果$(k_x,k_y,\theta)$是节点则$(-k_x,-k_y,-\theta)$也一定是;**时间反演对称要求手性费米子一定是成对出现的,除了在时间反演不变动量点.**
+
+![png](../assets/images/topology/tpf12.png)
+
+当第二Chern数是奇数的时候,在3D布里渊区中一定有奇数个Dirac锥在八个高对称点上.
+
+### $\mathbb{Z}_2$非平庸绝缘体物理性质
+
+鱼油非平庸的绝缘体有磁电极化$P_3=1/2$ mod $1$, 根据
+
+$$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_3(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau\label{ha24}$$
+
+体态有效作用量为
+
+$$S_{3D}=\frac{2n+1}{8\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\nu\partial_\sigma A_\tau,\quad n=P_3-1/2\in\mathbb{Z}\label{ha25}$$
+
+在时间反演对称下,$\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\nu\partial_\sigma A_\tau=2\mathbf{E}\cdot\mathbf{B}$是奇函数,有效作用量(\ref{ha24})破坏了时间反演对称.然而,当空间流形是闭合的时候(所有的方向都是周期边界),$\int d^3xdt\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\nu\partial_\sigma A_\tau$的结果是量子化的$8\pi^2m,m\in\mathbb{Z}$.y因此$S_{3D}=(2n+1)m\pi$,从而作用量$e^{iS_{3D}}=e^{im\pi}=(-1)^m$是时间反演不变的,而且与$n$无关(n是$P_3$的整数部分).因此在一个闭合的时空流形上,拓扑作用量(\ref{ha25})与$\mathbb{Z}_2$非平庸时间反演拓扑绝缘体的有效理论结果是一致的,极化$P_3$的整数部分并不是一个物理量.但是在开边界条件的时候,情况变的有所不同,在时空流形上有边界的时候$S_{3D}$的值不再是量子化的,基矢$P_3=1/2$ or $0$,在这种情况下$P_3$的整数部分并不会进入到$e^{iS_{3D}}$中并且物理,它的值会依赖于边界的具体细节.
+
+为了理解开边界时候的物理,考虑在$z=0$两边分别是拓扑不等价的系统,有效作用量(\ref{ha24})可以写为
+
+$$S_{3D}=\frac{1}{4\pi}\int d^3 xdt \epsilon^{\mu\nu\sigma\tau}A_\mu\partial_\nu P_3\partial_\sigma A_\tau$$
+
+因为当$z<0P_3=1/2$ mod1 ,当$z>0$是$P_3=0$ mod 1,此时可以有
+
+$$\partial_zP_3=(n+1/2)\delta(z)$$
+
+这里的$n\in\mathbb{Z}$依赖于表面拓扑非平庸的细节.在这种情况下有效作用量可以约化到表面上$(2+1)$维的Chern-Simons项
+
+$$S_\text{eff}=-\frac{2n+1}{8\pi}\int dxdydt\epsilon^{3\mu\nu\rho}A_\mu\partial_\nu A_\rho\label{ha26}$$
+
+这与前面在$P_3$的畴壁上存在量子霍尔效应的结论一致.$\mathbb{Z}_2$非平庸绝缘体上表面上的Hall电导为$\sigma_H=(n+1/2)/2\pi$,它是一个半奇数乘以量子$e^2/h$.从上面分析中也可以得到在非平庸绝缘体表面上总是存在奇数个$(2+1)$维Dirac费米子.**因此表面上的半量子Hall效应可以从无质量Dirac费米子的宇称反常简单理解.**
+
+> 由Dirac费米子携带的Hall电导只有在费米子质量不为零的时候才是well defined, 也就是说此时应该存在能隙.
+
+联系哈密顿量模型$H=k_x\sigma^x+k_y\sigma^y+m\sigma^z$,其Berry曲率可以通过(\ref{c1})计算,矢量${\bf d}$为${\bf d}=(k_x,k_y,m)$其对应的Hall电导为
+
+$$\sigma_H=\frac{1}{4\pi}\text{sgn}(m)(=\frac{e^2}{2h}\text{sgn}(m))$$
+
+现在考虑拓扑绝缘体表面具有$(2n+1)$个无能隙的Dirac锥,从前面的讨论中可以知道,在不破坏时间反演对称的情况下,至少由一个Dirac锥是不打开能隙的,对每个Dirac锥考虑质量项$m_i,i=1,2,\cdots,2n+1$,诱导出的净Hall电导为$\sum_{i=1}^{2n+1}\text{sgn}(m_i)/4\pi$.由于$\sum_{i=1}^{2n+1}\text{sgn}(m_i)$s是奇整数,此时得到的Hall电导与Chern-Simons理论(\ref{ha26})得到的一致.从这个讨论同样可以理解有效作用量(\ref{ha26})描述了一个时间反演破缺的表面,尽管其体态仍然是时间反演不变的.
+
+**体态的拓扑要求这里由1/2个量子的Hall电导,而表面的时间反演破缺则决定了整数部分n.**这个结论与粒子空穴对称$(1+1)$维系统终端会存在一个半整数的电荷是完全类似的.局域在绝缘体链一端的电荷为$(n+1/2)e$,整数部分$n$依赖于时间反演破缺的表面,而$1/2$则是由体态拓扑
+所保证的.
+{:.success}
+
+下面从更加明确的物理角度来研究这个表面态,通过一个Dirac格点模型来作为例子,考虑一个$(3+1)$维的格点模型(\ref{ha20}),并且有一个$\theta(\vec{x})$畴壁存在
+
+$$\theta(\vec{x})=\theta(z)=\frac{\pi}{2}[1-\tanh(z/4\xi)],\quad \theta(z\rightarrow-\infty)=\pi,\theta(z\rightarrow+\infty)=0$$
+
+其构型如下图所示
+
+![png](../assets/images/topology/tpf13.png)
+
+当沿着$x,y$方向为周期边界时,哈密顿量可以进行块对角化
+
+$$\begin{equation}\begin{aligned}H&=\sum_{z,k_x,k_y}[\psi^\dagger_{k_x,k_y}(z)(\frac{c\Gamma^0-i\Gamma^3}{2})\psi_{k_x,k_y}(z+1+\text{H.c})]\\&+\sum_{z,k_x,k_y}\psi^\dagger_{k_x,k_y}(z)[(m+c\cos\theta(z)+c\cos k_x+c\cos k_y)\Gamma^0+\sin k_x\Gamma^1+\sin k_y\Gamma^2]\psi^\dagger_{k_x,k_y}(z)\\&+\sum_{z,k_x,k_y}\psi^\dagger_{k_x,k_y}(z)\sin\theta(z)\Gamma^4\psi^\dagger_{k_x,k_y}(z)\equiv H_0+H_1\end{aligned}\end{equation}\label{ha27}$$
+
+在时间反演变化下$\Gamma^0$是偶函数$\Gamma^{1,2,3,4}$是奇函数性质,因此(\ref{ha27})中只有最后一项是时间反演奇函数项,因为$\sin\theta(z)$项的存在,它会局域点边界上.将哈密顿量分解为$H=H_0+H_1$,这里$H_1$代表的就是(\ref{ha27})中的最后一项,而$H_0$则是其余满足TRI的项.第一$h_0,h_1$分别对应$H_0,H_1.哈密顿量$H_0$描述$\theta=0,\theta=\pi$交接处的时间反演不变面.对于$-4c < m < -2c$参化的哈密顿量$H_0(\theta),\theta\in[0,2\pi]$有一个Chern数$C_2=1$,因此对于$\theta=0,\theta=\pi$的系统有相对Chern宇称为-1.可以进行检验对于$\theta=0,-4c < m < -2c$哈密顿量与$m\rightarrow-\infty$是绝热连接的.因此$\theta=0,\theta=\pi$对应的分别是$\mathbb{Z}$的拓扑平庸与非平庸相.因此对于$H_0$在$z$的畴壁处,会存在奇数个无能隙的Dirac锥.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
