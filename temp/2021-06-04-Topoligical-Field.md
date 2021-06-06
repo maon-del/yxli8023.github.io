@@ -1,6 +1,6 @@
 ---
 title: 时间反演不变绝缘体的拓扑场论(.....ing)
-tags: Topology
+tags: Topology Field-Theory
 layout: article
 license: true
 toc: true
@@ -666,7 +666,28 @@ $$\theta(\vec{x})=\theta(z)=\frac{\pi}{2}[1-\tanh(z/4\xi)],\quad \theta(z\righta
 
 $$\begin{equation}\begin{aligned}H&=\sum_{z,k_x,k_y}[\psi^\dagger_{k_x,k_y}(z)(\frac{c\Gamma^0-i\Gamma^3}{2})\psi_{k_x,k_y}(z+1+\text{H.c})]\\&+\sum_{z,k_x,k_y}\psi^\dagger_{k_x,k_y}(z)[(m+c\cos\theta(z)+c\cos k_x+c\cos k_y)\Gamma^0+\sin k_x\Gamma^1+\sin k_y\Gamma^2]\psi^\dagger_{k_x,k_y}(z)\\&+\sum_{z,k_x,k_y}\psi^\dagger_{k_x,k_y}(z)\sin\theta(z)\Gamma^4\psi^\dagger_{k_x,k_y}(z)\equiv H_0+H_1\end{aligned}\end{equation}\label{ha27}$$
 
-在时间反演变化下$\Gamma^0$是偶函数$\Gamma^{1,2,3,4}$是奇函数性质,因此(\ref{ha27})中只有最后一项是时间反演奇函数项,因为$\sin\theta(z)$项的存在,它会局域点边界上.将哈密顿量分解为$H=H_0+H_1$,这里$H_1$代表的就是(\ref{ha27})中的最后一项,而$H_0$则是其余满足TRI的项.第一$h_0,h_1$分别对应$H_0,H_1.哈密顿量$H_0$描述$\theta=0,\theta=\pi$交接处的时间反演不变面.对于$-4c < m < -2c$参化的哈密顿量$H_0(\theta),\theta\in[0,2\pi]$有一个Chern数$C_2=1$,因此对于$\theta=0,\theta=\pi$的系统有相对Chern宇称为-1.可以进行检验对于$\theta=0,-4c < m < -2c$哈密顿量与$m\rightarrow-\infty$是绝热连接的.因此$\theta=0,\theta=\pi$对应的分别是$\mathbb{Z}$的拓扑平庸与非平庸相.因此对于$H_0$在$z$的畴壁处,会存在奇数个无能隙的Dirac锥.
+在时间反演变化下$\Gamma^0$是偶函数$\Gamma^{1,2,3,4}$是奇函数性质,因此(\ref{ha27})中只有最后一项是时间反演奇函数项,因为$\sin\theta(z)$项的存在,它会局域点边界上.将哈密顿量分解为$H=H_0+H_1$,这里$H_1$代表的就是(\ref{ha27})中的最后一项,而$H_0$则是其余满足TRI的项.第一$h_0,h_1$分别对应$H_0,H_1.哈密顿量$H_0$描述$\theta=0,\theta=\pi$交接处的时间反演不变面.对于$-4c < m < -2c$参化的哈密顿量$H_0(\theta),\theta\in[0,2\pi]$有一个Chern数$C_2=1$,因此对于$\theta=0,\theta=\pi$的系统有相对Chern宇称为-1.可以进行检验对于$\theta=0,-4c < m < -2c$哈密顿量与$m\rightarrow-\infty$是绝热连接的.因此$\theta=0,\theta=\pi$对应的分别是$\mathbb{Z}$的拓扑平庸与非平庸相.因此对于$H_0$在$z$的畴壁处,会存在奇数个无能隙的Dirac锥.通过数值的方式同样可以确定对于$h_0$在$(k_x,j_y)=(0,0)$存在一个Dirac锥.接下来研究$h_1$的作用,它满足$\{\Gamma^4,h_0=0\}$满足反对易关系,则是一个质量项,表面Dirac锥的有效哈密顿量为$h)\text{surf}=k_x\sigma_x+k_y\sigma_y$是个合适的基矢,它与$\GAmma^4$反对易.在希尔伯特空间中与$H_\text{surf}$反对易的项只有$\sigma_z$,因此在格点模型中$\Gamma^4$的作用是诱导出质量项$m\sigma_z$.更加准确的关于$m$的幅值和符号可以通过微扰理论进行计算.$H-\text{surf}$的两个零能表面态为$\rvert k=0,\alpha\rangle,\alpha=1,2$,在有效理论中矩阵$\sigma_x,\sigma_y$的表示为
+
+$$\sigma_{\alpha\beta}^{i}=\langle k=0,\alpha\rvert\frac{\partial h_0}{\partial k_i}\rvert_{k=0}\rvert k=0,\beta\rangle,\quad i=x,y$$
+
+$\sigma_z$可以表示为$-i\sigma_x\sigma_y$,因此质量m由
+
+$$m=\frac{1}{2}\sum_{\alpha\beta}\sigma_{\alpha\beta}^z\langle k=0,\beta\rvert h_1\rvert k=0,\alpha\rangle$$
+
+决定.考虑一个参数化的哈密顿量$h=h_0+\lambda h_1$,表面Drirac费米子的质量在$\lambda\rightarrow 0$的时候正比于$\lambda$. 如上图(c)所示, 当$\lambda<0$的时候表面Hall电导为$\text{sgn}(\lambda)/4\pi.$表面Hall电导同样可以从有效理论进行计算. 对于$\lambda=1$位相场$\theta$从$\pi$变到$0$,对应的Hall电导为$\sigma_H=\int_{-\infty}^{+\infty}dP_3(z)/2=\int_0^\pi dP_3(\theta)/2\pi=-1/4\pi$.对于$\lambda=-1$可以考虑将$H(\theta)$中的$\theta(z)$替换成$-\theta(z)$,这个操作保持了$h_0$不变但是改变了$h_1$的符号,最终是的$\theta$的winding从$-\pi$变到了$0$,对应的Hall电导为$\sigma_H=\int_{-\pi}^0dP_3(\theta)/2=1/4\pi$.这两种情况对应的$\theta$的winding如上图(d)所示.
+
+物理上,时间反演对称破缺项来源于磁场或者表面上的局域磁矩(可能来源于表面相互作用导致的自发时间反演对称破缺).一旦这样的"时间反演破缺表面场"(M)出现,有效作用量$S_{3D}=\frac{1}{4\pi}\int d^3 xdt \epsilon^{\mu\nu\sigma\tau}A_\mu\partial_\nu P_3\partial_\sigma A_\tau$在开边界的时候是well defined, 它描述了$\mathbb{Z}_2$非平庸绝缘体对电磁场的响应. 实际上,时间反演破缺场应该被认为是施加在TRI系统上的外场,此时有效作用量$S_{3D}$描述的是一个结合M和电磁场$A_\mu$系统的非线性响应.对于一个占据空间大小为$\mathcal{V}$的$\mathbb{Z}_2$非平庸系统,其边界为$\partial\mathcal{V}$,$P_3$的空间梯度为
+
+$$\nabla P_3(\vec{x})=(g[M(\vec{x})]+\frac{1}{2})\int_{\partial\mathcal{V}}d\hat{\bf n}\delta^3(\vec{x}-\vec{y})$$
+
+这里$g[M(\vec{x})]\in\mathbb{Z}$是有时间反演破缺场$M(\vec{x})$决定的winding的整数部分,$\hat{\bf n}$是表面的法线方向.在这种$\nabla P_3$的构型下$S_{3D}$可以约化成表面Chern-Simons作用量
+
+$$S_\text{surf}=\frac{1}{4\pi}\int_{\partial\mathcal{V}}d\hat{n}(g[M(\vec{x})]+\frac{1}{2})\epsilon^{\mu\nu\sigma\tau}A_\nu\partial_\sigma A_\tau$$
+
+因为通常$g[M(\vec{x})]$只能取离散的值,非平庸绝缘体表面将会有几个畴壁对应着不同的Hall电导.
+
+#### 磁化诱导量子Hall效应
+![png](../assets/images/topology/tpf14.png)
 
 
 
