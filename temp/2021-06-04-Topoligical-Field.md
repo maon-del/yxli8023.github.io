@@ -682,12 +682,94 @@ $$\nabla P_3(\vec{x})=(g[M(\vec{x})]+\frac{1}{2})\int_{\partial\mathcal{V}}d\hat
 
 这里$g[M(\vec{x})]\in\mathbb{Z}$是有时间反演破缺场$M(\vec{x})$决定的winding的整数部分,$\hat{\bf n}$是表面的法线方向.在这种$\nabla P_3$的构型下$S_{3D}$可以约化成表面Chern-Simons作用量
 
-$$S_\text{surf}=\frac{1}{4\pi}\int_{\partial\mathcal{V}}d\hat{n}(g[M(\vec{x})]+\frac{1}{2})\epsilon^{\mu\nu\sigma\tau}A_\nu\partial_\sigma A_\tau$$
+$$S_\text{surf}=\frac{1}{4\pi}\int_{\partial\mathcal{V}}d\hat{n}(g[M(\vec{x})]+\frac{1}{2})\epsilon^{\mu\nu\sigma\tau}A_\nu\partial_\sigma A_\tau\label{ha28}}$$
 
 因为通常$g[M(\vec{x})]$只能取离散的值,非平庸绝缘体表面将会有几个畴壁对应着不同的Hall电导.
 
 #### 磁化诱导量子Hall效应
 ![png](../assets/images/topology/tpf14.png)
+
+考虑如上图所示的两层题词层具有平行或者反平行的磁化方向,一个标准的六终端设置可以执行平面Hall电导的测量,净Hall电导是有上下两个表面的和贡献的.当拓扑绝缘体是均匀的时候,一个外指向的磁化矢量将会有相同的效应,无论那个表面上存在这样的磁化.假设上面有电场$\mathbf{E}=E_x\hat{\bf x}$诱导的Hall电流$\mathbf{j}_t=\hat{\bf n}_t\times \mathbf{E}/4\pi$,下表面与上表面的公式相同$\mathbf{j}_b=\hat{\bf n}_b\times  \mathbf{E}/4\pi$.因为上下表面的法线方向相反$\hat{\bf n}_t=-\hat{\bf n}_b=\hat{\bf z}$,电流满足$\mathbf{j}_t=-\mathbf{j}_b$,如上图所示.最终,反平行磁化诱导出净为零的Hall电流,平行磁化诱导出的$\sigma_H=e^2/h$.和整数量子Hall效应相同,这里量子化的Hall电导是由手性边界态贡献的.由图14(a)可以看到,磁化矢量在上下表面上的方向是相反的,虽在在全局$x,y,z$基矢上磁化方向是相同的,但是通过每个面上的法线方向$\hat{\bf n}$来定义,两个表面上的Hall电导是相反的.也就是说在表面Chern-Simons有效作用量(\ref{ha28})中,对上表面而言$g[M(\vec{x})]$是$0$但是对下表面则是$-1$.结果就是在两个表面的边界交界处就会有Hall电导.这就类似于通常量子霍尔系统中在$\nu=0$和$\nu=1$的区域内,在畴壁处会补货手性费米流体,这正是实验上锁观测到的净Hall效应.
+
+> 这里边界面是两维的,所以一般情况下除了一致手性的边界态之外,同样会有其他无寿星的传播模式,但是这些无手性的态并不会改变净的稳定的手性边界态,因此这里总是会存在一支向左或者向右运动的边界态.
+
+这些边界态的稳定性是受到体态能隙保护的,在此时是有磁化诱导的能隙$E_M$.在满足下面两个要求的情况下是可以观测到这种效应的:
+
+- 温度$k_BT << E_m$
+- 当化学势在由磁化诱导上下表面能隙之间
+
+#### 拓扑磁电效应
+拓扑磁电效应是由$P_3$诱导出来,可以通过(\ref{ha22})与$\vec{P}=-\frac{\vec{B}}{2\pi}(P_3+\text{const})$描述,接下来考虑在非平庸拓扑绝缘体中实现这种效应.和表面量子Hall效应相同,$P_3$的整数部分是由磁化决定的,考虑一个铁磁-拓扑绝缘体-铁磁的异质结,入托14(b)所示,因为具有反平行的磁化,电场$E_x$诱导的电流在上下表面上的方向是相反的.当考虑一个如上描述的没有Hall bar的孤立系统,形成了一个循环的电流,在电场的作用下会诱导出平行或者反平行的磁化.然而当考虑图14(b)所示的几何结构时,循环电流在无能隙的边界面上会有耗散,违反了拓扑磁电(TME)的绝热条件.为了得到TME需要在边界面上存在破坏时间反演的能隙,这个可以通过图15(a)中的圆柱形结构来实现.
+
+![png](../assets/images/topology/tpf15.png)
+
+在圆柱体的表面上存在指向面外的磁化还有固定的Hall电导$\sigma_H=(n+\frac{1}{2})e^2/h$.当平行于圆柱体施加一个电场后,在边界面上就会诱导出沿着切线方向的循环电流,其强度为$j_t=\sigma_HE$.这个循环电流的出现与在表面上束缚一个常数的磁化$M=j_t/c=(n+1/2)\frac{e^2}{hc}E$是相同的,它的方向与电场是反平行的.总之,表面的Hall电流就像是拓扑磁化电流,表面的半Hall效应就等价于体态磁化贡献的拓扑
+
+$$\mathbf{M}_t=-(n+\frac{1}{2})\frac{e^2}{hc}\mathbf{E}$$
+
+这里需要指出的是,响应系数等于$1/4\pi$成精细结构常数$\alpha=e^2/\hbar c$的奇数倍.通常情况下如果一个电场施加在方向方向为$\hat{\bf n}$的拓扑绝缘体表面上行,Hall电流为$\mathbf{j}_H=(n+1/2)\frac{e^2}{h}\hat{\bf n}\times\mathbf{E}$, 这与上式给出的磁化产生的磁化流是一致的.结合通常非拓扑的磁化响应$\mathbf{M}_c$,可以得到总的磁化为$\mathbf{M}=\mathbf{M}_c+\mathbf{M}_t$,则修改后的方程为
+
+$$\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c+(2n+1)\frac{e^2}{\hbar c}\mathbf{E}\label{ha29}$$
+
+同样的电场和磁场的诱导也会发生在平行于圆柱体施加磁场的情况下,如图15(b)所示.当磁场从零逐渐打开时,平行于边界面的循环电流将会被产生,诱导出的Hall电流为$j\simeq dB/dt$,其方向会平行或者反平行与磁场方向.最终,在上下表面会有正比于磁场$B$的电荷密度积累,因此又磁场诱导电荷极化的拓扑贡献为
+
+$$\mathbf{P}_t=(n+\frac{1}{2})\frac{e^2}{hc}\mathbf{B}$$
+
+将常规与拓扑的响应结合起来可以得到
+
+$$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c-(2n+1)\frac{e^2}{\hbar c}\mathbf{B}\label{ha30}$$
+
+通常的Maxwell's方程加上(\ref{ha29})和(\ref{\ha30})就可以完整的描述3D拓扑绝缘体的电动力学.另外一个替代描述就是利用常规的关系$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c$和$\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$外加上一些被拓扑相修正的Maxwell's方程.包含拓扑相$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_c(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau$后的电磁场总的作用量为
+
+$$S_\text{tot}=S_\text{Maxwell}+S_\text{topo}=\int d^3xdt[\frac{1}{16\pi}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}F_{\mu\nu}\mathcal{P}^{\mu\nu}-\frac{1}{c}j^\mu A_\mu]+\frac{\alpha}{16\pi}\int d^3xdt P_3\epsilon^{\mu\nu\sigma\tau}F_{\mu\nu}F_{\sigma\tau}\label{ha32}$$
+
+$\alpha\equiv e^2/\hbar c$是精细结构常数,$\mathcal{P}^{0i}=P^i,\mathcal{P}^{ij}=\epsilon^{ij}M_k$分别是电,磁极化矢量.可以通过对$A_\mu$求变分得到运动方程
+
+$$\frac{1}{4\pi}\partial_\nu F^{\mu\nu}+\partial_\nu\mathcal{P}^{\mu\nu}+\frac{\alpha}{4\pi}\epsilon^{\mu\nu\sigma\tau}\partial_\nu(P_3F_{\sigma\tau})=\frac{1}{c}j^\mu$$
+
+这些方程可以写成更加熟悉的形式
+
+$$\nabla\cdot\mathbf{D}=4\pi\rho+2\alpha(\nabla P_3\cdot\mathbf{B})\\ \nabla\times\mathbf{H}-\frac{1}{c}\frac{\partial\mathbf{D}}{\partial t}=\frac{4\pi}{c}\mathbf{j}-2\alpha((\nabla P_3\times \mathbf{E})+\frac{1}{c}(\partial_t P_3)\mathbf{B})\\ \nabla\times\mathbf{E}+\frac{1}{c}\frac{\partial\mathbf{B}}{\partial t}=0\\ \nabla\cdot\mathbf{B}=0\label{ha31}$$
+
+这里$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c,\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$仅仅包含了非拓扑的贡献. 这些是轴子电动力学的运动方程.通过将拓扑项移动到左边,并根据(\ref{ha20})和(\ref{ha30}重新改写$\mathbf{D,H}$,取$P_3=n+1/2$就可以得到传统的Maxwell's方程.
+
+**因为在拓扑绝缘体中体态存在时间反演对称,不可能由其他非拓扑的机制来对磁电系数由贡献,这也保证了拓扑磁电效应的鲁棒性.**
+
+这里要强调一下,在拓扑绝缘体中$P_3$的值只有在当打开能隙的表面上存在磁化的时候才能被确定,如图15(c),选择一个路径$L$从参考点深入到真空中,$P_3$可以被计算$P_3(\vec{x})=\int_{\vec{x}_0L}^{\vec{x}}dl\cdot \nabla P_3$.然而这个结果仅仅适用于当结果不依赖于路径的时候.如果一个磁化的壳包裹在拓扑绝缘体表面上,在界面的任何处磁化方向都指向外侧,当$P_3$穿过界面的时候在不同位置处的改变量都是相同的,此时体态的$P_3$是well defined,在这种情况下,方程(\ref{ha29},\ref{ha30})也都是well defined,如果磁化的方向反向,那么$P_3$的整数部分会发生改变.另一方面,当在表面上存在磁化方向的畴壁时,在体态中此时整数部分的$P_3$不是well defined,(\ref{ha29},\ref{ha30})并不能使用,如图15(d)所示.方程(\ref{ha29},\ref{ha30}})失败是因为此时边界上存在量子霍尔边界流,此时需要更加一般形式的Maxwell's方程(\ref{ha31})来包含这些边界电流的贡献.这些分析同样提供了表面Hall效应新的图像,即表面上的量子霍尔效应是由寄居在$P_3$场vortex ring上的手性边界态产生的.只有当这种边界态不存在,表面是full gapped,电磁响应才可以用(\ref{ha29},\ref{ha30})来描述.
+
+#### 低频Faraday旋转
+通过一个电容施加电场,并利用超导量子干涉仪来探测磁场从而可以观测TME效应,同样的也可以利用Faraday或者Kerr旋转来进行探测.修改后的Maxwell方程(\ref{ha31})可以运用到地外一个现象中-光子传播系统.这里需要注意方程(\ref{ha32})只能应用到力能极限$E << E_g$,这里$E_g$是表面态的能隙.用来探测系统拓扑性质的光子频率应该是低频光子$\omega << E_g/hbar$.
+
+![png](../assets/images/topology/tpf16.png)
+
+在$z=0$处考虑一个铁磁-拓扑绝缘体的界面,如上图所示,正常的线性偏振光可以表示为
+
+$$\mathbf{A}(z,t)=\left\{\begin{array}{c}\mathbf{a}e^{i(-kz-\omega t)}+\mathbf{b}e^{i(kz-\omega t)},\quad z>0\\ \mathbf{c}e^{i(-k^{'}z-\omega t)},\quad z<0\end{array}\right.$$
+
+这里的$k=\omega/v,k^{'}=\omega/v^{'}$分别是$z>0,z<0$区域的波矢. 方程(\ref{ha32})中的$\nabla P_3$项在$z=0$处会贡献一个非常规的边界条件.定义$\nabla P_3=\Delta\hat{\bf z}\delta(z)$(满足$\Delta -1/2\in\mathbb{z}$),边界条件为
+
+$${\bf a+b=c},\quad \hat{\bf z}\times [k(-\mathbf{a}+\mathbf{b})/\mu+k^{'}\mathbf{c}/\mu^{'}]=-\frac{2\alpha\Delta\omega}{c}\mathbf{c}$$
+
+这里$\epsilon,epsilon^{'}$和$\mu,\mu^{'}$分别是$z>0,z<0$处的的介电常数和透射率.简记$a_\pm=a_x\pm ia_y,b_\pm,c_\pm$也一样,上面的方程可以得到
+
+$$a_+=\frac{1}{2}[1+\frac{k^{'}/\mu^{'}-2i\alpha\Delta\omega/c}{k/\mu}]c_+$$
+
+当入社波矢$\mathbf{a}$是线极化的,那么传播波矢$\mathbf{c}$同样是线极化的,极化平面的旋转角度为
+
+$$\theta_\text{topo}=\arctan\frac{2\alpha\Delta}{\sqrt{\epsilon/\mu}+\sqrt{\epsilon^{'}/\mu^{'}}}\label{ha33}$$
+
+这里总是假设铁磁材料的磁化方向是垂直于$xy$面的,因此$\mathbf{H}=\mu\mathbf{B}$总是一个面内的磁场.
+
+由于铁磁材料同时也会诱导Fraday旋转,在测量拓扑贡献(\ref{ha33})的时序必须对其进行区分,将铁磁层替换成具有更大磁化率的顺磁材料并施加磁场进行极化,此时磁化正比于磁场,因此体态贡献的Faraday旋转正比于磁场.净Faraday旋转为$\theta=\theta_\text{topo}^{(t)}+\theta_\text{topo}^{(b)}+\theta_\text{bulk}$,它与磁场的依赖关系为
+
+$$\theta(B)=\mu B+2\text{sgn}(B)\arctan\frac{2}{\sqrt{\epsilon/\mu}+\sqrt{\epsilon^{'}/\mu^{'}}}$$
+
+最终,拓扑贡献可以通过改变磁场的方向来得到,也可以通过外推$\theta(B)$在$B\rightarrow 0^+$的极限下.
+
+# 维度约化zhi$(2+1)$维
+
+
+
 
 
 
