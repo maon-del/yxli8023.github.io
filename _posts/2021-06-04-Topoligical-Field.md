@@ -761,8 +761,11 @@ $$\mathbf{P}_t=(n+\frac{1}{2})\frac{e^2}{hc}\mathbf{B}$$
 
 $$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c-(2n+1)\frac{e^2}{\hbar c}\mathbf{B}\label{ha30}$$
 
-通常的Maxwell's方程加上(\ref{ha29})和(\ref{ha30})就可以完整的描述3D拓扑绝缘体的电动力学。另外一个替代描述就是利用常规的关系$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_{c}$和$\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$外加上一些被拓扑相修正的Maxwell's方程。
-包含拓扑相$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_c(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau$后的电磁场总的作用量为
+通常的Maxwell's方程加上(\ref{ha29})和(\ref{ha30})就可以完整的描述3D拓扑绝缘体的电动力学。另外一个替代描述就是利用常规的关系
+
+$$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_{c},\quad \mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$$
+
+外加上一些被拓扑相修正的Maxwell's方程,包含拓扑相$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_c(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau$后的电磁场总的作用量为
 
 $$S_\text{tot}=S_\text{Maxwell}+S_\text{topo}=\int d^3xdt[\frac{1}{16\pi}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}F_{\mu\nu}\mathcal{P}^{\mu\nu}-\frac{1}{c}j^\mu A_\mu]+\frac{\alpha}{16\pi}\int d^3xdt P_3\epsilon^{\mu\nu\sigma\tau}F_{\mu\nu}F_{\sigma\tau}\label{ha32}$$
 
@@ -897,7 +900,7 @@ $m>0,\hat{\bf n}=(\hat{n}_0,\hat{n}_3,\hat{n}_4)$是三维单位矢量,对于这
 
 $${\bf d}(\mathbf{k},\theta,\varphi)=\mathbf{d}_0(\mathbf{k})+\left(\begin{array}{c}0\\ 0\\ m\hat{\bf n}\end{array}\right),\quad \mathbf{d}_0(\mathbf{k})=(\sin k_x,\sin k_y,0,0,\cos k_x+\cos k_y-2)$$
 
-在$m << 2$的极限下,哈密顿量的连续形式为$h(\mathbf{k},\hat{\bf n})\simeq\sum_{a=1,2}k_a\Gamma^a+\sum_{b=0,3,4}m\hat{n}_b\Gamma^b$,这是由三种可能质量项的$4\tiems 4$Dirac模型.在这个极限下并对$\mathbf{k}$进行积分(\ref{ha40})可以得到
+在$m << 2$的极限下,哈密顿量的连续形式为$h(\mathbf{k},\hat{\bf n})\simeq\sum_{a=1,2}k_a\Gamma^a+\sum_{b=0,3,4}m\hat{n}_b\Gamma^b$,这是由三种可能质量项的$4\times 4$Dirac模型.在这个极限下并对$\mathbf{k}$进行积分(\ref{ha40})可以得到
 
 $$\partial_\mu\Omega_\nu-\partial_\nu\Omega_\mu=\frac{1}{2}\hat{\bf n}\cdot\partial_\mu\hat{\bf n}\times\partial_\nu\hat{\bf n}$$
 
@@ -936,7 +939,11 @@ $$h(\mathbf{k},0)=h_1,\quad h(\mathbf{k},\pi)=h_2,\\ T^\dagger h(-\mathbf{k},-\t
 
 $$g(\mathbf{k},\theta,0)=h(\mathbf{k},\theta),\quad g(\mathbf{k},\theta,\pi)=h^{'}(\mathbf{k},\theta)\\ g(\mathbf{k},0,\varphi)=h_1{\mathbf{k}},\quad g(\mathbf{k},\pi,\varphi)=h_2(\mathbf{k})\\ g^T(\mathbf{k},\theta,\varphi)=T^\dagger g(-\mathbf{k},-\theta,-\varphi)T $$
 
-这里$g(\mathbf{k},\theta,\varphi)$对应一个$(4+1)$维绝缘体哈密顿量,其第二Chern数$C_2[g]$是被定义的.通过这个定义,$h(\mathbf{k},\theta),h^{'}(\mathbf{k},\theta)$的第二Chern数宇称$N_3$满足$N_3[h]N_3[h^{'}]=-1^{C_2[g]}$.同时$g(\mathbf{k},\theta,\varphi)$可以考虑为$\theta=0,\theta=\pi$系统之间的一个插值$g(\mathbf{k},0,\varphi)\equiv h_1(\mathbf{k}),g(\mathbf{k},\pi,\varphi)\equiv h_2(\mathbf{k})).由于$h_{1,2}({\bf k})$都是独立于$\varphi$的,所以$g(\mathbf{k},0,\varphi),g(\mathbf{k},\pi,\varphi)$的Berry位相规范场的$\varphi$分量是零,结果是$-1^{C_2[g]}=N_3[g(\mathbf{k},0,\varphi)]=N_3[g(\mathbf{k},\pi,\varphi)]=1$.因此对于任意两个插值$h,h^{'}$都有$N_3[h]N_3[h^{'}]=1$,因此发现$Z_2$量$N_2[h_1(\mathbf{k},h_2(\mathbf{k})]\equiv N_3[h(\mathbf{k},\theta)]$仅仅依赖于$(2+1)$维哈密顿量$h_1,h_2$.通过定义常数哈密顿量$h_0(\mathbf{k})=h_0$作为参考,所有的$(2+1)$维哈密顿量可以通过$N_2[h_0,h(\mathbf{k})]$的值来区分,一个绝缘体满足$N_2[h_0,h]=-1$不能在不破坏时间反演对称的情况下绝热演化成平庸绝缘体$h_0$.
+这里$g(\mathbf{k},\theta,\varphi)$对应一个$(4+1)$维绝缘体哈密顿量,其第二Chern数$C_2[g]$是被定义的.通过这个定义,$h(\mathbf{k},\theta),h^{'}(\mathbf{k},\theta)$的第二Chern数宇称$N_3$满足$N_3[h]N_3[h^{'}]=-1^{C_2[g]}$.同时$g(\mathbf{k},\theta,\varphi)$可以考虑为$\theta=0,\theta=\pi$系统之间的一个插值$g(\mathbf{k},0,\varphi)\equiv h_1(\mathbf{k}),g(\mathbf{k},\pi,\varphi)\equiv h_2(\mathbf{k})).
+
+由于$h_{1,2}({\bf k})$都是独立于$\varphi$的,所以$g(\mathbf{k},0,\varphi),g(\mathbf{k},\pi,\varphi)$的Berry位相规范场的$\varphi$分量是零,结果是$-1^{C_2[g]}=N_3[g(\mathbf{k},0,\varphi)]=N_3[g(\mathbf{k},\pi,\varphi)]=1$.
+因此对于任意两个插值$h,h^{'}$都有$N_3[h]N_3[h^{'}]=1$,因此发现$Z_2$量$N_2[h_1(\mathbf{k},h_2(\mathbf{k})]\equiv N_3[h(\mathbf{k},\theta)]$仅仅依赖于$(2+1)$维哈密顿量$h_1,h_2$.
+通过定义常数哈密顿量$h_0(\mathbf{k})=h_0$作为参考,所有的$(2+1)$维哈密顿量可以通过$N_2[h_0,h(\mathbf{k})]$的值来区分,一个绝缘体满足$N_2[h_0,h]=-1$不能在不破坏时间反演对称的情况下绝热演化成平庸绝缘体$h_0$.
 
 ### $Z_2$非平庸绝缘体的物理性质
 与$(3+1)$维的情况相似,$Z_2$非平庸的拓扑绝缘体对应的非平庸的边界态动力学性质可以被有效理论(\ref{ha36})或者等价的利用(\ref{ha37})来描述.$Z_2$非平庸绝缘体的边界等价于平庸绝缘体与非平庸绝缘体的畴壁,接下里主要考虑这个畴壁上的性质.
@@ -1114,7 +1121,7 @@ $CS_s^t$代表的是混合的Chern-Simons作用量在$s$相空间维度对应的
 
 对$(2+1)$维系统,总共有3个可以利用的相空间Chern-Simons项,其中$CS_5^2$描述量子Hall绝缘体,$CS_5^1$描述量子自旋霍尔绝缘体,第三个为
 
-$$CS_%^0=\frac{3!(2\pi)^2}{1}\int d^5q\epsilon^{ABCDE}\text{Tr}[a_A\partial_Ba_C\partial_Da_E+\frac{3}{2}a_Aa_Ba_c\partial_Da_E+\frac{3}{5}a_Aa_Ba_ca_Da_E]$$
+$$CS_5^0=\frac{3!(2\pi)^2}{1}\int d^5q\epsilon^{ABCDE}\text{Tr}[a_A\partial_Ba_C\partial_Da_E+\frac{3}{2}a_Aa_Ba_c\partial_Da_E+\frac{3}{5}a_Aa_Ba_ca_Da_E]$$
 
 这里并不包含$A_A$,因此不能描述任何体系对电磁场的响应性质.将上面的所有内容组合起来就可以得到下面的家族表
 
@@ -1223,8 +1230,4 @@ T^\dagger H_{2n-1}(\mathbf{p})T=H_{2n-1}(-\mathbf{p}),\quad T^*T=-\mathbb{I},\qu
 
 # 参考
 
-<<<<<<< HEAD
 - 1.[Topological field theory of time-reversal invariant insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.78.195424)
-=======
-- 1.[Topological field theory of time-reversal invariant insulators](https://journals。aps。org/prb/abstract/10。1103/PhysRevB。78。195424)
->>>>>>> c87bcacdda79d10a666879d5d3cd5c9e34273bb9
