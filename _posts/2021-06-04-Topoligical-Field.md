@@ -275,10 +275,13 @@ $$h_{mn}(\theta)=\frac{1}{\sqrt{L}}\sum_ke^{ik(x_m-x_n)}h(k,\theta),\quad 1\leq 
 Chern数是奇数是,一定有零能级出现在$\theta=0$和$\theta=\pi$。由于$\theta=0$是个平庸的绝缘体,对应着平带因此不存在终端态,局域的
 零能拓扑态出现在$\theta=\pi$处。
 
-总而言之,一个粒子空穴对称的$\mathbb{Z}_2$拓扑绝缘体在开边界的时候会存在一个零能的局域态。存在零
-能级会有一个重要的物理结果，在非平庸拓扑绝缘体边界上将会存在半整数的电荷，在周期系统中当化学势为零的时候，当有$N$条占据的能带
-时，每个格点上平均的粒子数密度为$\bar{n}_m=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle=N$，在开放边界时相对
-于$N$的粒子数为$\rho_m(\mu)=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle_\mu-N$，粒子空穴对称性会保证$\rho_m(\mu)=-\rho_m(-\mu)$，当化学势$\mu$在能隙中间时，$\mu,-\mu$的区别就是零能态束缚在$\rvert 0L\rangle$还是$\rvert 0R\rangle$，对格点$m$足够远离右边界的时候
+总而言之,一个粒子空穴对称的$\mathbb{Z}_2$拓扑绝缘体在开边界的时候会存在一个零能的局域态。
+
+存在零能级会有一个重要的物理结果，在非平庸拓扑绝缘体边界上将会存在半整数的电荷，在周期系统中当化学势为零的时候，当有$N$条占据的能带时，每个格点上平均的粒子数密度为
+
+$$\bar{n}_m=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle=N$$
+
+在开放边界时相对于$N$的粒子数为$\rho_m(\mu)=\langle\sum_\alpha c^\dagger_{m\alpha}c_{m\alpha}\rangle_\mu-N$，粒子空穴对称性会保证$\rho_m(\mu)=-\rho_m(-\mu)$，当化学势$\mu$在能隙中间时，$\mu,-\mu$的区别就是零能态束缚在$\rvert 0L\rangle$还是$\rvert 0R\rangle$，对格点$m$足够远离右边界的时候
 
 $$\text{lim}_{\mu\rightarrow 0^{+}}[\rho_m(\mu)-\rho_m(-\mu)]=\sum_\alpha\rvert\langle m\alpha\rvert 0L\rangle\rvert^2$$
 
@@ -657,7 +660,7 @@ $$S_{3D}=\frac{2n+1}{8\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\
 
 在时间反演对称下,$\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\nu\partial_\sigma A_\tau=2\mathbf{E}\cdot\mathbf{B}$是奇函数,有效作用量(\ref{ha24})破坏了时间反演对称。然而,当空间流形是闭合的时候(所有的方向都是周期边界),$\int d^3xdt\epsilon^{\mu\nu\sigma\tau}\partial_\mu A_\nu\partial_\sigma A_\tau$的结果是量子化的$8\pi^2m,m\in\mathbb{Z}$。y因此$S_{3D}=(2n+1)m\pi$,从而作用量$e^{iS_{3D}}=e^{im\pi}=(-1)^m$是时间反演不变的,而且与$n$无关(n是$P_3$的整数部分)。
 
-因此在一个闭合的时空流形上,拓扑作用量(\ref{ha25})与$\mathbb{Z}_2$非平庸时间反演拓扑绝缘体的有效理论结果是一致的,极化$P_3$的整数部分并不是一个物理量。但是在开边界条件的时候,情况变的有所不同,在时空流形上有边界的时候$S_{3D}$的值不再是量子化的,基矢$P_3=1/2$ or $0$,在这种情况下$P_3$的整数部分并不会进入到$e^{iS_{3D}}$中并且物理,它的值会依赖于边界的具体细节。
+因此在一个闭合的时空流形上,拓扑作用量(\ref{ha25})与$\mathbb{Z}_{2}$非平庸时间反演拓扑绝缘体的有效理论结果是一致的,极化$P_3$的整数部分并不是一个物理量。但是在开边界条件的时候,情况变的有所不同,在时空流形上有边界的时候$S_{3D}$的值不再是量子化的,基矢$P_3=1/2$ or $0$,在这种情况下$P_3$的整数部分并不会进入到$e^{iS_{3D}}$中并且物理,它的值会依赖于边界的具体细节。
 
 为了理解开边界时候的物理,考虑在$z=0$两边分别是拓扑不等价的系统,有效作用量(\ref{ha24})可以写为
 
@@ -709,7 +712,7 @@ $$m=\frac{1}{2}\sum_{\alpha\beta}\sigma_{\alpha\beta}^z\langle k=0,\beta\rvert h
 
 决定。考虑一个参数化的哈密顿量$h=h_0+\lambda h_1$,表面Drirac费米子的质量在$\lambda\rightarrow 0$的时候正比于$\lambda$。 如上图(c)所示, 当$\lambda<0$的时候表面Hall电导为$\text{sgn}(\lambda)/4\pi。$表面Hall电导同样可以从有效理论进行计算。 对于$\lambda=1$位相场$\theta$从$\pi$变到$0$,对应的Hall电导为$\sigma_H=\int_{-\infty}^{+\infty}dP_3(z)/2=\int_0^\pi dP_3(\theta)/2\pi=-1/4\pi$。对于$\lambda=-1$可以考虑将$H(\theta)$中的$\theta(z)$替换成$-\theta(z)$,这个操作保持了$h_0$不变但是改变了$h_1$的符号,最终是的$\theta$的winding从$-\pi$变到了$0$,对应的Hall电导为$\sigma_H=\int_{-\pi}^0dP_3(\theta)/2=1/4\pi$。这两种情况对应的$\theta$的winding如上图(d)所示。
 
-物理上,时间反演对称破缺项来源于磁场或者表面上的局域磁矩(可能来源于表面相互作用导致的自发时间反演对称破缺)。一旦这样的"时间反演破缺表面场"(M)出现,有效作用量$S_{3D}=\frac{1}{4\pi}\int d^3 xdt \epsilon^{\mu\nu\sigma\tau}A_\mu\partial_\nu P_3\partial_\sigma A_\tau$在开边界的时候是well defined, 它描述了$\mathbb{Z}_2$非平庸绝缘体对电磁场的响应。 实际上,时间反演
+物理上,时间反演对称破缺项来源于磁场或者表面上的局域磁矩(可能来源于表面相互作用导致的自发时间反演对称破缺)。一旦这样的"时间反演破缺表面场"(M)出现,有效作用量$S_{3D}=\frac{1}{4\pi}\int d^3 xdt \epsilon^{\mu\nu\sigma\tau}A_\mu\partial_\nu P_3\partial_\sigma A_\tau$在开边界的时候是well defined, 它描述了$\mathbb{Z}_{2}$非平庸绝缘体对电磁场的响应。 实际上,时间反演
 破缺场应该被认为是施加在TRI系统上的外场,此时有效作用量$S_{3D}$描述的是一个结合M和电磁场$A_\mu$系统的非线性响应。对于一个占据空间大小为$\mathcal{V}$的$\mathbb{Z}_2$非平庸系统,其边界为$\partial\mathcal{V}$,$P_3$的空间梯度为
 
 $$\nabla P_3(\vec{x})=(g[M(\vec{x})]+\frac{1}{2})\int_{\partial\mathcal{V}}d\hat{\bf n}\delta^3(\vec{x}-\vec{y})$$
@@ -753,8 +756,8 @@ $$\mathbf{P}_t=(n+\frac{1}{2})\frac{e^2}{hc}\mathbf{B}$$
 
 $$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c-(2n+1)\frac{e^2}{\hbar c}\mathbf{B}\label{ha30}$$
 
-通常的Maxwell's方程加上(\ref{ha29})和(\ref{\ha30})就可以完整的描述3D拓扑绝缘体的电动力学。另外一个替代描述就是利用常规的关系$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_c$和$\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$外加上一些被拓扑相修正的Maxwell's方
-程。包含拓扑相$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_c(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau$后的电磁场总的作用量为
+通常的Maxwell's方程加上(\ref{ha29})和(\ref{ha30})就可以完整的描述3D拓扑绝缘体的电动力学。另外一个替代描述就是利用常规的关系$\mathbf{D}=\mathbf{E}+4\pi\mathbf{P}_{c}$和$\mathbf{H}=\mathbf{B}-4\pi\mathbf{M}_c$外加上一些被拓扑相修正的Maxwell's方程。
+包含拓扑相$S_{3D}=\frac{1}{4\pi}\int d^3xdt\epsilon^{\mu\nu\sigma\tau}P_c(x,t)\partial_\mu A_\nu\partial_\sigma A_\tau$后的电磁场总的作用量为
 
 $$S_\text{tot}=S_\text{Maxwell}+S_\text{topo}=\int d^3xdt[\frac{1}{16\pi}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}F_{\mu\nu}\mathcal{P}^{\mu\nu}-\frac{1}{c}j^\mu A_\mu]+\frac{\alpha}{16\pi}\int d^3xdt P_3\epsilon^{\mu\nu\sigma\tau}F_{\mu\nu}F_{\sigma\tau}\label{ha32}$$
 
@@ -885,11 +888,11 @@ $$\partial_\mu\Omega_\nu-\partial_\nu\Omega_\mu=3\epsilon^{abcde}\int \frac{d^2k
 
 $$h({\bf k,n})=\sin k_x\Gamma^1+\sin k_y\Gamma^2+(\cos k_x+\cos k_y-2)\Gamma^0+m\sum_{a=0,3,4}\hat{n}_a\Gamma^a$$
 
-$m>0,\hat{\bf n}=(\hat{n}_0,\hat{n}_3,\hat{n}_4)$是三维单位矢量,对于这样的一个模型$\bf{d}$矢量分解Wie
+$m>0,\hat{\bf n}=(\hat{n}_0,\hat{n}_3,\hat{n}_4)$是三维单位矢量,对于这样的一个模型$\bf{d}$矢量分解为
 
-$${\bf d}(\mathbf{k},\theta,\varphi)=\mathbf{d}_0(\mathbf{k})+\left(\begin{array}{c}0\\ 0\\ m\hat{\bf n}\end{array}\right)$$
+$${\bf d}(\mathbf{k},\theta,\varphi)=\mathbf{d}_0(\mathbf{k})+\left(\begin{array}{c}0\\ 0\\ m\hat{\bf n}\end{array}\right),\quad \mathbf{d}_0(\mathbf{k})=(\sin k_x,\sin k_y,0,0,\cos k_x+\cos k_y-2)$$
 
-$\mathbf{d}_0(\mathbf{k})=(\sin k_x,\sin k_y,0,0,\cos k_x+\cos k_y-2)$,在$m << 2$的极限下,哈密顿量的连续形式为$h(\mathbf{k},\hat{\bf n})\simeq\sum_{a=1,2}k_a\Gamma^a+\sum_{b=0,3,4}m\hat{n}_b\Gamma^b$,这是由三种可能质量项的$4\tiems 4$Dirac模型.在这个极限下并对$\mathbf{k}$进行积分(\ref{ha40})可以得到
+在$m << 2$的极限下,哈密顿量的连续形式为$h(\mathbf{k},\hat{\bf n})\simeq\sum_{a=1,2}k_a\Gamma^a+\sum_{b=0,3,4}m\hat{n}_b\Gamma^b$,这是由三种可能质量项的$4\tiems 4$Dirac模型.在这个极限下并对$\mathbf{k}$进行积分(\ref{ha40})可以得到
 
 $$\partial_\mu\Omega_\nu-\partial_\nu\Omega_\mu=\frac{1}{2}\hat{\bf n}\cdot\partial_\mu\hat{\bf n}\times\partial_\nu\hat{\bf n}$$
 
@@ -928,7 +931,7 @@ $$h(\mathbf{k},0)=h_1,\quad h(\mathbf{k},\pi)=h_2,\\ T^\dagger h(-\mathbf{k},-\t
 
 $$g(\mathbf{k},\theta,0)=h(\mathbf{k},\theta),\quad g(\mathbf{k},\theta,\pi)=h^{'}(\mathbf{k},\theta)\\ g(\mathbf{k},0,\varphi)=h_1{\mathbf{k}},\quad g(\mathbf{k},\pi,\varphi)=h_2(\mathbf{k})\\ g^T(\mathbf{k},\theta,\varphi)=T^\dagger g(-\mathbf{k},-\theta,-\varphi)T $$
 
-这里$g(\mathbf{k},\theta,\varphi)$对应一个$(4+1)$维绝缘体哈密顿量,其第二Chern数$C_2[g]$是被定义的.通过这个定义,$h(\mathbf{k},\theta),h^{'}(\mathbf{k},\theta)$的第二Chern数宇称$N_3$满足$N_3[h]N_3[h^{'}]=-1^{C_2[g]}$.同时$g(\mathbf{k},\theta,\varphi)$可以考虑为$\theta=0,\theta=\pi$系统之间的一个插值(g(\mathbf{k},0,\varphi)\equiv h_1(\mathbf{k}),g(\mathbf{k},\pi,\varphi)\equiv h_2(\mathbf{k})).由于$h_{1,2}({\bf k})$都是独立于$\varphi$的,所以$g(\mathbf{k},0,\varphi),g(\mathbf{k},\pi,\varphi)$的Berry位相规范场的$\varphi$分量是零,结果是$-1^{C_2[g]}=N_3[g(\mathbf{k},0,\varphi)]=N_3[g(\mathbf{k},\pi,\varphi)]=1$.因此对于任意两个插值$h,h^{'}$都有$N_3[h]N_3[h^{'}]=1$,因此发现$\mathbb{Z}_2$量$N_2[h_1(\mathbf{k},h_2(\mathbf{k})]\equiv N_3[h(\mathbf{k},\theta)]$仅仅依赖于$(2+1)$维哈密顿量$h_1,h_2$.通过定义常数哈密顿量$h_0(\mathbf{k})=h_0$作为参考,所有的$(2+1)$维哈密顿量可以通过$N_2[h_0,h(\mathbf{k})]$的值来区分,一个绝缘体满足$N_2[h_0,h]=-1$不能在不破坏时间反演对称的情况下绝热演化成平庸绝缘体$h_0$.
+这里$g(\mathbf{k},\theta,\varphi)$对应一个$(4+1)$维绝缘体哈密顿量,其第二Chern数$C_2[g]$是被定义的.通过这个定义,$h(\mathbf{k},\theta),h^{'}(\mathbf{k},\theta)$的第二Chern数宇称$N_3$满足$N_3[h]N_3[h^{'}]=-1^{C_2[g]}$.同时$g(\mathbf{k},\theta,\varphi)$可以考虑为$\theta=0,\theta=\pi$系统之间的一个插值$g(\mathbf{k},0,\varphi)\equiv h_1(\mathbf{k}),g(\mathbf{k},\pi,\varphi)\equiv h_2(\mathbf{k})).由于$h_{1,2}({\bf k})$都是独立于$\varphi$的,所以$g(\mathbf{k},0,\varphi),g(\mathbf{k},\pi,\varphi)$的Berry位相规范场的$\varphi$分量是零,结果是$-1^{C_2[g]}=N_3[g(\mathbf{k},0,\varphi)]=N_3[g(\mathbf{k},\pi,\varphi)]=1$.因此对于任意两个插值$h,h^{'}$都有$N_3[h]N_3[h^{'}]=1$,因此发现$\mathbb{Z}_2$量$N_2[h_1(\mathbf{k},h_2(\mathbf{k})]\equiv N_3[h(\mathbf{k},\theta)]$仅仅依赖于$(2+1)$维哈密顿量$h_1,h_2$.通过定义常数哈密顿量$h_0(\mathbf{k})=h_0$作为参考,所有的$(2+1)$维哈密顿量可以通过$N_2[h_0,h(\mathbf{k})]$的值来区分,一个绝缘体满足$N_2[h_0,h]=-1$不能在不破坏时间反演对称的情况下绝热演化成平庸绝缘体$h_0$.
 
 ### $\mathbb{Z}_2$非平庸绝缘体的物理性质
 与$(3+1)$维的情况相似,$\mathbb{Z}_2$非平庸的拓扑绝缘体对应的非平庸的边界态动力学性质可以被有效理论(\ref{ha36})或者等价的利用(\ref{ha37})来描述.$\mathbb{Z}_2$非平庸绝缘体的边界等价于平庸绝缘体与非平庸绝缘体的畴壁,接下里主要考虑这个畴壁上的性质.
@@ -1032,7 +1035,7 @@ $$\hbar\omega,\quad\hbar vk << E_g \label{ha45}$$
 
 $$S_{0+1}=-\int dt(\phi-\phi_0)\text{Tr}[\partial_\phi a_t-\partial_t a_\phi]=-\int dt\text{Tr}(\partial_t\phi\tilde{a}_\phi+\tilde{a}_t)$$
 
-这里积分$\int dxdk_x/2\pi$已经被移除.为了后面的方便$a_t,a_{k_x}$在$(1+1)$维中与$\tilde{a}_t,\tilde{a}_\phi$相关,为了得到第二个式子,进行分部积分即可.最终$(0+1)$维系统的Berry位相规范势由两部分组成
+这里积分$\int dxdk_x/2\pi$已经被移除.为了后面的方便$a_t,a_{k_x}$在$(1+1)$维中与$\tilde{a_t},\tilde{a}_\phi$相关,为了得到第二个式子,进行分部积分即可.最终$(0+1)$维系统的Berry位相规范势由两部分组成
 
 $$a^{\alpha\beta}_t=-i\langle\alpha;t,\phi(t)\rvert\partial_t\rvert\beta;t,\phi(t)\rangle$=-i\langle\alpha;t,\phi\rvert[(\frac{\partial}{\partial t})_\phi+\frac{\partial\phi}{\partial t}(\frac{\partial}{\partial\phi})_t]\rvert\beta;t.\phi\rangle=\tilde{a}_t+\partial_t\phi\tilde{a}_\phi$$
 
@@ -1056,7 +1059,7 @@ $$S_{3+1}=\frac{3}{96\pi^3}\int d^7q\epsilon^{\mu\nu\sigma\tau}\epsilon^{ijk}A_\
 
 $\mu,\nu,\cdots=0,1,2,3; i,j,k=1,2,3$分别是$(3+1)$维中的时空和动量指标,cycl.带脖啊的是$\theta,ij,k$对应的轮换项.积分$\int dk_wdw/2\pi$已经被移除,前面的因子3来源于这里由三个$A_A$.同样的在$(2+1)$维向$(1+1)$维进行时,$\partial_\mu\theta D_\theta$被替换为$D_\mu$,最终可以得到$(3+1)$维绝缘体的结果
 
-$$S_{3+1}=\int \frac{d^7q}{32\pi^3}\epsilon^{AB\cdots G}A_A\partial_BA_c\text{Tr}[D_Da_ED_Fa_G]\label{ha45}$$
+$$S_{3+1}=\int\frac{d^7q}{32\pi^3}\epsilon^{AB\cdots G}A_A\partial_BA_c\text{Tr}[D_Da_ED_Fa_G]\label{ha45}$$
 
 根据$P_3$的定义
 
@@ -1137,8 +1140,12 @@ $$C^\dagger h(-{\bf k})C=-h^T(\mathbf{k}),\quad C^\dagger C=C^*C=\mathbb{I}$$
 
 $$T^\dagger h(-\mathbf{k})T=h^T(\mathbf{k}),\quad T^\dagger T=-T^*T=\mathbb{I}$$
 
-根据这个可以将$\mathbb{Z}_2$分类推广到高维度.,首先来理解$(2+1)$维与$(4+1)$维所需要的的不同的离散对称性.最简单的方式是研究
-Chern-Simons理论在粒子空穴对称(C)和时间反演对称(T)操作下的不同.**只在粒子空穴对称下,电荷密度和电流都改变符号,矢势同样也是这样,因为是受到最小耦合$A_\mu j^\mu$不变形的原因.**同样的也可以得到$A_\mu$在时间反演下的性质
+根据这个可以将$\mathbb{Z_2}$分类推广到高维度.,首先来理解$(2+1)$维与$(4+1)$维所需要的的不同的离散对称性.最简单的方式是研究
+Chern-Simons理论在粒子空穴对称(C)和时间反演对称(T)操作下的不同.
+
+**只在粒子空穴对称下,电荷密度和电流都改变符号,矢势同样也是这样,因为是受到最小耦合$A_\mu j^\mu$不变形的原因.**
+
+同样的也可以得到$A_\mu$在时间反演下的性质
 
 $$C:A_\mu\rightarrow -A_\mu,\quad T:A_\mu\rightarrow\left\{\begin{arrar}{c}A_0\\ -A_i\end{array}\right.$$
 
@@ -1149,7 +1156,7 @@ $$C:S_{2n+1}^{CS}\rightarrow (-1)^{n+1}S_{2n+1}^{CS},\quad T:S_{2n+1}^{CS}\right
 可以看到$S_{4n+1}^{CS}$在T的操作下是偶的,在C的操作下是奇的,而$S_{4n-1}^{CS}$在T的操作下是奇的,在C的操作下是偶的.总之,一个$(4n+1)$维拓扑绝缘体必须破坏粒子空穴对称但是满足时间反演对称,就像$(4+1)$维的情况;一个$[(4n-2)+1]$维的拓扑绝缘体必须破坏时间反演对称但满足粒子空穴对称,就像$(2+1)$维的情况.总而言之,$(4n+1)$维[(4n-1)维]拓扑绝缘体的"子孙",只有在时间反演对称(粒子空穴对称)的限制下才可能定义$\mathbb{Z}_2$分类.
 {:.success}
 
-前面介绍的通过维度约化定义$\mathbb{Z}_2$分类的过程看起来可以递归的运用到所有$(2n+1)$维拓扑绝缘体上,然而这个结论是不正确的.比如可以研究$(1+1)$维TRI绝缘体作为$(2+1)$维量子自旋霍尔绝缘体的"子孙"[不是$2+1$维量子Hall绝缘体].在从$(3+1)$维向$(2+1)$维的维度约化过程中,在两个$(2+1)$维TRI哈密顿量$h_1(\mathbf{k}),h_2(\mathbf{k})$中插入$h(\mathbf{k},\theta)$.当$h(\mathbf{k},\theta)$要求满足时间反演对称的时候,它对应的正是$(3+1)$维拓扑绝缘体,此时定义了$\mathbb{Z}_2$拓扑量$N_3[h(\mathbf{k},\theta)]$,它并不依赖于插值$h(\mathbf{k},\theta)$的路径选择,从而提供了一个判断$h_(\mathbf{k}),h_2(\mathbf{k})$是否拓扑等价的一个判据.如果对$(1+1)$维系统执行同样的过程,看起来对于两个哈密顿量$h_1(k),h_2(k)$可以以相同的方式定义$\mathbb{Z}_2$拓扑分类.这个结论是否正确,以一个格点Dirac模型为例进行研究,$(2+1)$维$4\times 4$的单粒子格点Dirac模型存在时间反演对称可以表示为
+前面介绍的通过维度约化定义$\mathbb{Z_2}$分类的过程看起来可以递归的运用到所有$(2n+1)$维拓扑绝缘体上,然而这个结论是不正确的.比如可以研究$(1+1)$维TRI绝缘体作为$(2+1)$维量子自旋霍尔绝缘体的"子孙"[不是$2+1$维量子Hall绝缘体].在从$(3+1)$维向$(2+1)$维的维度约化过程中,在两个$(2+1)$维TRI哈密顿量$h_1(\mathbf{k}),h_2(\mathbf{k})$中插入$h(\mathbf{k},\theta)$.当$h(\mathbf{k},\theta)$要求满足时间反演对称的时候,它对应的正是$(3+1)$维拓扑绝缘体,此时定义了$\mathbb{Z}_2$拓扑量$N_3[h(\mathbf{k},\theta)]$,它并不依赖于插值$h(\mathbf{k},\theta)$的路径选择,从而提供了一个判断$h_(\mathbf{k}),h_2(\mathbf{k})$是否拓扑等价的一个判据.如果对$(1+1)$维系统执行同样的过程,看起来对于两个哈密顿量$h_1(k),h_2(k)$可以以相同的方式定义$\mathbb{Z}_2$拓扑分类.这个结论是否正确,以一个格点Dirac模型为例进行研究,$(2+1)$维$4\times 4$的单粒子格点Dirac模型存在时间反演对称可以表示为
 
 $$h_{2D}(\mathbf{k})=\Gamma^1\sin k_x\Gamma^2\sin k_y+\Gamma^0[m+c(\cos k_x+\cos k_y)]\label{9}$$
 
