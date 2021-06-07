@@ -766,7 +766,7 @@ $$\theta(B)=\mu B+2\text{sgn}(B)\arctan\frac{2}{\sqrt{\epsilon/\mu}+\sqrt{\epsil
 
 最终,拓扑贡献可以通过改变磁场的方向来得到,也可以通过外推$\theta(B)$在$B\rightarrow 0^+$的极限下.
 
-# 维度约化zhi$(2+1)$维
+# 维度约化至$(2+1)$维
 
 
 
