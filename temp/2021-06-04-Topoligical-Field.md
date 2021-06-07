@@ -397,7 +397,7 @@ $$\{\Gamma^\mu,\Gamma^\nu\}=2\delta_{\mu\nu}\mathbb{I},\quad\mathbb{I}\text{是�
 
 $$H=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^--i\Gamma^i}{2})\psi_{n+\hat{i}}+\text{H.c}]+m\sum_n\psi^\dagger_n\Gamma^0\psi_n\label{ha15}$$
 
-在动量空间中红
+在动量空间中
 
 $$H=\sum_{\bf k}\psi^\dagger_{\bf k}[\sum_i\sin k_i\Gamma^i+(m+c\sum_i\cos k_i)\Gamma^0]\psi_{\bf k}\label{ha13}$$
 
@@ -986,7 +986,7 @@ $$Q_\text{pump}=\int_0^Tdtj_{1D}=-[P_3(T)-P_3(0)]=-(n+\frac{1}{2})$$
 # 拓扑绝缘体的统一理论
 到现在为止已经系统的研究了几种相互关联的拓扑相,包括有非平庸第一Chern数的$(2+1)$维量子Hall绝缘体,有非平庸第二Chern数的$(4+1)$维拓扑绝缘体,以及它们对应的维度约化情况.可以发现$(2+1)$和$(4+1)$维都可一个基本的整数表征,分别是第一Chern数和第二Chern数.在离散对称性下($(2+1)$维粒子空穴对称,$(4+1)$维时间反演对称),$\mathbb{Z}_2$拓扑分类可以对维度更低的系统进行定义,其对应的物理性质也可以通过对有效理论的维度约化得到,主要的性质如下图Table I所示
 
-![png](../assets/images/topology/tpf21.png)
+![png](/assets/images/topology/tpf21.png)
 
 在这里对所有系统在想空间的统一形式进行研究.首先考虑量子Hall效应的有效模型
 
@@ -1048,13 +1048,9 @@ $$S_\text{eff}=\frac{C_2}{24\pi^2}\int d^4xdt\epsilon^{\mu\nu\rho\sigma\tau}A_\m
 
 在相空间可以表示为
 
-$$S_{4+1}=\frac{1}{192\pi^4}\int d^9q\epsilon^{ABCDEFGHI}A_A\partial_B A_C\partial_DA_E\text{Tr}[D_Fa_GD_Ha_I]\label{7}
+$$S_{4+1}=\frac{1}{192\pi^4}\int d^9q\epsilon^{ABCDEFGHI}A_A\partial_B A_C\partial_DA_E\text{Tr}[D_Fa_GD_Ha_I]\label{7}$$
 
-$$
-
-这里的协变微分为$D_B=\partial_B+ia_B$是为了非阿贝尔Berry位相规范场引入的.与前面相似的方式进行$(3+1)$维的维度约化,将第四个空间维度记为$w$,它将会被进行维度约化,之后任何$\partial_w,a_w$都将会消失,(\ref{7})中不消失的之后那些$A_w$项,现在将会被参数$\theta(x,
-
-y,z,t)$替换.另一方面在形式$D_Fa_GD_Ha_I$中的一个$F,G,H,I$会是$k_w$,现在被替换为$\theta$,最终可以得到
+这里的协变微分为$D_B=\partial_B+ia_B$是为了非阿贝尔Berry位相规范场引入的.与前面相似的方式进行$(3+1)$维的维度约化,将第四个空间维度记为$w$,它将会被进行维度约化,之后任何$\partial_w,a_w$都将会消失,(\ref{7})中不消失的之后那些$A_w$项,现在将会被参数$\theta(x,y,z,t)$替换,另一方面在形式$D_Fa_GD_Ha_I$中的一个$F,G,H,I$会是$k_w$,现在被替换为$\theta$,最终可以得到
 
 $$S_{3+1}=\frac{3}{96\pi^3}\int d^7q\epsilon^{\mu\nu\sigma\tau}\epsilon^{ijk}A_\mu\partial_\nu A_\sigma\partial_\tau\theta\text{Tr}[D_\theta a_iD_ja_k+\text{cycl.}]$$
 
@@ -1114,7 +1110,7 @@ $$CS_%^0=\frac{3!(2\pi)^2}{1}\int d^5q\epsilon^{ABCDE}\text{Tr}[a_A\partial_Ba_C
 
 这里并不包含$A_A$,因此不能描述任何体系对电磁场的响应性质.将上面的所有内容组合起来就可以得到下面的家族表
 
-![png](../assets/images/topology/tpf22.png)
+![png](/assets/images/topology/tpf22.png)
 
 
 对于一个$(n+1)$维系统由$N$个占据态,在相空间中可以定义一个$U(N)$的规范矢势
@@ -1133,9 +1129,78 @@ $$CS_{2n+1}(\lambda)=\sum_{t=0}^{[n/2]+1}\lambda^tCS_{2n+1}^t\rightarrow SC_{2n+
 着意味着所有可能想空间Chern-Simons项都可以从单个生成泛函$CS_{2n+1}(\lambda)$得到.
 
 ## 一般维度的$\mathbb{Z}_2$拓扑绝缘体
+对$(2+1)$维和$(4+1)$维的绝缘体,在离散对称性的限制下可以定义$\mathbb{Z}_2$不变量,$(2+1)$维绝缘体的"子孙",在粒子空穴对称限制下定义了$\mathbb{Z}_2$不变量,哈密顿量满足
 
+$$C^\dagger h(-{\bf k})C=-h^T(\mathbf{k}),\quad C^\dagger C=C^*C=\mathbb{I}$$
 
+这个分类的关键点是在两个粒子空穴对称哈密顿量$h_1(k),h_2(k)$中找到一个插值,当结合其粒子空穴变换的伙伴后可以形成一个闭合的路径.这样一个闭合路径的Chern数总是对应着确定的宇称,并不依赖于路径的选择.同样的,对于$(0+1)$维满足粒子空穴对称的系统也可以定义$\mathbb{Z}_2$分类.对于$(4+1)$维绝缘体这个过程是相同的,只不过此时的粒子空穴对称替换成了时间反演对称
 
+$$T^\dagger h(-\mathbf{k})T=h^T(\mathbf{k}),\quad T^\dagger T=-T^*T=\mathbb{I}$$
+
+根据这个可以将$\mathbb{Z}_2$分类推广到高维度.,首先来理解$(2+1)$维与$(4+1)$维所需要的的不同的离散对称性.最简单的方式是研究
+Chern-Simons理论在粒子空穴对称(C)和时间反演对称(T)操作下的不同.**只在粒子空穴对称下,电荷密度和电流都改变符号,矢势同样也是这样,因为是受到最小耦合$A_\mu j^\mu$不变形的原因.**同样的也可以得到$A_\mu$在时间反演下的性质
+
+$$C:A_\mu\rightarrow -A_\mu,\quad T:A_\mu\rightarrow\left\{\begin{arrar}{c}A_0\\ -A_i\end{array}\right.$$
+
+在$C$和$T$的操作下,动量算符$-i\partial_\mu$具有和$A_\mu$相同的性质.基于这些,Chern-Simons拉格朗日量的变换性质为
+
+$$C:S_{2n+1}^{CS}\rightarrow (-1)^{n+1}S_{2n+1}^{CS},\quad T:S_{2n+1}^{CS}\rightarrow (-1)^nS_{2n+1}^CS$$
+
+可以看到$S_{4n+1}^{CS}$在T的操作下是偶的,在C的操作下是奇的,而$S_{4n-1}^{CS}$在T的操作下是奇的,在C的操作下是偶的.总之,一个$(4n+1)$维拓扑绝缘体必须破坏粒子空穴对称但是满足时间反演对称,就像$(4+1)$维的情况;一个$[(4n-2)+1]$维的拓扑绝缘体必须破坏时间反演对称但满足粒子空穴对称,就像$(2+1)$维的情况.总而言之,$(4n+1)$维[(4n-1)维]拓扑绝缘体的"子孙",只有在时间反演对称(粒子空穴对称)的限制下才可能定义$\mathbb{Z}_2$分类.
+{:.success}
+
+前面介绍的通过维度约化定义$\mathbb{Z}_2$分类的过程看起来可以递归的运用到所有$(2n+1)$维拓扑绝缘体上,然而这个结论是不正确的.比如可以研究$(1+1)$维TRI绝缘体作为$(2+1)$维量子自旋霍尔绝缘体的"子孙"[不是$2+1$维量子Hall绝缘体].在从$(3+1)$维向$(2+1)$维的维度约化过程中,在两个$(2+1)$维TRI哈密顿量$h_1(\mathbf{k}),h_2(\mathbf{k})$中插入$h(\mathbf{k},\theta)$.当$h(\mathbf{k},\theta)$要求满足时间反演对称的时候,它对应的正是$(3+1)$维拓扑绝缘体,此时定义了$\mathbb{Z}_2$拓扑量$N_3[h(\mathbf{k},\theta)]$,它并不依赖于插值$h(\mathbf{k},\theta)$的路径选择,从而提供了一个判断$h_(\mathbf{k}),h_2(\mathbf{k})$是否拓扑等价的一个判据.如果对$(1+1)$维系统执行同样的过程,看起来对于两个哈密顿量$h_1(k),h_2(k)$可以以相同的方式定义$\mathbb{Z}_2$拓扑分类.这个结论是否正确,以一个格点Dirac模型为例进行研究,$(2+1)$维$4\times 4$的单粒子格点Dirac模型存在时间反演对称可以表示为
+
+$$h_{2D}(\mathbf{k})=\Gamma^1\sin k_x\Gamma^2\sin k_y+\Gamma^0[m+c(\cos k_x+\cos k_y)]\label{9}$$
+
+当$0 < m < 2\rvert c\rvert$或者$-2\rvert c\rvert < m < 0$的时候是个拓扑非平庸的相. 拖过维度约化,$h_{2D}(\mathbf{k})$可以认为是$(1+1)$维TRI哈密顿量两个$h_1(k)=h_{2D}(k,0),h_2(k)=h_{2D}(k,\pi)$之间的插值.如果$\mathbb{Z}_2$的定义过程可以适用,当(\ref{9})是非平庸的时候,那么$h_1,h_2$应该是拓扑不等价的.总而言之,不可能在$h_1,h_2$之间定义另外一个插值$h_0(k,\theta)$,使得其满足
+
+$$T^\dagger h_0(k,\theta)T=h^*_0(-k,-\theta)=h^*_0(-k,\theta),\quad\text{对任意的}\quad\theta$$
+
+然而这样的插值在此时是可以构建的,如下
+
+$$h_0(k,\theta)=\Gamma^1\sin k+\Gamma^{02}\sin^2\theta+\Gamma^0(m+c\cos k_x+c\cos \theta),\quad \Gamma^{02}=i\Gamma^0\Gamma^2$$
+
+$\Gamma^{02]$在时间反演下是偶的.这里存在两个拓扑不等价的插值$h_0(k,\theta)$和$h_{2D}(k,\theta)$说明对于$(1+1)$维TRI绝缘体,不能以在$(2+1)$维和$(3+1)$维相同的方式取定义$\mathbb{Z}_2$拓扑分类.
+
+**这个方法的失败主要是因为参数化哈密顿量的流形是简单连接的,换句话说,一个插值$h(\mathbf{k},\theta,\varphi)$总是可以被定义成两个插值$h(\mathbf{k},\theta),h^{'}(\mathbf{k},\theta)$**.
+
+在上面的额实例中,路径$h_{2D}$和$h_0$不能通过绝热的方式连接起来,因为组合路径
+
+$$g(k,\theta)=\left\{\begin{array}{c}h_{2D}(k,\theta),\quad\theta\in[0,\pi]\\ h_0(k,2\pi-\theta),\quad\theta\in[\pi,2\pi]\end{array}\right.$$
+
+是一个$(2+1)$维的哈密顿量,它破坏了时间反演对称且有一个非平庸的的第一Chern数$C_1=-1$.总之,路径$g$不能收缩成一个点,在定义路径无关的$\mathbb{Z}_2$不变量的时候是失败的.
+
+从上面的事例中可以看到,对$(2n+1)$维拓扑绝缘体的"子孙"定义$\mathbb{Z}_2$拓扑分类在维度被约化到$[(2n-3)+1]$维的时候是失败的,因为
+在$[(2n-3)+1]$维的哈密顿量而言,冰河的路径定义了一个更低的Chern数$C_{n-1}$.总而言之,$\mathbb{Z}_2$拓扑绝缘体作为$(2n+1)$维拓扑绝缘体的"子孙"只能被定义在$[(2n-1)+1],[(2n-2)+1]$维.由于体态的拓扑绝缘体总是对应一个拓扑保护的边界态,$\mathbb{Z}_2$分类的有效应需要通过研究边界理论的稳定性.比如第二Chern数为$C_2$的$(4+1)$维拓扑绝缘体包含$\rvert C_2\rvert$种类的手性(Weyl)费米子.
+
+最简单的考虑格点Dirac模型
+
+$$H=\sum_{n,i}[\psi^\dagger_n(\frac{c\Gamma^--i\Gamma^i}{2})\psi_{n+\hat{i}}+\text{H.c} +m\sum_n\psi^\dagger_n\Gamma^0\psi_n$$
+
+在参数区间$-4c < m < -2c$边界上的单粒子哈密顿量为
+
+$$h_{\partial(4+1)}=v\vec{\sigma}\cdot\vec{\bf p},$$
+
+因为没有质量项可以利用,它是拓扑稳定的边界态.通过维度约化,$(3+1)$维$\mathbb{Z}_2$非平庸绝缘体的边界理论简单的由上面的方程当$p_z=0$
+
+$$H_{\partial(3+1)}=v(\sigma_x+\sigma_yp_y)$$
+
+在时间反演对称下它是拓扑稳定的,因为不存在时间反演不变的质量项.同样的分析对于$(2+1)$为拓扑绝缘体为$H_{\partial(2+1)}=v\sigma_zp_z$.当维度约化再进行词义,得到$(1+1)$维系统的$(0+1)$维边界$H_{\partial(1+1)}=0$.着所描述的正是局域在边界上的Kramers对.因为这个Kramers对midgap states可以在不破坏时间反演的情况下平移常数值的能量,$(1+1)$维TRI绝缘体并没有拓扑非平庸的类.
+
+上面边界理论的分析同样可以简单地推广到高维,具有非平庸Chern数的$[2n+1]$维拓扑绝缘体的边界态由$[(2n-1)+1]$维的手性费米子描述,哈密顿量为
+
+$$H_{2n-1}(\mathbf{p})=v\sum_{i=1}^{2n-1}p_i\Gamma^i\label{ha49}$$
+
+这里$\Gamma^i$是$2^{n-1}\times 2^{n-1}$维矩阵,构成了$so(2n-1)$Cliffor代数的表示.$(2n+1)$维系统的第m个"子孙"的边界理论就是取$p_i=0,i=2n-m,2n-m+1,\cdots,2n-1.$对称性及未定型可以通过研究$\Gamma^a$的性质.
+
+- 手性哈密顿量(\ref{ha49})在不同的维度满足不同的离散对称性
+
+$$C^\dagger H_{2n-1}(\mathbf{p})C=-H_{2n-1}(-\mathbf{p}),\quad C^*C=\mathbb{I},\quad m=4m-3,\quad m\in\mathbb{N},\\ 
+T^\dagger H_{2n-1}(\mathbf{p})T=H_{2n-1}(-\mathbf{p}),\quad T^*T=-\mathbb{I},\quad n=4m-2,\quad m\in\mathbb{N},\\ 
+\tilde{C}^\dagger H_{2n-1}(\mathbf{p})\tilde{C}=-H_{2n-1}(-\mathbf{p}),\quad \tilde{C}^*\tilde{C}=-\mathbb{I},\quad n=4m-1,\quad m\in\mathbb{N}\\ \tilde{T}^\dagger H_{2n-1}(\mathbf{p})\tilde{T}=H_{2n-1}(-\mathbf{p}),\quad\tilde{T}^*\tilde{T}=\mathbb{I},\quad n=4m,\quad m\in\mathbb{N}$$
+
+- 只有$H_{2n-1}$的前两个"子孙",$H(\mathbf{p})=\sum_{i=1}^{2n-2}p_i\Gamma^i,H(\mathbf{p})=\sum_{i=1}^{2n-3}p_i\Gamma^i$,在给定的维度和对称性下面才是稳定的($C,\tilde{C},T,\tilde{T}$).$(2n+1)$维拓扑绝缘体的"子孙"中可以存在$\mathbb{Z}_2$拓扑非平庸绝缘体的只在$[(2n-1)+1]$维和$[(2n-2)+1]$维.
 
 
 
