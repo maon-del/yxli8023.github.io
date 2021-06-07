@@ -841,13 +841,7 @@ $$G_2(\theta_0\varphi_0)=-2\pi\int d^2k(\partial_x\mathcal{K}^x+\partial_y\mathc
 
 与$(3+1)$维的情况相似,只要$\mathcal{K}^{(x,y)}$是单只的,那么对动量的导数$\partial_{(x,y)}\mathcal{K}^{(x,y)}$的贡献就是零,此时可以将$G_2$表示为
 
-$$G_2(\theta_0,\varphi_0)=\partial_\theta\Omega_\varphi-\partial_\varphi\Omega_\theta,\quad\Omega_\varphi=-2\pi\int d^2k\mathcal{K}^\theta,\quad\Omega_\theta=2\pi\int d^2k\mathcal{K}^\varphi\label{ha43}$$
-
-
-
-
-
-
+$$G_2(\theta_0,\varphi_0)=\partial_\theta\Omega_\varphi-\partial_\varphi\Omega_\theta,\quad\Omega_\varphi=-2\pi\int d^2k\mathcal{K}^\theta,\quad\Omega_\theta=2\pi\int d^2k\mathcal{K}^\varphi\label{ha42}$$
 
 这里有
 
@@ -955,13 +949,7 @@ $$Q=\frac{1}{2\pi}\int_Ad^2x(\partial_x\Omega_y-\partial_y\Omega_x)=\frac{1}{2\p
 
 $$\rho_{1d}(x)=\frac{1}{2\pi}\int_{-L}^Ldy(\partial_x\Omega_y-\partial_y\Omega_x)\\ j_{1d}(x)=\frac{1}{2\pi}\int_{-L}^Ldy(\partial_y\Omega_t-\partial_t\Omega_y)$$
 
-$L$是沿$y$方向的截断,满足$L >> \xi$才能忽略$\rvert y\rvert > L$区域外对$\rho_{1d},j_{1d}$的贡献.根据(\ref{ha43},\ref{ha34}
-
-
-
-
-
-)对有效规范矢势$\Omega_\mu$的定义,在深入体态或者真空态的时候$\rvert y\rvert\rightarrow +\infty$其贡献$\Omega_\mu(x,y,t)\rightarrow 0$.可以将1D密度和电流简化为
+$L$是沿$y$方向的截断,满足$L >> \xi$才能忽略$\rvert y\rvert > L$区域外对$\rho_{1d},j_{1d}$的贡献.根据(\ref{ha42},\ref{ha34})对有效规范矢势$\Omega_\mu$的定义,在深入体态或者真空态的时候$\rvert y\rvert\rightarrow +\infty$其贡献$\Omega_\mu(x,y,t)\rightarrow 0$.可以将1D密度和电流简化为
 
 $$\rho_{1D}(x,t)=\partial_xP_3(x,t),\quad j_{1D}(x,t)=-\partial_tP_3(x,t)$$
 
@@ -983,156 +971,22 @@ $$Q_\text{pump}=\int_0^Tdtj_{1D}=-[P_3(T)-P_3(0)]=-(n+\frac{1}{2})$$
 
 在外加磁场的粒子中,当磁场绝热的从${\bf B}$转动到${\bf -B}$的过程中,上面的泵浦过程意味着将会有半个电荷被泵浦,如图20所示.
 
-# 拓扑绝缘体的统一理论
-到现在为止已经系统的研究了几种相互关联的拓扑相,包括有非平庸第一Chern数的$(2+1)$维量子Hall绝缘体,有非平庸第二Chern数的$(4+1)$维拓扑绝缘体,以及它们对应的维度约化情况.可以发现$(2+1)$和$(4+1)$维都可一个基本的整数表征,分别是第一Chern数和第二Chern数.在离散对称性下($(2+1)$维粒子空穴对称,$(4+1)$维时间反演对称),$\mathbb{Z}_2$拓扑分类可以对维度更低的系统进行定义,其对应的物理性质也可以通过对有效理论的维度约化得到,主要的性质如下图Table I所示
 
-![png](../assets/images/topology/tpf21.png)
 
-在这里对所有系统在想空间的统一形式进行研究.首先考虑量子Hall效应的有效模型
 
-$$S_\text{eff}=\frac{C_1}{4\pi}\int d^2x\int dt A_\mu\epsilon^{\mu\nu\tau}\partial_\nu A_\tau$$
 
-将第一Chern数展开可以得到
 
-$$S=\frac{C_1}{4\pi}\int\frac{d^2k}{2\pi}\epsilon^{ij}\text{Tr}[\partial_ia_j]\int d^2xdt \epsilon^{\mu\nu\rho}A_\mu\partial_\nu A_\rho\label{ha41}$$
 
-这里的$ij=1,2$在动量空间中,$\mu,\nu,\rho=0,1,2$是时空索引.$A_\mu,a_i$分别是实空间中的外电磁场和动量空间中的Berry位相规范场.求迹(Tr)是对所有占据态进行的.定义相空间坐标$\mathbf{q}=(t,x,y,k_x,k_y)$和想空间规范势$\mathbf{A}=(A_0,A_1,A_2,0,0),\mathbf{a}=(0,0,0,a_1,a_2)$,上面的作用量等价于下面的第二Chern-Simons项
 
-$$S_{2+1}=\frac{1}{8\pi^2}\int d^5q\epsilon^{ABCDE}A_A\partial_BA_C\text{Tr}[\partial_Da_E]$$
 
-这里所有的大写字母索引遍历所有相空间坐标.因为在一个系统中$\mathbf{A}$和$\mathbf{a}$总是相互正交的,这样的一个重新编写公式是平庸的,但是这对考虑维度约化是很有帮助的.比如在由$(2+1)$维系统像$(1+1)$维进行维度约化,将$k_y+A_y$替换成参数$\theta(x,t)$,它一般都是时空依赖的.这个改变包含四个方面:
-- $A_y$被替换成$\theta(x,t)-\theta_0,\theta_0$扮演了$k_y$的角色
-- $\partial/\partial_y$替换成$\partial/\partial\theta$
-- Berry位相规范场$a_{k_y}^{\alpha\beta}=-i\langle\alpha;\mathbf{k}\rvert\partial_{k_y}\rvert\beta;\mathbf{k}\rangle$替换成$a_\theta^{\alpha\beta}=-i\langle\alpha;k_x,\theta\rvert\partial_\theta\rvert\beta;k_x,\theta\rangle$
-- 积分$\int dy$和$\int dk_y/2\pi$被移出有效作用量中国
 
-利用这些替换之后就可以得到$(1+1)$维的有效作用量.下面来展示如何推导$(1+1)$为有效理论,从(\ref{ha41})出发,在维度约化之后规范场$A_\mu$仅依赖于$(1+1)$维的坐标$(t,x)$,在Chern-Simons形式$\epsilon^{\mu\nu\tau}A_\mu\partial_\nu A_\tau$中包含$\partial_y$的项恒等于零,因此
 
-$$\epsilon^{\mu\nu\tau}A_\mu\partial_\nu A_\tau=2(A_t\partial_xA_y-A_x\partial_tA_y)=2(A_t\partial_x\theta-A_x\partial_t\theta)$$
 
-在分部积分之后有,效作用量(\ref{ha41})经过上面的替换后表示为
 
-$$S_{1+1}=\frac{1}{2\pi}\int dk_x\text{Tr}[\partial_{k_x}a_\theta-\partial_\theta a_{k_x}]\int dtdx(A_t\partial_x\theta-A_x\partial_t\theta)\label{5}$$
 
-存在一个时间依赖的平滑$\theta(x,t)$场,本征态$\rvert\alpha;k_x,\theta\rangle$可以认为是时空依赖的本征态,它的空间依赖来源于$\theta(x,t)$.这种方式下,每个态$\rvert\alpha;k_x,\theta(x,t)\rangle=\rvert;k_x,x,t\rangle$是定义在整个相空间$(t,x,k_x)$中的,贝利位相规范场可以获得一个实空间的分量$a_\mu^{\alpha\beta}=-i\langle\alpha k_x;x,t\rvert\partial_\mu\rvert\beta,k_x,x,t\rangle=a_\theta\partial_\mu\theta,\mu=t,x$.同样的$a_{k_x}$的时空求导为$\partial_\mu a_{k_x}=\partial_\theta a_{k_x}\partial_\mu\theta$,利用缩写后可以将有效作用量简化为
 
-$$S_{1+1}=\frac{1}{2\pi}\int dk_x\int dtdx\{A_t\text{Tr}[\partial_{k_x}a_x-\partial_xa_{k_x}]-A_x\text{Tr}[\partial_{k_x}a_t-\partial_ta_{k_x}]\}$$
 
-将规范势$(A_t,A_x)$的定义一般化到位相空间矢量$(A_t,A_x,0)$,上面的方程可以表示为位相空间中的混合Chern-Simons项
 
-$$S_{1+1}=\frac{1}{2\pi}\int d^3q\epsilon^{ABC}A_A\text{Tr}[\partial_BA_c]$$
-
-它描述了一个非均匀的$(1+1)$维绝缘体.动量求导作用在$(A_t,A_x)$上为零.这个相空间的体系仅仅适用于当$\theta$的时空变化是光滑的,在$(t,x,y)$附近近似是个常数才是用.定量的来说,$\theta(x,y,t)$特征频率$\omega$和波矢$k$满足
-
-$$\hbar\omega,\quad\hbar vk << E_g \label{ha45}$$
-
-在条件(\ref{ha45})限制下$\theta$场的时空变化并不会产生越过能隙的激发,系统可以看做是由局域哈密顿量$h(k_x;x,t)$描述的能带绝缘体.
-
-再多进行一次维度约化就可以得到$(0+1)$为的作用量,在(\ref{5})中$a_x=0,\partial_xa_{k_x}=0$,因为在维度约化之后这里没有什么是随着$x$坐标变化的,下面将$A_x$替换成参数$\phi(t)-\phi_0$有
-
-$$S_{0+1}=-\int dt(\phi-\phi_0)\text{Tr}[\partial_\phi a_t-\partial_t a_\phi]=-\int dt\text{Tr}(\partial_t\phi\tilde{a}_\phi+\tilde{a}_t)$$
-
-这里积分$\int dxdk_x/2\pi$已经被移除.为了后面的方便$a_t,a_{k_x}$在$(1+1)$维中与$\tilde{a}_t,\tilde{a}_\phi$相关,为了得到第二个式子,进行分部积分即可.最终$(0+1)$维系统的Berry位相规范势由两部分组成
-
-$$a^{\alpha\beta}_t=-i\langle\alpha;t,\phi(t)\rvert\partial_t\rvert\beta;t,\phi(t)\rangle$=-i\langle\alpha;t,\phi\rvert[(\frac{\partial}{\partial t})_\phi+\frac{\partial\phi}{\partial t}(\frac{\partial}{\partial\phi})_t]\rvert\beta;t.\phi\rangle=\tilde{a}_t+\partial_t\phi\tilde{a}_\phi$$
-
-结合上面的两个方程之后可以得到
-
-$$S_{0+1}=-\int dt\text{Tr}[a_t]$$
-
-在这种情况下唯一保持规范不变的量是通过绝热演化路径得到的单粒子系统的Berry位相.
-
-对于第二族的拓扑绝缘体,有效理论
-
-$$S_\text{eff}=\frac{C_2}{24\pi^2}\int d^4xdt\epsilon^{\mu\nu\rho\sigma\tau}A_\mu\partial_\nu A_\rho\partial_\sigma A_\tau$$
-
-在相空间可以表示为
-
-$$S_{4+1}=\frac{1}{192\pi^4}\int d^9q\epsilon^{ABCDEFGHI}A_A\partial_B A_C\partial_DA_E\text{Tr}[D_Fa_GD_Ha_I]\label{7}
-
-$$
-
-这里的协变微分为$D_B=\partial_B+ia_B$是为了非阿贝尔Berry位相规范场引入的.与前面相似的方式进行$(3+1)$维的维度约化,将第四个空间维度记为$w$,它将会被进行维度约化,之后任何$\partial_w,a_w$都将会消失,(\ref{7})中不消失的之后那些$A_w$项,现在将会被参数$\theta(x,
-
-y,z,t)$替换.另一方面在形式$D_Fa_GD_Ha_I$中的一个$F,G,H,I$会是$k_w$,现在被替换为$\theta$,最终可以得到
-
-$$S_{3+1}=\frac{3}{96\pi^3}\int d^7q\epsilon^{\mu\nu\sigma\tau}\epsilon^{ijk}A_\mu\partial_\nu A_\sigma\partial_\tau\theta\text{Tr}[D_\theta a_iD_ja_k+\text{cycl.}]$$
-
-$\mu,\nu,\cdots=0,1,2,3; i,j,k=1,2,3$分别是$(3+1)$维中的时空和动量指标,cycl.带脖啊的是$\theta,ij,k$对应的轮换项.积分$\int dk_wdw/2\pi$已经被移除,前面的因子3来源于这里由三个$A_A$.同样的在$(2+1)$维向$(1+1)$维进行时,$\partial_\mu\theta D_\theta$被替换为$D_\mu$,最终可以得到$(3+1)$维绝缘体的结果
-
-$$S_{3+1}=\int \frac{d^7q}{32\pi^3}\epsilon^{AB\cdots G}A_A\partial_BA_c\text{Tr}[D_Da_ED_Fa_G]\label{ha45}$$
-
-根据$P_3$的定义
-
-$$P_3(\theta_0)=\int d^3k\mathcal{K}^\theta=\frac{1}{16\pi^2}\int d^3k\epsilon^{\theta ijk}\text{Tr}[(f_{ij}-\frac{1}{3}[a_i,a_j])\cdot a_k]$$
-
-可知
-
-$$\partial_l P_3=\frac{1}{8\pi^2}\int d^k\epsilon^{\theta ijk}\text{Tr}[f_{li}f_{jk}]$$
-
-从上面$(2+1)$维$\rightarrow(1+1)$维$\rightarrow(0+1)$维和$(4+1)$维$\rightarrow(3+1)$维$\rightarrow(2+1)$维的研究,可以在相空间找到一个一般的规则来实现维度约化的相空间Chern-Simons理论.对于一个$(d+1)$维的系统,想空间维度为为$2d+1$,对应相空间Chern-Simons维度约化定义如下:
-- 从作用量中移除$\partial_AA_B$项并且替换$(2d+1)$维的反对称张量为$(2d-1)$维
-- 当$x_d,k_d$是空间维度时移除积分$\int dx_ddk_d/2\pi$并且动量指标被约化
-- 当外部规范场$A_A$的幂次为$n$时乘以一个因子$n$
-{:.success}
-
-根据上面的规则,$(2+1)$维TRI绝缘体的有效作用量可以从(\ref{ha45})再进行一次维度约化得到
-
-$$S_{2+1}=\int \frac{d^5q}{8\pi^2}\epsilon^{ABCDE}A_A\text{Tr}[D_Ba_CD_Da_E]$$
-
-这里的系数由$8\pi^2=32\pi^2/(2\cdot 2\pi)$决定.
-
-对于$(2n+1)$维的拓扑绝缘体其有效理论为
-
-$$S_{2n+1}=\frac{C_n}{(n+1)!(2\pi)^n}\int d^{2n+1}x\epsilon^{\mu_1\mu_2\cdots\mu_{2n+1}}A_{\mu_1}\partial_{\mu_2}A_{\mu_3}\cdots\partial_{\mu_{2n}}A_{\mu_{2n+1}}$$
-
-这里的第$n$Chern数在动量空间中的定义为
-
-$$C_n=\frac{1}{n!2^n(2\pi)^2}\int d^{2n}k\epsilon^{i_1i_2\cdots i_{2n}}\text{Tr}[f_{i_1i_2}f_{i_3i_4}\cdots f_{i_{2n-1}i_{2n}}]$$
-
-对于$(4n+1)$维相空间有效作用量的公式为
-
-$$S_{4n+1}=\frac{1}{n!(n+1)!(2\pi)^{2n}}\int d^{4n+1}q\epsilon^{A_1A_2\cdots A_{4n+1}}A_{A_1}\partial_{A_2}A_{A_3}\cdots\partial_{A_{2n}}A_{A_{2n+1}}\text{Tr}[D_{A_{2n+2}}a_{A_{2n+3}}\cdots D_{A_{4n}}a_{A_{4n+1}}]\label{ha47}$$
-
-根据维度约化的一般规则,可以得到低纬度拓扑绝缘体的有效理论,它是拓扑理论(\ref{ha47})的"子孙".
-
-从上面的实例中可以看到,在维度约化的过程中,Berry位相规范势$a_i$的数目在有效作用量中是不变的,尽管在每一步约化中外部规范势$A_\mu$是减少的.在经过$n+1$次约化之后,可以得到维度为$[(n-1)+1]$维的系统,此时不包含$A_i$.就像$(0+1)$维系统,有效作用量的变分并不导致任何对系统的响应,而只是由绝热演化时候的Berry位相来描述.**很明显,为杜月华不能再对这个$[(n-1)+1]$维的系统进行,存在非平庸第$n$Chern数的$(2n+1)$维拓扑绝缘体在维度约化中仅有$(n+1)$个"子孙".**
-{:.success}
-
-这儿离来看一下一个$(2n+1)$维拓扑绝缘体的第$m$个子孙$1\leq m\leq n+1$
-
-$$S^{m}_{2n+1-m}=\frac{\begin{array}{c}2n+1-m\\ n\end{array}}{(2n+1-m)!}\int\frac{d^{4n+1-2m}}{(2\pi)^{2n-m}}\epsilon^{A_1A_2\cdots A_{4n+1-2m}}A_{A_1}\partial_{A_2}A_{A_3}\cdots\partial_{A_{2n-2m}}A_{A_{2n+1-2,}}\text{Tr}[D_{A_{2n+2-2m}}a_{A_{2n+3-2m}}\cdots D_{A_{4n-2m}}a_{A_{4n+1-2m}}]\\ \equiv CS_{4n-2m+1}^{n-m+1}$$
-
-$CS_s^t$代表的是混合的Chern-Simons作用量在$s$相空间维度对应的外场$A_A$的幂指数是$t$.特别的,$CS_s^0$是Berry位相规范场$a_A$的纯非阿贝尔Chern-Simons项,它不能通过函数$f_{AB}=D_Aa_B-D_Ba_A$单独约化得到.在给定空间维度$d$,在能带绝缘体所有可能的拓扑现象都由$CS_{2d+1}^t$取所有可能的$t$值所给出.这里需要注意,外部规范场$A_A$仅在实空间中给出,所以当$A$或者$B$是动量所以的时候$A,B=d+2,d+3,\cdots,2d+1$,$A_A,\partial_BA_A$都是为零.
-
-因为在$CS_{2d+1}^t$中又t$t$个$A_A$,至少可以在$A_A$上作用$t-1$次偏微分,当$2t-1>d+1$的时候Chern-Simons项$CS_{2d+1}^t$就会消失,所以在一个$(d+1)$维的相空间中,总共会有$[d/2]+2$个科艺隆的Chern-Semions项,它们是$CS^t_{2d+1},t=0,1,\cdots,[d/2]+1$.
-{:.success}
-
-对$(2+1)$维系统,总共有3个可以利用的相空间Chern-Simons项,其中$CS_5^2$描述量子Hall绝缘体,$CS_5^1$描述量子自旋霍尔绝缘体,第三个为
-
-$$CS_%^0=\frac{3!(2\pi)^2}{1}\int d^5q\epsilon^{ABCDE}\text{Tr}[a_A\partial_Ba_C\partial_Da_E+\frac{3}{2}a_Aa_Ba_c\partial_Da_E+\frac{3}{5}a_Aa_Ba_ca_Da_E]$$
-
-这里并不包含$A_A$,因此不能描述任何体系对电磁场的响应性质.将上面的所有内容组合起来就可以得到下面的家族表
-
-![png](../assets/images/topology/tpf22.png)
-
-
-对于一个$(n+1)$维系统由$N$个占据态,在相空间中可以定义一个$U(N)$的规范矢势
-
-$$\mathcal{A}^\lambda_A=\lambda A_A=a_A$$
-
-$A_A$是外场,$a_A$是Berry位相规范势,$\mathcal{A}_A^\lambda$的非阿贝尔Chern-Simons项为
-
-$$CS_{2n+1}(\lambda)\equiv CS_{2n+1}[\mathcal{A}^\lambda_A]=\frac{1}{(n=1)!(2\pi)^n}\int d^{2n+1}q\epsilon^{A_1A_2\cdots A_{2n+1]}}\text{Tr}[\mathcal{A}_{A_1}^\lambda\partial_{A_2}\mathcal{A}_{A_3}^\lambda\cdots \partial_{A_{2n}}\mathcal{A}_{A_{2n+1}}^\lambda+\text{N.T.}]$$
-
-这里$\text{N.T}$表示包含对易$\mathcal{A}_A^\lambda$的非阿贝尔项.它可以由$(2d+1)$维的Chern-Simons像是到$[(2d+1)+1]$维的Chern形式决定.
-将作用量$CS_{2n+1}(\lambda)$根据$\lambda$展开,得到下面的方程
-
-$$CS_{2n+1}(\lambda)=\sum_{t=0}^{[n/2]+1}\lambda^tCS_{2n+1}^t\rightarrow SC_{2n+1}^t=\frac{1}{t!}\frac{\partial^t}{\partial\lambda^t}CS_{2n+1}(\lambda)\rvert_{\lambda=0}$$
-
-着意味着所有可能想空间Chern-Simons项都可以从单个生成泛函$CS_{2n+1}(\lambda)$得到.
-
-## 一般维度的$\mathbb{Z}_2$拓扑绝缘体
 
 
 
