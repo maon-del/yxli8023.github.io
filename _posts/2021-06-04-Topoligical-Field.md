@@ -1,5 +1,5 @@
 ---
-title: 时间反演不变绝缘体的拓扑场论(。。。。。ing)
+title: 时间反演不变绝缘体的拓扑场论
 tags: Topology Field-Theory
 layout: article
 license: true
