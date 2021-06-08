@@ -957,6 +957,10 @@ $$\rho_{1d}(x)=\frac{1}{2\pi}\int_{-L}^Ldy(\partial_x\Omega_y-\partial_y\Omega_x
 
 $L$是沿$y$方向的截断,满足$L >> \xi$才能忽略$\rvert y\rvert > L$区域外对$\rho_{1d},j_{1d}$的贡献.根据(\ref{ha43},\ref{ha34}
 
+<<<<<<< HEAD
+# 维度约化至$(2+1)$维
+=======
+>>>>>>> c87bcacdda79d10a666879d5d3cd5c9e34273bb9
 
 
 
