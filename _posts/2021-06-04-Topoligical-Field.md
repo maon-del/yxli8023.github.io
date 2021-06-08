@@ -828,7 +828,7 @@ $$H_{2D}[A,\theta,\varphi]=\sum_{\mathbf{x},s}[\psi^\dagger_\mathbf{x}(\frac{c\G
 
 $$S_{2D}=\frac{G_2(\theta_0,\varphi_0)}{2\pi}\int d^2xdt\epsilon^{\mu\nu\rho}A_\mu\partial_\nu\delta\theta\partial_\rho\delta\varphi\label{ha35}$$
 
-这里的系数$G_2(\theta_0,\varphi_0)由关联函数(\ref{ha10})决定但不包括对$k_z,k_w$的积分
+这里的系数$G_2(\theta_0,\varphi_0)$由关联函数(\ref{ha10})决定但不包括对$k_z,k_w$的积分
 
 $$G_2(\theta_0,\varphi_0)=\frac{2\pi}{3}\int\frac{d^2kd\omega}{(2\pi)^3}\text{Tr}\epsilon^{\mu\nu\rho}[(G\frac{\partial G^{-1}}{\partial q^\mu})(G\frac{\partial G^{-1}}{\partial q^\nu})(G\frac{\partial G^{-1}}{\partial q^\rho})(G\frac{\partial G^{-1}}{\partial q_{\theta_0}})(G\frac{\partial G^{-1}}{\partial q_{\varphi_0}})]\\ =\frac{1}{4\pi}\int d^2k\epsilon^{ij}\text{Tr}[2f_{i\theta}f_{i\varphi}-f_{ij}f_{\theta\varphi}],\quad\mu,\nu,\rho=0,1,2,\quad i,j=1,2,\quad q^\mu=(\omega,k_x,k_y)\label{ha39}$$
 
