@@ -59,6 +59,16 @@ $$\rvert P1^\pm,\alpha\rangle=\frac{1}{\sqrt{2}}(\rvert B_\alpha\rangle\mp\rvert
 这里上标的正负号对应着态的宇称,$\alpha=p_x,p_y,p_z$.当$\rvert B_\alpha(S_\alpha)\rangle$与$\rvert B^{'}_\alpha(S^{'}_\alpha)\rangle$之间的耦合被考虑之后,成键态与反键态对应的能量劈裂来,反键态比成键态具有更高的能量,如上图II阶段所示.此时$\rvert P1^+,\alpha\rangle,\rvert P2^-,\alpha\rangle,(\alpha=p_x,p_y,p_z)$是靠近费米面的,所以可以只关注这些态,而忽略那些远离费米面附近的能带的贡献.因为晶体是个层状结构,在原子平面上$z$方向与$x,y$方向是不同的,因此对$P1^+,P2^-$态,$p_z$轨道的能量分离与$p_x,p_y$轨道是不同的.这里$\rvert P1^+,p_{x,y}\rangle$轨道的能量比$\rvert P1^+,p_z\rangle$的能量高,而$\rvert P2^-,p_{x,y}\rangle$比$\rvert P2^-,p_z\rangle$的能量低,因此导带只考虑$\rvert P1^+,p_z\rangle$,价带只考虑$\rvert P2^-,p_z\rangle$,如上图III所示.
 
 
+在上面的原子轨道的基础上开始考虑SOC效应,给每个态再赋予自旋指标,态$\rvert P1^+,\alpha,\sigma\rangle,\rvert P2^-,\alpha,\sigma\rangle$都是双重简并的,$\sigma=\uparrow,\downarrow$表示的是自旋.原子的SOC哈密顿量为$\hat{H}_{SOC}=\lambda{\bf s\cdot L},\lambda=\frac{1}{2m_0^2c^2r}\frac{\partial U}{\partial r}$依赖于原子的势场$U$,它会将原子的轨道和自旋耦合起来.将轨道$p_x,p_y$转换成$p_\pm$来定义轨道角动量
+
+$$\rvert \Lambda,p_+,\sigma\rangle=-\frac{1}{\sqrt{2}}(\rvert\Lambda,p_x,\sigma\rangle+i\rvert\Lambda,p_y,\sigma\rangle),\quad\rvert \Lambda,p_{-},\sigma\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda,p_x,\sigma\rangle-i\rvert\Lambda,p_y,\sigma\rangle),\quad\Lambda=P1^+,P2^-$$
+
+在这个基矢下,原子SOC的哈密顿量为
+
+$$\langle\Lambda,p_+,\uparrow\rvert H_{SOC}\rvert\Lambda,p_+,\uparrow\rangle=\langle\Lambda,p_{-},\downarrow\rvert H_{SOC}\rvert\Lambda,p_{-},\downarrow\rangle\equiv\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_+,\downarrow\rvert H_{SOC}\rvert\Lambda,p_+,\downarrow\rangle=\langle\Lambda,p_{-},\uparrow\rvert H_{SOC}\rvert\Lambda,p_{-},\uparrow\rangle\equiv-\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_+,\downarrow\rvert H_{SOC}\rvert\Lambda,p_z,\uparrow\rangle=\langle\Lambda,p_{-},\uparrow\rvert H_{SOC}\rvert\Lambda,p_{z},\downarrow\rangle\equiv\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_z\uparrow(\downarrow)\rvert\rvert H_{SOC}\rvert\Lambda,p_z,\uparrow(\downarrow)\rangle=0 $$
+
+
+
 # 参考
 
 - 1.[Model Hamiltonian for topological insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.045122)
