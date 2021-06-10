@@ -159,7 +159,67 @@ $$H^{'}_\text{eff}=H_0^{'}+H_3^{'}\\ H_0^{'}=\epsilon_\mathbf{k}+M(\mathbf{k})\G
 在对每一项进行构建的时候,首先要确定多项式$\mathbf{k}$和其对应的矩阵要属于同一个不可约表示.一如$M(\mathbf{k})\Gamma_5$这一项,从上面的表中可以发现$\Gamma_5$属于$\tilde{\Gamma}_1^{+}$这个不可约表示,那么对应这个表示的多项式有$1,k_x^2+k_y^2,k_z^2$这三项,那么就可以得到$M(\mathbf{k})$的一个表示$M(\mathbf{k})=M_0+M_1k_z^2+M_2k_\parallel^2$.其余的项对应的构建方式也是完全相同.
 {:.success}
 
+# ${\bf k\cdot p}$微扰推导哈密顿量
+${\bf k\cdot p}$的基本想法是利用在布里渊区中$\Gamma$点的波函数为零级波函数,将
 
+$$\hat{H}^{'}=\frac{\hbar}{m_0}{\bf k\cdot p}$$
+作为微扰,这里$\mathbf{p}=-i\hbar\partial_\mathbf{r}$是作用在零级波函数上的动量算符,晶体动量$\mathbf{k}$此时是个小参数作为微扰来处理.哈密顿量模型可以被展开成一系列$k$的幂函数.首先来考虑$D_{3d}^5$对称性对动量矩阵元的限制.先来标记本征态$\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$.本征态$\rvert\Lambda,\pm 1/2\rangle$属于$\tilde{\Gamma}_6^\pm$表示,对于$\rvert\Lambda,\pm 3/2\rangle$态需要上面态的组合
+
+$$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle+\rvert\Lambda^\pm,-3/2\rangle),\\ \Lambda^\pm,\tilde{\Gamma}_5\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3.2\rangle-\rvert\Lambda^\pm,-3/2\rangle)$$
+
+分别属于$\tilde{\Gamma}_4,\tilde{\Gamma}_5$表示.
+
+$$(\tilde{\Gamma}_6^\pm)^*\otimes\tilde{\Gamma}_6^\pm=\tilde{\Gamma}_1^{+}+\tilde{\Gamma}_2^{+}+\tilde{\Gamma}_3^{+}, (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_1^{-}=\tilde{\Gamma}_1^{-}+\tilde{\Gamma}_2^{-}+\tilde{\Gamma}_3^{-}, (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_4^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_6^{-})^*\otimes \tilde{\Gamma}_4^{\pm}=\tilde{\Gamma}_3^{\pm},\\ (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_5^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_6^{-})^*\otimes \tilde{\Gamma}_5^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_{4(5)}^{+})^*\otimes \tilde{\Gamma}_{4(5)}^{-}=\tilde{\Gamma}_1^{-}, (\tilde{\Gamma}_{4(5)}^{+})^*\otimes \tilde{\Gamma}_{5(4)}^{-}=\tilde{\Gamma}_2^{-}$$
+
+上面给出了一些不可约表示的直积分解,也可以理解成态相乘,然后分解到对应的一些基本不可约表示上.动量$p_x,p_y$属于$\tilde{\Gamma}_3^{-}$表示,$p_z$属于$\tilde{\Gamma}_2^{-}$表示,因此这里要求本征态的直积分解中同样包含$\tilde{\Gamma}_3^{-},\tilde{\Gamma}_2^{-}$得到非零的矩阵元(**相容性原理**).比如$\tilde{\Gamma}_6^{\pm}$和$\tilde{\Gamma}_{4,5}^{\pm}$的直积并不包含$\tilde{\Gamma}_2^{-}$,因此矩阵元$\langle\Lambda_1,\pm 1/2\rvert p_z\rvert\Lambda_2,\tilde{\Gamma}_{4,5}\rangle$总是等于0.对称性操作可以进一步帮助得到矩阵元素和动量之间的关系.比如对于$R_3$旋转操作,可以得到
+
+$$\begin{equation}\begin{aligned}\langle\Lambda_1^+,\frac{1}{2}\rvert p_x\rvert\Lambda_2,-\frac{1}{2}\rangle &=\langle\Lambda_1^+,\frac{1}{2}\rvert R_3^\dagger R_3p_xR_3^\dagger D_3\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\\ &=e^{-i(2\pi/3)}\langle\Lambda_1^{+},\frac{1}{2}\rvert(p_x\cos\frac{2\pi}{3}-p_y\sin\frac{2\pi}{3})\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\\ &\rightarrow\langle\Lambda_1^{+},\frac{1}{2}\rvert p_x\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=i\langle\Lambda_1^+,\frac{1}{2}\rvert p_y\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\end{aligned}\end{equation}$$
+
+最后可以得到一些独立的矩阵元素
+
+$$\langle\Lambda_1^+,\frac{1}{2}\rvert p_x\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=\langle\Lambda_1^+,-\frac{1}{2}\rvert p_x\rvert\Lambda_2^{-},\frac{1}{2}\rangle\\ i\langle\Lambda_1^+,\frac{1}{2}\rvert p_y\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=-i\langle\Lambda_1^+,-\frac{1}{2}\rvert p_y\rvert\Lambda_2^{-},\frac{1}{2}\rangle=P_{\Lambda_1^{+},\Lambda_2^{-}}$$
+
+$$\langle\Lambda_1^+,\frac{1}{2}\rvert p_z\rvert\Lambda^{-},\frac{1}{2}\rangle=-\langle\Lambda_1^+,-\frac{1}{2}\rvert p_z\rvert\Lambda^{-},-\frac{1}{2}\rangle=Q_{\Lambda_1^{+},\Lambda_2^{-}}$$
+
+$$\langle\Lambda_1^\pm,\frac{1}{2}\rvert p_x\rvert\Lambda_2^{\mp},\tilde{\Gamma}_4\rangle=-i\langle\Lambda_1^\pm,-\frac{1}{2}\rvert p_x\rvert\Lambda_2^{\mp},\tilde{\Gamma}_4\rangle\\ =-i\langle\Lambda_1^\pm,\frac{1}{2}\rvert p_y\rvert\Lambda_2^{\mp},\tilde{\Gamma}_4\rangle=\langle\Lambda_1^\pm,-\frac{1}{2}\rvert p_y\rvert\Lambda_2^{\mp},\tilde{\Gamma}_4\rangle=M_{\Lambda^\pm_1,\Lambda_2^\mp}$$
+
+$$\langle\Lambda_1^\pm,\frac{1}{2}\rvert p_x\rvert\Lambda_2^{\pm},\tilde{\Gamma}_5\rangle=i\langle\Lambda_1^\pm,-\frac{1}{2}\rvert p_x\rvert\Lambda_2^{\mp},\tilde{\Gamma}_5\rangle=-i\langle\Lambda_1^\pm,\frac{1}{2}\rvert p_y\rvert\Lambda_2^{\mp},\tilde{\Gamma}_5\rangle\\ =-\langle\Lambda_1^\pm,-\frac{1}{2}\rvert p_y\rvert\Lambda_2^{\mp},\tilde{\Gamma}_5\rangle=N_{\Lambda_1^\pm,\Lambda_2^\mp}$$
+
+$$\langle\Lambda_1^{+},\tilde{\Gamma}_4\rvert p_z\rvert\Lambda^{-},\tilde{\Gamma}_4\rangle=R_{\Lambda_1^{+},\Lambda_2^{-}}$$
+
+$$\langle\Lambda_1^+,\tilde{\Gamma}_5\rvert p_z\rvert\Lambda^{-},\tilde{\Gamma}_5\rangle=S_{\Lambda_1^+,\Lambda_2^{-}}$$
+
+这里采用$p_\pm=p_x\pm p_y$
+
+$$\langle\Lambda_1^{+},\frac{1}{2}\rvert p_+\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=\langle\Lambda_1^{+},-\frac{1}{2}\rvert p_{-}\rvert\Lambda_2^{-},\frac{1}{2}\rangle=2P_{\Lambda_1^{+},\Lambda_2^{-}}$$
+
+$$\langle\Lambda_1^{+},\frac{1}{2}\rvert p_{-}\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=\langle\Lambda_1^{+},-\frac{1}{2}\rvert p_{+}\rvert\Lambda_2^{-},\frac{1}{2}\rangle=0$$
+
+$$\langle\Lambda_1^{\pm},\frac{1}{2}\rvert p_{-}\rvert\Lambda_1^{+},\Gamma_4\rangle=-i\langle\Lambda_1^{\pm},-\frac{1}{2}\rvert p_{+}\rvert\Lambda_2^{\mp},\Gamma_4\rangle=2M_{\Lambda_1^{\pm},\Lambda_2^{\mp}}$$
+
+$$\langle\Lambda_1^{\pm},\frac{1}{2}\rvert p_{+}\rvert\Lambda_2^{+},\Gamma_4\rangle=-i\langle\Lambda_1^{\pm},-\frac{1}{2}\rvert p_{-}\rvert\Lambda_2^{\mp},\Gamma_4\rangle=0$$
+
+$$\langle\Lambda_1^{\pm},\frac{1}{2}\rvert p_{-}\rvert\Lambda_2^{+},\Gamma_5\rangle=i\langle\Lambda_1^{\pm},-\frac{1}{2}\rvert p_{+}\rvert\Lambda_2^{\mp},\Gamma_5\rangle=2N_{\Lambda_1^{\pm},\Lambda_2^{\mp}}$$
+
+$$\langle\Lambda_1^{\pm},\frac{1}{2}\rvert p_{+}\rvert\Lambda_2^{\mp},\Gamma_5\rangle=i\langle\Lambda_1^{\pm},-\frac{1}{2}\rvert p_{-}\rvert\Lambda_2^{\mp},\Gamma_5\rangle=0$$
+
+时间反演表明$P_{\Lambda_1^+,\Lambda_2^{-}},Q_{\Lambda_1^+,\Lambda_2^{-}}$可以被选择为实数($P_{\Lambda_1^+,\Lambda_2^{-}}=P^{*}_{\Lambda_1^+,\Lambda_2^{-}},Q_{\Lambda_1^+,\Lambda_2^{-}}=Q^{*}_{\Lambda_1^+,\Lambda_2^{-}}$),而$M_{\Lambda_1^\pm,\Lambda_2^\mp}=iN^{*}_{\Lambda_1^\pm,\Lambda_2^\mp},R_{\Lambda_1^+\Lambda_2^{-}}=-S^{*}_{\Lambda_1^+,\Lambda_2^{-}}$.由于$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$之间的矩阵元是比较重要的,这里进行一下标记
+
+$$\langle P1_{-}^{+},\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},-\frac{1}{2}\rangle=\langle P1_{-}^{+},-\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},\frac{1}{2}\rangle=i\langle P1_{-}^{+},\frac{1}{2}\rvert p_y\rvert P2_{+}^{-},-\frac{1}{2}\rangle\\ =-i\langle P1_{-}^{+},-\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},\frac{1}{2}\rangle=P_0 $$
+
+$$\langle P1_{-}^+,\frac{1}{2}\rvert p_z\rvert P2_{+}^{-},\frac{1}{2}\rangle=-\langle P1_{-}^{+},-\frac{1}{2}\rvert p_z\rvert P2_{+}^{-},-\frac{1}{2}\rangle=Q_0$$
+
+接下来开始考虑微扰,简并微扰的公式如下
+
+$$H_{mm^{'}}^{(0)}=E_m\delta_{mm^{'}}$$
+
+$$H_{mm^{'}}^{(1)}=H_{mm^{'}}^{'}$$
+
+$$H^{(2)}_{mm^{'}}=\frac{1}{2}\sum_lH^{'}_{ml}H^{'}_{lm^{'}}(\frac{1}{E_m-E_l}-\frac{1}{E_{m'}-E_l})$$
+
+$$H^{(3)}_{mm^{'}}=-\frac{1}{2}\sum_{l,m^{''}}[\frac{H^{'}_{ml}H^{'}_{lm^{''}}H^{'}_{m^{''}m^{'}}}{(E_{m^{'}}-E_l)(E_{m^{''}}-E_l)}+\frac{H^{'}_{mm^{''}}H^{'}_{m^{''}l}H^{'}_{lm^{'}}}{(E_m-E_l)(E_{m^{''}}-E_l)}]\\ +\frac{1}{2}\sum_{l,l^{'}}H^{'}_{ml}H^{'}_{ll^{'}}H^{'}_{l^{'}m^{'}}[\frac{1}{(E_m-E_l)(E_m-E_{l^{'}})}+\frac{1}{(E_{m^{'}}-E_l)(E_{m^{'}}-E_{l^{'}})}]$$
+
+这里$m,m^{'}$取$\rvert P1_{-}^+,1/2\rangle=\rvert 1\rangle,\rvert P2_{+}^{-},1/2\rangle=\rvert 2\rangle,\rvert P1_{-}^+,-1/2\rangle=\rvert 3\rangle,\rvert P2_{+}^{-},-1/2\rangle=\rvert 4\rangle$,对应的能量为$E_1=E_3,E_2=E_4,E_1<E_2$.$l$会遍历除了这四个能带之外的其他能带.
 # 参考
 
 - 1.[Model Hamiltonian for topological insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.045122)
