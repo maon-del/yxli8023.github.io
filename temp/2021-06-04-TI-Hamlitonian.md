@@ -142,7 +142,22 @@ $$\rvert\Lambda^\pm,\tilde{\Gamma}_5\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm
 
 $$H_\text{eff}=\epsilon(\mathbf{k})\mathbb{I}+\sum_id_i(\mathbf{k})\Gamma_i+\sum_{ij}d_{ij}\Gamma_{ij}$$
 
-$\Gamma_i,i=1,2,3,4,5$是Dirac矩阵,满足$\{\Gamma_i,\Gamma_j\}=2\delta_{ij},\Gamma_{ij}=[\Gamma_i,\Gamma_j]/2i,\epsilon({\bf k}),d_i(\mathbf{k}),d_{ij}(\mathbf{k})$可以展开成动量$\mathbf{k}$的幂函数.
+$\Gamma_i,i=1,2,3,4,5$是Dirac矩阵,满足$\{\Gamma_i,\Gamma_j\}=2\delta_{ij},\Gamma_{ij}=[\Gamma_i,\Gamma_j]/2i,\epsilon({\bf k}),d_i(\mathbf{k}),d_{ij}(\mathbf{k})$可以展开成动量$\mathbf{k}$的幂函数.假设上面的哈密顿量是以$\rvert P1^+_{-},\frac{1}{2}\rangle,\rvert P2^{-}_+,\frac{1}{2}\rangle,\rvert P1^+_{-},-\frac{1}{2}\rangle,\rvert P2_+^{-},-\frac{1}{2}\rangle$为基矢,根据这些态在对称性操作下的变换,可以构建下面的变换矩阵
+- 时间反演:$\mathcal{T}=\Theta\mathcal{K},\Theta=i\sigma_2\otimes\mathcal{I},\mathcal{K}$是复共轭算符.
+- 三重旋转:$R_3=e^{i(\Pi/2)\theta},\Pi=\sigma_3\otimes\mathcal{I},\theta=2\pi/3.$
+- 两重转动:$R_2=i\sigma_1\otimes\tau_3$.
+- 反演操作:$P=\mathcal{I}\otimes\tau_3$.
+
+在上面$\sigma$作用在自旋上,$\tau$作用在$P1^+,P2^{-}$上.根据上面的变换矩阵,可以得到每个$\Gamma$矩阵的不可约表示.根据哈密顿量在对称性操作下的不变性,$d_i(\mathbf{k})[d_{ij}(\mathbf{k})]$与其对应的$\Gamma_i[\Gamma_{ij}]$在对称操作下具有相同的行为,也就意味着它们属于相同的晶体点群不可约表示.在上图中列举出了$\Gamma$矩阵和$\mathbf{k}$的多项式的表示以及其在时间反演下的性质.因为研究的时候希望同时保留时间反演和晶体对称性,我们必须选择$\Gamma$矩阵和$\mathbf{k}$具有相同的表示.比如,$\Gamma_1,\Gamma_2$都属于$\tilde{\Gamma}_3^{-}$表示,且在时间反演下是奇的,$k_x,k_y$也相同.因此可以将它们组合,从而构成哈密顿量中的不变项.将哈密顿量构建到$k^3$,可以得到
+
+$$H^{'}_\text{eff}=H_0^{'}+H_3^{'}\\ H_0^{'}=\epsilon_\mathbf{k}+M(\mathbf{k})\Gamma_5+B(k_z)\Gamma_4k_z+A(k_\parallel)(\Gamma_1k_y-\Gamma_2k_x)\\ H_3^{'}=R_1\Gamma_3(k_x^3-3k_xk_y^2)+R_2\Gamma_4(2k_x^2k_y-k_y^3)$$
+
+这里$\epsilon_\mathbf{k}=C_0+C_1k_z^2=C_2k_\parallel^2,M(\mathbf{k})=M_0+M_1k_z^2+M_2k_\parallel^2,A(k_\parallel)=A_0+A_2k_\parallel^2,B(k_z)=N_0+B_2k_z^2,$,$k_\parallel^2=k_x^2+k_y^2$. 此时$H_0^{'}$让然保持着沿$z$方向的面内旋转对称,然而$H_3^{'}$破坏了面内旋转对称,变成了三重旋转对称.
+
+- 哈密顿量构建方法
+
+在对每一项进行构建的时候,首先要确定多项式$\mathbf{k}$和其对应的矩阵要属于同一个不可约表示.一如$M(\mathbf{k})\Gamma_5$这一项,从上面的表中可以发现$\Gamma_5$属于$\tilde{\Gamma}_1^{+}$这个不可约表示,那么对应这个表示的多项式有$1,k_x^2+k_y^2,k_z^2$这三项,那么就可以得到$M(\mathbf{k})$的一个表示$M(\mathbf{k})=M_0+M_1k_z^2+M_2k_\parallel^2$.其余的项对应的构建方式也是完全相同.
+{:.success}
 
 
 # 参考
