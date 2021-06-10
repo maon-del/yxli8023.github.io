@@ -67,6 +67,82 @@ $$\rvert \Lambda,p_+,\sigma\rangle=-\frac{1}{\sqrt{2}}(\rvert\Lambda,p_x,\sigma\
 
 $$\langle\Lambda,p_+,\uparrow\rvert H_{SOC}\rvert\Lambda,p_+,\uparrow\rangle=\langle\Lambda,p_{-},\downarrow\rvert H_{SOC}\rvert\Lambda,p_{-},\downarrow\rangle\equiv\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_+,\downarrow\rvert H_{SOC}\rvert\Lambda,p_+,\downarrow\rangle=\langle\Lambda,p_{-},\uparrow\rvert H_{SOC}\rvert\Lambda,p_{-},\uparrow\rangle\equiv-\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_+,\downarrow\rvert H_{SOC}\rvert\Lambda,p_z,\uparrow\rangle=\langle\Lambda,p_{-},\uparrow\rvert H_{SOC}\rvert\Lambda,p_{z},\downarrow\rangle\equiv\frac{\lambda_\Lambda}{2}\\ \langle\Lambda,p_z\uparrow(\downarrow)\rvert\rvert H_{SOC}\rvert\Lambda,p_z,\uparrow(\downarrow)\rangle=0 $$
 
+对BI和Se原子,$\lambda_\Lambda$的值是其SOC系数的线性组合,它决定于在Se和Bi中有多少轨道混合到了态$\rvert \Lambda\rangle$,而$\lambda_\Lambda$的符号对$\Lambda=P1^+,P2^{-}$始终是正的,因为原子间的势能是吸引相互作用.这里可以发现沿着$z$方向的总角动量是守恒的,因为耦合只发生在$\rvert\Lambda,p_z,\uparrow\rangle(\rvert\Lambda,p_z,\downarrow\rangle)$和$\rvert\Lambda,p_{+},\downarrow\rangle(\rvert\Lambda,p_{-},\uparrow\rangle)$之间.当考虑了SOC之后,新的本征态为
+
+$$\rvert\Lambda,\frac{3}{2}\rangle=\rvert\Lambda,p_{+},\uparrow\rangle,\quad\rvert\Lambda,-\frac{3}{2}\rangle=\rvert\Lambda,p_{-},\downarrow\rangle,\quad\rvert\Lambda_{+},\frac{1}{2}\rangle=u^\Lambda_{+}\rvert\Lambda,p_z,\uparrow\rangle+v^\Lambda_{+}\rvert\Lambda,p_{+},\downarrow\rangle\\ \rvert\Lambda_{-},\frac{1}{2}\rangle=u^\Lambda_{-}\rvert\Lambda,p_z,\uparrow\rangle+v^\Lambda_{-}\rvert\Lambda,p_{+},\downarrow\rangle,\quad \rvert\Lambda_{+},-\frac{1}{2}\rangle=(u^\Lambda_{+})^*\rvert\Lambda,p_z,\downarrow\rangle+(v^\Lambda_{+})^*\rvert\Lambda,p_{+},\uparrow\rangle\\ \rvert\Lambda_{-},-\frac{1}{2}\rangle=(u^\Lambda_{-})^*\rvert\Lambda,p_z,\downarrow\rangle+(v^\Lambda_{-})^*\rvert\Lambda,p_{-},\uparrow\rangle\label{a1}$$
+
+对应的本征值为$E^\Lambda_{3/2},E^{\Lambda_\pm}_{1/2}$,每个能级都是双重简并的,系数$u,v$可以通过求解下面$2\times 2$哈密顿量得到
+
+$$\hat{H}=\left(\begin{array}{cc}E_{\Lambda,x}-\lambda_\Lambda/2&\lambda_\Lambda/\sqrt{2}\\ \lambda_\Lambda/\sqrt{2}& E_{\Lambda,z}\end{array}\right)$$
+
+对前面的本征态,所有关于SOC的信息都包含在$u,v$中,它们的值为
+
+$$\left(\begin{array}{c}u_\pm^\Lambda\\ v_\pm^\Lambda\end{array}\right)=\frac{1}{N_\pm}\left(\begin{array}{c}\Delta E_\Lambda\pm\sqrt{(\Delta E)^2+\frac{\lambda_\Lambda^2}{2}}\\  \lambda_\Lambda/\sqrt{2}\end{array}\right)$$
+
+$N_\pm=\lambda_\Lambda^2+2\Delta E^2_\lambda\pm 2\Delta E_\Lambda\sqrt{\Delta E^2_\Lambda+\lambda_\Lambda^2/2},\Delta E_\Lambda=\frac{E_{\Lambda,x}-E_{\Lambda,z}-\lambda_\Lambda/2}{2}$,这里轨道$p_{x(y)}$与$p_z$的能级分裂是因为晶体场效应比SOC是要大的
+,劈裂能量$\Delta E_\Lambda$主要是有$E_{\Lambda,x}-E_{\Lambda,z}$决定.到这里可以发现$\rvert\Lambda,p_z,\uparrow\rangle(\rvert\Lambda,p_z,\downarrow\rangle)$与$\rvert\Lambda,p_{+},\downarrow\rangle(\rvert\Lambda,p_{-},\uparrow\rangle)$之间的SOC效应会进一步诱导这两个态之间的能级排斥,**最终$\rvert P1^+_{-},\pm\frac{1}{2}\rangle$将会压低,$\rvert P2^{-}_+,\pm\frac{1}{2}\rangle$将会被推高**,当SOC效应足够强的时候,就会发生这一对态之间的能级交叉,如上图IV所示.
+
+因为这两个态具有相反的宇称(上标索引表示宇称),两者之间会发生能带反转没类似于HgTe量子阱.这也是$Bi_2Se_3$材料家族称为拓扑绝缘体相的重要特征.在接下来的分析中就会只关注这个四个态,而将其余的态作为微扰处理.
+{:.success}
+
+# 基于对称性的哈密顿量推导
+根据前面的讨论以及第一性原理计算的能带结果,将费米面附近的能带标记为$\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$,如下图所示
+
+![png](..\assets\images\topology\tih4.png)
+
+总之,这些态是有Bi和Se原子的$p$轨道组成的成键轨道和反键轨道,然而它们的$s$也会混合进来,为了明确每个条能,将其与晶体对称性的表示联系起来.**在$\Gamma$点个态都应该属于晶体对称群的一个不可约表示,这些轨道将的混合仍然会保持对称性**.则利用警惕的对称性是区分能带的一个合适的方法.首先根据晶体空间群$D_{3d}^5$的不可约表示来确定没一条能带,之后从对称性原理出发来推导哈密顿量的形式.
+
+首先来考虑无自旋的时候,态为$\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1,P2,\alpha=p_x,p_y,p_z$.晶体$Bi_2Se_3$的空间群为$D_{3d}^5$,对应的特征表如下
+
+![png](..\assets\images\topology\tih5.png)
+
+因为晶体是存在反演对称的,所以每个表示都具有确定的宇称本征值.对每个宇称,存在两个一维表示$\tilde{\Gamma}_1^\pm,\tilde{\Gamma}_2^\pm$,一个两维表示$\tilde{\Gamma}_3^\pm$,这里标记的上标则表示着宇称(+是偶,-是奇).根据前面每个原子轨道波函数的构建,可以通过点群生成元$R_3,R_2,P$来决定波函数在生成元变换下的性质.
+
+> 群生成元:群宠所有的元素,可以通过生成元之间的组合得到.
+
+> 空间群的不可约表示可以通过其对应点群的不可约表示诱导得到.
+
+首先来看操作$R_2$对态$\rvert P1^\pm,p_x\rangle=\frac{1}{\sqrt{2}}(\rvert B_x\rangle-\rvert B^{'}\rangle)$的作用.$R_2$旋转不会改变$p_x$轨道,它只会交换$Bi1(Se1)$和$Bi1^{'}(Se1^{'})$的位置,将$\rvert B\rangle$变换成$\rvert B^{'}\rangle$,因此有$R_2\rvert P1^+,p_x\rangle=-\rvert P1^+,p_x\rangle$.同样的讨论可以应用到其他的态上,下面列举这些态在晶体对称操作下的性质:
+
+- 三种旋转$R_3$:$\rvert\Lambda^\pm,p_x\rangle\rightarrow\cos\theta\rvert \Lambda^\pm,p_x\rangle-\sin\theta\rvert\Lambda^\pm,p_y\rangle,\rvert\Lambda^\pm,p_y\rangle\rightarrow\sin\theta\rvert\Lambda^\pm,p_x\rangle+\cos\theta\rvert\Lambda^\pm,p_y\rangle,\rvert\Lambda^\pm,p_z\rangle\rightarrow\rvert\Lambda^\pm,p_z\rangle,\theta=2\pi/3$
+
+- 两重旋转$R_2$:$\rvert\Lambda^\pm,p_x\rangle\rightarrow\mp\rvert\Lambda^\pm,p_x\rangle,\rvert\Lambda^\pm,p_y\rangle\rightarrow\pm\rvert\Lambda^\pm,p_y\rangle,\rvert\Lambda^\pm,p_z\rangle\rightarrow\pm\rvert\Lambda^\pm,p_z\rangle$
+
+- 反演对称$P$:$\rvert\Lambda^\pm,\alpha\rangle\rightarrow\pm\rvert\Lambda^\pm,\alpha\rangle,\alpha=p_x,p_y,p_z$
+
+这里$\Lambda=P1_\pm,P2_\pm$,通过上面的分析,可以发现$\rvert\Lambda^{+(-)},p_x\rangle,\rvert\Lambda^{+(-)},p_y\rangle$授予$\tilde{\Gamma}^{+(-)}_3$不可约表示,$\rvert\Lambda^+,p_z\rangle$属于$\tilde{\Gamma}^+_1$不可约表示,$\rvert\lambda^{-},p_z\rangle$属于$\tilde{\Gamma}_2^{-}$不可约表示.
+
+当考虑了自旋之后,需要引入自旋表示$\tilde{\Gamma}^+_6$,在旋转$\mathcal{C}=2\pi$时,它将会江边符号.空间群$D_{3d}^5$的双群可以通过$\tilde{\Gamma}^+_6$与$\tilde{\Gamma}^\pm_{1,2,3}$的直积得到
+
+$$\tilde{\Gamma}^\pm_3\otimes\tilde{\Gamma}^{+}_6=\tilde{\Gamma}^\pm_4+\tilde{\Gamma}^\pm_5+\tilde{\Gamma}^\pm_6\\ \tilde{\Gamma}^\pm_1\otimes \tilde{\Gamma}^+_6=\tilde{\Gamma}^\pm_6\\ \tilde{\Gamma}^\pm_2\otimes \tilde{\Gamma}^+_6=\tilde{\Gamma}^\pm_6\label{a2}$$
+
+可以发现$\tilde{\Gamma}^\pm_3\otimes\tilde{\Gamma}^+_6$会产生两个新的一维不可约表示$\tilde{\Gamma}^\pm_4,\tilde{\Gamma}^\pm_5$,它们是相互共轭的.$D_{3d}^5$的双群特征表如下
+
+![png](..\assets\images\topology\tih6.png)
+
+在考虑了SOC之后,本征态(\ref{a1})可以被分解到这个直积表示上,从双群构建直积表示的过程中可以发现,$\tilde{\Gamma}^\pm_{1,2}\otimes\tilde{\Gamma}^\pm_6$总是给出$\tilde{\Gamma}^\pm_6$,因此$\rvert\Lambda^+,\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应该属于$\tilde{\Gamma}^+_6$表示,而$\rvert\Lambda^{-},\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应该属于$\tilde{\Gamma}^{-}_6$表示.态$\rvert\Lambda^\pm,\pm 3/2\rangle$来源于$\rvert\Lambda,p_{x,y}\rangle$与自旋的组合,根据(\ref{a2})可以得到$\rvert\Lambda^\pm,\pm3/2\rangle$应该是$\tilde{\Gamma}_4^\pm,\tilde{\Gamma}_5^\pm$表示的组合.通过在$R_2,R_3$的
+变换分析,可以得到
+
+$$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle+\rvert\Lambda^\pm,-3/2\rangle)$$
+
+属于$\tilde{\Gamma}^\pm_4$表示,
+
+$$\rvert\Lambda^\pm,\tilde{\Gamma}_5\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle-\rvert\Lambda^\pm,-3/2\rangle)$$
+
+属于$\tilde{\Gamma}_5$表示.上面的结果可以同归对(\ref{a1})的变换来研究其变换
+- 三重旋转$R_3$:$\rvert\Lambda,\pm\frac{1}{2}\rangle\rightarrow e^{\pm i\pi/3}\rvert\Lambda,\pm\frac{1}{2},\rvert\Lambda,\pm\frac{3}{2}\rightarrow-\rvert\Lambda,\pm\frac{3}{2},\Lambda=P1^\pm_\pm$.
+- 两重旋转$R_2$:$\rvert\Lambda^+,\pm\frac{1}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{1}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow-i\rvert\Lambda^{-},\mp\frac{1}{2}\rangle,\rvert\Lambda^+,\pm\frac{3}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{3}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow -i\rvert\Lambda^{-},\mp\frac{3}{2}\rangle,\Lambda=P1_\pm,P2_\pm$.
+- 反演对称$P$:$\rvert\Lambda^\pm,\alpha\rangle\rightarrow\pm\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$.
+
+在通常的金刚石或者闪锌矿结构中轨道$p$与自旋的耦合通常给出四维表示$\tilde{\Gamma}_8$和两维表示$\tilde{\Gamma}_7$,在现在的情况中,因为晶体具有更低的对称性,$\tilde{\Gamma}_7$表示与$\tilde{\Gamma}_6$相表示相同,$\tilde{\Gamma}_8$表示约化为两个一维表示$\tilde{\Gamma}_4$和$\tilde{\Gamma}_5$以及一个两维表示$\tilde{\Gamma}_6$.在下图中给出了费米面附近能带对应的不可约表示以及基函数
+
+![png](..\assets\images\topology\tih7.png)
+
+接下来开始通过在$\Gamma$点波函数的对称性来分析$Bi_2Se_3$的低能物理,并构建哈密顿量.根据前面的讨论,在费米面附近,导带和价带主要由$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$决定,它们分别属于$\tilde{\Gamma}_6^+,\tilde{\Gamma}_6^{-}$不可约表示,因此$Bi_2Se_3$对应的最小哈密顿量就是以这四个态为基矢.通常$4\times 4$哈密顿量可以利用$\Gamma$矩阵进行展开
+
+$$H_\text{eff}=\epsilon(\mathbf{k})\mathbb{I}+\sum_id_i(\mathbf{k})\Gamma_i+\sum_{ij}d_{ij}\Gamma_{ij}$$
+
+$\Gamma_i,i=1,2,3,4,5$是Dirac矩阵,满足$\{\Gamma_i,\Gamma_j\}=2\delta_{ij},\Gamma_{ij}=[\Gamma_i,\Gamma_j]/2i,\epsilon({\bf k}),d_i(\mathbf{k}),d_{ij}(\mathbf{k})$可以展开成动量$\mathbf{k}$的幂函数.
 
 
 # 参考
