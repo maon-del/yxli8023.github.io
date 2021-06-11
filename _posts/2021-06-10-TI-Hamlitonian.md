@@ -48,7 +48,7 @@ $R_3^z$可以通过下面的变换产生:$x\rightarrow x\cos\theta-y\sin\theta,y
 - 时间反演对称$\mathcal{T}$
 时间反演操作为$\mathcal{T}=\Theta\mathcal{K},\Theta=i\sigma_2,\mathcal{K}$是复数共轭,这里$\sigma_i$矩阵代表的是自旋.
 # 原子轨道
-为了从物理图像上理解$Bi_2Se_3$的能带结构,首先来研究每个元素的轨道信息.Bi原子的电子结构维$6s^26p^3$,Se的为$4s^24p^4$,**可以发现两种元素最外层电子都是$p$轨道的,因此在考虑能带的时候,就可以只关心$p$轨道电子的贡献,而忽略其余轨道**.因为$Bi_2Se_3$是个层状结构,在单个的五元层中,化学键是比较强的,但是在相邻两个五元层之间仅通过较弱的范德瓦尔斯力耦合在一起,因此可以只关心单个五元层的信息.在一个五元层中又一个元胞中存在5个原子,前面也提到过只需要关注$p$轨道即可($p_x,p_y,p_z$),因此这里一个元胞中会有15个轨道,首先忽略电子自旋,在之后考虑自旋轨道耦合(SOC)时再进行自旋的研究.这里标记一下轨道$\rvert\Lambda,\alpha\rangle,\Lambda=Bi1,Bi1^\prime ,Se1,Se1^\prime ,Se2,\alpha=p_x,p_y,p_z$.通过晶体结构可以发现,$Se2$在五元层的中间,被夹在两层Bi($Bi1,Bi1^\prime $)之间,而两个$Se(Se1,Se1^\prime )$位于最外层.**由于所有的Se原子层都被Bi原子层分开了,所以体系中耦合最强的就是Bi原子层与Se原子层**.这样的耦合会产生能级排斥效应,使得$Bi$的能级被推高形成新的态$\rvert B_\alpha\rangle,\rvert B^\prime \rangle$,而$Se$的能级则被压低形成三个态$\rvert S_\alpha\rangle,\rvert S_\alpha^\prime \rangle,\rvert S0_\alpha\rangle$,如下图所示.
+为了从物理图像上理解$Bi_2Se_3$的能带结构,首先来研究每个元素的轨道信息.Bi原子的电子结构维$6s^26p^3$,Se的为$4s^24p^4$,**可以发现两种元素最外层电子都是$p$轨道的,因此在考虑能带的时候,就可以只关心$p$轨道电子的贡献,而忽略其余轨道**.因为$Bi_2Se_3$是个层状结构,在单个的五元层中,化学键是比较强的,但是在相邻两个五元层之间仅通过较弱的范德瓦尔斯力耦合在一起,因此可以只关心单个五元层的信息.在一个五元层中又一个元胞中存在5个原子,前面也提到过只需要关注$p$轨道即可($p_x,p_y,p_z$),因此这里一个元胞中会有15个轨道,首先忽略电子自旋,在之后考虑自旋轨道耦合(SOC)时再进行自旋的研究.这里标记一下轨道$\rvert\Lambda,\alpha\rangle,\Lambda=Bi1,Bi1^\prime ,Se1,Se1^\prime ,Se2,\alpha=p_x,p_y,p_z$.通过晶体结构可以发现,$Se2$在五元层的中间,被夹在两层Bi($Bi1,Bi1^\prime$)之间,而两个$Se(Se1,Se1^\prime )$位于最外层.**由于所有的Se原子层都被Bi原子层分开了,所以体系中耦合最强的就是Bi原子层与Se原子层**.这样的耦合会产生能级排斥效应,使得$Bi$的能级被推高形成新的态$\rvert B_\alpha\rangle,\rvert B^\prime \rangle$,而$Se$的能级则被压低形成三个态$\rvert S_\alpha\rangle,\rvert S_\alpha^\prime \rangle,\rvert S0_\alpha\rangle$,如下图所示.
 
 ![png](/assets/images/topology/tih3.png)
 
@@ -228,6 +228,87 @@ $$H^{(2)}_{mm^\prime }=\frac{1}{2}\sum_lH^\prime _{ml}H^\prime _{lm^\prime }(\fr
 $$H^{(3)}_{mm^\prime }=-\frac{1}{2}\sum_{l,m^{''}}[\frac{H^\prime _{ml}H^\prime _{lm^{''}}H^\prime _{m^{''}m^\prime }}{(E_{m^\prime }-E_l)(E_{m^{''}}-E_l)}+\frac{H^\prime _{mm^{''}}H^\prime _{m^{''}l}H^\prime _{lm^\prime }}{(E_m-E_l)(E_{m^{''}}-E_l)}]\\ +\frac{1}{2}\sum_{l,l^\prime }H^\prime _{ml}H^\prime _{ll^\prime }H^\prime _{l^\prime m^\prime }[\frac{1}{(E_m-E_l)(E_m-E_{l^\prime })}+\frac{1}{(E_{m^\prime }-E_l)(E_{m^\prime }-E_{l^\prime })}]$$
 
 这里$m,m^{\prime}$取$\rvert P1_{-}^+,1/2\rangle=\rvert 1\rangle,\rvert P2_{+}^{-},1/2\rangle=\rvert 2\rangle,\rvert P1_{-}^+,-1/2\rangle=\rvert 3\rangle,\rvert P2_{+}^{-},-1/2\rangle=\rvert 4\rangle$,对应的能量为$E_1=E_3,E_2=E_4,E_1<E_2,l$会遍历除了这四个能带之外的其他能带.
+
+通过简并微扰的到的哈密顿量将会是一些依赖于动量矩阵元$\rvert \Lambda_1,\alpha\rvert\mathbf{p}\rvert\Lambda_2,\beta\rangle$,通过晶体的对称性,这些矩阵元可以被简化.比如,因为晶体存在反演对称,在$\Gamma$点的每个态都具有确定的宇称,因为动量$\mathbf{p}$是奇宇称的,那么当动量矩阵元中的两个态都是相同的宇称的时候,这一项是等于零的(**相容性原理**).波函数可以通过第一性原理计算,从而就可以计算这些对应的矩阵元素.通过这些矩阵元素和上面简并微扰的计算,就可以的到模型哈密顿量.其中参数的计算如下
+
+$$C_0+M_0=E_1$$
+
+$$C_0-M_0=E_2$$
+
+
+$$C_1+M_1=\frac{\hbar^2}{2m_0}+\frac{\hbar^2}{m_0^2}\sum_{\Lambda^{-}}\frac{\rvert Q_{P1^+,\Lambda^{-}}\rvert^2}{E_1-E_{\Lambda^{-},1/2}}$$
+
+$$C_2+M_2=\frac{\hbar^2}{2m_0}+\frac{\hbar^2}{m_0^2}\sum_{\Lambda^{-}}(\frac{\rvert P_{P1^+,\Lambda^{-}}\rvert^2}{E_1-E_{\Lambda^{-},-1/2}}+\frac{\rvert M_{P1^+,\Lambda^{-}}\rvert^2}{E_1-E_{\Lambda^{-},\Gamma_4}}+\frac{\rvert N_{P1^+,\Lambda^{-}}\rvert^2}{E_1-E_{\Lambda^{-},\Gamma_5}})$$
+
+$$C_1-M_1=\frac{\hbar^2}{2m_0}+\frac{\hbar^2}{m_0^2}\sum_{\Lambda^{-}}\frac{\rvert Q_{\Lambda^+,P2^{-}}\rvert^2}{E_1-E_{\Lambda^{+},1/2}}$$
+
+$$C_2-M_2=\frac{\hbar^2k^2}{2m_0}+\frac{\hbar^2}{m_0^2}\sum_{\Lambda^{-}}(\frac{\rvert P_{\Lambda^+,P2^{-}}\rvert^2}{E_1-E_{\Lambda^{+},-1/2}}+\frac{\rvert M_{\Lambda^+,P2^{-}}\rvert^2}{E_1-E_{\Lambda^{+},\Gamma_4}}+\frac{\rvert N_{\Lambda^+,P2^{-}}\rvert^2}{E_1-E_{\Lambda^{+},\Gamma_5}})$$
+
+$$A_0=\frac{\hbar}{m_0}P_0$$
+
+$$B_0=\frac{\hbar}{m_0}Q_0$$
+
+$$R_1-R_2=\frac{\hbar^3}{m_0^3}[\sum_{\Lambda}\frac{\rvert M_{P1^+,\Lambda^{-}}\rvert^2P_{P1^+,P2^{-}}}{(E_{P2^{-}}-E_{\Lambda^{-}})(E_{P1^{+}}-E_{\Lambda^{-}})}]-\sum_{\Lambda_1^{-},\Lambda_2^{+}}M_{P1^+\Lambda_1^{+}}M^{*}_{\Lambda_2^{+}\Lambda_1^{+}}P_{\Lambda_1^{+}P2^{-}}(\frac{1}{(E_{P1^{+}}-E_{\Lambda_1^{-}})(E_{P1^{+}}-E_{\Lambda_2^{+}})}+\frac{1}{(E_{P2^{-}}-E_{\Lambda_1^{-}})(E_{P2^{-}}-E_{\Lambda_2^{+}})})$$
+
+$$R_1+R_2=\frac{\hbar^3}{m_0^3}[-\sum_{\Lambda}\frac{\rvert M_{P2^{-},\Lambda^{-}}\rvert^2P_{P1^+,P2^{-}}}{(E_{P2^{-}}-E_{\Lambda^{+}})(E_{P1^{+}}-E_{\Lambda^{+}})}]-\sum_{\Lambda_1^{-},\Lambda_2^{+}}M_{\Lambda_1^{-}\Lambda_2^{+}}M^{*}_{P2^{-}\Lambda_2^{+}}P_{P1^{+}\Lambda_1^{-}}(\frac{1}{(E_{P1^{+}}-E_{\Lambda_1^{-}})(E_{P1^{+}}-E_{\Lambda_2^{+}})}+\frac{1}{(E_{P2^{-}}-E_{\Lambda_1^{-}})(E_{P2^{-}}-E_{\Lambda_2^{+}})})$$
+
+# 表面态
+考虑一个定义在半个空间的哈密顿量模型$z>0$,可以将模型哈密顿量分成两部分
+
+$$\hat{H}=\tilde{H}_0+\tilde{H}_1$$
+
+$$\tilde{H}_0\tilde{\epsilon}(k_z)\tilde{M}(k_z)\Gamma_5+B_0\Gamma_4k_z$$
+
+$$\tilde{H}_1+C_2k_\parallel^2+M_2k_\parallel^2\Gamma_5+A_)\Gamma_1k_y-\Gamma_2k_x)+H_3$$
+
+这里$\tilde{\epsilon}(k_z)=C_0+C_1k_z^2,\tilde{M}(k_z)M_0+M_1k_z^2$.所有与$k_z$有关的项都包含在$\tilde{H}_0$中,替换$k_z\rightarrow -i\partial_z$并求解本征方程
+
+$$\tilde{H}_0(k_z\rightarrow -i\partial_z)\Psi(z)=E\Psi(z)$$
+
+因为$\Gamma_4=\mathbb{I}\times\tau_2,\Gamma_5=\mathbb{I}\times\tau_3$都是块对角的,哈密顿量同样也是块对角的,本征态的形式为
+
+$$\Psi_\uparrow(z)=\left(\begin{array}{c}\psi_0\\ \mathbf{0}\end{array}\right),\quad \Psi_\downarrow(z)=\left(\begin{array}{c} \mathbf{0}\\ \psi_0\end{array}\right)$$
+
+这里的$\Psi_\uparrow(z),\Psi_\downarrow(z)$是由时间反演联系的.为了得到表面态,$\psi_0$需要满足本征方程
+
+$$(\tilde{\epsilon}(-i\partial_z)+\tilde{M}(-i\partial_z)\tau_3-iB_o\tau_2\partial_z)\psi_0(z)=E\psi_0(z)$$
+
+此时可以忽略$\tilde{\epsilon}$项,上面的本征方程就存在粒子空穴对称,因此可以期待$E=0$本征态的出现,假设波函数为$\psi_0=\phie^{\lambda z}$,本恒方程简化为
+
+$$(M_0-M_1\lambda^2)\tau_1\phi=B_0\lambda\phi$$
+
+很明显两分量的闭函数$\phi$应该是Pauli矩阵$\tau_1$的本征态,定义$\tau_1\phi_\pm=\pm\phi_\pm$,则上面的方程可以简化成一个关于$\lambda$的二次方程.如果$\lambda$是解$\phi_{+}$的本征值,$-\lambda$是$\phi_{-}$的本征值,波函数可以得到为
+
+$$\phi_0(z)=(ae^{\lambda_1z}+be^{\lambda_2z})\phi_{+}+(ce^{-\lambda_1z}+de^{-\lambda_2z})\phi_{-}$$
+
+本征值$\lambda$满足
+
+$$\lambda_{1,2}=\frac{1}{2M_1}(-B_0\pm\sqrt{4M_0M_1+B_0^2})$$
+
+利用边界条件$\phi(0)=0$以及波函数只存在于$z>0$的区域,从而可以得到$\mathcal{R}(\lambda_{1,2})<0(c=d=0)$或者$\mathcal{R}(\lambda_{1,2})>0(a=b=0)$,从而得到了满足能带反转的条件$M_0M_1<0$.当$B_0/M_1>0\mathcal{R}(\lambda_{1,2})<0$或者$B_0/M_1<0\mathcal{R}(\lambda_{1,2})>0$,对于在$\Gamma$点的表面态波函数为
+
+$$\psi_0(m)=\left\{\begin{array}{c}a(e^{\lambda_1z}-e^{\lambda_2z}),\quad B_0/M_1>0\\ c(e^{-\lambda_1z}-e^{-\lambda_2z}),\quad B_0/M_1<0\end{array}\right.$$
+
+在$\Psi=[\Psi_\uparrow,\Psi_\downarrow]$的子空间中,可以发现
+
+$$\langle\rvert\Gamma_1\rvert\Psi\rangle=\alpha_1\sigma_x,\quad,\langle\rvert\Gamma_2\rvert\Psi\rangle=\alpha_1\sigma_y,\quad,\langle\rvert\Gamma_3\rvert\Psi\rangle=\alpha_1\sigma_z,\quad,\langle\rvert\Gamma_4\rvert\Psi\rangle=0,\\ \langle\rvert\Gamma_5\rvert\Psi\rangle=\alpha_3,\alpha\equiv\langle\psi_0\rvert\tau_1\rvert\psi\rangle,\alpha\equiv=\langle\psi_0\rvert\tau_3\rvert\psi_0\rangle$$
+
+最终可以得到有效哈密顿量的表面态为
+
+$$H_\text{surf}=\tilde{C}_0+\tilde{C}_2k_\parallel^2+\tilde{A}(\sigma_xk_y-\sigma_yk_x)+\tilde{R}(k_{+}^3+k_{-}^3)\sigma_z\\ =(C_0+\alpha_3 M_0)+(C_2+\alpha_3M_2)k_\parallel^2+A_0\alpha_1(\sigma_xk_y-\sigma_yk_x)+\frac{R_1\alpha_1}{2}(k_{+}^3+k_{-}^3)\sigma_z$$
+
+这里的$k_\pm=k_x\pm k_y=k_\parallel e^{\pm i\theta}$.
+
+
+
+
+
+
+
+
+
+
 # 参考
 
 - 1.[Model Hamiltonian for topological insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.045122)
+- 2.The $k\cdot p$Method
