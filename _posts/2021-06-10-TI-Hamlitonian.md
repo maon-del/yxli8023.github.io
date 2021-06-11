@@ -59,7 +59,8 @@ $$\rvert P1^\pm,\alpha\rangle=\frac{1}{\sqrt{2}}(\rvert B_\alpha\rangle\mp\rvert
 这里上标的正负号对应着态的宇称,$\alpha=p_x,p_y,p_z$.当$\rvert B_\alpha(S_\alpha)\rangle$与$\rvert B^\prime _\alpha(S^\prime _\alpha)\rangle$之间的耦合被考虑之后,成键态与反键态对应的能量劈裂来,反键态比成键态具有更高的能量,如上图II阶段所示.此时$\rvert P1^+,\alpha\rangle,\rvert P2^-,\alpha\rangle,(\alpha=p_x,p_y,p_z)$是靠近费米面的,所以可以只关注这些态,而忽略那些远离费米面附近的能带的贡献.因为晶体是个层状结构,在原子平面上$z$方向与$x,y$方向是不同的,因此对$P1^+,P2^-$态,$p_z$轨道的能量分离与$p_x,p_y$轨道是不同的.这里$\rvert P1^+,p_{x,y}\rangle$轨道的能量比$\rvert P1^+,p_z\rangle$的能量高,而$\rvert P2^-,p_{x,y}\rangle$比$\rvert P2^-,p_z\rangle$的能量低,因此导带只考虑$\rvert P1^+,p_z\rangle$,价带只考虑$\rvert P2^-,p_z\rangle$,如上图III所示.
 
 
-在上面的原子轨道的基础上开始考虑SOC效应,给每个态再赋予自旋指标,态$\rvert P1^+,\alpha,\sigma\rangle,\rvert P2^-,\alpha,\sigma\rangle$都是双重简并的,$\sigma=\uparrow,\downarrow$表示的是自旋.原子的SOC哈密顿量为$\hat{H}_{SOC}=\lambda{\bf s\cdot L},\lambda=\frac{1}{2m_0^2c^2r}\frac{\partial U}{\partial r}$依赖于原子的势场$U$,它会将原子的轨道和自旋耦合起来.将轨道$p_x,p_y$转换成$p_\pm$来定义轨道角动量
+在上面的原子轨道的基础上开始考虑SOC效应,给每个态再赋予自旋指标,态$\rvert P1^+,\alpha,\sigma\rangle,\rvert P2^-,\alpha,\sigma\rangle$都是双重简并的,$\sigma=\uparrow,\downarrow$表示的是自旋.
+原子的SOC哈密顿量为$\hat{H}_{SOC}=\lambda{\bf s\cdot L},\lambda=\frac{1}{2m_0^2c^2r}\frac{\partial U}{\partial r}$依赖于原子的势场$U$,它会将原子的轨道和自旋耦合起来.将轨道$p_x,p_y$转换成$p_{\pm}$来定义轨道角动量
 
 $$\rvert \Lambda,p_+,\sigma\rangle=-\frac{1}{\sqrt{2}}(\rvert\Lambda,p_x,\sigma\rangle+i\rvert\Lambda,p_y,\sigma\rangle),\quad\rvert \Lambda,p_{-},\sigma\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda,p_x,\sigma\rangle-i\rvert\Lambda,p_y,\sigma\rangle),\quad\Lambda=P1^+,P2^-$$
 
@@ -79,8 +80,12 @@ $$\hat{H}=\left(\begin{array}{cc}E_{\Lambda,x}-\lambda_\Lambda/2&\lambda_\Lambda
 
 $$\left(\begin{array}{c}u_\pm^\Lambda\\ v_\pm^\Lambda\end{array}\right)=\frac{1}{N_\pm}\left(\begin{array}{c}\Delta E_\Lambda\pm\sqrt{(\Delta E)^2+\frac{\lambda_\Lambda^2}{2}}\\  \lambda_\Lambda/\sqrt{2}\end{array}\right)$$
 
-$N_\pm=\lambda_\Lambda^2+2\Delta E^2_\lambda\pm 2\Delta E_\Lambda\sqrt{\Delta E^2_\Lambda+\lambda_\Lambda^2/2},\Delta E_\Lambda=\frac{E_{\Lambda,x}-E_{\Lambda,z}-\lambda_\Lambda/2}{2}$,这里轨道$p_{x(y)}$与$p_z$的能级分裂是因为晶体场效应比SOC是要大的
-,劈裂能量$\Delta E_\Lambda$主要是有$E_{\Lambda,x}-E_{\Lambda,z}$决定.到这里可以发现$\rvert\Lambda,p_z,\uparrow\rangle(\rvert\Lambda,p_z,\downarrow\rangle)$与$\rvert\Lambda,p_{+},\downarrow\rangle(\rvert\Lambda,p_{-},\uparrow\rangle)$之间的SOC效应会进一步诱导这两个态之间的能级排斥,**最终$\rvert P1^+_{-},\pm\frac{1}{2}\rangle$将会压低,$\rvert P2^{-}_+,\pm\frac{1}{2}\rangle$将会被推高**,当SOC效应足够强的时候,就会发生这一对态之间的能级交叉,如上图IV所示.
+$N_\pm=\lambda_\Lambda^2+2\Delta E^2_\lambda\pm 2\Delta E_\Lambda\sqrt{\Delta E^2_\Lambda+\lambda_\Lambda^2/2},
+\Delta E_\Lambda=\frac{E_{\Lambda,x}-E_{\Lambda,z}-\lambda_\Lambda/2}{2}$,这里轨道$p_{x(y)}$与$p_z$的能级分裂是因为晶体
+场效应比SOC是要大的,劈裂能量$\Delta E_\Lambda$主要是有$E_{\Lambda,x}-E_{\Lambda,z}$决定.到这里可以发现$\rvert\Lambda,p_z,
+\uparrow\rangle(\rvert\Lambda,p_z,\downarrow\rangle)$与$\rvert\Lambda,p_{+},\downarrow\rangle(\rvert\Lambda,p_{-},
+\uparrow\rangle)$之间的SOC效应会进一步诱导这两个态之间的能级排斥,**最终$\rvert P1^+_{-},\pm\frac{1}{2}\rangle$将会压低,
+$\rvert P2^{-}_+,\pm\frac{1}{2}\rangle$将会被推高**,当SOC效应足够强的时候,就会发生这一对态之间的能级交叉,如上图IV所示.
 
 因为这两个态具有相反的宇称(上标索引表示宇称),两者之间会发生能带反转没类似于HgTe量子阱.这也是$Bi_2Se_3$材料家族称为拓扑绝缘体相的重要特征.在接下来的分析中就会只关注这个四个态,而将其余的态作为微扰处理.
 {:.success}
@@ -110,9 +115,12 @@ $N_\pm=\lambda_\Lambda^2+2\Delta E^2_\lambda\pm 2\Delta E_\Lambda\sqrt{\Delta E^
 
 - 反演对称$P$:$\rvert\Lambda^\pm,\alpha\rangle\rightarrow\pm\rvert\Lambda^\pm,\alpha\rangle,\alpha=p_x,p_y,p_z$
 
-这里$\Lambda=P1_\pm,P2_\pm$,通过上面的分析,可以发现$\rvert\Lambda^{+(-)},p_x\rangle,\rvert\Lambda^{+(-)},p_y\rangle$授予$\tilde{\Gamma}^{+(-)}_3$不可约表示,$\rvert\Lambda^+,p_z\rangle$属于$\tilde{\Gamma}^+_1$不可约表示,$\rvert\lambda^{-},p_z\rangle$属于$\tilde{\Gamma}_2^{-}$不可约表示.
+这里$\Lambda=P1_{\pm},P2_{\pm}$;通过上面的分析,可以发现$\rvert\Lambda^{+(-)},p_x\rangle,\rvert\Lambda^{+(-)},
+p_y\rangle$属于$\tilde{\Gamma}^{+(-)}_3$不可约表示,$\rvert\Lambda^+,p_z\rangle$属于$\tilde{\Gamma}^+_1$不可约表示,
+$\rvert\lambda^{-},p_z\rangle$属于$\tilde{\Gamma}_2^{-}$不可约表示.
 
-当考虑了自旋之后,需要引入自旋表示$\tilde{\Gamma}^+_6$,在旋转$\mathcal{C}=2\pi$时,它将会江边符号.空间群$D_{3d}^5$的双群可以通过$\tilde{\Gamma}^+_6$与$\tilde{\Gamma}^\pm_{1,2,3}$的直积得到
+当考虑了自旋之后,需要引入自旋表示$\tilde{\Gamma}^+_6$,在旋转$\mathcal{C}=2\pi$时,它将会改变符号.
+空间群$D_{3d}^5$的双群可以通过$\tilde{\Gamma}^{+}_6$与$\tilde{\Gamma}^{\pm}_{1,2,3}$的直积得到
 
 $$\tilde{\Gamma}^\pm_3\otimes\tilde{\Gamma}^{+}_6=\tilde{\Gamma}^\pm_4+\tilde{\Gamma}^\pm_5+\tilde{\Gamma}^\pm_6\\ \tilde{\Gamma}^\pm_1\otimes \tilde{\Gamma}^+_6=\tilde{\Gamma}^\pm_6\\ \tilde{\Gamma}^\pm_2\otimes \tilde{\Gamma}^+_6=\tilde{\Gamma}^\pm_6\label{a2}$$
 
@@ -120,7 +128,10 @@ $$\tilde{\Gamma}^\pm_3\otimes\tilde{\Gamma}^{+}_6=\tilde{\Gamma}^\pm_4+\tilde{\G
 
 ![png](/assets/images/topology/tih6.png)
 
-在考虑了SOC之后,本征态(\ref{a1})可以被分解到这个直积表示上,从双群构建直积表示的过程中可以发现,$\tilde{\Gamma}^\pm_{1,2}\otimes\tilde{\Gamma}^\pm_6$总是给出$\tilde{\Gamma}^\pm_6$,因此$\rvert\Lambda^+,\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应该属于$\tilde{\Gamma}^+_6$表示,而$\rvert\Lambda^{-},\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应该属于$\tilde{\Gamma}^{-}_6$表示.态$\rvert\Lambda^\pm,\pm 3/2\rangle$来源于$\rvert\Lambda,p_{x,y}\rangle$与自旋的组合,根据(\ref{a2})可以得到$\rvert\Lambda^\pm,\pm3/2\rangle$应该是$\tilde{\Gamma}_4^\pm,\tilde{\Gamma}_5^\pm$表示的组合.通过在$R_2,R_3$的
+在考虑了SOC之后,本征态(\ref{a1})可以被分解到这个直积表示上,从双群构建直积表示的过程中可以发现,$\tilde{\Gamma}^\pm_{1,2}
+\otimes\tilde{\Gamma}^\pm_6$总是给出$\tilde{\Gamma}^\pm_6$,因此$\rvert\Lambda^+,\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应
+该属于$\tilde{\Gamma}^+_6$表示,而$\rvert\Lambda^{-},\pm\frac{1}{2}\rangle,\Lambda=P1,P2$应该属于$\tilde{\Gamma}^{-}_6$
+表示.态$\rvert\Lambda^\pm,\pm 3/2\rangle$来源于$\rvert\Lambda,p_{x,y}\rangle$与自旋的组合,根据(\ref{a2})可以得到$\rvert\Lambda^\pm,\pm3/2\rangle$应该是$\tilde{\Gamma}_4^\pm,\tilde{\Gamma}_5^\pm$表示的组合.通过在$R_2,R_3$的
 变换分析,可以得到
 
 $$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle+\rvert\Lambda^\pm,-3/2\rangle)$$
@@ -130,22 +141,41 @@ $$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm
 $$\rvert\Lambda^\pm,\tilde{\Gamma}_5\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle-\rvert\Lambda^\pm,-3/2\rangle)$$
 
 属于$\tilde{\Gamma}_5$表示.上面的结果可以同归对(\ref{a1})的变换来研究其变换
-- 三重旋转$R_3$:$\rvert\Lambda,\pm\frac{1}{2}\rangle\rightarrow e^{\pm i\pi/3}\rvert\Lambda,\pm\frac{1}{2},\rvert\Lambda,\pm\frac{3}{2}\rightarrow-\rvert\Lambda,\pm\frac{3}{2},\Lambda=P1^\pm_\pm$.
-- 两重旋转$R_2$:$\rvert\Lambda^+,\pm\frac{1}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{1}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow-i\rvert\Lambda^{-},\mp\frac{1}{2}\rangle,\rvert\Lambda^+,\pm\frac{3}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{3}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow -i\rvert\Lambda^{-},\mp\frac{3}{2}\rangle,\Lambda=P1_\pm,P2_\pm$.
-- 反演对称$P$:$\rvert\Lambda^\pm,\alpha\rangle\rightarrow\pm\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$.
+- 三重旋转$R_3$:
+
+$$\rvert\Lambda,\pm\frac{1}{2}\rangle\rightarrow e^{\pm i\pi/3}\rvert\Lambda,\pm\frac{1}{2},\rvert\Lambda,\pm\frac{3}{2}\rightarrow-\rvert\Lambda,\pm\frac{3}{2},\Lambda=P1^\pm_\pm$$
+
+- 两重旋转$R_2$:
+
+$$\rvert\Lambda^+,\pm\frac{1}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{1}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow-i\rvert\Lambda^{-},\mp\frac{1}{2}\rangle,\rvert\Lambda^+,\pm\frac{3}{2}\rangle\rightarrow i\rvert\Lambda^+,\mp\frac{3}{2}\rangle,\rvert\Lambda^{-},\pm\frac{3}{2}\rangle\rightarrow -i\rvert\Lambda^{-},\mp\frac{3}{2}\rangle,\Lambda=P1_\pm,P2_\pm$$
+
+- 反演对称$P$:
+
+$$\rvert\Lambda^\pm,\alpha\rangle\rightarrow\pm\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$$
 
 在通常的金刚石或者闪锌矿结构中轨道$p$与自旋的耦合通常给出四维表示$\tilde{\Gamma}_8$和两维表示$\tilde{\Gamma}_7$,在现在的情况中,因为晶体具有更低的对称性,$\tilde{\Gamma}_7$表示与$\tilde{\Gamma}_6$相表示相同,$\tilde{\Gamma}_8$表示约化为两个一维表示$\tilde{\Gamma}_4$和$\tilde{\Gamma}_5$以及一个两维表示$\tilde{\Gamma}_6$.在下图中给出了费米面附近能带对应的不可约表示以及基函数
 
 ![png](/assets/images/topology/tih7.png)
 
-接下来开始通过在$\Gamma$点波函数的对称性来分析$Bi_2Se_3$的低能物理,并构建哈密顿量.根据前面的讨论,在费米面附近,导带和价带主要由$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$决定,它们分别属于$\tilde{\Gamma}_6^+,\tilde{\Gamma}_6^{-}$不可约表示,因此$Bi_2Se_3$对应的最小哈密顿量就是以这四个态为基矢.通常$4\times 4$哈密顿量可以利用$\Gamma$矩阵进行展开
+接下来开始通过在$\Gamma$点波函数的对称性来分析$Bi_2Se_3$的低能物理,并构建哈密顿量.根据前面的讨论,在费米面附近,导带和价带主要由
+$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$决定,它们分别属于$\tilde{\Gamma}_6^+,
+\tilde{\Gamma}_6^{-}$不可约表示,因此$Bi_2Se_3$对应的最小哈密顿量就是以这四个态为基矢.通常$4\times 4$哈密顿量可以利用
+$\Gamma$矩阵进行展开
 
 $$H_\text{eff}=\epsilon(\mathbf{k})\mathbb{I}+\sum_id_i(\mathbf{k})\Gamma_i+\sum_{ij}d_{ij}\Gamma_{ij}$$
 
-$\Gamma_i,i=1,2,3,4,5$是Dirac矩阵,满足$\{\Gamma_i,\Gamma_j\}=2\delta_{ij},\Gamma_{ij}=[\Gamma_i,\Gamma_j]/2i,\epsilon({\bf k}),d_i(\mathbf{k}),d_{ij}(\mathbf{k})$可以展开成动量$\mathbf{k}$的幂函数.假设上面的哈密顿量是以$\rvert P1^+_{-},\frac{1}{2}\rangle,\rvert P2^{-}_+,\frac{1}{2}\rangle,\rvert P1^+_{-},-\frac{1}{2}\rangle,\rvert P2_+^{-},-\frac{1}{2}\rangle$为基矢,根据这些态在对称性操作下的变换,可以构建下面的变换矩阵
+$\Gamma_i,i=1,2,3,4,5$是Dirac矩阵,满足$\{\Gamma_i,\Gamma_j\}=2\delta_{ij},\Gamma_{ij}=[\Gamma_i,\Gamma_j]/2i,\epsilon({\bf k}),d_i(\mathbf{k}),d_{ij}(\mathbf{k})$可以展开成动量$\mathbf{k}$的幂函数.
+假设上面的哈密顿量是以
+
+$$\rvert P1^+_{-},\frac{1}{2}\rangle,\rvert P2^{-}_+,\frac{1}{2}\rangle,\rvert P1^+_{-},-\frac{1}{2}\rangle,\rvert P2_+^{-},-\frac{1}{2}\rangle$$
+
+为基矢,根据这些态在对称性操作下的变换,可以构建下面的变换矩阵
 - 时间反演:$\mathcal{T}=\Theta\mathcal{K},\Theta=i\sigma_2\otimes\mathcal{I},\mathcal{K}$是复共轭算符.
+
 - 三重旋转:$R_3=e^{i(\Pi/2)\theta},\Pi=\sigma_3\otimes\mathcal{I},\theta=2\pi/3.$
+
 - 两重转动:$R_2=i\sigma_1\otimes\tau_3$.
+
 - 反演操作:$P=\mathcal{I}\otimes\tau_3$.
 
 在上面$\sigma$作用在自旋上,$\tau$作用在$P1^+,P2^{-}$上.根据上面的变换矩阵,可以得到每个$\Gamma$矩阵的不可约表示.根据哈密顿量在对称性操作下的不变性,$d_i(\mathbf{k})[d_{ij}(\mathbf{k})]$与其对应的$\Gamma_i[\Gamma_{ij}]$在对称操作下具有相同的行为,也就意味着它们属于相同的晶体点群不可约表示.在上图中列举出了$\Gamma$矩阵和$\mathbf{k}$的多项式的表示以及其在时间反演下的性质.因为研究的时候希望同时保留时间反演和晶体对称性,我们必须选择$\Gamma$矩阵和$\mathbf{k}$具有相同的表示.比如,$\Gamma_1,\Gamma_2$都属于$\tilde{\Gamma}_3^{-}$表示,且在时间反演下是奇的,$k_x,k_y$也相同.因此可以将它们组合,从而构成哈密顿量中的不变项.将哈密顿量构建到$k^3$,可以得到
@@ -156,14 +186,21 @@ $$H^\prime _\text{eff}=H_0^\prime +H_3^\prime \\ H_0^\prime =\epsilon_\mathbf{k}
 
 - 哈密顿量构建方法
 
-在对每一项进行构建的时候,首先要确定多项式$\mathbf{k}$和其对应的矩阵要属于同一个不可约表示.一如$M(\mathbf{k})\Gamma_5$这一项,从上面的表中可以发现$\Gamma_5$属于$\tilde{\Gamma}_1^{+}$这个不可约表示,那么对应这个表示的多项式有$1,k_x^2+k_y^2,k_z^2$这三项,那么就可以得到$M(\mathbf{k})$的一个表示$M(\mathbf{k})=M_0+M_1k_z^2+M_2k_\parallel^2$.其余的项对应的构建方式也是完全相同.
+在对每一项进行构建的时候,首先要确定多项式$\mathbf{k}$和其对应的矩阵要属于同一个不可约表示.一如$M(\mathbf{k})\Gamma_5$这一项,
+从上面的表中可以发现$\Gamma_5$属于$\tilde{\Gamma^{+}_1}$这个不可约表示,那么对应这个表示的多项式有$1,k_x^2+k_y^2,k_z^2$这三
+项,那么就可以得到$M(\mathbf{k})$的一个表示$M(\mathbf{k})=M_0+M_1k_z^2+M_2k_\parallel^2$.其余的项对应的构建方式也是完全相同.
 {:.success}
 
 # ${\bf k\cdot p}$微扰推导哈密顿量
 ${\bf k\cdot p}$的基本想法是利用在布里渊区中$\Gamma$点的波函数为零级波函数,将
 
 $$\hat{H}^\prime =\frac{\hbar}{m_0}{\bf k\cdot p}$$
-作为微扰,这里$\mathbf{p}=-i\hbar\partial_\mathbf{r}$是作用在零级波函数上的动量算符,晶体动量$\mathbf{k}$此时是个小参数作为微扰来处理.哈密顿量模型可以被展开成一系列$k$的幂函数.首先来考虑$D_{3d}^5$对称性对动量矩阵元的限制.先来标记本征态$\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$.本征态$\rvert\Lambda,\pm 1/2\rangle$属于$\tilde{\Gamma}_6^\pm$表示,对于$\rvert\Lambda,\pm 3/2\rangle$态需要上面态的组合
+
+作为微扰,这里$\mathbf{p}=-i\hbar\partial_\mathbf{r}$是作用在零级波函数上的动量算符,晶体动量$\mathbf{k}$此时是个小参数作为微扰来处理.哈密顿量模型可以被展开成一系列$k$的幂函数.首先来考虑$D_{3d}^5$对称性对动量矩阵元的限制.先来标记本征态
+
+$$\rvert\Lambda^\pm,\alpha\rangle,\Lambda=P1_\pm,P2_\pm,\alpha=\pm\frac{1}{2},\pm\frac{3}{2}$$
+
+本征态$\rvert\Lambda,\pm 1/2\rangle$属于$\tilde{\Gamma}_6^\pm$表示,对于$\rvert\Lambda,\pm 3/2\rangle$态需要上面态的组合
 
 $$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3/2\rangle+\rvert\Lambda^\pm,-3/2\rangle),\\ \Lambda^\pm,\tilde{\Gamma}_5\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm,3.2\rangle-\rvert\Lambda^\pm,-3/2\rangle)$$
 
@@ -171,7 +208,11 @@ $$\rvert\Lambda^\pm,\tilde{\Gamma}_4\rangle=\frac{1}{\sqrt{2}}(\rvert\Lambda^\pm
 
 $$(\tilde{\Gamma}_6^\pm)^*\otimes\tilde{\Gamma}_6^\pm=\tilde{\Gamma}_1^{+}+\tilde{\Gamma}_2^{+}+\tilde{\Gamma}_3^{+}, (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_1^{-}=\tilde{\Gamma}_1^{-}+\tilde{\Gamma}_2^{-}+\tilde{\Gamma}_3^{-}, (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_4^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_6^{-})^*\otimes \tilde{\Gamma}_4^{\pm}=\tilde{\Gamma}_3^{\pm},\\ (\tilde{\Gamma}_6^{+})^*\otimes \tilde{\Gamma}_5^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_6^{-})^*\otimes \tilde{\Gamma}_5^{\pm}=\tilde{\Gamma}_3^{\pm}, (\tilde{\Gamma}_{4(5)}^{+})^*\otimes \tilde{\Gamma}_{4(5)}^{-}=\tilde{\Gamma}_1^{-}, (\tilde{\Gamma}_{4(5)}^{+})^*\otimes \tilde{\Gamma}_{5(4)}^{-}=\tilde{\Gamma}_2^{-}$$
 
-上面给出了一些不可约表示的直积分解,也可以理解成态相乘,然后分解到对应的一些基本不可约表示上.动量$p_x,p_y$属于$\tilde{\Gamma}_3^{-}$表示,$p_z$属于$\tilde{\Gamma}_2^{-}$表示,因此这里要求本征态的直积分解中同样包含$\tilde{\Gamma}_3^{-},\tilde{\Gamma}_2^{-}$得到非零的矩阵元(**相容性原理**).比如$\tilde{\Gamma}_6^{\pm}$和$\tilde{\Gamma}_{4,5}^{\pm}$的直积并不包含$\tilde{\Gamma}_2^{-}$,因此矩阵元$\langle\Lambda_1,\pm 1/2\rvert p_z\rvert\Lambda_2,\tilde{\Gamma}_{4,5}\rangle$总是等于0.对称性操作可以进一步帮助得到矩阵元素和动量之间的关系.比如对于$R_3$旋转操作,可以得到
+上面给出了一些不可约表示的直积分解,也可以理解成态相乘,然后分解到对应的一些基本不可约表示上. 动量$p_x,p_y$属于$\tilde{\Gamma}
+_3^{-}$表示,$p_z$属于$\tilde{\Gamma}_2^{-}$表示,因此这里要求本征态的直积分解中同样包含$\tilde{\Gamma}_3^{-},\tilde
+{\Gamma}_2^{-}$得到非零的矩阵元(**相容性原理**).比如$\tilde{\Gamma}_6^{\pm}$和$\tilde{\Gamma}_{4,5}^{\pm}$的直积并不包含
+$\tilde{\Gamma}_2^{-}$,因此矩阵元$\langle\Lambda_1,\pm 1/2\rvert p_z\rvert\Lambda_2,\tilde{\Gamma}_{4,5}\rangle$总是等
+于0.对称性操作可以进一步帮助得到矩阵元素和动量之间的关系.比如对于$R_3$旋转操作,可以得到
 
 $$\begin{equation}\begin{aligned}\langle\Lambda_1^+,\frac{1}{2}\rvert p_x\rvert\Lambda_2,-\frac{1}{2}\rangle &=\langle\Lambda_1^+,\frac{1}{2}\rvert R_3^\dagger R_3p_xR_3^\dagger D_3\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\\ &=e^{-i(2\pi/3)}\langle\Lambda_1^{+},\frac{1}{2}\rvert(p_x\cos\frac{2\pi}{3}-p_y\sin\frac{2\pi}{3})\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\\ &\rightarrow\langle\Lambda_1^{+},\frac{1}{2}\rvert p_x\rvert\Lambda_2^{-},-\frac{1}{2}\rangle=i\langle\Lambda_1^+,\frac{1}{2}\rvert p_y\rvert\Lambda_2^{-},-\frac{1}{2}\rangle\end{aligned}\end{equation}$$
 
@@ -211,7 +252,11 @@ $$P_{\Lambda_1^+,\Lambda_2^{-}},Q_{\Lambda_1^+,\Lambda_2^{-}}$$
 
 $$P_{\Lambda_1^+,\Lambda_2^{-}}=P^{*}_{\Lambda_1^+,\Lambda_2^{-}},Q_{\Lambda_1^+,\Lambda_2^{-}}=Q^{*}_{\Lambda_1^+,\Lambda_2^{-}}$$
 
-而$M_{\Lambda_1^\pm,\Lambda_2^\mp}=iN^{*}_{\Lambda_1^\pm,\Lambda_2^\mp},R_{\Lambda_1^+\Lambda_2^{-}}=-S^{*}_{\Lambda_1^+,\Lambda_2^{-}}$.由于$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$之间的矩阵元是比较重要的,这里进行一下标记
+而
+
+$$M_{\Lambda_1^\pm,\Lambda_2^\mp}=iN^{*}_{\Lambda_1^\pm,\Lambda_2^\mp},R_{\Lambda_1^+\Lambda_2^{-}}=-S^{*}_{\Lambda_1^+,\Lambda_2^{-}}$.由于$\rvert P1_{-}^+,\pm\frac{1}{2}\rangle,\rvert P2_{+}^{-},\pm\frac{1}{2}\rangle$$
+
+之间的矩阵元是比较重要的,这里进行一下标记
 
 $$\langle P1_{-}^{+},\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},-\frac{1}{2}\rangle=\langle P1_{-}^{+},-\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},\frac{1}{2}\rangle=i\langle P1_{-}^{+},\frac{1}{2}\rvert p_y\rvert P2_{+}^{-},-\frac{1}{2}\rangle\\ =-i\langle P1_{-}^{+},-\frac{1}{2}\rvert p_x\rvert P2_{+}^{-},\frac{1}{2}\rangle=P_0 $$
 
@@ -227,7 +272,11 @@ $$H^{(2)}_{mm^\prime }=\frac{1}{2}\sum_lH^\prime _{ml}H^\prime _{lm^\prime }(\fr
 
 $$H^{(3)}_{mm^\prime }=-\frac{1}{2}\sum_{l,m^{''}}[\frac{H^\prime _{ml}H^\prime _{lm^{''}}H^\prime _{m^{''}m^\prime }}{(E_{m^\prime }-E_l)(E_{m^{''}}-E_l)}+\frac{H^\prime _{mm^{''}}H^\prime _{m^{''}l}H^\prime _{lm^\prime }}{(E_m-E_l)(E_{m^{''}}-E_l)}]\\ +\frac{1}{2}\sum_{l,l^\prime }H^\prime _{ml}H^\prime _{ll^\prime }H^\prime _{l^\prime m^\prime }[\frac{1}{(E_m-E_l)(E_m-E_{l^\prime })}+\frac{1}{(E_{m^\prime }-E_l)(E_{m^\prime }-E_{l^\prime })}]$$
 
-这里$m,m^{\prime}$取$\rvert P1_{-}^+,1/2\rangle=\rvert 1\rangle,\rvert P2_{+}^{-},1/2\rangle=\rvert 2\rangle,\rvert P1_{-}^+,-1/2\rangle=\rvert 3\rangle,\rvert P2_{+}^{-},-1/2\rangle=\rvert 4\rangle$,对应的能量为$E_1=E_3,E_2=E_4,E_1<E_2,l$会遍历除了这四个能带之外的其他能带.
+这里$m,m^\prime$可以取
+
+$$\rvert P1_{-}^+,1/2\rangle=\rvert 1\rangle,\rvert P2_{+}^{-},1/2\rangle=\rvert 2\rangle,\rvert P1_{-}^+,-1/2\rangle=\rvert 3\rangle,\rvert P2_{+}^{-},-1/2\rangle=\rvert 4\rangle$$
+
+对应的能量为$E_1=E_3,E_2=E_4,E_1 < E_2,l$会遍历除了这四个能带之外的其他能带.
 
 通过简并微扰的到的哈密顿量将会是一些依赖于动量矩阵元$\rvert \Lambda_1,\alpha\rvert\mathbf{p}\rvert\Lambda_2,\beta\rangle$,通过晶体的对称性,这些矩阵元可以被简化.比如,因为晶体存在反演对称,在$\Gamma$点的每个态都具有确定的宇称,因为动量$\mathbf{p}$是奇宇称的,那么当动量矩阵元中的两个态都是相同的宇称的时候,这一项是等于零的(**相容性原理**).波函数可以通过第一性原理计算,从而就可以计算这些对应的矩阵元素.通过这些矩阵元素和上面简并微扰的计算,就可以的到模型哈密顿量.其中参数的计算如下
 
@@ -273,7 +322,7 @@ $$\Psi_\uparrow(z)=\left(\begin{array}{c}\psi_0\\ \mathbf{0}\end{array}\right),\
 
 $$(\tilde{\epsilon}(-i\partial_z)+\tilde{M}(-i\partial_z)\tau_3-iB_o\tau_2\partial_z)\psi_0(z)=E\psi_0(z)$$
 
-此时可以忽略$\tilde{\epsilon}$项,上面的本征方程就存在粒子空穴对称,因此可以期待$E=0$本征态的出现,假设波函数为$\psi_0=\phie^{\lambda z}$,本恒方程简化为
+此时可以忽略$\tilde{\epsilon}$项,上面的本征方程就存在粒子空穴对称,因此可以期待$E=0$本征态的出现,假设波函数为$\psi_0=\phi e^{\lambda z}$,本恒方程简化为
 
 $$(M_0-M_1\lambda^2)\tau_1\phi=B_0\lambda\phi$$
 
