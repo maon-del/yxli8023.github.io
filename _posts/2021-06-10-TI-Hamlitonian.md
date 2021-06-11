@@ -21,7 +21,7 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
-这篇博客整理一下在拓扑材料Bi$_2$Se$_3$计算中,通过能带成分和对称性分析,再结合微扰论来推导低能有效模型.
+这篇博客整理一下在拓扑材料Bi$_2$Se$_3$计算中,通过能带成分和对称性分析,再结合微扰论来推导低能有效模型,主要是对文章进行翻译,过程中会加一点自己的笔记.
 {:.info}
 <!--more-->
 虽然对拓扑绝缘体的材料和对应的模型都很熟了,但是始终没有掌握如何从具体的材料出发,来得到其对应的低能哈密顿量,从而可以在材料的基础上,对模型进行研究.这里就想通过精读[Model Hamiltonian for topological insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.82.045122)这篇文章,来掌握一下这个方法.
