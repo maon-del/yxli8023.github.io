@@ -1,6 +1,6 @@
 ---
 title: 空间群学习工具
-tags: Math
+tags: Group-Theory
 layout: article
 license: true
 toc: true

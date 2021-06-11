@@ -1,6 +1,6 @@
 ---
-title: 群论学习笔记
-tags: Math
+title: 群论学习笔记(.......ing)
+tags: Group-Theory
 layout: article
 license: true
 toc: true

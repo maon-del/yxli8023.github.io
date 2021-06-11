@@ -1,6 +1,6 @@
 ---
-title: 拓扑绝缘体哈密顿量推导(......ing)
-tags: Topology Group Theory
+title: 拓扑绝缘体哈密顿量推导
+tags: Topology Group-Theory
 layout: article
 license: true
 toc: true
