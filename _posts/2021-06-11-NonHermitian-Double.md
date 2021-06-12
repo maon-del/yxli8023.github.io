@@ -119,11 +119,11 @@ $$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k
 # Doubling theorem for DPs
 一个DPs可以使EPs或者NDPs,它的拓扑表征不变量,可以根据沿着判别式进行积分的结果来确定
 
-$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E\[\mathcal{H}\](\mathbf{k})\label{a5}$$
+$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})\label{a5}$$
 
 这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$是单值的,这个不变量是量子化的,叫做**判别式数**.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$.为了得到DPs的doublin theorem,对所有在BZ中的DPs的**判别式数进行求和**.
 
-$$\sum_{\mathbf{k}_D^l\in BZ}\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$$
+$$\sum_{\mathbf{k}_D^l\in BZ}\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})$$
 
 因为DPs的歧义性仅发生在(\ref{a5})的积分中,积分路径在对所有奇异点的求和中可以连续的变化成布里渊区的边界,如上图(b)所示.因此上面的求和一定等于零,也就是所通过判别式数确定的DPs一定是成对出现的,这就证明了DPs的doubling theorem.对所有的奇异点求积分,其实就是利用留数定理.
 {:.success}
@@ -165,7 +165,7 @@ $$\mathcal{H}(\mathbf{k})=\left(\begin{array}{cc}A(\mathbf{k})&B(\mathbf{k})\\ 0
 
 对应的能谱为$E_\pm(\mathbf{k})=\pm B(\mathbf{k})$,特征多项式为$f_E(\mathbf{k})=E^2-A^2(\mathbf{k})$,从而得到判别式为
 
-$$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})=4A^2(\mathbf{k})$$
+$$\text{Disc}_E[\mathcal{H}](\mathbf{k})=4A^2(\mathbf{k})$$
 
 通过求解判别式的零点可以得到两个DPs的位置$(0,\pm\pi/2)$,处于$(0,-\pi/2)$的DP是个EP点对应的$\nu=-2$,而处于$(0,+\pi/2)$的DP点是个NDP对应的$\nu=-2$,它们同样满足doubling theorem.这里可以发现EP点并不是branch cut的终点,如上图(c,d)所示,因为能谱$E_\pm(\mathbf{k})$在整个BZ中是单值的.但这里存在一个参数可调的情况,当加入一个很小的形变$\eta\sigma_x$,这个微扰会将NDP和EP分离开来,每个都会变成$\nu\pm 1$的EPs,最终会变成branch cut的终点.
 
