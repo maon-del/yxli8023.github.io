@@ -107,7 +107,7 @@ $$\mathcal{H}(\mathbf{k})=h_0(\mathbf{k})\sigma_0+{\bf h(k)\cdot\sigma},\quad h_
 # 判别式与DPs
 下面来研究非厄米哈密顿量中的简并点(DP),并通过特征多项式$f_E(\mathbf{k})$的判别式来快速寻找简并点.这里$f_E(\mathbf{k})$的定义为(\ref{a3}),但是化学势会被$E$代替.一个DP点$\mathbf{k}_D$出现在$E_i(\mathbf{k}_D)=E_j(\mathbf{k}_D),i\neq j$,因此多项式$f_E(\mathbf{k})$在$\mathbf{k}_D$一定会有多个根,多项式的判别式定义为
 
-$$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2$$
+$$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2$$
 
 一定会在$\mathbf{k}_D$处消失,当DP出现在$\mathbf{k}_D$处,一定会有$\text{Disc}_E\[\mathcal{H}\](\mathbf{k}_D)=0$.从判别式来计算DPs相比于求解多项式$f_E(\mathbf{k})$的根要更有效率.判别式可以通过计算$f_E(\mathbf{k})$和$\partial_Ef_E(\mathbf{k})$的Sylvester矩阵的行列式得到,因此利用判别式$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$的零值来寻找整个布里渊区中所有的DPs是最有效的方法.
 
