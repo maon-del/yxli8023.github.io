@@ -56,7 +56,7 @@ $$S^{-1}(p)=m+\frac{i}{a}\sum_\mu\gamma_\mu\sin(p_\mu a)$$
 
 在EP和NDP两个能带在简并点是简并的,但是在EP点的时候,会存在波函数坍塌(虽然简并度是两重的,但是简并态只有一个),然而在NDP处本两个简并态的波函数是不同的.因此对于非厄米系统而言,哈密顿量在EPs是不可对角化的,只能约化成Jordan block的形式,如下图所示
 
-![png](..assets\images\Non-Hermitian\fd1.png)
+![png](/assets/images/Non-Hermitian/fd1.png)
 
 **当不存在对称性的时候,FPs和EPs在2维是拓扑稳定的,这也就意味着这些节点是不可以通过微扰被移除的**.
 
@@ -78,7 +78,7 @@ $$f_\mu(\mathbf{k})\equiv\text{det}[\mu-\mathcal{H}(\mathbf{k})]=\Pi_i[\mu-E_i(\
 
 多项式$f_\mu(\mathbf{k})=0$的解就是FPs的位置,因为此时是个复多项式,则会给出两个条件$\text{Re}[f_\mu(\mathbf{k})=0],\text{Im}[f_\mu(\mathbf{k})]=0$,它们的解会对应两条闭合的线,其交点对应的就是FPs的位置,如下图(a1)所示
 
-![png](..\assets\images\Non-Hermitian\fd2.png)
+![png](/assets/images/Non-Hermitian/fd2.png)
 
 这里可以发现两个闭合的线总是相交偶数次,这也就是FPs的doubling theorem.当在哈密顿量中引入微扰之后,仅仅是会影响必和路径的形状,但是不会使得FPs消失.
 
@@ -115,9 +115,74 @@ $$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k
 # Doubling theorem for DPs
 一个DPs可以使EPs或者NDPs,它的拓扑表征不变量,可以根据沿着判别式进行积分的结果来确定
 
-$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})$$
+$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})\label{a5}$$
 
-这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E[\mathcal{H}](\mathbf{k})$是单值的,这个不变量是量子化的,叫做判别式数.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E[\mathcal{H}](\mathbf{k})$.
+这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E[\mathcal{H}](\mathbf{k})$是单值的,这个不变量是量子化的,叫做**判别式数**.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E[\mathcal{H}](\mathbf{k})$.为了得到DPs的doublin theorem,对所有在BZ中的DPs的**判别式数进行求和**.
+
+$$\sum_{\mathbf{k}_D^l\in BZ}\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})$$
+
+因为DPs的歧义性仅发生在(\ref{a5})的积分中,积分路径在对所有奇异点的求和中可以连续的变化成布里渊区的边界,如上图(b)所示.因此上面的求和一定等于零,也就是所通过判别式数确定的DPs一定是成对出现的,这就证明了DPs的doubling theorem.对所有的奇异点求积分,其实就是利用留数定理.
+{:.success}
+
+在前面的研究中,由两个能带形成的DPs的拓扑性质是通过vorticity不变量表征的
+
+$$\nu_{ij}(\mathbf{k}_D^l)=-\frac{1}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}\nabla_\mathbf{k}\text{arg}[E_i(\mathbf{k})-E_j(\mathbf{k})]\cdot d\mathbf{k}$$
+
+这里的$i,j$是两个能带的标记,$\text{arg}(z)=-i\ln(z/\rvert z\rvert)$,下面来证明它与判别式数是等价的.在$\mathbf{k}_D^l$处的判别式数为
+
+$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln \Delta_f(\mathbf(k))$$
+
+这里的$\Delta f_E(\mathbf{k})$是$n\times n$哈密顿量$\mathcal{H}$的特征多项式$f_E(\mathbf{k})$的判别式
+
+$$\Delta_f(\mathbf{k})=\Pi_{1\leq i\leq j\leq n}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2$$
+
+$E_i(\mathbf{k})$是哈密顿量$\mathcal{H}(\mathbf{k})$的能带,将上面的两个方程结合起来可以得到
+
+$$\begin{equation}\begin{aligned}\nu(\mathbf{k}_D^l)&=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln \Pi_{1\leq i\leq j\leq n}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2\\ &= \frac{i}{2\pi}\sum_{i\neq j}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln[E_i(\mathbf{k})-E_j(\mathbf{k})]\\ &= \frac{-1}{2\pi}\sum_{i\neq j}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\text{arg}[E_i(\mathbf{k})-E_j(\mathbf{k})]=\sum_{i\neq j}\nu_{ij}(\mathbf{k}_D^l)\end{aligned}\end{equation}$$
+
+这里利用了$\ln(z)=\ln(\rvert z\rvert)+i\text{arg}(z)$.通过上面的证明可以发现判别式数等于vorticity不变量对所有不同带的贡献之和,$\nu(\mathbf{k}_D^l)=\sum_{i\neq j}\nu_{ij}(\mathbf{k}_D^l)$.
+
+## 双DPs的实例
+这里通过一个具体的例子来研究DPs的doubling theorem,可以发现对于EPs一般是稳定的,但是对于NDPs会被任意小的微扰破坏.博涵两个NDPs的一个两带模型为
+
+$$\mathcal{H}=\left(\begin{array}{c}0&F(\mathbf{k})\\ G(\mathbf{k})&0\end{array}\right)\\ F(\mathbf{k})=\sin^2k_x-\frac{1}{2}\sin^2k_y+2i\sin k_x\sin k_y+\cos k_y-1,G(\mathbf{k})=\sin k_x-i\sin k-Y+\cos k_y-1$$
+
+对应的本征能谱为$E_\pm=\pm\sqrt{F(\mathbf{k})G(\mathbf{k})}$,对应的特征多项式为$f_E(\mathbf{k})=E^2-F(\mathbf{k})G(\mathbf{k})$,d对应的判别式$\text{Disc}_E[\mathcal{H}](\mathbf{k})=4F(\mathbf{k})G(\mathbf{k})$,存在两个NDPs分别位于$(0,0),(0,\pi)$.利用(\ref{a5})可以得到对应的判别式数为$\pm 1$,因此满足doubling theorem.这两个DPs都是branch cut的终点,所以复能带的branch cut不必要一定就终结在EPs点,如下图所示
+
+![png](/assets/images/Non-Hermitian/fd3.png)
+
+但是NDPs是不稳定的,当加入小的微扰$\delta\sigma_z$之后就会变成EPs.
+
+第二个例子包含一个NDP和一个EP,可以由下面的哈密顿量描述
+
+$$\mathcal{H}(\mathbf{k})=\left(\begin{array}{cc}A(\mathbf{k})&B(\mathbf{k})\\ 0&-A(\mathbf{k})\end{array}\right)\\ A(\mathbf{k})=1-\cos k_x-\cos k_y+i\sin k_x,B(\mathbf{k})=1-\sin k_y$$
+
+对应的能谱为$E_\pm(\mathbf{k})=\pm B(\mathbf{k})$,特征多项式为$f_E(\mathbf{k})=E^2-A^2(\mathbf{k})$,从而得到判别式为$\text{Disc}_E[\mathcal{H}](\mathbf{k})=4A^2(\mathbf{k})$.通过求解判别式的零点可以得到两个DPs的位置$(0,\pm\pi/2)$,处于$(0,-\pi/2)$的DP是个EP点对应的$\nu=-2$,而处于$(0,+\pi/2)$的DP点是个NDP对应的$\nu=-2$,它们同样满足doubling theorem.这里可以发现EP点并不是branch cut的终点,如上图(c,d)所示,因为能谱$E_\pm(\mathbf{k})$在整个BZ中是单值的.但这里存在一个参数可调的情况,当加入一个很小的形变$\eta\sigma_x$,这个微扰会将NDP和EP分离开来,每个都会变成$\nu\pm 1$的EPs,最终会变成branch cut的终点.
+
+通常,一个两重简并的EP对应的$\nu=\pm 1$就会是能谱中branch cut的终点;在两维系统中,NDPs都是不稳定的,在微扰下回演化成EPs.而且对于$\rvert\nu\rvert> 1$的EPs都是可以在微扰下分裂为几个$\rvert\nu\rvert=1$的EPs,而且只有$\mu=\pm 1$的EPs是稳定的.总上所述,也就可以得到两维中,唯一稳定的DPs是EPs,对应的$\nu\pm 1$,基矢存在微扰,这些EPs也一定是带有相反的判别式数$\nu$成对出现的.
+{:.success}
+
+# 表面反常的FPs和EPs
+在三维的表面上,doubling theorem是会违反的,三维系统的表面可以看做是半个两维的体态,原则上表面上可以存在奇数个稳定的FPs或者EPs,因此会违反doubling theorem.在存在这种反常的表面的时候,体态通常会有比较特殊的性质,这依赖于晶体的对称性.
+
+- 首先考虑一个联系三维系统上下表面的对称性
+
+当上下两个表面通过反演对称或者反射对称联系联系的时候,作用在表面哈密顿量上之后
+
+$$P_\pm\mathcal{H}_\text{top}(k_x,k_y)P^{-1}_\pm=\mathcal{H}_\text{bot}(\pm k_x,\pm k_y)\label{a6}$$
+
+这里$P_\pm$是个幺正算符,表示反射(+)或者反演(-).当只关注表面的时候,量对称性(\ref{a6})作用在判别式数(\ref{a5})上之后,可以发现上表面上所有EPs的$\nu$求和等于下表面上所有EPs的$\nu$求和
+
+$$\sum_{\mathbf{k}_D^l\in BZ_\text{top}}\nu(\mathbf{k}_D^l)=\sum_{\mathbf{k}_D^l\in BZ_\text{bot}}\nu(\mathbf{k}_D^l)$$
+
+与三维拓扑绝缘体不同,上下表面的EPs对应的拓扑荷并不会相互抵消,因此在三维的体态中,一定也会渗透着判别式数非零的EPs.事实上,因为非零的$\nu$是根据线积分定义的,通过形变并不能使其消失,所在在三维体态中一定存在整个EPs构成的线.因此对于非厄米的系统,会存在反常的表面,体态也会存在奇异线.
+
+同样的对于表面上的FPs,也会具有相同的性质,如果在具有反演或者反射对称性的系统中表面上的FPs违反了doubling theorem,那么体态内一定至少存在一个费米线.下面给出一个格点模型
+
+$$H_{3D}(\mathbf{k})=(m(\mathbf{k})+\cos k_z)\Gamma_0+\sqrt{2}\sin (k_x+\pi/4)\Gamma_1+(i+\sin k_y)\Gamma_2+\sin k_z\Gamma_3 -gi\Gamma_1\Gamma_2\\ m(\mathbf{k})=\cos k_x+\cos k_y-2.7,g=0.2,\Gamma_0\rho_3\sigma_0,\Gamma_i=\rho_1\sigma_i,\{\Gamma_\alpha,\Gamma_\beta\}=2\delta_{\alpha\beta}\mathbb{I}_{4\times 4}$$
+
+这个哈密顿量是反射对称的$z\rightarrow -z,R_zH_{3D}(k_x,k_y,-k_z)R_z^{-1}=H_{3D}(\mathbf{k}),R_z=\rho_3\sigma_3$.通过反射对称可以将上表面(001)与下表面$(00\bar{1})$联系起来.
+
 
 
 
