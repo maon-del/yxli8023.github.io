@@ -86,7 +86,9 @@ $$f_\mu(\mathbf{k})\equiv\text{det}[\mu-\mathcal{H}(\mathbf{k})]=\Pi_i[\mu-E_i(\
 
 $$W(\mathbf{k}_F^j)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_F^j)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln f_\mu(\mathbf{k})\label{a1}$$
 
-这里的积分路径是包含$\mathbf{k}_F^j$沿顺时针方向的闭合路径,如上图(b1)所示.因为多项式$f_\mu(\mathbf{k})$在整个布里渊区中都是单值的,每个winding number$W(\mathbf{k}_F^j)$也都是量子化的整数,在每个FP点处$\mathbf{k}_F^j$都会对应的由一个拓扑荷.**当winding number不等于零的时候,积分路径$\Gamma(\mathbf{k}_F^j)$不能平滑的收缩成一个点,因为它包含了一个奇异点.**这也就保证了在FP点处的拓扑稳定性,从而微扰不能打开能隙.当对整个布里渊区中所有的FPs对应的winding number求和之后
+这里的积分路径是包含$\mathbf{k}_F^j$沿顺时针方向的闭合路径,如上图(b1)所示.
+
+因为多项式$f_\mu(\mathbf{k})$在整个布里渊区中都是单值的,每个winding number$W(\mathbf{k}_F^j)$也都是量子化的整数,在每个FP点处$\mathbf{k}_F^j$都会对应的由一个拓扑荷.**当winding number不等于零的时候,积分路径$\Gamma(\mathbf{k}_F^j)$不能平滑的收缩成一个点,因为它包含了一个奇异点.**这也就保证了在FP点处的拓扑稳定性,从而微扰不能打开能隙.当对整个布里渊区中所有的FPs对应的winding number求和之后
 
 $$\sum_{\mathbf{k}_F^j\in BZ}W(\mathbf{k}_F^j)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\in f_\mu(\mathbf{k})=0\label{a2}$$
 
@@ -96,18 +98,20 @@ $$\sum_{\mathbf{k}_F^j\in BZ}W(\mathbf{k}_F^j)=\frac{i}{2\pi}\oint_{\partial BZ}
 
 $$\mathcal{H}(\mathbf{k})=h_0(\mathbf{k})\sigma_0+{\bf h(k)\cdot\sigma},\quad h_0(\mathbf{k})=\frac{1}{2}\sin k_y,h_x(\mathbf{k})=\sin k_x-i,\\ h_y(\mathbf{k})=\sin k_y,h_z(\mathbf{k})=\cos k_x+\cos k_y -2$$
 
-当化学势为$\mu=\sqrt{3}/4$的时候两个FPs位置为$\mathbf{k}_F^{-}=(0,-0.479\pi),\mathbf{k}_F^{+}=(0,\pi/2)$,对应的winding number为$W(\mathbf{k}_F^{\pm})=\mp 1$,此时是满足doubling theorem的.哈密顿量$\mathcal{H}(\mathbf{k})$的能谱为$E_\pm(\mathbf{k})=(s_y/2)\pm\sqrt{5-4(c_x+c_y)+c_{x+y}+c_{x-y}-2is_x}$.这里记号$c_{x/y}=\cos k_{x/y},s_{x/y}=\sin k_{x/y},c_{x\pm y}=\cos (k_x\pm k_y)$.这个能谱是多值的,且存在brach cut终止与两个EPs处,在$(0,\pm\pi/3)$处的能量为$E-\mu=0,E-\mu=-\sqrt{3}/2$.
+当化学势为$\mu=\sqrt{3}/4$的时候两个FPs位置为$\mathbf{k}_F^{-}=(0,-0.479\pi),\mathbf{k}_F^{+}=(0,\pi/2)$,对应的winding number为$W(\mathbf{k}_F^{\pm})=\mp 1$,此时是满足doubling theorem的.
+
+哈密顿量$\mathcal{H}(\mathbf{k})$的能谱为$E_\pm(\mathbf{k})=(s_y/2)\pm\sqrt{5-4(c_x+c_y)+c_{x+y}+c_{x-y}-2is_x}$.这里记号$c_{x/y}=\cos k_{x/y},s_{x/y}=\sin k_{x/y},c_{x\pm y}=\cos (k_x\pm k_y)$.这个能谱是多值的,且存在brach cut终止与两个EPs处,在$(0,\pm\pi/3)$处的能量为$E-\mu=0,E-\mu=-\sqrt{3}/2$.
 
 又是后会遇到EPs和FPs出现在相同的位置,这纯属偶然,通常情况下载一般的非厄米哈密顿量中,两者是处在不同位置的.
 
 # 判别式与DPs
 下面来研究非厄米哈密顿量中的简并点(DP),并通过特征多项式$f_E(\mathbf{k})$的判别式来快速寻找简并点.这里$f_E(\mathbf{k})$的定义为(\ref{a3}),但是化学势会被$E$代替.一个DP点$\mathbf{k}_D$出现在$E_i(\mathbf{k}_D)=E_j(\mathbf{k}_D),i\neq j$,因此多项式$f_E(\mathbf{k})$在$\mathbf{k}_D$一定会有多个根,多项式的判别式定义为
 
-$$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2$$
+$$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2$$
 
-一定会在$\mathbf{k}_D$处消失,当DP出现在$\mathbf{k}_D$处,一定会有$\text{Disc}_E[\mathcal{H}](\mathbf{k}_D)=0$.从判别式来计算DPs相比于求解多项式$f_E(\mathbf{k})$的根要更有效率.判别式可以通过计算$f_E(\mathbf{k})$和$\partial_Ef_E(\mathbf{k})$的Sylvester矩阵的行列式得到,因此利用判别式$\text{Disc}_E[\mathcal{H}](\mathbf{k})$的零值来寻找整个布里渊区中所有的DPs是最有效的方法.
+一定会在$\mathbf{k}_D$处消失,当DP出现在$\mathbf{k}_D$处,一定会有$\text{Disc}_E\[\mathcal{H}\](\mathbf{k}_D)=0$.从判别式来计算DPs相比于求解多项式$f_E(\mathbf{k})$的根要更有效率.判别式可以通过计算$f_E(\mathbf{k})$和$\partial_Ef_E(\mathbf{k})$的Sylvester矩阵的行列式得到,因此利用判别式$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$的零值来寻找整个布里渊区中所有的DPs是最有效的方法.
 
-判别式还有一个额外的优点,它是单值的,因为多项式$f_E(\mathbf{k})$的系数都是单只的,这个性质在根据$\text{Disc}_E[\mathcal{H}](\mathbf{k})$定义量子化不变量的时候很重要,对证明doubling theorem也同样重要.首先来给出说明性的一个解释为什么DPs一定会满足doubling theorme.可以发现判别式的零点一定会满足两个限制$\text{Re}[\text{Disc}_E[\mathcal{H}](\mathbf{k})]=0,\text{Im}[\text{Disc}_E[\mathcal{H}](\mathbf{k})]=0$.通过这两个等式可以在布里渊区中确定两个闭合的线,他们的交点就是DPs的位置,而布里渊区是具有周期性的,那么这两条线的交点数目也一定会是偶数次,因此DPs一定也是成对出现的,从而满足doubling theorem.
+判别式还有一个额外的优点,它是单值的,因为多项式$f_E(\mathbf{k})$的系数都是单只的,这个性质在根据$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$定义量子化不变量的时候很重要,对证明doubling theorem也同样重要.首先来给出说明性的一个解释为什么DPs一定会满足doubling theorme.可以发现判别式的零点一定会满足两个限制$\text{Re}\[\text{Disc}_E\[\mathcal{H})\](\mathbf{k})\]=0,\text{Im}\[\text{Disc}_E\[\mathcal{H}\](\mathbf{k})\]=0$.通过这两个等式可以在布里渊区中确定两个闭合的线,他们的交点就是DPs的位置,而布里渊区是具有周期性的,那么这两条线的交点数目也一定会是偶数次,因此DPs一定也是成对出现的,从而满足doubling theorem.
 
 在不存在额外对称性的时候,DPs一般只存在两重简并,热河一个具有高简并度的DPs可以通过加入一个微扰,是的分开成多对具有双重简并的DPs.
 {:.warning}
@@ -115,11 +119,11 @@ $$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k
 # Doubling theorem for DPs
 一个DPs可以使EPs或者NDPs,它的拓扑表征不变量,可以根据沿着判别式进行积分的结果来确定
 
-$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})\label{a5}$$
+$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E\[\mathcal{H}\](\mathbf{k})\label{a5}$$
 
-这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E[\mathcal{H}](\mathbf{k})$是单值的,这个不变量是量子化的,叫做**判别式数**.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E[\mathcal{H}](\mathbf{k})$.为了得到DPs的doublin theorem,对所有在BZ中的DPs的**判别式数进行求和**.
+这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$是单值的,这个不变量是量子化的,叫做**判别式数**.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$.为了得到DPs的doublin theorem,对所有在BZ中的DPs的**判别式数进行求和**.
 
-$$\sum_{\mathbf{k}_D^l\in BZ}\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})$$
+$$\sum_{\mathbf{k}_D^l\in BZ}\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\partial BZ}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$$
 
 因为DPs的歧义性仅发生在(\ref{a5})的积分中,积分路径在对所有奇异点的求和中可以连续的变化成布里渊区的边界,如上图(b)所示.因此上面的求和一定等于零,也就是所通过判别式数确定的DPs一定是成对出现的,这就证明了DPs的doubling theorem.对所有的奇异点求积分,其实就是利用留数定理.
 {:.success}
@@ -140,14 +144,16 @@ $E_i(\mathbf{k})$是哈密顿量$\mathcal{H}(\mathbf{k})$的能带,将上面的�
 
 $$\begin{equation}\begin{aligned}\nu(\mathbf{k}_D^l)&=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln \Pi_{1\leq i\leq j\leq n}[E_i(\mathbf{k})-E_j(\mathbf{k})]^2\\ &= \frac{i}{2\pi}\sum_{i\neq j}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln[E_i(\mathbf{k})-E_j(\mathbf{k})]\\ &= \frac{-1}{2\pi}\sum_{i\neq j}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\text{arg}[E_i(\mathbf{k})-E_j(\mathbf{k})]=\sum_{i\neq j}\nu_{ij}(\mathbf{k}_D^l)\end{aligned}\end{equation}$$
 
-这里利用了$\ln(z)=\ln(\rvert z\rvert)+i\text{arg}(z)$.通过上面的证明可以发现判别式数等于vorticity不变量对所有不同带的贡献之和,$\nu(\mathbf{k}_D^l)=\sum_{i\neq j}\nu_{ij}(\mathbf{k}_D^l)$.
+这里利用了$\ln(z)=\ln(\rvert z\rvert)+i\text{arg}(z)$.通过上面的证明可以发现判别式数等于vorticity不变量对所有不同带的贡献之和
+
+$$\nu(\mathbf{k}_D^l)=\sum_{i\neq j}\nu_{ij}(\mathbf{k}_D^l)$$
 
 ## 双DPs的实例
 这里通过一个具体的例子来研究DPs的doubling theorem,可以发现对于EPs一般是稳定的,但是对于NDPs会被任意小的微扰破坏.博涵两个NDPs的一个两带模型为
 
 $$\mathcal{H}=\left(\begin{array}{c}0&F(\mathbf{k})\\ G(\mathbf{k})&0\end{array}\right)\\ F(\mathbf{k})=\sin^2k_x-\frac{1}{2}\sin^2k_y+2i\sin k_x\sin k_y+\cos k_y-1,G(\mathbf{k})=\sin k_x-i\sin k-Y+\cos k_y-1$$
 
-对应的本征能谱为$E_\pm=\pm\sqrt{F(\mathbf{k})G(\mathbf{k})}$,对应的特征多项式为$f_E(\mathbf{k})=E^2-F(\mathbf{k})G(\mathbf{k})$,d对应的判别式$\text{Disc}_E[\mathcal{H}](\mathbf{k})=4F(\mathbf{k})G(\mathbf{k})$,存在两个NDPs分别位于$(0,0),(0,\pi)$.利用(\ref{a5})可以得到对应的判别式数为$\pm 1$,因此满足doubling theorem.这两个DPs都是branch cut的终点,所以复能带的branch cut不必要一定就终结在EPs点,如下图所示
+对应的本征能谱为$E_\pm=\pm\sqrt{F(\mathbf{k})G(\mathbf{k})}$,对应的特征多项式为$f_E(\mathbf{k})=E^2-F(\mathbf{k})G(\mathbf{k})$,d对应的判别式$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})=4F(\mathbf{k})G(\mathbf{k})$,存在两个NDPs分别位于$(0,0),(0,\pi)$.利用(\ref{a5})可以得到对应的判别式数为$\pm 1$,因此满足doubling theorem.这两个DPs都是branch cut的终点,所以复能带的branch cut不必要一定就终结在EPs点,如下图所示
 
 ![png](/assets/images/Non-Hermitian/fd3.png)
 
@@ -157,7 +163,11 @@ $$\mathcal{H}=\left(\begin{array}{c}0&F(\mathbf{k})\\ G(\mathbf{k})&0\end{array}
 
 $$\mathcal{H}(\mathbf{k})=\left(\begin{array}{cc}A(\mathbf{k})&B(\mathbf{k})\\ 0&-A(\mathbf{k})\end{array}\right)\\ A(\mathbf{k})=1-\cos k_x-\cos k_y+i\sin k_x,B(\mathbf{k})=1-\sin k_y$$
 
-对应的能谱为$E_\pm(\mathbf{k})=\pm B(\mathbf{k})$,特征多项式为$f_E(\mathbf{k})=E^2-A^2(\mathbf{k})$,从而得到判别式为$\text{Disc}_E[\mathcal{H}](\mathbf{k})=4A^2(\mathbf{k})$.通过求解判别式的零点可以得到两个DPs的位置$(0,\pm\pi/2)$,处于$(0,-\pi/2)$的DP是个EP点对应的$\nu=-2$,而处于$(0,+\pi/2)$的DP点是个NDP对应的$\nu=-2$,它们同样满足doubling theorem.这里可以发现EP点并不是branch cut的终点,如上图(c,d)所示,因为能谱$E_\pm(\mathbf{k})$在整个BZ中是单值的.但这里存在一个参数可调的情况,当加入一个很小的形变$\eta\sigma_x$,这个微扰会将NDP和EP分离开来,每个都会变成$\nu\pm 1$的EPs,最终会变成branch cut的终点.
+对应的能谱为$E_\pm(\mathbf{k})=\pm B(\mathbf{k})$,特征多项式为$f_E(\mathbf{k})=E^2-A^2(\mathbf{k})$,从而得到判别式为
+
+$$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})=4A^2(\mathbf{k})$$
+
+通过求解判别式的零点可以得到两个DPs的位置$(0,\pm\pi/2)$,处于$(0,-\pi/2)$的DP是个EP点对应的$\nu=-2$,而处于$(0,+\pi/2)$的DP点是个NDP对应的$\nu=-2$,它们同样满足doubling theorem.这里可以发现EP点并不是branch cut的终点,如上图(c,d)所示,因为能谱$E_\pm(\mathbf{k})$在整个BZ中是单值的.但这里存在一个参数可调的情况,当加入一个很小的形变$\eta\sigma_x$,这个微扰会将NDP和EP分离开来,每个都会变成$\nu\pm 1$的EPs,最终会变成branch cut的终点.
 
 通常,一个两重简并的EP对应的$\nu=\pm 1$就会是能谱中branch cut的终点;在两维系统中,NDPs都是不稳定的,在微扰下回演化成EPs.而且对于$\rvert\nu\rvert> 1$的EPs都是可以在微扰下分裂为几个$\rvert\nu\rvert=1$的EPs,而且只有$\mu=\pm 1$的EPs是稳定的.总上所述,也就可以得到两维中,唯一稳定的DPs是EPs,对应的$\nu\pm 1$,基矢存在微扰,这些EPs也一定是带有相反的判别式数$\nu$成对出现的.
 {:.success}
