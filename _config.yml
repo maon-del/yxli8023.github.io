@@ -128,7 +128,7 @@ comments:
   disqus:
     shortname: # the Disqus shortname for the site
 
-  ## Gitalk
+  ## Gitalk   评论系统
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
     clientID    : 549b4fdae9cab2718b93 # GitHub Application Client ID
@@ -148,9 +148,9 @@ comments:
     meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
 
 
-## => Pageview
+## => Pageview 统计系统
 ##############################
-# pageview:
+pageview:
   provider: leancloud # false (default), "leancloud", "custom"
 
 #   ## Leancloud
