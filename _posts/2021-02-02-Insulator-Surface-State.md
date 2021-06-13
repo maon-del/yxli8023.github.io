@@ -161,7 +161,7 @@ $$\begin{equation}
 将方程通过幺正变换分解为这个形式之后,求解有效边界理论即为先求解$\tilde{h}_0$的零能本本征解,然后将$\tilde{h}_1$当作微扰来计算,而这个求解过程,在前面的两篇博客[有效边界理论(space部分)](https://yxli8023.github.io/2021/01/20/Effective-Edge-Theory.html),[有效边界理论(spinor部分)](https://yxli8023.github.io/2021/01/22/Effective-Edge-Theory-spinor.html)中已经详细记录过,这篇文章中设下的内容也就完全可以求解了.如果想详细了解关于微分方程求解有效边界理论的内容,可以阅读[Majorana Corner Modes in a High-Temperature Platform](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.096803)这篇文章,其中有详细的推导过程.
 
 # 代码下载
-因为无法在博客中排版Mathematica的代码,所有的计算代码,可以[点击这里下载](../assets/data/2021-0202.nb)
+因为无法在博客中排版Mathematica的代码,所有的计算代码,可以[点击这里下载](../assets/data/2021-02-02.nb)
 
 
 
