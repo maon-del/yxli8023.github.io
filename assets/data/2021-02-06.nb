@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    217649,       5907]
-NotebookOptionsPosition[    217174,       5889]
-NotebookOutlinePosition[    217560,       5906]
-CellTagsIndexPosition[    217517,       5903]
+NotebookDataLength[    217716,       5909]
+NotebookOptionsPosition[    217241,       5891]
+NotebookOutlinePosition[    217627,       5908]
+CellTagsIndexPosition[    217584,       5905]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -61,50 +61,52 @@ Cell[BoxData[{
   "(*", "\:6240\:6709\[CapitalGamma]\:77e9\:9635\:7684\:96c6\:5408", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"namelist", "=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Style", "[", 
-      RowBox[{"#", ",", "Blue", ",", "20", ",", 
-       RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], "]"}], 
-     "&"}], "/@", 
-    RowBox[{"Flatten", "@", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"StringJoin", "[", 
-        RowBox[{
-        "i3", ",", "\"\<\[CircleTimes]\>\"", ",", "i2", ",", 
-         "\"\<\[CircleTimes]\>\"", ",", "i1"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"i1", ",", 
-         RowBox[{"{", 
-          RowBox[{
-          "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(0\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(x\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(y\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(z\)]\)\>\""}], "}"}]}], 
-        "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"i2", ",", 
-         RowBox[{"{", 
-          RowBox[{
-          "\"\<\!\(\*SubscriptBox[\(s\), \(0\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(s\), \(x\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(s\), \(y\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(s\), \(z\)]\)\>\""}], "}"}]}], "}"}], 
-       ",", 
-       RowBox[{"{", 
-        RowBox[{"i3", ",", 
-         RowBox[{"{", 
-          RowBox[{
-          "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(0\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(x\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(y\)]\)\>\"", ",", 
-           "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(z\)]\)\>\""}], "}"}]}], 
-        "}"}]}], "]"}]}]}]}], ";", 
   RowBox[{
-  "(*", "\:6240\:6709\:53ef\:80fd\:7684\:57fa\:77e2\:76f4\:79ef", "*)"}], 
-  "\[IndentingNewLine]", 
+   RowBox[{"namelist", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{"#", ",", "Blue", ",", "20", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], "]"}],
+       "&"}], "/@", 
+     RowBox[{"Flatten", "@", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"StringJoin", "[", 
+         RowBox[{
+         "i3", ",", "\"\<\[CircleTimes]\>\"", ",", "i2", ",", 
+          "\"\<\[CircleTimes]\>\"", ",", "i1"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i1", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(0\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(x\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(y\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(z\)]\)\>\""}], "}"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i2", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<\!\(\*SubscriptBox[\(s\), \(0\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(s\), \(x\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(s\), \(y\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(s\), \(z\)]\)\>\""}], "}"}]}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"i3", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(0\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(x\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(y\)]\)\>\"", ",", 
+            "\"\<\!\(\*SubscriptBox[\(\[Sigma]\), \(z\)]\)\>\""}], "}"}]}], 
+         "}"}]}], "]"}]}]}]}], ";"}], 
+  RowBox[{
+  "(*", "\:6240\:6709\:53ef\:80fd\:7684\:57fa\:77e2\:76f4\:79ef", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"m1", "=", 
    RowBox[{"KroneckerProduct", "[", 
     RowBox[{"z", ",", "i", ",", "z"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
@@ -5906,8 +5908,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 8355, 231, 803, "Input",ExpressionUUID->"92d2de67-0948-4af8-9736-511b281596e0"],
-Cell[8938, 255, 208220, 5631, 2471, "Output",ExpressionUUID->"cd56cde6-a96d-4d82-99f0-038a9055df4d"]
+Cell[580, 22, 8422, 233, 803, "Input",ExpressionUUID->"92d2de67-0948-4af8-9736-511b281596e0"],
+Cell[9005, 257, 208220, 5631, 2471, "Output",ExpressionUUID->"cd56cde6-a96d-4d82-99f0-038a9055df4d"]
 }, Open  ]]
 }
 ]
