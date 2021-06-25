@@ -61,6 +61,7 @@ $$A(\omega,k_i)=-\frac{1}{\pi}\textrm{Im}(g^{(N)}(\omega,k_i))$$
 {:.warning}
 
 # 代码
+## Julia
 ```julia
 using LinearAlgebra,DelimitedFiles,PyPlot
 #---------------------------------------------------

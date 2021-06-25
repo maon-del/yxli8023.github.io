@@ -210,5 +210,6 @@ $$H_{3D}(\mathbf{k})=(m(\mathbf{k})+\cos k_z)\Gamma_0+\sqrt{2}\sin (k_x+\pi/4)\G
 - 1.[Fermion Doubling Theorems in Two-Dimensional Non-Hermitian Systems for Fermi Points and Exceptional Points](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.086401)
 - 2.[Fermion doubling](https://en.wikipedia.org/wiki/Fermion_doubling)
 - 3.[Jordan matrix](https://en.wikipedia.org/wiki/Jordan_matrix)
+- 4.[Chiral Anomalies and the Nielsen - Ninomiya No-Go Theorem](https://mcgreevy.physics.ucsd.edu/s13/final-papers/2013S-215C-Kadakia-Nirag.pdf)
 
 
