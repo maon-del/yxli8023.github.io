@@ -256,3 +256,6 @@ splot 'test-format.dat' u 1:2:3 w pm3d
 ![png](/assets/images/Julia/jf3.png)
 
 因为利用格林函数方法进行计算的时候,要想得到漂亮的图,取点间隔必须小,这样就会使得数据比较大,所以利用gnuplot绘图还是比较方便的.
+
+# 代码下载
+这些程序的源代码,可以[点击这里下载](/assets/data/jf.zip)
