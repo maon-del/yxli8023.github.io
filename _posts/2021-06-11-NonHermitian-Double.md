@@ -119,6 +119,11 @@ $$\text{Disc}_E[\mathcal{H}](\mathbf{k})=\Pi_{i<j}[E_i(\mathbf{k})-E_j(\mathbf{k
 # Doubling theorem for DPs
 一个DPs可以使EPs或者NDPs,它的拓扑表征不变量,可以根据沿着判别式进行积分的结果来确定
 
+<<<<<<< HEAD:temp/2021-06-11-NonHermitian-Double.md
+$$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})\label{a4}$$
+
+这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E[\mathcal{H}](\mathbf{k})$是单值的,这个不变量是量子化的,叫做判别式数.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E[\mathcal{H}](\mathbf{k})$.非零的$\nu$值保证了DPs对于能隙的打开具有稳定性，利用方程
+=======
 $$\nu(\mathbf{k}_D^l)=\frac{i}{2\pi}\oint_{\Gamma(\mathbf{k}_D^l)}d\mathbf{k}\cdot\nabla_\mathbf{k}\ln\text{Disc}_E[\mathcal{H}](\mathbf{k})\label{a5}$$
 
 这里$\Gamma(\mathbf{k}_D^l)$是包含在$\mathbf{k}_D^l$处DP的一个顺时针路径,因为$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$是单值的,这个不变量是量子化的,叫做**判别式数**.它的数学结构与FPs的winding number是相同的,唯一的区别就是在积分中将$\text{det}[\mu-\mathcal{H}(\mathbf{k})]$替换成了$\text{Disc}_E\[\mathcal{H}\](\mathbf{k})$.为了得到DPs的doublin theorem,对所有在BZ中的DPs的**判别式数进行求和**.
@@ -193,6 +198,7 @@ $$H_{3D}(\mathbf{k})=(m(\mathbf{k})+\cos k_z)\Gamma_0+\sqrt{2}\sin (k_x+\pi/4)\G
 
 这个哈密顿量是反射对称的$z\rightarrow -z,R_zH_{3D}(k_x,k_y,-k_z)R_z^{-1}=H_{3D}(\mathbf{k}),R_z=\rho_3\sigma_3$.通过反射对称可以将上表面(001)与下表面$(00\bar{1})$联系起来.
 
+>>>>>>> 779f0c456823ecf82038b5a47b5037b1fd2be02f:_posts/2021-06-11-NonHermitian-Double.md
 
 
 
