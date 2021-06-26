@@ -1,5 +1,5 @@
 ---
-title: 毕业
+title: 本科毕业
 tags: Live
 layout: article
 license: true
