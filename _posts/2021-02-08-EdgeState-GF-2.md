@@ -94,273 +94,139 @@ function matset(ky::Float64)
     return H00,H01
 end
 # ====================================================================================
-function surfgreen_1985(omg::Float64,ky::Float64)
+function gf(omg::Float64,ky::Float64)
     hn::Int64 = 4
+    iter::Int64 = 0
+    itermax::Int64 = 100
+    eta::Float64 = 0.01
+    omegac::ComplexF64 = 0.0
+    accuarrcy::Float64 = 1E-7
+    erracc::Float64 = 0.0
+    epsilon0 = zeros(ComplexF64,hn,hn)
+    epsilon0s = zeros(ComplexF64,hn,hn)
+    epsiloni = zeros(ComplexF64,hn,hn)
+    epsilonis = zeros(ComplexF64,hn,hn)
+    alpha0 = zeros(ComplexF64,hn,hn)
+    alphai = zeros(ComplexF64,hn,hn)
+    beta0 = zeros(ComplexF64,hn,hn)
+    betai = zeros(ComplexF64,hn,hn)
+    H00 = zeros(ComplexF64,hn,hn)
+    H01 = zeros(ComplexF64,hn,hn)
+    unit = zeros(ComplexF64,hn,hn)
     GLL = zeros(ComplexF64,hn,hn)
     GRR = zeros(ComplexF64,hn,hn)
     GBulk = zeros(ComplexF64,hn,hn)
-    iter::Int64 = 0
-    itermax::Int64 = 100
-    accuarrcy::Float64 = 1E-7
-    real_temp::Float64 = 0.0
-    omegac::ComplexF64 = 0.0
-    eta::Float64 = 0.01
-    #-----------------------------------
-    alphai = zeros(ComplexF64,hn,hn)
-    betai = zeros(ComplexF64,hn,hn)
-    epsiloni = zeros(ComplexF64,hn,hn)
-    epsilons = zeros(ComplexF64,hn,hn)
-    epsilons_t = zeros(ComplexF64,hn,hn)
-    mat1 = zeros(ComplexF64,hn,hn)
-    mat2 = zeros(ComplexF64,hn,hn)
-    g0 = zeros(ComplexF64,hn,hn)
-    unit = zeros(ComplexF64,hn,hn)
-    #------------------------------------
+    #------------------------------------------
+    omegac = omg + 1im*eta
     H00,H01 = matset(ky)
-    epsiloni = H00
-    epsilons = H00
-    epsilons_t = H00
-    alphai = H01
-    betai = conj(transpose(H01))
+    epsilon0s = H00
+    epsilon0 = H00
+    alpha0 = H01
+    beta0 = conj(transpose(H01))
     #-------------------------------------
     for i in 1:hn
         unit[i,i] = 1
     end
-    #-------------------------------------
-    omegac = omg + 1im*eta
+    #--------------------------------------------
     for iter in 1:itermax
-        g0 = inv(omegac*unit- epsiloni)
-        mat1 = alphai*g0
-        mat2 = betai*g0
-        g0 = mat1*betai
-        epsiloni = epsiloni + g0
-        epsilons = epsilons + g0
-        g0 = mat2*alphai
-        epsiloni= epsiloni + g0
-        epsilons_t = epsilons_t+ g0
-        g0 = mat1*alphai
-        alphai = g0
-        betai = g0
-        real_temp = abs(sum(alphai))
-        if real_temp < accuarrcy
-            break
-        end
+        epsilonis = epsilon0s + alpha0*inv(omegac*unit - epsilon0)*beta0
+        epsiloni = epsilon0 + beta0*inv(omegac*unit - epsilon0)*alpha0+alpha0*inv(omegac*unit - epsilon0)*beta0
+        alphai = alpha0*inv(omegac*unit - epsilon0)*alpha0
+        betai = beta0*inv(omegac*unit - epsilon0)*beta0
+
+        epsilon0s = epsilonis
+        epsilon0 = epsiloni
+        alpha0 = alphai
+        beta0 = betai
+        erracc = abs(sum(alphai))
+        # if erracc < accuarrcy
+        #     break
+        # end
     end
-    GLL = inv(omegac*unit - epsilons)
-    GRR = inv(omegac*unit - epsilons_t)
-    GBulk = inv(omegac*unit - epsiloni)
-    return GLL,GRR,GBulk
+    # GLL = inv(omegac*unit - epsilon0s)
+    # GBulk = inv(omegac*unit - epsilon0)
+    GLL = epsilon0s
+    GBulk = epsilon0
+    return GLL,GBulk
 end
-# ==========================================================
-function surfState()
+# ====================================================================================
+function gf2(omg::Float64,ky::Float64)
     hn::Int64 = 4
-    dk::Float64 = 0.01
-    domg::Float64 = 0.05
-    ky::Float64 = 0.0
-    omg::Float64 = 0.0
+    iter::Int64 = 0
+    itermax::Int64 = 100
+    eta::Float64 = 0.01
+    omegac::ComplexF64 = 0.0
+    epsilon0 = zeros(ComplexF64,hn,hn)
+    epsilon0s = zeros(ComplexF64,hn,hn)
+    epsiloni = zeros(ComplexF64,hn,hn)
+    epsilonis = zeros(ComplexF64,hn,hn)
+    alpha0 = zeros(ComplexF64,hn,hn)
+    alphai = zeros(ComplexF64,hn,hn)
+    beta0 = zeros(ComplexF64,hn,hn)
+    betai = zeros(ComplexF64,hn,hn)
+    H00 = zeros(ComplexF64,hn,hn)
+    H01 = zeros(ComplexF64,hn,hn)
+    unit = zeros(ComplexF64,hn,hn)
     GLL = zeros(ComplexF64,hn,hn)
     GRR = zeros(ComplexF64,hn,hn)
     GBulk = zeros(ComplexF64,hn,hn)
-    f1 = open("edgeState.dat","w")
+    #------------------------------------------
+    omegac = omg + 1im*eta
+    H00,H01 = matset(ky)
+    epsilon0s = H00
+    epsilon0 = H00
+    alpha0 = H01
+    beta0 = conj(transpose(H01))
+    #-------------------------------------
+    for i in 1:hn
+        unit[i,i] = 1
+    end
+    #--------------------------------------------
+    for iter in 1:itermax
+        epsilonis = epsilon0s + alpha0*inv(omegac*unit - epsilon0)*beta0
+        epsiloni = epsilon0 + alpha0*inv(omegac*unit - epsilon0)*beta0 + beta0*inv(omegac*unit - epsilon0)*alpha0
+        alphai = alpha0*inv(omegac*unit - epsilon0)*alpha0
+        betai = beta0*inv(omegac*unit - epsilon0)*beta0
+
+        epsilon0s = epsilonis
+        epsilon0 = epsiloni
+        alpha0 = alphai
+        beta0 = betai
+        erracc = abs(sum(alphai))
+    end
+    # GLL = inv(omegac*unit - epsilon0s)
+    # GBulk = inv(omegac*unit - epsilon0)
+    GLL = epsilon0s
+    GBulk = epsilon0
+    return GLL,GBulk
+end
+# ==========================================================
+function main()
+    hn::Int64 = 4
+    dk::Float64 = 0.01
+    domg::Float64 = 0.01
+    ky::Float64 = 0.0
+    omg::Float64 = 0.0
+    GLL = zeros(ComplexF64,hn,hn)
+    GBulk = zeros(ComplexF64,hn,hn)
+    f1 = open("test.dat","w")
     for ky in -pi:dk:pi
         for omg in -3:domg:3
-            GLL,GRR,GBulk = surfgreen_1985(omg,ky)
-            re1 = -imag(sum(GLL))/pi
-            re2 = -imag(sum(GRR))/pi
-            re3 = -imag(sum(GBulk))/pi
-            writedlm(f1,[ky/pi omg re1 re2 re3])
+            GLL,GBulk = gf2(omg,ky)
+            re1 = log(-imag(sum(GLL))/pi)
+            re2 = log(-imag(sum(GBulk))/pi)
+            writedlm(f1,[ky/pi omg re1 re2 re1 + re2],"\t")
         end
+        writedlm(f1,"\n")
     end
     close(f1)
 end
 # =========================================================
-@time surfState()
-```
-
-## Fortran
-```fortran
-    module pub
-    implicit none
-    integer hn,N,itermax
-    real eta,dk,de,pi,accuarrcy
-    parameter(hn = 4,eta = 0.01,dk = 0.1,de = dk,pi = 3.1415926535,itermax = 100,accuarrcy = 1e-5)
-    complex,parameter::im = (0.,1.0)  
-    complex H00(hn,hn),H01(hn,hn)
-    real one(hn,hn) 
-!=================================
-    real m0,tx,ty,ax,ay
-    complex g1(hn,hn),g2(hn,hn),g3(hn,hn) 
-    end module pub
-!================= PROGRAM START ============================
-    program sol
-    use pub
-    integer i1
-!======parameter value setting =====
-    m0 = 1.5
-    tx = 1.0
-    ty = 1.0
-    ax = 1.0
-    ay = 1.0
-    call main()
-    stop 
-    end program sol
-!=============================================================================================
-    subroutine main()
-    use pub
-    integer i1
-    complex GLL(hn,hn),GRR(hn,hn),GBulk(hn,hn)
-    real re1,re2,re3,kx,omega
-    open(30,file="spectral.dat")
-    do kx = -pi,pi,dk
-        do omega = -3,3,de
-            call surfgreen_1985(omega,kx,GLL,GRR,Gbulk)
-            re1 = 0
-            re2 = 0
-            re3 = 0
-            do i1 = 1,hn
-                re1 = re1 - aimag(GLL(i1,i1))
-                re2 = re2 - aimag(GRR(i1,i1))
-                re3 = re3 - aimag(GBulk(i1,i1))
-            end do
-            re1 = re1/pi
-            re2 = re2/pi
-            re3 = re3/pi
-            write(30,999)kx/pi,omega,re1,re2,re3
-        end do
-        write(30,*)" "
-    end do
-    close(30)
-999 format(10f11.6)
-    return
-    end subroutine main
-!==================================================
-    subroutine surfgreen_1985(omega,ky,GLL,GRR,Gbulk)
-    use pub
-    real omega,ky
-    integer iter
-    real real_temp
-    complex omegac
-    complex GLL(hn,hn),GRR(hn,hn),Gbulk(hn,hn)
-    complex alphai(hn,hn),betai(hn,hn),epsiloni(hn,hn),epsilons(hn,hn),epsilons_t(hn,hn)
-    complex mat1(hn,hn),mat2(hn,hn),g0(hn,hn)
-    !------------------------------------------
-    ! call openy(ky)
-    call openx(ky)
-    epsiloni = H00
-    epsilons = H00
-    epsilons_t = H00
-    alphai = H01
-    betai = conjg(transpose(H01))
-    omegac = omega + im*eta
-    do iter = 1,itermax
-        call inv(omegac*one- epsiloni,g0)
-        mat1 = matmul(alphai,g0)
-        mat2 = matmul(betai,g0)
-        g0 = matmul(mat1,betai)
-        epsiloni = epsiloni + g0
-        epsilons = epsilons + g0
-        g0 = matmul(mat2,alphai)
-        epsiloni = epsiloni + g0
-        epsilons_t = epsilons_t + g0
-        g0 = matmul(mat1,alphai)
-        alphai = g0
-        betai = g0
-        real_temp = abs(sum(alphai))
-        if (real_temp < accuarrcy) then
-            exit
-        end if
-        call inv(omegac*one - epsilons,GLL)
-        call inv(omegac*one - epsilons_t,GRR)
-        call inv(omegac*one - epsiloni,GBulk)  
-    end do
-    return
-    end subroutine surfgreen_1985
-!====================================================
-    subroutine Pauli()
-    use pub
-    integer i1
-    !=== Kinetic energy
-    g1(1,1) = 1
-    g1(2,2) = -1
-    g1(3,3) = 1
-    g1(4,4) = -1
-    !====== SOC-x
-    g2(1,2) = 1
-    g2(2,1) = 1
-    g2(3,4) = -1
-    g2(4,3) = -1
-    !====== SOC-y
-    g3(1,2) = -im
-    g3(2,1) = im
-    g3(3,4) = -im
-    g3(4,3) = im
-    !---------------
-    do i1 = 1,hn
-        one(i1,i1) = 1  !单位矩阵
-    end do
-    return
-    end subroutine Pauli
-!==========================================================
-    subroutine openx(ky)
-    use pub
-    real ky
-    integer m,l,k
-    call Pauli()
-    H00 = 0
-    H01 = 0
-    do m = 1,hn
-        do l = 1,hn
-            H00(m,l) = (m0-ty*cos(ky))*g1(m,l) + ay*sin(ky)*g3(m,l) 
-
-            H01(m,l) = (-tx*g1(m,l) - im*ax*g2(m,l))/2
-        end do
-    end do
-    return
-    end subroutine openx
-!==========================================================
-    subroutine openy(kx)
-    use pub
-    real kx
-    integer m,l,k
-    call Pauli()
-    H00 = 0
-    H01 = 0
-    do m = 1,hn
-        do l = 1,hn
-            H00(m,l) = (m0-tx*cos(kx))*g1(m,l) + ax*sin(kx)*g2(m,l)
-
-            H01(m,l) = (-ty*g1(m,l) - im*ay*g3(m,l))/2
-        end do
-    end do
-    return
-    end subroutine openy
-!=================================================================
-    subroutine inv(matin,matout)
-    use pub
-    complex,intent(in) :: matin(hn,hn)
-    complex:: matout(size(matin,1),size(matin,2))
-    real:: work2(size(matin,1))            ! work array for LAPACK
-    integer::info2,ipiv(size(matin,1))     ! pivot indices
-    ! Store A in Ainv to prevent it from being overwritten by LAPACK
-    matout = matin
-    ! SGETRF computes an LU factorization of a general M-by-N matrix A
-    ! using partial pivoting with row interchanges.
-    call CGETRF(hn,hn,matout,hn,ipiv,info2)
-    if (info2.ne.0)then
-      write(*,*)'Matrix is numerically singular!'
-      stop
-    end if
-    ! SGETRI computes the inverse of a matrix using the LU factorization
-    ! computed by SGETRF.
-    call CGETRI(N,matout,hn,ipiv,work2,hn,info2)
-    if (info2.ne.0)then
-        write(*,*)'Matrix inversion failed!'
-        stop
-    end if
-    return
-    end subroutine inv
+# @time main()
+main()
 
 ```
+
 # 绘图
 ```shell
 set encoding iso_8859_1
@@ -397,3 +263,5 @@ splot 'openy-bhz.dat' u 1:2:3 w pm3d
 
 # 参考
 1. [Highly convergent schemes for the calculation of bulk and surface Green functions](https://iopscience.iop.org/article/10.1088/0305-4608/15/4/009)
+
+2. [参考资料](/assets/pdf/sg8_6.pdf)
