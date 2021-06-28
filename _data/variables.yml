@@ -32,7 +32,7 @@ default:
     show_tags: true
     show_author_profile: true
     show_subscribe: true
-    full_width: true
+    full_width: false
     sharing: true
     comment: true
     license: true
