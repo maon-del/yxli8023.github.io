@@ -64,4 +64,5 @@ $F_{i,j}$的维度是$2N\times 2N$，即表示此时的占据态共有$2N$个
 
 # 参考
 1.[$Z_2$拓扑不变量与拓扑绝缘体](http://www.wuli.ac.cn/CN/abstract/abstract32045.shtml)
+
 2.[An equivalent expression of $Z_2$ Topological Invariant for band insulators using Non-Abelian Berry's connection](https://arxiv.org/abs/1101.2011)
