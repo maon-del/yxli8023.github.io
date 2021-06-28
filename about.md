@@ -13,6 +13,7 @@ titles:
   zh-SG   : *ZH_HANS
   # @end locale config
 key: page-about
+show_title: false
 license: true
 toc: true
 pageview: true
