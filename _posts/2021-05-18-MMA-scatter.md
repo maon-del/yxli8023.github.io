@@ -18,7 +18,7 @@ aside:
     toc: true
 sitemap: true
 mathjax: true
-cover: /assets/page-article-header-overlay-background-image-header-background.jpg
+cover: /assets/images/Mma/r1.png
 author: YuXuan
 show_author_profile: true
 ---
@@ -29,11 +29,13 @@ show_author_profile: true
 当利用程序求解得到密度图数据后,利用Mathamatica直接绘制得到的效果并不好,这里先争议如何通过`Graphics`来绘制密度图,可以得到很好的显示效果
 
 ![png](/assets/images/Mma/den-scatter1.png)
+
 ![png](/assets/images/Mma/r1.png)
 
 ## 函数封装
 
 ![png](/assets/images/Mma/den-scatter2.png)
+
 ![png](/assets/images/Mma/r2.png)
 
 这里在绘制的时候,设置了一下旋转,将整个图形转动了45度,这个转动角度时可以调节的,可以通过**RotationMatrix**中的转动角度来进行调整,但是在调整了旋转角度之后会使得colorbar和图形重叠到一起,这个时候需要重新设置**Inset**中的第二个参数,来调整插入的corlorbar的位置,同时也可以调整第四个参数来设置colorbar的尺寸大小.至于配色也可以自行设置,具体颜色可以查阅帮助文档.
