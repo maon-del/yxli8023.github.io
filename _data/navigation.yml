@@ -36,5 +36,5 @@ header:
     url:   https://github.com/yxli8023
 
   - title: 网站收藏
-    url:   /samples.html
-    key: web-Collect
+    url:   /webCollect.html
+    key: webCollect-page
