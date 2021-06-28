@@ -18,7 +18,7 @@ aside:
     toc: true
 sitemap: true
 mathjax: true
-cover: /assets/images/Mma/Remain-code1.png
+cover: /assets/images/Mma/Remain-pic1.png
 author: YuXuan
 show_author_profile: true
 ---

@@ -18,7 +18,7 @@ aside:
     toc: true
 sitemap: true
 mathjax: true
-cover: /assets/images/Mma/vector-sphere-code.png
+cover: /assets/images/Mma/vector-sphere.png
 author: YuXuan
 show_author_profile: true
 ---
