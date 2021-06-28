@@ -181,7 +181,7 @@ plot for [i=2:3] 'test-format.dat' u 1:i w p  pt 7  ps 1.1 lc 'red' # 绘制多�
 #plot 'test-format.dat' u 1:2 w p pt 7 ps 4 lc 'red'
 ```
 
-![png](/assets/images/topology/bhz-Wilson.png)
+![png](/assets/images/topology/bhz-wilson.png)
 
 
 # 参考
