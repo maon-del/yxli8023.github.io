@@ -35,6 +35,17 @@ show_author_profile: true
 - 在颜色区分的基础上,再根据格点的大小来区分密度
 ![png](/assets/images/Mma/den2.png)
 
+# 3D
+- 首先把代码贴出来
+
+![png](/assets/images/Mma/den3-code.png)
+
+- 首先根据颜色进行区分
+![png](/assets/images/Mma/den3.png)
+
+- 在颜色区分的基础上,再根据格点的大小来区分密度
+![png](/assets/images/Mma/den4.png)
+
 # 代码下载
 源代码可以[点击这里下载](/assets/data/mma-density.nb)
 
