@@ -85,6 +85,11 @@ a \mathcal{U}=\{a \circ p \mid p \in \mathcal{U} \subseteq \mathcal{G}\}, & a \i
 
 计算的代码可以[点击这里下载](/assets/data/1005.nb)
 
+如果$\theta$是$\mathbf{G}$到$\mathbf{G}^{'}$的同态映射,$\mathbf{H}$是$\theta$的Kernel,那么$\mathbf{H}$是群$\mathbf{G}$的不变子群,且$\mathbf{G}^{'}$与商群$\mathbf{G}/\mathbf{H}$是同构的.
+
+如果$\mathbf{H}$是群$\mathbf{G}$的不变子群,且$\theta$会将群$\mathbf{G}$映射到$\mathbf{G}/\mathbf{H}$上,那么$\theta G=G\mathbf{H}\quad,G\in\mathbf{G}$,此时$\theta$是个同态映射,其对应的Kernel是子群$\mathbf{H}$.
+
+
 ## Homomorphism
 存在两个群$G$与$G^{'}$,如果在$G$与$G^{'}$有一个映射关系$\theta$且仍然满足群元素的运算关系,那么这个映射称为同态(Homomorphism).
 
@@ -126,6 +131,17 @@ If $\theta(E)= E, \theta(A)= B, (B)= C, \theta(C)= A, \theta(D)= F$, and $\theta
 
 ## 简单群(simple group)
 - 如果一个群没有正规不变子群,就称为简单群,若没有正规不变阿贝尔子群,则成为半简单群(semi-simple).
+
+## 外直积
+群$\mathbf{G}$有两个子群$\mathbf{H},\mathbf{K}$,存在如下关系
+- (1):$H\in\mathbf{H},K\in\mathbf{K}\rightarrow HK=KH$,
+- (2):群$\mathbf{G}$中的所有元素$G\in\mathbf{G}$可以表示为$G=HK,H\in\mathbf{H},K\in\mathbf{K}$,
+- (3):两个子群的交集为$\mathbf{K}\cap\mathbf{H}={E}$,这个单位元素$E\in\mathbf{G}$.
+
+此时群$\mathbf{G}$叫做$\mathbf{K},\mathbf{H}$的外直积,$\mathbf{G}=\mathbf{K}\otimes\mathbf{H}$
+
+## 内直积
+
 
 
 
