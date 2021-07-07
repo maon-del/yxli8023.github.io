@@ -4,7 +4,8 @@ tags: Group-Theory
 layout: article
 license: true
 toc: true
-key: a20210415
+key: a20210707
+cover: /assets/images/GroupTheory/cube_symmetry.jpg
 header:
   theme: dark
   background: 'linear-gradient(135deg, rgb(34, 139, 87), rgb(139, 34, 139))'
@@ -22,19 +23,19 @@ show_author_profile: true
 学习群论有一段时间了, 这里想结合一些工具, 并通过一些书籍阅读来将自己所学到的内容整理一下, 同时加深一下自己对这些知识内容的理解.
 {:.info}
 <!--more-->
-
-# 共轭
+# 基本概念
+## 共轭
 一个元素$a,b,c$是群$\mathcal{G}$的群元$(a,b,c)\in\mathcal{G}$,加入下列关系成立
 
 $$a=c\circ b\circ c^{-1}\label{eq1}$$
 
 那么就说群元$a$与$b$之间是共轭的.**上式中的$\quad\circ\quad$代表的是群元的操作**.
-# 类
+## 类
 利用(\ref{eq1})的关系,将所有与群元$b$共轭的群元划分成一组,那么这一组叫做一个类.
 
 $$\mathcal{C}_{a}=\left\{a_{i} \mid a, b \in \mathcal{G} \wedge a_{i}=b \circ a \circ b^{-1} \wedge a \text { fixed }\right\}$$
 
-# 陪集
+## 陪集
 假设$\mathcal{U}$是群$\mathcal{G}$的子群,$a$是$\mathcal{G}$中的元素,那么$a\mathcal{U}$代表元素$a$和群$\mathcal{U}$中的每一个元素相操作,形成一个集合,叫做左陪集.那么相应的$\mathcal{U}a$就叫做右陪集
 
 $$\begin{array}{ll}
@@ -46,14 +47,25 @@ a \mathcal{U}=\{a \circ p \mid p \in \mathcal{U} \subseteq \mathcal{G}\}, & a \i
 
 ![png](/assets/images/GroupTheory/coset1.png)
 
-# 不变子群
+## 子群
+- 群$G$中的一些元素组成一个集合$H$,如果这些元素仍然满足群的定义,那么$H$就是$G$的一个子群.
+
+一个群它自身和单位元一定是其子群,这样的子群叫做非正规子群(improper subgroup),其余的子群叫做正规子群(proper subgroup).
+
+## 阿贝尔群
+- 如果一个群中的元素满足$G_1G_2=G_2G_1$则成这个群是阿贝尔群.
+
+## 拉格朗日定理
+- 群$G$的子群的阶数,一定是群$G$阶数的因子.
+
+## 不变子群
 首先给出书上不变子群的定义
 
 ![png](/assets/images/GroupTheory/invsub.png)
 
 解释一下,就是首先这个子群$\mathcal{S}$的所有元素,在$x\in\mathcal{G}$的共轭操作下,还是它自己,这里要强调的是,这个关系要对所有的$x\in\mathcal{G}$都成立才可以,这就是不变子群的特殊之处.
 
-# 商群(Factor Group)
+## 商群(Factor Group)
 ![png](/assets/images/GroupTheory/factor.png)
 
 既然前面提到了,对于陪集来说,它们之间要么是相同的,要么是完全没有交集,利用这个性质,可以简单的将陪集想象成基矢,类似于坐标空间中的基矢,只不过这个时候的基矢就是我们提到的陪集,那么就可以将整个群在这些基矢上进行分解,也就是图中(3.17)所表示的含义,至于这个基矢的数量可以参考陪集中定理8的第六条.
@@ -73,17 +85,17 @@ a \mathcal{U}=\{a \circ p \mid p \in \mathcal{U} \subseteq \mathcal{G}\}, & a \i
 
 计算的代码可以[点击这里下载](/assets/data/1005.nb)
 
-# Homomorphism
+## Homomorphism
 存在两个群$G$与$G^{'}$,如果在$G$与$G^{'}$有一个映射关系$\theta$且仍然满足群元素的运算关系,那么这个映射称为同态(Homomorphism).
 
 $$(\theta A_i)(\theta A_j)=\theta(A_iA_j)\quad \text{for all }A_i,A_j\in G$$
 
 阶数较小的群称为阶数较大的群的同态像(homomorph). 把$G$中映射到$G^{'}$单位元素上的所有元素的集合, 称为同态核(kernel of the homomorphism).
 
-# Isomorphism
+## Isomorphism
 如果这个映射使得群$G$与$G^{'}$中的元素满足一一对应关系, 那么此时的$\theta$叫做同构(Isomorphism), 两个群之间是同构的(isomorphic).
 
-# automorphism
+## automorphism
 如果两个群$G$与$G^{'}$是完全相同的, 那么也就是$\theta$是一个群到自身的映射, 那么这种映射称为自同构(automorphism).
 
 如果$\theta$是自同构映射, 且映射满足
@@ -102,4 +114,19 @@ is a homomorphism of $G_6$ onto $G_2$.
 The groups $C_{3v}$, $D_3$ and $S_3$ are isomorphic: They have the same order and share the same multiplication table.
 
 If $\theta(E)= E, \theta(A)= B, (B)= C, \theta(C)= A, \theta(D)= F$, and $\theta(F)= D$, the mapping is an automorphism of $G_6$ onto itself.
+
+## Kernel
+- 如果$\theta$是$\mathbf{G}$到$\mathbf{G}^{'}$的同态映射,$\theta\mathbf{G}=\mathbf{G}^{'}$,映射$\theta$的Kernel就是群$\mathbf{G}$中映射到群$\mathbf{G}^{'}$单位元的群元.
+
+这里可以知道,对于同构映射,其Kernel只有一个群元素.
+
+
+## 内自同构(Inner automorphism)
+- 一个映射$\beta$将群$\mathbf{G}$映射到它自身,$\beta G=BGB^{-1}$,这里$G\in\mathbf{G}$,$B$是群$\mathbf{G}$中的一个固定元素,这是一个自同构,而通过这种共轭方式产生的自同构称为**内自同构**.
+
+## 简单群(simple group)
+- 如果一个群没有正规不变子群,就称为简单群,若没有正规不变阿贝尔子群,则成为半简单群(semi-simple).
+
+
+
 
