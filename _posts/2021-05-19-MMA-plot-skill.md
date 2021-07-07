@@ -55,6 +55,10 @@ show_author_profile: true
 
 ![png](/assets/images/Mma/multi-pic2.png)
 
+# 变色环
+
+![png](/assets/images/Mma/ring-color.png)
+
 
 
 

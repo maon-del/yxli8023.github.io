@@ -102,3 +102,4 @@ is a homomorphism of $G_6$ onto $G_2$.
 The groups $C_{3v}$, $D_3$ and $S_3$ are isomorphic: They have the same order and share the same multiplication table.
 
 If $\theta(E)= E, \theta(A)= B, (B)= C, \theta(C)= A, \theta(D)= F$, and $\theta(F)= D$, the mapping is an automorphism of $G_6$ onto itself.
+
