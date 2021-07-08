@@ -141,8 +141,34 @@ If $\theta(E)= E, \theta(A)= B, (B)= C, \theta(C)= A, \theta(D)= F$, and $\theta
 此时群$\mathbf{G}$叫做$\mathbf{K},\mathbf{H}$的外直积,$\mathbf{G}=\mathbf{K}\otimes\mathbf{H}$
 
 ## 内直积
+- 外直积$\mathbf{H}\otimes\mathbf{H}$群的一个子群$\mathbf{G}$与群$\mathbf{H}$是同构的(isomorphic),那么称$\mathbf{G}$是$\mathbf{H}$自身的内直积$\mathbf{G}=\mathbf{H}\boxtimes\mathbf{H}$.
+
+这里再强调一下,此时群$\mathbf{G}$是外直积群的子群.
+
+## 半直积
+$\mathbf{H},\mathbf{K}$是群$\mathbf{G}$的子群,当满足
+- (1):$K\in\mathbf{K},K\mathbf{H}=\mathbf{H}K$,
+- (2):所有的$G\in\mathbf{G}$可以表示为$G=HK$且$K\in\mathbf{K},H\in\mathbf{H}$,
+- (3):子群$\mathbf{H},\mathbf{K}$的交集为$\mathbf{K}\cap\mathbf{H}={E}$,
+
+此时称$\mathbf{G}$是子群$\mathbf{H},\mathbf{K}$的半直积$\mathbf{G}=\mathbf{H}\land\mathbf{K}$.这里可以看出子群$\mathbf{H}$是群$\mathbf{G}$的不变子群,但是$\mathbf{K}$却不必是个不变子群.
 
 
+## 全形(holomorph)
+- 一个半直积$\mathbf{G}\land\mathbf{A}(\mathbf{G})$叫做群$\mathbf{G}$的同形,这里的$\mathbf{A}(\mathbf{G})$是群$\mathbf{G}$的自同构群.
 
+## 不变子空间
+- 如果$\gamma$是$\mathbf{G}$的一个表示,$\mathbf{T}=\gamma\mathbf{G}$是作用在矢量空间$\mathbf{V}$上的非奇异线性算符,在$\mathbf{T}$下$\mathbf{U}$称为$\mathbf{V}$的不变子空间,当其满足下面条件:
+(1):$\mathbf{U}$是$\mathbf{V}$的矢量子空间,
+(2):对所有的$\mathbf{x}\in\mathbf{U}$有$\mathbf{T}_G\mathbf{x}\in\mathbf{U}$,这里的$\mathbf{T}_G\in\mathbf{T}$.
 
+## 群表示
 
+- 一个群的不可约表示数目等于群类的数目
+- 所有不可约表示维数的平方和等于群的阶数$\sum_{i=1}^{r}d_i^2=\rvert\mathbf{G}\rvert$
+
+# 点群
+
+- 三维的点群是指对称操作作用在一个点上,保持变换对象的距离和角度不变.
+- 当一个点群只包含转动操作的时候,被称为三维正规转动群,它与行列式=+1的SO(3)群是同构的.
+- 当一个群包含所有的转动与反演操作的乘积被称为三维转动群,它与所有$3\times 3$的O(3)群是同构的.
