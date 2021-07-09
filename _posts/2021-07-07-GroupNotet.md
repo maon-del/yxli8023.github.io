@@ -172,3 +172,26 @@ $\mathbf{H},\mathbf{K}$是群$\mathbf{G}$的子群,当满足
 - 三维的点群是指对称操作作用在一个点上,保持变换对象的距离和角度不变.
 - 当一个点群只包含转动操作的时候,被称为三维正规转动群,它与行列式=+1的SO(3)群是同构的.
 - 当一个群包含所有的转动与反演操作的乘积被称为三维转动群,它与所有$3\times 3$的O(3)群是同构的.
+
+## 布拉菲点阵
+三维空间中一共会存在14种布拉菲点阵,而着14种点阵又可以分为7大晶系,每个晶系满足不同的对称操作
+
+![png](/assets/images/GroupTheory/1-1.png)
+
+Table 1.2中操作元素分成了两列,右侧的一列就是左侧列组合反演对称操作`I`之后的结果.$C_{nr}^{-}$表示绕着$r$轴顺时针旋转$2\pi/n$度,而$C_{nr}^+$则表示顺时针转动.在上面的标记中反射面标记为$\sigma$,而其它的旋转反射标记为$S$.
+
+> $\sigma=IC_2,IC_3^\pm=S_6^\mp$
+
+$S^+_n$表示先逆时针转动$2\pi/n$然后再通过垂直于旋转轴的面进行反射(reflection),从而可以得到$IC^+_n=\sigma C_2C^+_n=\sigma(C_{2n}^+)^{n+2}=(S_{2n}^-)^{n+2}$
+
+![png](/assets/images/GroupTheory/1-2.png)
+
+图中Table 1.2分别给出了这些晶系满足的对称操作和其对应的点群标记.上面的点群操作对应的图示如下
+
+![png](/assets/images/GroupTheory/1-3.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/1-4.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/1-5.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/1-6.png)
