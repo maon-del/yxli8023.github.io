@@ -1,5 +1,5 @@
 ---
-title: 
+title: Origin Plot绘图方法整理
 tags: Plot Origin 
 layout: article
 license: true
