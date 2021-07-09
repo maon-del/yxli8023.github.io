@@ -182,16 +182,17 @@ Table 1.2中操作元素分成了两列,右侧的一列就是左侧列组合反�
 
 > $\sigma=IC_2,IC_3^\pm=S_6^\mp$
 
-$S^+_n$表示先逆时针转动$2\pi/n$然后再通过垂直于旋转轴的面进行反射(reflection),从而可以得到$IC^+_n=\sigma C_2C^+_n=\sigma(C_{2n}^+)^{n+2}=(S_{2n}^-)^{n+2}$
+$S^+_n$表示先逆时针转动$2\pi/n$然后再通过垂直于旋转轴的面进行反射(reflection),从而可以得到
+> $IC^+_n=\sigma C_2C^+_n=\sigma(C_{2n}^+)^{n+2}=(S_{2n}^-)^{n+2}$
 
 ![png](/assets/images/GroupTheory/1-2.png)
 
 图中Table 1.2分别给出了这些晶系满足的对称操作和其对应的点群标记.上面的点群操作对应的图示如下
 
-![png](/assets/images/GroupTheory/1-3.png){:width="330px",:height="495px"}
+![png](/assets/images/GroupTheory/1-3.png)
 
-![png](/assets/images/GroupTheory/1-4.png){:width="330px",:height="495px"}
+![png](/assets/images/GroupTheory/1-4.png)
 
-![png](/assets/images/GroupTheory/1-5.png){:width="330px",:height="495px"}
+![png](/assets/images/GroupTheory/1-5.png)
 
 ![png](/assets/images/GroupTheory/1-6.png)
