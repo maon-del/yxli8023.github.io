@@ -183,7 +183,8 @@ Table 1.2中操作元素分成了两列,右侧的一列就是左侧列组合反�
 > $\sigma=IC_2,IC_3^\pm=S_6^\mp$
 
 $S^+_n$表示先逆时针转动$2\pi/n$然后再通过垂直于旋转轴的面进行反射(reflection),从而可以得到
-> $IC^+_n=\sigma C_2C^+_n=\sigma(C_{2n}^+)^{n+2}=(S_{2n}^-)^{n+2}$
+
+$$IC^{+}_{n}=\sigma C_2C^{+}_{n}=\sigma(C_{2n}^+)^{n+2}=(S_{2n}^-)^{n+2}$$
 
 ![png](/assets/images/GroupTheory/1-2.png)
 
@@ -255,3 +256,24 @@ $$\sum_{i=1}^7n_ip_i$$
 ![png](/assets/images/GroupTheory/1-12.png)
 
 通过考虑滑移反射和螺旋操作之后,会存在157中非点式空间群.这里需要说明一下,滑移反射中的平移操作一定是在自身的反射面中,而螺旋操作中的平移操作一定是沿着转动轴的.157个非点式空间群加上73个点式空间群,最终一共有230个空间群,如Table1.7所示.
+
+## 空间群操作符号
+
+$$\{\mathbf{R}_1\rvert \mathbf{v}_1\}\mathbf{r}=\mathbf{r}^{'}=\mathbf{R}_1\mathbf{r}+\mathbf{v}_1$$
+
+这里的$\mathbf{R}_1$表示点群操作,$\mathbf{v}_1$则是平移矢量.
+
+$$\{\mathbf{R}_2\rvert\mathbf{v}_2\}\{\mathbf{R}_1\rvert\mathbf{v}_1\}=\{\mathbf{R}_1\mathbf{R}_2\rvert\mathbf{v}_2+\mathbf{R}_2\mathbf{v}_1\}$$
+
+当点群操作$\mathbf{R}$作用到一个空间矢量上之后
+
+$$\mathbf{Rr}=\mathbf{r}^{'}$$
+
+在$\mathbf{r}$和$\mathbf{r}^{'}$对应的操作上,可以定义函数关系满足
+
+$$g(\mathbf{r}^{'}=f(\mathbf{r})$$
+
+这里的虽然$\mathbf{r}$和$\mathbf{r}^{'}$是不同的,但是当将两者作为参数进行函数映射之后,对应的函数表达式确实相同的,因此对于点群操作$\mathbf{R}$可以在函数上定义函数空间中的操作算符$\bar{R}$有$g=\bar{R}f$,其存在关系
+
+$$\bar{R}f(\mathbf{r})=f(\mathbf{R}^{-1}\mathbf{r})$$
+
