@@ -74,7 +74,37 @@ $$IY^l_m(\theta,\phi)=(-1)^lY^l_m(\theta,\phi)$$
 
 $$R\phi_s^i=\sum_{t=1}^{d_i}\phi_t^i\mathbf{D}^i(R)_{ts},\quad R\in\mathbf{G}$$
 
+这里的$\phi_s^i$是属于不可约表示$\Gamma^i$的第$s$行的symmetry-adapted function,这些所有的$\phi_s^i$构成了一个完整的线性空间$V$.
 
+首先来定义一个元素$W^i_{ts}$:
+
+$$W^i_{ts}=\frac{d_i}{\rvert\mathbf{G}\rvert}\sum_{R\in\mathbf{G}}\mathbf{D}^i(R)_{ts}^*R$$
+
+这里的求和是对所有$R\in\mathbf{G}$进行的,从它的定义中可以看出它是由一些数和群$\mathbf{G}$中的操作群元组成的.
+
+- 定理:如果$\phi$是$V$中的任意一个函数满足$W^i_{ss}\phi\neq 0$($s$是固定的,可以遍历1到$d_i$),那么函数$W^i_{ts}\phi=\phi^i_t,t=1\rightarrow d_i$就构成了不可约表示$\Gamma^i$的一个基矢.
+
+这里可以将$\phi$看做是symmetry-adapted function的生成函数,$W_{ss}^i$是投影算符.
+
+## 点群基函数寻找
+对于一个点群$\mathbf{G}$其中的元素为$R,S,\cdots$,其对应的矩阵表示为$\mathbf{D}^i(R),\mathbf{D}^i(S),\cdots$,此时选择球谐函数$Y_l^m(\theta,\phi)$作为生成函数,来计算投影算符对球谐函数的作用
+
+$$W^i_{ts}Y_l^m(\theta,\phi)=\frac{d_i}{\rvert \mathbf{G}\rvert}\sum_{R\in\mathbf{G}}\mathbf{D}^i(R)_{ts}^*RY_l^m(\theta,\phi)$$
+
+此时需要计算$RY_l^m(\theta,\phi)$,这里的额$R$表示正规转动操作或者反演操作,它们对球谐函数的作用在前面已经给出,如果$R$是一个非正规转动(improper)可以将其表示为$R=IQ$,此时需要同时计算$QY_l^m(\theta,\phi),IY_l^m(\theta,\phi)$,反演操作不过是简单的加上一个$(-1)^l$的因子,最终可以将上式变为
+
+$$W^i_{ts}Y_l^m(\theta,\phi)=\frac{d_i}{\rvert\mathbf{G}\rvert}\sum_{R\in\mathbf{G}}P_R\mathbf{D}^i(R)_{ts}^*\exp(-im\alpha)\sum_nC_{nm}\exp(-in\gamma)d^l(\beta)Y^n_l(\theta,\phi)$$
+
+## 晶体点群symmetry-adapted function
+首先给出32个点群对应的特征标表
+
+![png](/assets/images/GroupTheory/1-15.png)
+
+![png](/assets/images/GroupTheory/1-16.png)
+
+![png](/assets/images/GroupTheory/1-17.png)
+
+![png](/assets/images/GroupTheory/1-18.png)
 
 
 
