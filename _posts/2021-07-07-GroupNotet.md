@@ -1,5 +1,5 @@
 ---
-title: 群论学习笔记(.......ing)
+title: 群论学习笔记-Part1
 tags: Group-Theory
 layout: article
 license: true
@@ -276,4 +276,21 @@ $$g(\mathbf{r}^{'}=f(\mathbf{r})$$
 这里的虽然$\mathbf{r}$和$\mathbf{r}^{'}$是不同的,但是当将两者作为参数进行函数映射之后,对应的函数表达式确实相同的,因此对于点群操作$\mathbf{R}$可以在函数上定义函数空间中的操作算符$\bar{R}$有$g=\bar{R}f$,其存在关系
 
 $$\bar{R}f(\mathbf{r})=f(\mathbf{R}^{-1}\mathbf{r})$$
+
+## 主动/被动操作
+主动操作(active)是固定坐标轴之后变换点的位置
+
+$$\{\mathbf{R}_a\rvert\mathbf{v}\}\mathbf{r}=\mathbf{R}_a\mathbf{r}+\mathbf{v}$$
+
+$$\{\mathbf{S}_a\rvert\mathbf{w}\}\{\mathbf{R}_a\rvert\mathbf{v}\}=\{\mathbf{S}_a\mathbf{R}_a\rvert\mathbf{w}+\mathbf{S}_a\mathbf{v}\}$$
+
+$$\{\mathbf{R}_a\rvert\mathbf{v}\}^{-1}=\{\mathbf{R}_a^{-1}\rvert-\mathbf{R}_a^{-1}\mathbf{v}\}$$
+
+被动转动是在固定操作点的情况下操作坐标轴进行变化
+
+$$[\mathbf{R}_p\rvert\mathbf{v}]\mathbf{r}=\mathbf{R}_p\mathbf{r}-\mathbf{R}_p\mathbf{v}$$
+
+$$[\mathbf{S}_p\rvert\mathbf{w}][\mathbf{R}_p\rvert\mathbf{v}]=[\mathbf{S}_p\mathbf{R}_p\rvert\mathbf{v}+\mathbf{R}_p\mathbf{w}]$$
+
+$$[\mathbf{R}_p\rvert\mathbf{v}]^{-1}=[\mathbf{R}_p^{-1}\rvert-\mathbf{R}_p\mathbf{v}]$$
 
