@@ -24,6 +24,7 @@ show_author_profile: true
 {:.info}
 <!--more-->
 # 点群操作基函数
+## 球谐函数
 对于点群操作,可以找到对应的一些基函数来满足变换性质,从而在基函数的基础上可以得到操作的矩阵表示,这里就以球谐函数为出发点,来寻找点群操作的基函数.首先球谐函数的定义为
 
 $$Y_l^m(\theta,\phi)=\sqrt{\frac{(2l+1)(l-\rvert m\rvert)!}{4\pi(l+\rvert m\rvert)!}}P_l^m(\cos\theta)\exp(im\phi)$$
@@ -36,17 +37,17 @@ $$P_l^m(\cos\theta)=\frac{1}{2^ll!}\sin^{\rvert m\rvert}\theta\frac{d^{l+\rvert 
 
 ![png](/assets/images/GroupTheory/1-13.png)
 
-一个转动操作$\mathbf{R}(\alpha,\beta,\gamma)$就对应着连续进行这三个操作,这里采用主动坐标系(active),此时的转动方向都是逆时针方向进行的.当将一个转动操作作用到球谐函数上之后
+一个转动操作$R(\alpha,\beta,\gamma)$就对应着连续进行这三个操作,这里采用主动坐标系(active),此时的转动方向都是逆时针方向进行的.当将一个转动操作作用到球谐函数上之后
 
-$$\mathbf{R}(\alpha,\beta,\gamma)Y^m_l(\theta,\phi)=\sum_{n=-l}^{l}Y^n_l(\theta,\phi)\mathcal{D}^l\{\mathbf{R}(\alpha,\beta,\gamma)\}_{mn}$$
+$$R(\alpha,\beta,\gamma)Y^m_l(\theta,\phi)=\sum_{n=-l}^{l}Y^n_l(\theta,\phi)\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}_{mn}$$
 
 这里的矩阵$\mathcal{D}^l$为
 
-$$\mathcal{D}^l\{\mathbf{R}(\alpha,\beta,\gamma)\}_{nm}=C_{nm}\exp(-in\gamma)d^l(\beta)_{nm}\exp(-im\alpha),\quad C_{nm}=(i^{\rvert n\rvert+n})(i^{-\rvert m\rvert -m})$$
-1
+$$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}_{nm}=C_{nm}\exp(-in\gamma)d^l(\beta)_{nm}\exp(-im\alpha),\quad C_{nm}=(i^{\rvert n\rvert+n})(i^{-\rvert m\rvert -m})$$
+
 $$d^l(\beta)_{nm}=\sum_k\frac{(-1)^{k-m+n}\sqrt{(l+n)!(l+m)!(l-n)!(l-m)!}}{(l-n-k)!(l+m-k)!k!(k-m+n)!}\cos^{2l+m-n-2k}(\frac{1}{2}\beta)\sin^{2k+n-m}(\frac{1}{2}\beta),\quad k=\text{max}\{0,(m-n)\}\rightarrow\text{min}\{(l-n),(l+m)\}$$
 
-对于三维空间中的转动操作$\mathbf{R}(\alpha,\beta,\gamma)$,当整数$l$确定之后,只有唯一的一个$\mathcal{D}^l\{\mathbf{R}(\alpha,\beta,\gamma)\}$与之相对应.对于一个给定的$l$值的矩阵$\mathcal{D}^l\{\mathbf{R}(\alpha,\beta,\gamma)\}$形成了一个$(2l+1)$维的旋转群$\mathbf{R}(\alpha,\beta,\gamma)$的表示,而球谐函数$Y_l^m(\theta,\phi)(-l\le m\le l)$则是这个表示的基矢.矩阵元素$d^l(\beta)_{nm}$会有下面的对称关系
+对于三维空间中的转动操作$R(\alpha,\beta,\gamma)$,当整数$l$确定之后,只有唯一的一个$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$与之相对应.对于一个给定的$l$值的矩阵$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$形成了一个$(2l+1)$维的旋转群$R(\alpha,\beta,\gamma)$的表示,而球谐函数$Y_l^m(\theta,\phi)(-l\le m\le l)$则是这个表示的基矢.矩阵元素$d^l(\beta)_{nm}$会有下面的对称关系
 
 $$d^l(\beta)_{nm}=d^l(\beta)_{-m,-n}=(-1)^{m+n}d^l(\beta)_{mn}$$
 
@@ -54,11 +55,11 @@ $$d^l(\beta)_{nm}=d^l(\beta)_{-m,-n}=(-1)^{m+n}d^l(\beta)_{mn}$$
 
 - 当$\beta=0$的时候:
 
-$$\mathcal{D}^l\{\mathbf{R}(\alpha,0,\gamma)\}_{nm}=\exp(-im\alpha)\exp(-im\gamma)\delta_{nm}$$
+$$\mathcal{D}^l\{R(\alpha,0,\gamma)\}_{nm}=\exp(-im\alpha)\exp(-im\gamma)\delta_{nm}$$
 
 - 当$\beta=\pi$的时候:
 
-$$\mathcal{D}^l\{\mathbf{R}(\alpha,\pi,\gamma)\}_{nm}=(-1)^l\exp(-im\alpha)\exp(im\gamma)\delta_{n,-m}$$
+$$\mathcal{D}^l\{R(\alpha,\pi,\gamma)\}_{nm}=(-1)^l\exp(-im\alpha)\exp(im\gamma)\delta_{n,-m}$$
 
 为了研究球谐函数在晶体点群操作下的性质,还需要考虑反演操作$I$
 
@@ -67,6 +68,15 @@ $$IY^l_m(\theta,\phi)=(-1)^lY^l_m(\theta,\phi)$$
 下面给出一个点群操作对应的欧拉角
 
 ![png](/assets/images/GroupTheory/1-14.png)
+
+## 基函数寻找
+对弈一个群$\mathbf{G}$其对应的阶数为$\rvert\mathbf{G}\rvert$,其对应的不可约表示$\Gamma^i\{R\rightarrow\mathbf{D}^i(R)\}$已知,这里的$\mathbf{D}^i$是是群元$R$的矩阵表示,对应的维度是$d_i$,而现在就要找到一组合适的基矢$\langle\phi_1^i,\phi_2^i,\cdots,\phi_{d_i}^i\rvert$满足
+
+$$R\phi_s^i=\sum_{t=1}^{d_i}\phi_t^i\mathbf{D}^i(R)_{ts},\quad R\in\mathbf{G}$$
+
+
+
+
 
 
 
