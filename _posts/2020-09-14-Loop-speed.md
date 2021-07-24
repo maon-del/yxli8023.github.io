@@ -43,6 +43,7 @@ print('Timing cost is(s):  ',t2 - t1)
 ```
 > Result is:  1498500000000
 > Timing cost is(s):   85.73423385620117
+
 ## julia
 ```julia
 function sum1(num::Int128)
@@ -61,6 +62,7 @@ end
 > Result is: 1498500000000
 > 
 > Timing cost is(s): 0.000084 seconds
+
 ## Fortran
 ```fortran
 program main
@@ -88,6 +90,7 @@ end program main
 > Result is:          1498500000000
 >
 > Timing cost is(s):   0.4992760
+
 ## Mathematica
 ```mathematica
 Sum[i + j + k, {i, 0, 999}, {j, 0, 999}, {k, 0, 999}] // AbsoluteTiming
@@ -127,6 +130,7 @@ print('Timing cost is(s):  ',t2 - t1)
 > 2424547410323587072
 > 
 > Timing cost is(s):   0.08331894874572754
+
 ## julia
 ```julia
 function sum1(num::Int128)
@@ -144,6 +148,7 @@ end
 ```
 > 0.794240 seconds
 > 2424547410323587072
+
 ## fortran
 ```fortran
 program main
