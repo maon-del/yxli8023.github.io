@@ -21,7 +21,7 @@ mathjax: true
 author: YuXuan
 show_author_profile: true
 ---
-这里收集了一些在平时写$\Latex$的时候可能用到的一些符号。
+这里收集了一些在平时写**Latex**的时候可能用到的一些符号。
 {:.info}
 <!--more-->
 
