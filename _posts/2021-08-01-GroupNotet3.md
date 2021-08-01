@@ -89,6 +89,53 @@ $$\mathbf{g}=n_1\mathbf{g}_1+n_2\mathbf{g}_2+n_3\mathbf{g}_3$$
 ![png](/assets/images/GroupTheory/3-14.png)
 
 ## The classification of points and lines of symmetry
+三维空间中红一共有14种不同的布拉菲点阵,但是有的点阵只有一种布里渊区,有的点阵可以有几种不同形式的布里渊区,讲这些所有的布里渊区集合到一起,总共有22中布里渊区,如下所示
+
+![png](/assets/images/GroupTheory/3-16.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-17.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-18.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-19.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-20.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-21.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-22.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-23.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-24.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-25.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-26.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-27.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-28.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-29.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-30.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-31.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-32.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-33.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-34.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-35.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-36.png){:width="330px",:height="495px"}
+
+![png](/assets/images/GroupTheory/3-37.png)
+
+
 
 
 
