@@ -45,9 +45,9 @@ $$R(\alpha,\beta,\gamma)Y^m_l(\theta,\phi)=\sum_{n=-l}^{l}Y^n_l(\theta,\phi)\mat
 
 $$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}_{nm}=C_{nm}\exp(-in\gamma)d^l(\beta)_{nm}\exp(-im\alpha),\quad C_{nm}=(i^{\rvert n\rvert+n})(i^{-\rvert m\rvert -m})$$
 
-$$d^l(\beta)_{nm}=\sum_k\frac{(-1)^{k-m+n}\sqrt{(l+n)!(l+m)!(l-n)!(l-m)!}}{(l-n-k)!(l+m-k)!k!(k-m+n)!}\cos^{2l+m-n-2k}(\frac{1}{2}\beta)\sin^{2k+n-m}(\frac{1}{2}\beta),\quad k=\text{max}\{0,(m-n)\}\rightarrow\text{min}\{(l-n),(l+m)\}$$
+$$d^l(\beta)_{nm}=\sum_k\frac{(-1)^{k-m+n}\sqrt{(l+n)!(l+m)!(l-n)!(l-m)!}}{(l-n-k)!(l+m-k)!k!(k-m+n)!}\cos^{2l+m-n-2k}(\frac{1}{2}\beta)\sin^{2k+n-m}(\frac{1}{2}\beta)$$
 
-对于三维空间中的转动操作$R(\alpha,\beta,\gamma)$,当整数$l$确定之后,只有唯一的一个$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$与之相对应.对于一个给定的$l$值的矩阵$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$形成了一个$(2l+1)$维的旋转群$R(\alpha,\beta,\gamma)$的表示,而球谐函数$Y_l^m(\theta,\phi)(-l\le m\le l)$则是这个表示的基矢.矩阵元素$d^l(\beta)_{nm}$会有下面的对称关系
+$k=\text{max}\{0,(m-n)\}\rightarrow\text{min}\{(l-n),(l+m)\}$,对于三维空间中的转动操作$R(\alpha,\beta,\gamma)$,当整数$l$确定之后,只有唯一的一个$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$与之相对应.对于一个给定的$l$值的矩阵$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$形成了一个$(2l+1)$维的旋转群$R(\alpha,\beta,\gamma)$的表示,而球谐函数$Y_l^m(\theta,\phi)(-l\le m\le l)$则是这个表示的基矢.矩阵元素$d^l(\beta)_{nm}$会有下面的对称关系
 
 $$d^l(\beta)_{nm}=d^l(\beta)_{-m,-n}=(-1)^{m+n}d^l(\beta)_{mn}$$
 
@@ -70,7 +70,7 @@ $$IY^l_m(\theta,\phi)=(-1)^lY^l_m(\theta,\phi)$$
 ![png](/assets/images/GroupTheory/1-14.png)
 
 ## 基函数寻找
-对弈一个群$\mathbf{G}$其对应的阶数为$\rvert\mathbf{G}\rvert$,其对应的不可约表示$\Gamma^i\{R\rightarrow\mathbf{D}^i(R)\}$已知,这里的$\mathbf{D}^i$是是群元$R$的矩阵表示,对应的维度是$d_i$,而现在就要找到一组合适的基矢$\langle\phi_1^i,\phi_2^i,\cdots,\phi_{d_i}^i\rvert$满足
+对一个群$\mathbf{G}$其对应的阶数为$\rvert\mathbf{G}\rvert$,其对应的不可约表示$\Gamma^i\{R\rightarrow\mathbf{D}^i(R)\}$已知,这里的$\mathbf{D}^i$是是群元$R$的矩阵表示,对应的维度是$d_i$,而现在就要找到一组合适的基矢$\langle\phi_1^i,\phi_2^i,\cdots,\phi_{d_i}^i\rvert$满足
 
 $$R\phi_s^i=\sum_{t=1}^{d_i}\phi_t^i\mathbf{D}^i(R)_{ts},\quad R\in\mathbf{G}$$
 
@@ -91,9 +91,11 @@ $$W^i_{ts}=\frac{d_i}{\rvert\mathbf{G}\rvert}\sum_{R\in\mathbf{G}}\mathbf{D}^i(R
 
 $$W^i_{ts}Y_l^m(\theta,\phi)=\frac{d_i}{\rvert \mathbf{G}\rvert}\sum_{R\in\mathbf{G}}\mathbf{D}^i(R)_{ts}^*RY_l^m(\theta,\phi)$$
 
-此时需要计算$RY_l^m(\theta,\phi)$,这里的额$R$表示正规转动操作或者反演操作,它们对球谐函数的作用在前面已经给出,如果$R$是一个非正规转动(improper)可以将其表示为$R=IQ$,此时需要同时计算$QY_l^m(\theta,\phi),IY_l^m(\theta,\phi)$,反演操作不过是简单的加上一个$(-1)^l$的因子,最终可以将上式变为
+此时需要计算$RY_l^m(\theta,\phi)$,这里的$R$表示正规转动操作或者反演操作,它们对球谐函数的作用在前面已经给出,如果$R$是一个非正规转动(improper)可以将其表示为$R=IQ$,此时需要同时计算$QY_l^m(\theta,\phi),IY_l^m(\theta,\phi)$,反演操作不过是简单的加上一个$(-1)^l$的因子,最终可以将上式变为
 
 $$W^i_{ts}Y_l^m(\theta,\phi)=\frac{d_i}{\rvert\mathbf{G}\rvert}\sum_{R\in\mathbf{G}}P_R\mathbf{D}^i(R)_{ts}^*\exp(-im\alpha)\sum_nC_{nm}\exp(-in\gamma)d^l(\beta)Y^n_l(\theta,\phi)$$
+
+这里的求和$R$需要对所有的点群元素进行.
 
 ## 晶体点群symmetry-adapted function
 首先给出32个点群对应的特征标表
@@ -105,6 +107,48 @@ $$W^i_{ts}Y_l^m(\theta,\phi)=\frac{d_i}{\rvert\mathbf{G}\rvert}\sum_{R\in\mathbf
 ![png](/assets/images/GroupTheory/1-17.png)
 
 ![png](/assets/images/GroupTheory/1-18.png)
+
+这个表中,几列表示的是点群的标记和其对应不可约表示的记法,这里同时给出了两种不同的标记方式,最后一列给出的就是点群的乘法表,这里需要说明的是,可能有的点群其乘法表示相同的,这也就是表中最后一列中会同时有两行不同的群元,他们分别代表的是不同点群的操作元,但是又具有相同的乘法表.在上表中,$i=1,2,3;j=1,2,3,4$是一些约定的符号记法.
+
+## 晶体场劈裂
+在孤立的环境中,电子周围的势场是个球对称的,在不考虑自旋的时候,其满足O(3)群对称性$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$,这里的$l$是个整数,其实也就是实际中的角动量(暂时这么理解),$\mathcal{D}^l\{R(\alpha,\beta,\gamma)\}$的简并度是$(2l+1)$,它的基函数可以构成一个矢量,这$(2l+1)$个基函数对应的就是球谐函数$Y_l^m(\theta,\phi)(-l\le m\le l)$,因此这些波函数对应的能量此时都是相同的.当电子的环境发生改变的时候,也就是把它放到空间群中,那么其对称性就会从$O(3)$变成点群$\mathbf{G}$,原本的$(2l+1)$个简并能级就会发生劈裂,这些劈裂的能级就会用群$\mathbf{G}$的不可约表示来标记,下面给出$O(3)$群和点群的相容性关系
+
+![png](/assets/images/GroupTheory/1-19.png)
+
+![png](/assets/images/GroupTheory/1-20.png)
+
+![png](/assets/images/GroupTheory/1-21.png)
+
+![png](/assets/images/GroupTheory/1-22.png)
+
+![png](/assets/images/GroupTheory/1-23.png)
+
+![png](/assets/images/GroupTheory/1-24.png)
+
+![png](/assets/images/GroupTheory/1-25.png)
+
+考虑将一个$l=2$的放置到$mm2(C_{2v})$点群中,根据下表
+
+![png](/assets/images/GroupTheory/1-26.png)
+
+$$\mathcal{D}^2=\mathcal{D}^{2*1+0}=1*\text{reg}+\mathcal{D}^0=(A_1+B_1+B_2)+A_1=2A_1+A_2+B_1+B_2$$
+
+$l=2$的基函数为$\{Y_2^{-2}(\theta,\phi),Y_2^{-1}(\theta,\phi),Y_2^{0}(\theta,\phi),Y_2^{1}(\theta,\phi),Y_2^{2}(\theta,\phi)\}$,根据下表
+
+![png](/assets/images/GroupTheory/1-27.png)
+
+可以得到
+
+$$A_1:Y_2^{0}(\theta,\phi),Y_2^{2,c}(\theta,\phi)\quad A_2:Y_2^{2,s}(\theta,\phi)\quad B_1:Y_2^{1,c}(\theta,\phi)\quad B_2:Y_2^{1,s}(\theta,\phi)$$
+
+![png](/assets/images/GroupTheory/1-28.png)
+
+
+
+
+
+
+
 
 
 
