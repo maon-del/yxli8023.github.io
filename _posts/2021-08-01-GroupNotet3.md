@@ -88,6 +88,10 @@ $$\mathbf{g}=n_1\mathbf{g}_1+n_2\mathbf{g}_2+n_3\mathbf{g}_3$$
 
 ![png](/assets/images/GroupTheory/3-14.png)
 
+## The classification of points and lines of symmetry
+
+
+
 
 
 
