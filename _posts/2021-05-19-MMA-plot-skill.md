@@ -59,6 +59,8 @@ show_author_profile: true
 
 ![png](/assets/images/Mma/ring-color.png)
 
+![png](/assets/images/Mma/ring-2.png)
+
 
 
 
